@@ -1,73 +1,72 @@
-# TemporalRuleAPI
+# \TemporalRuleAPI
 
 All URIs are relative to *http://api.cpaaslabs.net*
 
-| Method | HTTP request | Description |
-|------------- | ------------- | -------------|
-| [**V1AccountAccountIDTemporalruleGet**](TemporalRuleAPI.md#V1AccountAccountIDTemporalruleGet) | **Get** /v1/account/{accountID}/temporalrule | Get Temporal Rule List |
-| [**V1AccountAccountIDTemporalrulePost**](TemporalRuleAPI.md#V1AccountAccountIDTemporalrulePost) | **Post** /v1/account/{accountID}/temporalrule | Create Temporal Rule |
-| [**V1AccountAccountIDTemporalruleTemporalRuleIDDelete**](TemporalRuleAPI.md#V1AccountAccountIDTemporalruleTemporalRuleIDDelete) | **Delete** /v1/account/{accountID}/temporalrule/{temporalRuleID} | Delete Temporal Rule |
-| [**V1AccountAccountIDTemporalruleTemporalRuleIDGet**](TemporalRuleAPI.md#V1AccountAccountIDTemporalruleTemporalRuleIDGet) | **Get** /v1/account/{accountID}/temporalrule/{temporalRuleID} | Get Temporal Rule Details |
-| [**V1AccountAccountIDTemporalruleTemporalRuleIDPut**](TemporalRuleAPI.md#V1AccountAccountIDTemporalruleTemporalRuleIDPut) | **Put** /v1/account/{accountID}/temporalrule/{temporalRuleID} | Update Temporal Rule |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**V1AccountAccountIDTemporalruleGet**](TemporalRuleAPI.md#V1AccountAccountIDTemporalruleGet) | **Get** /v1/account/{accountID}/temporalrule | Get Temporal Rule List
+[**V1AccountAccountIDTemporalrulePost**](TemporalRuleAPI.md#V1AccountAccountIDTemporalrulePost) | **Post** /v1/account/{accountID}/temporalrule | Create Temporal Rule
+[**V1AccountAccountIDTemporalruleTemporalRuleIDDelete**](TemporalRuleAPI.md#V1AccountAccountIDTemporalruleTemporalRuleIDDelete) | **Delete** /v1/account/{accountID}/temporalrule/{temporalRuleID} | Delete Temporal Rule
+[**V1AccountAccountIDTemporalruleTemporalRuleIDGet**](TemporalRuleAPI.md#V1AccountAccountIDTemporalruleTemporalRuleIDGet) | **Get** /v1/account/{accountID}/temporalrule/{temporalRuleID} | Get Temporal Rule Details
+[**V1AccountAccountIDTemporalruleTemporalRuleIDPut**](TemporalRuleAPI.md#V1AccountAccountIDTemporalruleTemporalRuleIDPut) | **Put** /v1/account/{accountID}/temporalrule/{temporalRuleID} | Update Temporal Rule
 
 
 
 ## V1AccountAccountIDTemporalruleGet
 
-> ServiceDocsTemporalRuleGetAll V1AccountAccountIDTemporalruleGet(accountID, startKey, pageSize)
+> ServiceDocsTemporalRuleGetAll V1AccountAccountIDTemporalruleGet(ctx, accountID).StartKey(startKey).PageSize(pageSize).Execute()
 
 Get Temporal Rule List
 
-Access all temporal rules for an account.
+
 
 ### Example
 
-```java
-// Import classes:
-import .ApiClient;
-import .ApiException;
-import .Configuration;
-import .auth.*;
-import .models.*;
-import openapi.TemporalRuleAPI;
+```go
+package main
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("http://api.cpaaslabs.net");
-        
-        // Configure API key authorization: BearerAuth
-        ApiKeyAuth BearerAuth = (ApiKeyAuth) defaultClient.getAuthentication("BearerAuth");
-        BearerAuth.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //BearerAuth.setApiKeyPrefix("Token");
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
 
-        TemporalRuleAPI apiInstance = new TemporalRuleAPI(defaultClient);
-        string accountID = accountID_example; // string | Account ID, 32 alpha numeric
-        string startKey = startKey_example; // string | start_key for pagination that was returned as next_start_key from your previous call
-        int32 pageSize = 56; // int32 | number of records to return, range 1 to 50
-        try {
-            ServiceDocsTemporalRuleGetAll result = apiInstance.V1AccountAccountIDTemporalruleGet(accountID, startKey, pageSize);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling TemporalRuleAPI#V1AccountAccountIDTemporalruleGet");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+func main() {
+	accountID := "accountID_example" // string | Account ID, 32 alpha numeric
+	startKey := "startKey_example" // string | start_key for pagination that was returned as next_start_key from your previous call (optional)
+	pageSize := int32(56) // int32 | number of records to return, range 1 to 50 (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TemporalRuleAPI.V1AccountAccountIDTemporalruleGet(context.Background(), accountID).StartKey(startKey).PageSize(pageSize).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TemporalRuleAPI.V1AccountAccountIDTemporalruleGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountAccountIDTemporalruleGet`: ServiceDocsTemporalRuleGetAll
+	fmt.Fprintf(os.Stdout, "Response from `TemporalRuleAPI.V1AccountAccountIDTemporalruleGet`: %v\n", resp)
 }
 ```
 
-### Parameters
+### Path Parameters
 
 
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **accountID** | **string**| Account ID, 32 alpha numeric | |
-| **startKey** | **string**| start_key for pagination that was returned as next_start_key from your previous call | [optional] |
-| **pageSize** | **int32**| number of records to return, range 1 to 50 | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountID** | **string** | Account ID, 32 alpha numeric | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountAccountIDTemporalruleGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **startKey** | **string** | start_key for pagination that was returned as next_start_key from your previous call | 
+ **pageSize** | **int32** | number of records to return, range 1 to 50 | 
 
 ### Return type
 
@@ -82,68 +81,64 @@ public class Example {
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-| **400** | Bad Request |  -  |
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## V1AccountAccountIDTemporalrulePost
 
-> ServiceDocsTemporalRuleGetSingle V1AccountAccountIDTemporalrulePost(accountID, temporalrule)
+> ServiceDocsTemporalRuleGetSingle V1AccountAccountIDTemporalrulePost(ctx, accountID).Temporalrule(temporalrule).Execute()
 
 Create Temporal Rule
 
-Create temporal rules for an account.
+
 
 ### Example
 
-```java
-// Import classes:
-import .ApiClient;
-import .ApiException;
-import .Configuration;
-import .auth.*;
-import .models.*;
-import openapi.TemporalRuleAPI;
+```go
+package main
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("http://api.cpaaslabs.net");
-        
-        // Configure API key authorization: BearerAuth
-        ApiKeyAuth BearerAuth = (ApiKeyAuth) defaultClient.getAuthentication("BearerAuth");
-        BearerAuth.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //BearerAuth.setApiKeyPrefix("Token");
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
 
-        TemporalRuleAPI apiInstance = new TemporalRuleAPI(defaultClient);
-        string accountID = accountID_example; // string | Account ID, 32 alphanumeric
-        ServiceVOIPTemporalRuleAddEdit2 temporalrule = ; // ServiceVOIPTemporalRuleAddEdit2 | payload fields
-        try {
-            ServiceDocsTemporalRuleGetSingle result = apiInstance.V1AccountAccountIDTemporalrulePost(accountID, temporalrule);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling TemporalRuleAPI#V1AccountAccountIDTemporalrulePost");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+func main() {
+	accountID := "accountID_example" // string | Account ID, 32 alphanumeric
+	temporalrule := *openapiclient.NewServiceVOIPTemporalRuleAddEdit2("Cycle_example", "Name_example") // ServiceVOIPTemporalRuleAddEdit2 | payload fields
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TemporalRuleAPI.V1AccountAccountIDTemporalrulePost(context.Background(), accountID).Temporalrule(temporalrule).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TemporalRuleAPI.V1AccountAccountIDTemporalrulePost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountAccountIDTemporalrulePost`: ServiceDocsTemporalRuleGetSingle
+	fmt.Fprintf(os.Stdout, "Response from `TemporalRuleAPI.V1AccountAccountIDTemporalrulePost`: %v\n", resp)
 }
 ```
 
-### Parameters
+### Path Parameters
 
 
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **accountID** | **string**| Account ID, 32 alphanumeric | |
-| **temporalrule** | [**ServiceVOIPTemporalRuleAddEdit2**](ServiceVOIPTemporalRuleAddEdit2.md)| payload fields | |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountID** | **string** | Account ID, 32 alphanumeric | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountAccountIDTemporalrulePostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **temporalrule** | [**ServiceVOIPTemporalRuleAddEdit2**](ServiceVOIPTemporalRuleAddEdit2.md) | payload fields | 
 
 ### Return type
 
@@ -158,68 +153,65 @@ public class Example {
 - **Content-Type**: application/json
 - **Accept**: application/json
 
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-| **400** | Bad Request |  -  |
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## V1AccountAccountIDTemporalruleTemporalRuleIDDelete
 
-> ServiceDocsTemporalRuleGetSingle V1AccountAccountIDTemporalruleTemporalRuleIDDelete(accountID, temporalRuleID)
+> ServiceDocsTemporalRuleGetSingle V1AccountAccountIDTemporalruleTemporalRuleIDDelete(ctx, accountID, temporalRuleID).Execute()
 
 Delete Temporal Rule
 
-Remove a temporal rule from an account.
+
 
 ### Example
 
-```java
-// Import classes:
-import .ApiClient;
-import .ApiException;
-import .Configuration;
-import .auth.*;
-import .models.*;
-import openapi.TemporalRuleAPI;
+```go
+package main
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("http://api.cpaaslabs.net");
-        
-        // Configure API key authorization: BearerAuth
-        ApiKeyAuth BearerAuth = (ApiKeyAuth) defaultClient.getAuthentication("BearerAuth");
-        BearerAuth.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //BearerAuth.setApiKeyPrefix("Token");
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
 
-        TemporalRuleAPI apiInstance = new TemporalRuleAPI(defaultClient);
-        string accountID = accountID_example; // string | Account ID, 32 alpha numeric
-        string temporalRuleID = temporalRuleID_example; // string | temporal rule ID, 32 alpha numeric
-        try {
-            ServiceDocsTemporalRuleGetSingle result = apiInstance.V1AccountAccountIDTemporalruleTemporalRuleIDDelete(accountID, temporalRuleID);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling TemporalRuleAPI#V1AccountAccountIDTemporalruleTemporalRuleIDDelete");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+func main() {
+	accountID := "accountID_example" // string | Account ID, 32 alpha numeric
+	temporalRuleID := "temporalRuleID_example" // string | temporal rule ID, 32 alpha numeric
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TemporalRuleAPI.V1AccountAccountIDTemporalruleTemporalRuleIDDelete(context.Background(), accountID, temporalRuleID).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TemporalRuleAPI.V1AccountAccountIDTemporalruleTemporalRuleIDDelete``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountAccountIDTemporalruleTemporalRuleIDDelete`: ServiceDocsTemporalRuleGetSingle
+	fmt.Fprintf(os.Stdout, "Response from `TemporalRuleAPI.V1AccountAccountIDTemporalruleTemporalRuleIDDelete`: %v\n", resp)
 }
 ```
 
-### Parameters
+### Path Parameters
 
 
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **accountID** | **string**| Account ID, 32 alpha numeric | |
-| **temporalRuleID** | **string**| temporal rule ID, 32 alpha numeric | |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountID** | **string** | Account ID, 32 alpha numeric | 
+**temporalRuleID** | **string** | temporal rule ID, 32 alpha numeric | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountAccountIDTemporalruleTemporalRuleIDDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
 
 ### Return type
 
@@ -234,68 +226,65 @@ public class Example {
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-| **400** | Bad Request |  -  |
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## V1AccountAccountIDTemporalruleTemporalRuleIDGet
 
-> ServiceDocsTemporalRuleGetSingle V1AccountAccountIDTemporalruleTemporalRuleIDGet(accountID, temporalRuleID)
+> ServiceDocsTemporalRuleGetSingle V1AccountAccountIDTemporalruleTemporalRuleIDGet(ctx, accountID, temporalRuleID).Execute()
 
 Get Temporal Rule Details
 
-View details about individual time rules.
+
 
 ### Example
 
-```java
-// Import classes:
-import .ApiClient;
-import .ApiException;
-import .Configuration;
-import .auth.*;
-import .models.*;
-import openapi.TemporalRuleAPI;
+```go
+package main
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("http://api.cpaaslabs.net");
-        
-        // Configure API key authorization: BearerAuth
-        ApiKeyAuth BearerAuth = (ApiKeyAuth) defaultClient.getAuthentication("BearerAuth");
-        BearerAuth.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //BearerAuth.setApiKeyPrefix("Token");
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
 
-        TemporalRuleAPI apiInstance = new TemporalRuleAPI(defaultClient);
-        string accountID = accountID_example; // string | Account ID, 32 alpha numeric
-        string temporalRuleID = temporalRuleID_example; // string | Temporal Rule ID, 32 alpha numeric
-        try {
-            ServiceDocsTemporalRuleGetSingle result = apiInstance.V1AccountAccountIDTemporalruleTemporalRuleIDGet(accountID, temporalRuleID);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling TemporalRuleAPI#V1AccountAccountIDTemporalruleTemporalRuleIDGet");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+func main() {
+	accountID := "accountID_example" // string | Account ID, 32 alpha numeric
+	temporalRuleID := "temporalRuleID_example" // string | Temporal Rule ID, 32 alpha numeric
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TemporalRuleAPI.V1AccountAccountIDTemporalruleTemporalRuleIDGet(context.Background(), accountID, temporalRuleID).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TemporalRuleAPI.V1AccountAccountIDTemporalruleTemporalRuleIDGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountAccountIDTemporalruleTemporalRuleIDGet`: ServiceDocsTemporalRuleGetSingle
+	fmt.Fprintf(os.Stdout, "Response from `TemporalRuleAPI.V1AccountAccountIDTemporalruleTemporalRuleIDGet`: %v\n", resp)
 }
 ```
 
-### Parameters
+### Path Parameters
 
 
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **accountID** | **string**| Account ID, 32 alpha numeric | |
-| **temporalRuleID** | **string**| Temporal Rule ID, 32 alpha numeric | |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountID** | **string** | Account ID, 32 alpha numeric | 
+**temporalRuleID** | **string** | Temporal Rule ID, 32 alpha numeric | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountAccountIDTemporalruleTemporalRuleIDGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
 
 ### Return type
 
@@ -310,70 +299,67 @@ public class Example {
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-| **400** | Bad Request |  -  |
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## V1AccountAccountIDTemporalruleTemporalRuleIDPut
 
-> ServiceDocsTemporalRuleGetSingle V1AccountAccountIDTemporalruleTemporalRuleIDPut(accountID, temporalRuleID, reqBody)
+> ServiceDocsTemporalRuleGetSingle V1AccountAccountIDTemporalruleTemporalRuleIDPut(ctx, accountID, temporalRuleID).ReqBody(reqBody).Execute()
 
 Update Temporal Rule
 
-Edit the existing temporal rules in an account.
+
 
 ### Example
 
-```java
-// Import classes:
-import .ApiClient;
-import .ApiException;
-import .Configuration;
-import .auth.*;
-import .models.*;
-import openapi.TemporalRuleAPI;
+```go
+package main
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("http://api.cpaaslabs.net");
-        
-        // Configure API key authorization: BearerAuth
-        ApiKeyAuth BearerAuth = (ApiKeyAuth) defaultClient.getAuthentication("BearerAuth");
-        BearerAuth.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //BearerAuth.setApiKeyPrefix("Token");
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
 
-        TemporalRuleAPI apiInstance = new TemporalRuleAPI(defaultClient);
-        string accountID = accountID_example; // string | Account ID, 32 alpha numeric
-        string temporalRuleID = temporalRuleID_example; // string | Temporal Rule ID, 32 alpha numeric
-        ServiceVOIPTemporalRuleAddEdit2 reqBody = ; // ServiceVOIPTemporalRuleAddEdit2 | payload fields
-        try {
-            ServiceDocsTemporalRuleGetSingle result = apiInstance.V1AccountAccountIDTemporalruleTemporalRuleIDPut(accountID, temporalRuleID, reqBody);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling TemporalRuleAPI#V1AccountAccountIDTemporalruleTemporalRuleIDPut");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+func main() {
+	accountID := "accountID_example" // string | Account ID, 32 alpha numeric
+	temporalRuleID := "temporalRuleID_example" // string | Temporal Rule ID, 32 alpha numeric
+	reqBody := *openapiclient.NewServiceVOIPTemporalRuleAddEdit2("Cycle_example", "Name_example") // ServiceVOIPTemporalRuleAddEdit2 | payload fields
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TemporalRuleAPI.V1AccountAccountIDTemporalruleTemporalRuleIDPut(context.Background(), accountID, temporalRuleID).ReqBody(reqBody).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TemporalRuleAPI.V1AccountAccountIDTemporalruleTemporalRuleIDPut``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountAccountIDTemporalruleTemporalRuleIDPut`: ServiceDocsTemporalRuleGetSingle
+	fmt.Fprintf(os.Stdout, "Response from `TemporalRuleAPI.V1AccountAccountIDTemporalruleTemporalRuleIDPut`: %v\n", resp)
 }
 ```
 
-### Parameters
+### Path Parameters
 
 
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **accountID** | **string**| Account ID, 32 alpha numeric | |
-| **temporalRuleID** | **string**| Temporal Rule ID, 32 alpha numeric | |
-| **reqBody** | [**ServiceVOIPTemporalRuleAddEdit2**](ServiceVOIPTemporalRuleAddEdit2.md)| payload fields | |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountID** | **string** | Account ID, 32 alpha numeric | 
+**temporalRuleID** | **string** | Temporal Rule ID, 32 alpha numeric | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountAccountIDTemporalruleTemporalRuleIDPutRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **reqBody** | [**ServiceVOIPTemporalRuleAddEdit2**](ServiceVOIPTemporalRuleAddEdit2.md) | payload fields | 
 
 ### Return type
 
@@ -388,10 +374,7 @@ public class Example {
 - **Content-Type**: application/json
 - **Accept**: application/json
 
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-| **400** | Bad Request |  -  |
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 

@@ -1,75 +1,75 @@
-# MetaflowAPI
+# \MetaflowAPI
 
 All URIs are relative to *http://api.cpaaslabs.net*
 
-| Method | HTTP request | Description |
-|------------- | ------------- | -------------|
-| [**V1AccountAccountIDDeviceDeviceIDMetaflowDelete**](MetaflowAPI.md#V1AccountAccountIDDeviceDeviceIDMetaflowDelete) | **Delete** /v1/account/{accountID}/device/{deviceID}/metaflow | Delete Device Metaflow |
-| [**V1AccountAccountIDDeviceDeviceIDMetaflowGet**](MetaflowAPI.md#V1AccountAccountIDDeviceDeviceIDMetaflowGet) | **Get** /v1/account/{accountID}/device/{deviceID}/metaflow | Get Device Metaflow List |
-| [**V1AccountAccountIDDeviceDeviceIDMetaflowPost**](MetaflowAPI.md#V1AccountAccountIDDeviceDeviceIDMetaflowPost) | **Post** /v1/account/{accountID}/device/{deviceID}/metaflow | Create Device Metaflow |
-| [**V1AccountAccountIDMetaflowDelete**](MetaflowAPI.md#V1AccountAccountIDMetaflowDelete) | **Delete** /v1/account/{accountID}/metaflow | Delete Account Metaflow |
-| [**V1AccountAccountIDMetaflowGet**](MetaflowAPI.md#V1AccountAccountIDMetaflowGet) | **Get** /v1/account/{accountID}/metaflow | Get Account Metaflow List |
-| [**V1AccountAccountIDMetaflowPost**](MetaflowAPI.md#V1AccountAccountIDMetaflowPost) | **Post** /v1/account/{accountID}/metaflow | Create Account Metaflow |
-| [**V1AccountAccountIDUserUserIDMetaflowDelete**](MetaflowAPI.md#V1AccountAccountIDUserUserIDMetaflowDelete) | **Delete** /v1/account/{accountID}/user/{userID}/metaflow | Delete User Metaflow |
-| [**V1AccountAccountIDUserUserIDMetaflowGet**](MetaflowAPI.md#V1AccountAccountIDUserUserIDMetaflowGet) | **Get** /v1/account/{accountID}/user/{userID}/metaflow | Get User Metaflow List |
-| [**V1AccountAccountIDUserUserIDMetaflowPost**](MetaflowAPI.md#V1AccountAccountIDUserUserIDMetaflowPost) | **Post** /v1/account/{accountID}/user/{userID}/metaflow | Create User Metaflow |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**V1AccountAccountIDDeviceDeviceIDMetaflowDelete**](MetaflowAPI.md#V1AccountAccountIDDeviceDeviceIDMetaflowDelete) | **Delete** /v1/account/{accountID}/device/{deviceID}/metaflow | Delete Device Metaflow
+[**V1AccountAccountIDDeviceDeviceIDMetaflowGet**](MetaflowAPI.md#V1AccountAccountIDDeviceDeviceIDMetaflowGet) | **Get** /v1/account/{accountID}/device/{deviceID}/metaflow | Get Device Metaflow List
+[**V1AccountAccountIDDeviceDeviceIDMetaflowPost**](MetaflowAPI.md#V1AccountAccountIDDeviceDeviceIDMetaflowPost) | **Post** /v1/account/{accountID}/device/{deviceID}/metaflow | Create Device Metaflow
+[**V1AccountAccountIDMetaflowDelete**](MetaflowAPI.md#V1AccountAccountIDMetaflowDelete) | **Delete** /v1/account/{accountID}/metaflow | Delete Account Metaflow
+[**V1AccountAccountIDMetaflowGet**](MetaflowAPI.md#V1AccountAccountIDMetaflowGet) | **Get** /v1/account/{accountID}/metaflow | Get Account Metaflow List
+[**V1AccountAccountIDMetaflowPost**](MetaflowAPI.md#V1AccountAccountIDMetaflowPost) | **Post** /v1/account/{accountID}/metaflow | Create Account Metaflow
+[**V1AccountAccountIDUserUserIDMetaflowDelete**](MetaflowAPI.md#V1AccountAccountIDUserUserIDMetaflowDelete) | **Delete** /v1/account/{accountID}/user/{userID}/metaflow | Delete User Metaflow
+[**V1AccountAccountIDUserUserIDMetaflowGet**](MetaflowAPI.md#V1AccountAccountIDUserUserIDMetaflowGet) | **Get** /v1/account/{accountID}/user/{userID}/metaflow | Get User Metaflow List
+[**V1AccountAccountIDUserUserIDMetaflowPost**](MetaflowAPI.md#V1AccountAccountIDUserUserIDMetaflowPost) | **Post** /v1/account/{accountID}/user/{userID}/metaflow | Create User Metaflow
 
 
 
 ## V1AccountAccountIDDeviceDeviceIDMetaflowDelete
 
-> ServiceDocMetaflowGet V1AccountAccountIDDeviceDeviceIDMetaflowDelete(accountID, deviceID)
+> ServiceDocMetaflowGet V1AccountAccountIDDeviceDeviceIDMetaflowDelete(ctx, accountID, deviceID).Execute()
 
 Delete Device Metaflow
 
-Delete all metaflows associated with a device.
+
 
 ### Example
 
-```java
-// Import classes:
-import .ApiClient;
-import .ApiException;
-import .Configuration;
-import .auth.*;
-import .models.*;
-import openapi.MetaflowAPI;
+```go
+package main
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("http://api.cpaaslabs.net");
-        
-        // Configure API key authorization: BearerAuth
-        ApiKeyAuth BearerAuth = (ApiKeyAuth) defaultClient.getAuthentication("BearerAuth");
-        BearerAuth.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //BearerAuth.setApiKeyPrefix("Token");
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
 
-        MetaflowAPI apiInstance = new MetaflowAPI(defaultClient);
-        string accountID = accountID_example; // string | Account ID, 32 alpha numeric
-        string deviceID = deviceID_example; // string | Device ID, 32 alpha numeric
-        try {
-            ServiceDocMetaflowGet result = apiInstance.V1AccountAccountIDDeviceDeviceIDMetaflowDelete(accountID, deviceID);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling MetaflowAPI#V1AccountAccountIDDeviceDeviceIDMetaflowDelete");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+func main() {
+	accountID := "accountID_example" // string | Account ID, 32 alpha numeric
+	deviceID := "deviceID_example" // string | Device ID, 32 alpha numeric
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MetaflowAPI.V1AccountAccountIDDeviceDeviceIDMetaflowDelete(context.Background(), accountID, deviceID).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MetaflowAPI.V1AccountAccountIDDeviceDeviceIDMetaflowDelete``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountAccountIDDeviceDeviceIDMetaflowDelete`: ServiceDocMetaflowGet
+	fmt.Fprintf(os.Stdout, "Response from `MetaflowAPI.V1AccountAccountIDDeviceDeviceIDMetaflowDelete`: %v\n", resp)
 }
 ```
 
-### Parameters
+### Path Parameters
 
 
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **accountID** | **string**| Account ID, 32 alpha numeric | |
-| **deviceID** | **string**| Device ID, 32 alpha numeric | |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountID** | **string** | Account ID, 32 alpha numeric | 
+**deviceID** | **string** | Device ID, 32 alpha numeric | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountAccountIDDeviceDeviceIDMetaflowDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
 
 ### Return type
 
@@ -84,68 +84,65 @@ public class Example {
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-| **400** | Bad Request |  -  |
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## V1AccountAccountIDDeviceDeviceIDMetaflowGet
 
-> ServiceDocMetaflowGet V1AccountAccountIDDeviceDeviceIDMetaflowGet(accountID, deviceID)
+> ServiceDocMetaflowGet V1AccountAccountIDDeviceDeviceIDMetaflowGet(ctx, accountID, deviceID).Execute()
 
 Get Device Metaflow List
 
-Get the list of metaflows for a device.
+
 
 ### Example
 
-```java
-// Import classes:
-import .ApiClient;
-import .ApiException;
-import .Configuration;
-import .auth.*;
-import .models.*;
-import openapi.MetaflowAPI;
+```go
+package main
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("http://api.cpaaslabs.net");
-        
-        // Configure API key authorization: BearerAuth
-        ApiKeyAuth BearerAuth = (ApiKeyAuth) defaultClient.getAuthentication("BearerAuth");
-        BearerAuth.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //BearerAuth.setApiKeyPrefix("Token");
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
 
-        MetaflowAPI apiInstance = new MetaflowAPI(defaultClient);
-        string accountID = accountID_example; // string | Account ID, 32 alpha numeric
-        string deviceID = deviceID_example; // string | Device ID, 32 alpha numeric
-        try {
-            ServiceDocMetaflowGet result = apiInstance.V1AccountAccountIDDeviceDeviceIDMetaflowGet(accountID, deviceID);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling MetaflowAPI#V1AccountAccountIDDeviceDeviceIDMetaflowGet");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+func main() {
+	accountID := "accountID_example" // string | Account ID, 32 alpha numeric
+	deviceID := "deviceID_example" // string | Device ID, 32 alpha numeric
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MetaflowAPI.V1AccountAccountIDDeviceDeviceIDMetaflowGet(context.Background(), accountID, deviceID).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MetaflowAPI.V1AccountAccountIDDeviceDeviceIDMetaflowGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountAccountIDDeviceDeviceIDMetaflowGet`: ServiceDocMetaflowGet
+	fmt.Fprintf(os.Stdout, "Response from `MetaflowAPI.V1AccountAccountIDDeviceDeviceIDMetaflowGet`: %v\n", resp)
 }
 ```
 
-### Parameters
+### Path Parameters
 
 
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **accountID** | **string**| Account ID, 32 alpha numeric | |
-| **deviceID** | **string**| Device ID, 32 alpha numeric | |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountID** | **string** | Account ID, 32 alpha numeric | 
+**deviceID** | **string** | Device ID, 32 alpha numeric | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountAccountIDDeviceDeviceIDMetaflowGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
 
 ### Return type
 
@@ -160,70 +157,67 @@ public class Example {
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-| **400** | Bad Request |  -  |
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## V1AccountAccountIDDeviceDeviceIDMetaflowPost
 
-> ServiceDocMetaflowGet V1AccountAccountIDDeviceDeviceIDMetaflowPost(accountID, deviceID, reqBody)
+> ServiceDocMetaflowGet V1AccountAccountIDDeviceDeviceIDMetaflowPost(ctx, accountID, deviceID).ReqBody(reqBody).Execute()
 
 Create Device Metaflow
 
-Create a metaflow or multiple metaflows for a device.
+
 
 ### Example
 
-```java
-// Import classes:
-import .ApiClient;
-import .ApiException;
-import .Configuration;
-import .auth.*;
-import .models.*;
-import openapi.MetaflowAPI;
+```go
+package main
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("http://api.cpaaslabs.net");
-        
-        // Configure API key authorization: BearerAuth
-        ApiKeyAuth BearerAuth = (ApiKeyAuth) defaultClient.getAuthentication("BearerAuth");
-        BearerAuth.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //BearerAuth.setApiKeyPrefix("Token");
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
 
-        MetaflowAPI apiInstance = new MetaflowAPI(defaultClient);
-        string accountID = accountID_example; // string | Account ID, 32 alpha numeric
-        string deviceID = deviceID_example; // string | Device ID, 32 alpha numeric
-        ServiceVOIPMetaflowAddData reqBody = ; // ServiceVOIPMetaflowAddData | payload fields
-        try {
-            ServiceDocMetaflowGet result = apiInstance.V1AccountAccountIDDeviceDeviceIDMetaflowPost(accountID, deviceID, reqBody);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling MetaflowAPI#V1AccountAccountIDDeviceDeviceIDMetaflowPost");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+func main() {
+	accountID := "accountID_example" // string | Account ID, 32 alpha numeric
+	deviceID := "deviceID_example" // string | Device ID, 32 alpha numeric
+	reqBody := *openapiclient.NewServiceVOIPMetaflowAddData() // ServiceVOIPMetaflowAddData | payload fields
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MetaflowAPI.V1AccountAccountIDDeviceDeviceIDMetaflowPost(context.Background(), accountID, deviceID).ReqBody(reqBody).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MetaflowAPI.V1AccountAccountIDDeviceDeviceIDMetaflowPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountAccountIDDeviceDeviceIDMetaflowPost`: ServiceDocMetaflowGet
+	fmt.Fprintf(os.Stdout, "Response from `MetaflowAPI.V1AccountAccountIDDeviceDeviceIDMetaflowPost`: %v\n", resp)
 }
 ```
 
-### Parameters
+### Path Parameters
 
 
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **accountID** | **string**| Account ID, 32 alpha numeric | |
-| **deviceID** | **string**| Device ID, 32 alpha numeric | |
-| **reqBody** | [**ServiceVOIPMetaflowAddData**](ServiceVOIPMetaflowAddData.md)| payload fields | |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountID** | **string** | Account ID, 32 alpha numeric | 
+**deviceID** | **string** | Device ID, 32 alpha numeric | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountAccountIDDeviceDeviceIDMetaflowPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **reqBody** | [**ServiceVOIPMetaflowAddData**](ServiceVOIPMetaflowAddData.md) | payload fields | 
 
 ### Return type
 
@@ -238,66 +232,62 @@ public class Example {
 - **Content-Type**: application/json
 - **Accept**: application/json
 
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-| **400** | Bad Request |  -  |
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## V1AccountAccountIDMetaflowDelete
 
-> ServiceDocMetaflowGet V1AccountAccountIDMetaflowDelete(accountID)
+> ServiceDocMetaflowGet V1AccountAccountIDMetaflowDelete(ctx, accountID).Execute()
 
 Delete Account Metaflow
 
-Remove all metaflows from an account.
+
 
 ### Example
 
-```java
-// Import classes:
-import .ApiClient;
-import .ApiException;
-import .Configuration;
-import .auth.*;
-import .models.*;
-import openapi.MetaflowAPI;
+```go
+package main
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("http://api.cpaaslabs.net");
-        
-        // Configure API key authorization: BearerAuth
-        ApiKeyAuth BearerAuth = (ApiKeyAuth) defaultClient.getAuthentication("BearerAuth");
-        BearerAuth.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //BearerAuth.setApiKeyPrefix("Token");
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
 
-        MetaflowAPI apiInstance = new MetaflowAPI(defaultClient);
-        string accountID = accountID_example; // string | Account ID, 32 alpha numeric
-        try {
-            ServiceDocMetaflowGet result = apiInstance.V1AccountAccountIDMetaflowDelete(accountID);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling MetaflowAPI#V1AccountAccountIDMetaflowDelete");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+func main() {
+	accountID := "accountID_example" // string | Account ID, 32 alpha numeric
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MetaflowAPI.V1AccountAccountIDMetaflowDelete(context.Background(), accountID).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MetaflowAPI.V1AccountAccountIDMetaflowDelete``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountAccountIDMetaflowDelete`: ServiceDocMetaflowGet
+	fmt.Fprintf(os.Stdout, "Response from `MetaflowAPI.V1AccountAccountIDMetaflowDelete`: %v\n", resp)
 }
 ```
 
-### Parameters
+### Path Parameters
 
 
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **accountID** | **string**| Account ID, 32 alpha numeric | |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountID** | **string** | Account ID, 32 alpha numeric | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountAccountIDMetaflowDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
 
 ### Return type
 
@@ -312,66 +302,62 @@ public class Example {
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-| **400** | Bad Request |  -  |
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## V1AccountAccountIDMetaflowGet
 
-> ServiceDocMetaflowGet V1AccountAccountIDMetaflowGet(accountID)
+> ServiceDocMetaflowGet V1AccountAccountIDMetaflowGet(ctx, accountID).Execute()
 
 Get Account Metaflow List
 
-Get an account&#39;s metaflow list.
+
 
 ### Example
 
-```java
-// Import classes:
-import .ApiClient;
-import .ApiException;
-import .Configuration;
-import .auth.*;
-import .models.*;
-import openapi.MetaflowAPI;
+```go
+package main
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("http://api.cpaaslabs.net");
-        
-        // Configure API key authorization: BearerAuth
-        ApiKeyAuth BearerAuth = (ApiKeyAuth) defaultClient.getAuthentication("BearerAuth");
-        BearerAuth.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //BearerAuth.setApiKeyPrefix("Token");
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
 
-        MetaflowAPI apiInstance = new MetaflowAPI(defaultClient);
-        string accountID = accountID_example; // string | Account ID, 32 alpha numeric
-        try {
-            ServiceDocMetaflowGet result = apiInstance.V1AccountAccountIDMetaflowGet(accountID);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling MetaflowAPI#V1AccountAccountIDMetaflowGet");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+func main() {
+	accountID := "accountID_example" // string | Account ID, 32 alpha numeric
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MetaflowAPI.V1AccountAccountIDMetaflowGet(context.Background(), accountID).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MetaflowAPI.V1AccountAccountIDMetaflowGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountAccountIDMetaflowGet`: ServiceDocMetaflowGet
+	fmt.Fprintf(os.Stdout, "Response from `MetaflowAPI.V1AccountAccountIDMetaflowGet`: %v\n", resp)
 }
 ```
 
-### Parameters
+### Path Parameters
 
 
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **accountID** | **string**| Account ID, 32 alpha numeric | |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountID** | **string** | Account ID, 32 alpha numeric | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountAccountIDMetaflowGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
 
 ### Return type
 
@@ -386,68 +372,64 @@ public class Example {
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-| **400** | Bad Request |  -  |
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## V1AccountAccountIDMetaflowPost
 
-> ServiceDocMetaflowGet V1AccountAccountIDMetaflowPost(accountID, metaflow)
+> ServiceDocMetaflowGet V1AccountAccountIDMetaflowPost(ctx, accountID).Metaflow(metaflow).Execute()
 
 Create Account Metaflow
 
-Generate a metaflow for an account.
+
 
 ### Example
 
-```java
-// Import classes:
-import .ApiClient;
-import .ApiException;
-import .Configuration;
-import .auth.*;
-import .models.*;
-import openapi.MetaflowAPI;
+```go
+package main
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("http://api.cpaaslabs.net");
-        
-        // Configure API key authorization: BearerAuth
-        ApiKeyAuth BearerAuth = (ApiKeyAuth) defaultClient.getAuthentication("BearerAuth");
-        BearerAuth.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //BearerAuth.setApiKeyPrefix("Token");
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
 
-        MetaflowAPI apiInstance = new MetaflowAPI(defaultClient);
-        string accountID = accountID_example; // string | Account ID
-        ServiceVOIPMetaflowAddData metaflow = ; // ServiceVOIPMetaflowAddData | Metaflow fields
-        try {
-            ServiceDocMetaflowGet result = apiInstance.V1AccountAccountIDMetaflowPost(accountID, metaflow);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling MetaflowAPI#V1AccountAccountIDMetaflowPost");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+func main() {
+	accountID := "accountID_example" // string | Account ID
+	metaflow := *openapiclient.NewServiceVOIPMetaflowAddData() // ServiceVOIPMetaflowAddData | Metaflow fields
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MetaflowAPI.V1AccountAccountIDMetaflowPost(context.Background(), accountID).Metaflow(metaflow).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MetaflowAPI.V1AccountAccountIDMetaflowPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountAccountIDMetaflowPost`: ServiceDocMetaflowGet
+	fmt.Fprintf(os.Stdout, "Response from `MetaflowAPI.V1AccountAccountIDMetaflowPost`: %v\n", resp)
 }
 ```
 
-### Parameters
+### Path Parameters
 
 
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **accountID** | **string**| Account ID | |
-| **metaflow** | [**ServiceVOIPMetaflowAddData**](ServiceVOIPMetaflowAddData.md)| Metaflow fields | |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountID** | **string** | Account ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountAccountIDMetaflowPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **metaflow** | [**ServiceVOIPMetaflowAddData**](ServiceVOIPMetaflowAddData.md) | Metaflow fields | 
 
 ### Return type
 
@@ -462,68 +444,65 @@ public class Example {
 - **Content-Type**: application/json
 - **Accept**: application/json
 
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-| **400** | Bad Request |  -  |
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## V1AccountAccountIDUserUserIDMetaflowDelete
 
-> ServiceDocMetaflowGet V1AccountAccountIDUserUserIDMetaflowDelete(accountID, userID)
+> ServiceDocMetaflowGet V1AccountAccountIDUserUserIDMetaflowDelete(ctx, accountID, userID).Execute()
 
 Delete User Metaflow
 
-Delete all metaflows associated with a user.
+
 
 ### Example
 
-```java
-// Import classes:
-import .ApiClient;
-import .ApiException;
-import .Configuration;
-import .auth.*;
-import .models.*;
-import openapi.MetaflowAPI;
+```go
+package main
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("http://api.cpaaslabs.net");
-        
-        // Configure API key authorization: BearerAuth
-        ApiKeyAuth BearerAuth = (ApiKeyAuth) defaultClient.getAuthentication("BearerAuth");
-        BearerAuth.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //BearerAuth.setApiKeyPrefix("Token");
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
 
-        MetaflowAPI apiInstance = new MetaflowAPI(defaultClient);
-        string accountID = accountID_example; // string | Account ID, 32 alpha numeric
-        string userID = userID_example; // string | user ID, 32 alpha numeric
-        try {
-            ServiceDocMetaflowGet result = apiInstance.V1AccountAccountIDUserUserIDMetaflowDelete(accountID, userID);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling MetaflowAPI#V1AccountAccountIDUserUserIDMetaflowDelete");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+func main() {
+	accountID := "accountID_example" // string | Account ID, 32 alpha numeric
+	userID := "userID_example" // string | user ID, 32 alpha numeric
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MetaflowAPI.V1AccountAccountIDUserUserIDMetaflowDelete(context.Background(), accountID, userID).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MetaflowAPI.V1AccountAccountIDUserUserIDMetaflowDelete``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountAccountIDUserUserIDMetaflowDelete`: ServiceDocMetaflowGet
+	fmt.Fprintf(os.Stdout, "Response from `MetaflowAPI.V1AccountAccountIDUserUserIDMetaflowDelete`: %v\n", resp)
 }
 ```
 
-### Parameters
+### Path Parameters
 
 
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **accountID** | **string**| Account ID, 32 alpha numeric | |
-| **userID** | **string**| user ID, 32 alpha numeric | |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountID** | **string** | Account ID, 32 alpha numeric | 
+**userID** | **string** | user ID, 32 alpha numeric | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountAccountIDUserUserIDMetaflowDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
 
 ### Return type
 
@@ -538,68 +517,65 @@ public class Example {
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-| **400** | Bad Request |  -  |
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## V1AccountAccountIDUserUserIDMetaflowGet
 
-> ServiceDocMetaflowGet V1AccountAccountIDUserUserIDMetaflowGet(accountID, userID)
+> ServiceDocMetaflowGet V1AccountAccountIDUserUserIDMetaflowGet(ctx, accountID, userID).Execute()
 
 Get User Metaflow List
 
-Get the list of metaflows for a user.
+
 
 ### Example
 
-```java
-// Import classes:
-import .ApiClient;
-import .ApiException;
-import .Configuration;
-import .auth.*;
-import .models.*;
-import openapi.MetaflowAPI;
+```go
+package main
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("http://api.cpaaslabs.net");
-        
-        // Configure API key authorization: BearerAuth
-        ApiKeyAuth BearerAuth = (ApiKeyAuth) defaultClient.getAuthentication("BearerAuth");
-        BearerAuth.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //BearerAuth.setApiKeyPrefix("Token");
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
 
-        MetaflowAPI apiInstance = new MetaflowAPI(defaultClient);
-        string accountID = accountID_example; // string | Account ID, 32 alpha numeric
-        string userID = userID_example; // string | user ID, 32 alpha numeric
-        try {
-            ServiceDocMetaflowGet result = apiInstance.V1AccountAccountIDUserUserIDMetaflowGet(accountID, userID);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling MetaflowAPI#V1AccountAccountIDUserUserIDMetaflowGet");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+func main() {
+	accountID := "accountID_example" // string | Account ID, 32 alpha numeric
+	userID := "userID_example" // string | user ID, 32 alpha numeric
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MetaflowAPI.V1AccountAccountIDUserUserIDMetaflowGet(context.Background(), accountID, userID).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MetaflowAPI.V1AccountAccountIDUserUserIDMetaflowGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountAccountIDUserUserIDMetaflowGet`: ServiceDocMetaflowGet
+	fmt.Fprintf(os.Stdout, "Response from `MetaflowAPI.V1AccountAccountIDUserUserIDMetaflowGet`: %v\n", resp)
 }
 ```
 
-### Parameters
+### Path Parameters
 
 
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **accountID** | **string**| Account ID, 32 alpha numeric | |
-| **userID** | **string**| user ID, 32 alpha numeric | |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountID** | **string** | Account ID, 32 alpha numeric | 
+**userID** | **string** | user ID, 32 alpha numeric | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountAccountIDUserUserIDMetaflowGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
 
 ### Return type
 
@@ -614,70 +590,67 @@ public class Example {
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-| **400** | Bad Request |  -  |
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## V1AccountAccountIDUserUserIDMetaflowPost
 
-> ServiceDocMetaflowGet V1AccountAccountIDUserUserIDMetaflowPost(accountID, userID, reqBody)
+> ServiceDocMetaflowGet V1AccountAccountIDUserUserIDMetaflowPost(ctx, accountID, userID).ReqBody(reqBody).Execute()
 
 Create User Metaflow
 
-Add a metaflow or multiple metaflows for a user in an account.
+
 
 ### Example
 
-```java
-// Import classes:
-import .ApiClient;
-import .ApiException;
-import .Configuration;
-import .auth.*;
-import .models.*;
-import openapi.MetaflowAPI;
+```go
+package main
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("http://api.cpaaslabs.net");
-        
-        // Configure API key authorization: BearerAuth
-        ApiKeyAuth BearerAuth = (ApiKeyAuth) defaultClient.getAuthentication("BearerAuth");
-        BearerAuth.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //BearerAuth.setApiKeyPrefix("Token");
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
 
-        MetaflowAPI apiInstance = new MetaflowAPI(defaultClient);
-        string accountID = accountID_example; // string | Account ID, 32 alpha numeric
-        string userID = userID_example; // string | user ID, 32 alpha numeric
-        ServiceVOIPMetaflowAddData reqBody = ; // ServiceVOIPMetaflowAddData | payload fields
-        try {
-            ServiceDocMetaflowGet result = apiInstance.V1AccountAccountIDUserUserIDMetaflowPost(accountID, userID, reqBody);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling MetaflowAPI#V1AccountAccountIDUserUserIDMetaflowPost");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+func main() {
+	accountID := "accountID_example" // string | Account ID, 32 alpha numeric
+	userID := "userID_example" // string | user ID, 32 alpha numeric
+	reqBody := *openapiclient.NewServiceVOIPMetaflowAddData() // ServiceVOIPMetaflowAddData | payload fields
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MetaflowAPI.V1AccountAccountIDUserUserIDMetaflowPost(context.Background(), accountID, userID).ReqBody(reqBody).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MetaflowAPI.V1AccountAccountIDUserUserIDMetaflowPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountAccountIDUserUserIDMetaflowPost`: ServiceDocMetaflowGet
+	fmt.Fprintf(os.Stdout, "Response from `MetaflowAPI.V1AccountAccountIDUserUserIDMetaflowPost`: %v\n", resp)
 }
 ```
 
-### Parameters
+### Path Parameters
 
 
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **accountID** | **string**| Account ID, 32 alpha numeric | |
-| **userID** | **string**| user ID, 32 alpha numeric | |
-| **reqBody** | [**ServiceVOIPMetaflowAddData**](ServiceVOIPMetaflowAddData.md)| payload fields | |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountID** | **string** | Account ID, 32 alpha numeric | 
+**userID** | **string** | user ID, 32 alpha numeric | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountAccountIDUserUserIDMetaflowPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **reqBody** | [**ServiceVOIPMetaflowAddData**](ServiceVOIPMetaflowAddData.md) | payload fields | 
 
 ### Return type
 
@@ -692,10 +665,7 @@ public class Example {
 - **Content-Type**: application/json
 - **Accept**: application/json
 
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-| **400** | Bad Request |  -  |
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 

@@ -1,81 +1,80 @@
-# AccountAPI
+# \AccountAPI
 
 All URIs are relative to *http://api.cpaaslabs.net*
 
-| Method | HTTP request | Description |
-|------------- | ------------- | -------------|
-| [**V1AccountAccountidChildrenGet**](AccountAPI.md#V1AccountAccountidChildrenGet) | **Get** /v1/account/{accountid}/children | Get Sub Account List |
-| [**V1AccountAccountidDelete**](AccountAPI.md#V1AccountAccountidDelete) | **Delete** /v1/account/{accountid} | Delete Account |
-| [**V1AccountAccountidDnsrecordGet**](AccountAPI.md#V1AccountAccountidDnsrecordGet) | **Get** /v1/account/{accountid}/dnsrecord |  |
-| [**V1AccountAccountidDnsrecordPost**](AccountAPI.md#V1AccountAccountidDnsrecordPost) | **Post** /v1/account/{accountid}/dnsrecord |  |
-| [**V1AccountAccountidDnsrecordPut**](AccountAPI.md#V1AccountAccountidDnsrecordPut) | **Put** /v1/account/{accountid}/dnsrecord |  |
-| [**V1AccountAccountidGet**](AccountAPI.md#V1AccountAccountidGet) | **Get** /v1/account/{accountid} | Get Account Details |
-| [**V1AccountAccountidLimitGet**](AccountAPI.md#V1AccountAccountidLimitGet) | **Get** /v1/account/{accountid}/limit | Get Account Limits |
-| [**V1AccountAccountidLimitPut**](AccountAPI.md#V1AccountAccountidLimitPut) | **Put** /v1/account/{accountid}/limit | Set Account Limits |
-| [**V1AccountAccountidPost**](AccountAPI.md#V1AccountAccountidPost) | **Post** /v1/account/{accountid} | Create Sub Account |
-| [**V1AccountAccountidPut**](AccountAPI.md#V1AccountAccountidPut) | **Put** /v1/account/{accountid} | Update Account |
-| [**V1AccountApikeyGet**](AccountAPI.md#V1AccountApikeyGet) | **Get** /v1/account/apikey |  |
-| [**V1AccountGet**](AccountAPI.md#V1AccountGet) | **Get** /v1/account | Get Account List |
-| [**V1AccountPost**](AccountAPI.md#V1AccountPost) | **Post** /v1/account | Create Account |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**V1AccountAccountidChildrenGet**](AccountAPI.md#V1AccountAccountidChildrenGet) | **Get** /v1/account/{accountid}/children | Get Sub Account List
+[**V1AccountAccountidDelete**](AccountAPI.md#V1AccountAccountidDelete) | **Delete** /v1/account/{accountid} | Delete Account
+[**V1AccountAccountidDnsrecordGet**](AccountAPI.md#V1AccountAccountidDnsrecordGet) | **Get** /v1/account/{accountid}/dnsrecord | 
+[**V1AccountAccountidDnsrecordPost**](AccountAPI.md#V1AccountAccountidDnsrecordPost) | **Post** /v1/account/{accountid}/dnsrecord | 
+[**V1AccountAccountidDnsrecordPut**](AccountAPI.md#V1AccountAccountidDnsrecordPut) | **Put** /v1/account/{accountid}/dnsrecord | 
+[**V1AccountAccountidGet**](AccountAPI.md#V1AccountAccountidGet) | **Get** /v1/account/{accountid} | Get Account Details
+[**V1AccountAccountidLimitGet**](AccountAPI.md#V1AccountAccountidLimitGet) | **Get** /v1/account/{accountid}/limit | Get Account Limits
+[**V1AccountAccountidLimitPut**](AccountAPI.md#V1AccountAccountidLimitPut) | **Put** /v1/account/{accountid}/limit | Set Account Limits
+[**V1AccountAccountidPost**](AccountAPI.md#V1AccountAccountidPost) | **Post** /v1/account/{accountid} | Create Sub Account
+[**V1AccountAccountidPut**](AccountAPI.md#V1AccountAccountidPut) | **Put** /v1/account/{accountid} | Update Account
+[**V1AccountApikeyGet**](AccountAPI.md#V1AccountApikeyGet) | **Get** /v1/account/apikey | 
+[**V1AccountGet**](AccountAPI.md#V1AccountGet) | **Get** /v1/account | Get Account List
+[**V1AccountPost**](AccountAPI.md#V1AccountPost) | **Post** /v1/account | Create Account
 
 
 
 ## V1AccountAccountidChildrenGet
 
-> ServiceDocsAccountGetAll V1AccountAccountidChildrenGet(accountid, startKey, pageSize)
+> ServiceDocsAccountGetAll V1AccountAccountidChildrenGet(ctx, accountid).StartKey(startKey).PageSize(pageSize).Execute()
 
 Get Sub Account List
 
-Conveniently access the list of children accounts.
+
 
 ### Example
 
-```java
-// Import classes:
-import .ApiClient;
-import .ApiException;
-import .Configuration;
-import .auth.*;
-import .models.*;
-import openapi.AccountAPI;
+```go
+package main
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("http://api.cpaaslabs.net");
-        
-        // Configure API key authorization: BearerAuth
-        ApiKeyAuth BearerAuth = (ApiKeyAuth) defaultClient.getAuthentication("BearerAuth");
-        BearerAuth.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //BearerAuth.setApiKeyPrefix("Token");
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
 
-        AccountAPI apiInstance = new AccountAPI(defaultClient);
-        string accountid = accountid_example; // string | Account ID, 32 alpha numeric
-        string startKey = startKey_example; // string | start_key for pagination that was returned as next_start_key from your previous call
-        int32 pageSize = 56; // int32 | number of records to return, range 1 to 50
-        try {
-            ServiceDocsAccountGetAll result = apiInstance.V1AccountAccountidChildrenGet(accountid, startKey, pageSize);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling AccountAPI#V1AccountAccountidChildrenGet");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+func main() {
+	accountid := "accountid_example" // string | Account ID, 32 alpha numeric
+	startKey := "startKey_example" // string | start_key for pagination that was returned as next_start_key from your previous call (optional)
+	pageSize := int32(56) // int32 | number of records to return, range 1 to 50 (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.V1AccountAccountidChildrenGet(context.Background(), accountid).StartKey(startKey).PageSize(pageSize).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.V1AccountAccountidChildrenGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountAccountidChildrenGet`: ServiceDocsAccountGetAll
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.V1AccountAccountidChildrenGet`: %v\n", resp)
 }
 ```
 
-### Parameters
+### Path Parameters
 
 
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **accountid** | **string**| Account ID, 32 alpha numeric | |
-| **startKey** | **string**| start_key for pagination that was returned as next_start_key from your previous call | [optional] |
-| **pageSize** | **int32**| number of records to return, range 1 to 50 | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountid** | **string** | Account ID, 32 alpha numeric | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountAccountidChildrenGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **startKey** | **string** | start_key for pagination that was returned as next_start_key from your previous call | 
+ **pageSize** | **int32** | number of records to return, range 1 to 50 | 
 
 ### Return type
 
@@ -90,66 +89,62 @@ public class Example {
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-| **400** | Bad Request |  -  |
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## V1AccountAccountidDelete
 
-> ServiceDocsAccountGetSingle V1AccountAccountidDelete(accountid)
+> ServiceDocsAccountGetSingle V1AccountAccountidDelete(ctx, accountid).Execute()
 
 Delete Account
 
-Delete an account within your organization.
+
 
 ### Example
 
-```java
-// Import classes:
-import .ApiClient;
-import .ApiException;
-import .Configuration;
-import .auth.*;
-import .models.*;
-import openapi.AccountAPI;
+```go
+package main
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("http://api.cpaaslabs.net");
-        
-        // Configure API key authorization: BearerAuth
-        ApiKeyAuth BearerAuth = (ApiKeyAuth) defaultClient.getAuthentication("BearerAuth");
-        BearerAuth.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //BearerAuth.setApiKeyPrefix("Token");
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
 
-        AccountAPI apiInstance = new AccountAPI(defaultClient);
-        string accountid = accountid_example; // string | Account ID, 32 alpha numeric
-        try {
-            ServiceDocsAccountGetSingle result = apiInstance.V1AccountAccountidDelete(accountid);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling AccountAPI#V1AccountAccountidDelete");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+func main() {
+	accountid := "accountid_example" // string | Account ID, 32 alpha numeric
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.V1AccountAccountidDelete(context.Background(), accountid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.V1AccountAccountidDelete``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountAccountidDelete`: ServiceDocsAccountGetSingle
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.V1AccountAccountidDelete`: %v\n", resp)
 }
 ```
 
-### Parameters
+### Path Parameters
 
 
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **accountid** | **string**| Account ID, 32 alpha numeric | |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountid** | **string** | Account ID, 32 alpha numeric | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountAccountidDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
 
 ### Return type
 
@@ -164,66 +159,62 @@ public class Example {
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-| **400** | Bad Request |  -  |
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## V1AccountAccountidDnsrecordGet
 
-> ServiceDocsAccountGetSingle V1AccountAccountidDnsrecordGet(accountid)
+> ServiceDocsAccountGetSingle V1AccountAccountidDnsrecordGet(ctx, accountid).Execute()
 
 
 
-Get the DNS record of an account from the Route 53 entry.
+
 
 ### Example
 
-```java
-// Import classes:
-import .ApiClient;
-import .ApiException;
-import .Configuration;
-import .auth.*;
-import .models.*;
-import openapi.AccountAPI;
+```go
+package main
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("http://api.cpaaslabs.net");
-        
-        // Configure API key authorization: BearerAuth
-        ApiKeyAuth BearerAuth = (ApiKeyAuth) defaultClient.getAuthentication("BearerAuth");
-        BearerAuth.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //BearerAuth.setApiKeyPrefix("Token");
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
 
-        AccountAPI apiInstance = new AccountAPI(defaultClient);
-        string accountid = accountid_example; // string | Account ID, 32 alpha numeric
-        try {
-            ServiceDocsAccountGetSingle result = apiInstance.V1AccountAccountidDnsrecordGet(accountid);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling AccountAPI#V1AccountAccountidDnsrecordGet");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+func main() {
+	accountid := "accountid_example" // string | Account ID, 32 alpha numeric
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.V1AccountAccountidDnsrecordGet(context.Background(), accountid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.V1AccountAccountidDnsrecordGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountAccountidDnsrecordGet`: ServiceDocsAccountGetSingle
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.V1AccountAccountidDnsrecordGet`: %v\n", resp)
 }
 ```
 
-### Parameters
+### Path Parameters
 
 
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **accountid** | **string**| Account ID, 32 alpha numeric | |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountid** | **string** | Account ID, 32 alpha numeric | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountAccountidDnsrecordGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
 
 ### Return type
 
@@ -238,66 +229,62 @@ public class Example {
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-| **400** | Bad Request |  -  |
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## V1AccountAccountidDnsrecordPost
 
-> ServiceDocsAccountGetSingle V1AccountAccountidDnsrecordPost(accountid)
+> ServiceDocsAccountGetSingle V1AccountAccountidDnsrecordPost(ctx, accountid).Execute()
 
 
 
-Create the DNS record of an account with the help realm in the Route 53 entry.
+
 
 ### Example
 
-```java
-// Import classes:
-import .ApiClient;
-import .ApiException;
-import .Configuration;
-import .auth.*;
-import .models.*;
-import openapi.AccountAPI;
+```go
+package main
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("http://api.cpaaslabs.net");
-        
-        // Configure API key authorization: BearerAuth
-        ApiKeyAuth BearerAuth = (ApiKeyAuth) defaultClient.getAuthentication("BearerAuth");
-        BearerAuth.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //BearerAuth.setApiKeyPrefix("Token");
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
 
-        AccountAPI apiInstance = new AccountAPI(defaultClient);
-        string accountid = accountid_example; // string | Account ID, 32 alpha numeric
-        try {
-            ServiceDocsAccountGetSingle result = apiInstance.V1AccountAccountidDnsrecordPost(accountid);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling AccountAPI#V1AccountAccountidDnsrecordPost");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+func main() {
+	accountid := "accountid_example" // string | Account ID, 32 alpha numeric
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.V1AccountAccountidDnsrecordPost(context.Background(), accountid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.V1AccountAccountidDnsrecordPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountAccountidDnsrecordPost`: ServiceDocsAccountGetSingle
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.V1AccountAccountidDnsrecordPost`: %v\n", resp)
 }
 ```
 
-### Parameters
+### Path Parameters
 
 
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **accountid** | **string**| Account ID, 32 alpha numeric | |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountid** | **string** | Account ID, 32 alpha numeric | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountAccountidDnsrecordPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
 
 ### Return type
 
@@ -312,68 +299,64 @@ public class Example {
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-| **400** | Bad Request |  -  |
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## V1AccountAccountidDnsrecordPut
 
-> ServiceDocsAccountGetSingle V1AccountAccountidDnsrecordPut(accountid, dnsrecord)
+> ServiceDocsAccountGetSingle V1AccountAccountidDnsrecordPut(ctx, accountid).Dnsrecord(dnsrecord).Execute()
 
 
 
-Toggle the realm DNS record between srv and cname.
+
 
 ### Example
 
-```java
-// Import classes:
-import .ApiClient;
-import .ApiException;
-import .Configuration;
-import .auth.*;
-import .models.*;
-import openapi.AccountAPI;
+```go
+package main
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("http://api.cpaaslabs.net");
-        
-        // Configure API key authorization: BearerAuth
-        ApiKeyAuth BearerAuth = (ApiKeyAuth) defaultClient.getAuthentication("BearerAuth");
-        BearerAuth.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //BearerAuth.setApiKeyPrefix("Token");
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
 
-        AccountAPI apiInstance = new AccountAPI(defaultClient);
-        string accountid = accountid_example; // string | Account ID, 32 alpha numeric
-        ServiceUpdateRecordTypeForAccount dnsrecord = ; // ServiceUpdateRecordTypeForAccount | record type fields with value SRV, CNAME
-        try {
-            ServiceDocsAccountGetSingle result = apiInstance.V1AccountAccountidDnsrecordPut(accountid, dnsrecord);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling AccountAPI#V1AccountAccountidDnsrecordPut");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+func main() {
+	accountid := "accountid_example" // string | Account ID, 32 alpha numeric
+	dnsrecord := *openapiclient.NewServiceUpdateRecordTypeForAccount("RecordType_example") // ServiceUpdateRecordTypeForAccount | record type fields with value SRV, CNAME
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.V1AccountAccountidDnsrecordPut(context.Background(), accountid).Dnsrecord(dnsrecord).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.V1AccountAccountidDnsrecordPut``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountAccountidDnsrecordPut`: ServiceDocsAccountGetSingle
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.V1AccountAccountidDnsrecordPut`: %v\n", resp)
 }
 ```
 
-### Parameters
+### Path Parameters
 
 
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **accountid** | **string**| Account ID, 32 alpha numeric | |
-| **dnsrecord** | [**ServiceUpdateRecordTypeForAccount**](ServiceUpdateRecordTypeForAccount.md)| record type fields with value SRV, CNAME | |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountid** | **string** | Account ID, 32 alpha numeric | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountAccountidDnsrecordPutRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **dnsrecord** | [**ServiceUpdateRecordTypeForAccount**](ServiceUpdateRecordTypeForAccount.md) | record type fields with value SRV, CNAME | 
 
 ### Return type
 
@@ -388,66 +371,62 @@ public class Example {
 - **Content-Type**: application/json
 - **Accept**: application/json
 
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-| **400** | Bad Request |  -  |
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## V1AccountAccountidGet
 
-> ServiceDocsAccountGetSingle V1AccountAccountidGet(accountid)
+> ServiceDocsAccountGetSingle V1AccountAccountidGet(ctx, accountid).Execute()
 
 Get Account Details
 
-This endpoint will not allow for modifying or making updates, it will only allow users to view/retrieve details.
+
 
 ### Example
 
-```java
-// Import classes:
-import .ApiClient;
-import .ApiException;
-import .Configuration;
-import .auth.*;
-import .models.*;
-import openapi.AccountAPI;
+```go
+package main
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("http://api.cpaaslabs.net");
-        
-        // Configure API key authorization: BearerAuth
-        ApiKeyAuth BearerAuth = (ApiKeyAuth) defaultClient.getAuthentication("BearerAuth");
-        BearerAuth.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //BearerAuth.setApiKeyPrefix("Token");
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
 
-        AccountAPI apiInstance = new AccountAPI(defaultClient);
-        string accountid = accountid_example; // string | Account ID, 32 alpha numeric
-        try {
-            ServiceDocsAccountGetSingle result = apiInstance.V1AccountAccountidGet(accountid);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling AccountAPI#V1AccountAccountidGet");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+func main() {
+	accountid := "accountid_example" // string | Account ID, 32 alpha numeric
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.V1AccountAccountidGet(context.Background(), accountid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.V1AccountAccountidGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountAccountidGet`: ServiceDocsAccountGetSingle
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.V1AccountAccountidGet`: %v\n", resp)
 }
 ```
 
-### Parameters
+### Path Parameters
 
 
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **accountid** | **string**| Account ID, 32 alpha numeric | |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountid** | **string** | Account ID, 32 alpha numeric | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountAccountidGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
 
 ### Return type
 
@@ -462,66 +441,62 @@ public class Example {
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-| **400** | Bad Request |  -  |
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## V1AccountAccountidLimitGet
 
-> ServiceDocsAccountLimit V1AccountAccountidLimitGet(accountid)
+> ServiceDocsAccountLimit V1AccountAccountidLimitGet(ctx, accountid).Execute()
 
 Get Account Limits
 
-Check the maximum number of inbound, outbound, and two-way trunks.
+
 
 ### Example
 
-```java
-// Import classes:
-import .ApiClient;
-import .ApiException;
-import .Configuration;
-import .auth.*;
-import .models.*;
-import openapi.AccountAPI;
+```go
+package main
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("http://api.cpaaslabs.net");
-        
-        // Configure API key authorization: BearerAuth
-        ApiKeyAuth BearerAuth = (ApiKeyAuth) defaultClient.getAuthentication("BearerAuth");
-        BearerAuth.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //BearerAuth.setApiKeyPrefix("Token");
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
 
-        AccountAPI apiInstance = new AccountAPI(defaultClient);
-        string accountid = accountid_example; // string | Account ID, 32 alpha numeric
-        try {
-            ServiceDocsAccountLimit result = apiInstance.V1AccountAccountidLimitGet(accountid);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling AccountAPI#V1AccountAccountidLimitGet");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+func main() {
+	accountid := "accountid_example" // string | Account ID, 32 alpha numeric
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.V1AccountAccountidLimitGet(context.Background(), accountid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.V1AccountAccountidLimitGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountAccountidLimitGet`: ServiceDocsAccountLimit
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.V1AccountAccountidLimitGet`: %v\n", resp)
 }
 ```
 
-### Parameters
+### Path Parameters
 
 
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **accountid** | **string**| Account ID, 32 alpha numeric | |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountid** | **string** | Account ID, 32 alpha numeric | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountAccountidLimitGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
 
 ### Return type
 
@@ -536,68 +511,64 @@ public class Example {
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-| **400** | Bad Request |  -  |
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## V1AccountAccountidLimitPut
 
-> ServiceDocsAccountLimit V1AccountAccountidLimitPut(accountid, limit)
+> ServiceDocsAccountLimit V1AccountAccountidLimitPut(ctx, accountid).Limit(limit).Execute()
 
 Set Account Limits
 
-Apply parameters to restrict access to inbound, outbound, and two-way trunks.
+
 
 ### Example
 
-```java
-// Import classes:
-import .ApiClient;
-import .ApiException;
-import .Configuration;
-import .auth.*;
-import .models.*;
-import openapi.AccountAPI;
+```go
+package main
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("http://api.cpaaslabs.net");
-        
-        // Configure API key authorization: BearerAuth
-        ApiKeyAuth BearerAuth = (ApiKeyAuth) defaultClient.getAuthentication("BearerAuth");
-        BearerAuth.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //BearerAuth.setApiKeyPrefix("Token");
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
 
-        AccountAPI apiInstance = new AccountAPI(defaultClient);
-        string accountid = accountid_example; // string | Account ID, 32 alpha numeric
-        ServiceVOIPAccountLimit2 limit = ; // ServiceVOIPAccountLimit2 | account fields
-        try {
-            ServiceDocsAccountLimit result = apiInstance.V1AccountAccountidLimitPut(accountid, limit);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling AccountAPI#V1AccountAccountidLimitPut");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+func main() {
+	accountid := "accountid_example" // string | Account ID, 32 alpha numeric
+	limit := *openapiclient.NewServiceVOIPAccountLimit2(int32(123), int32(123), int32(123)) // ServiceVOIPAccountLimit2 | account fields
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.V1AccountAccountidLimitPut(context.Background(), accountid).Limit(limit).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.V1AccountAccountidLimitPut``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountAccountidLimitPut`: ServiceDocsAccountLimit
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.V1AccountAccountidLimitPut`: %v\n", resp)
 }
 ```
 
-### Parameters
+### Path Parameters
 
 
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **accountid** | **string**| Account ID, 32 alpha numeric | |
-| **limit** | [**ServiceVOIPAccountLimit2**](ServiceVOIPAccountLimit2.md)| account fields | |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountid** | **string** | Account ID, 32 alpha numeric | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountAccountidLimitPutRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **limit** | [**ServiceVOIPAccountLimit2**](ServiceVOIPAccountLimit2.md) | account fields | 
 
 ### Return type
 
@@ -612,68 +583,64 @@ public class Example {
 - **Content-Type**: application/json
 - **Accept**: application/json
 
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-| **400** | Bad Request |  -  |
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## V1AccountAccountidPost
 
-> ServiceDocsAccountGetSingle V1AccountAccountidPost(accountid, account)
+> ServiceDocsAccountGetSingle V1AccountAccountidPost(ctx, accountid).Account(account).Execute()
 
 Create Sub Account
 
-Establish a sub account to enable an administrator within your organization to create accounts.
+
 
 ### Example
 
-```java
-// Import classes:
-import .ApiClient;
-import .ApiException;
-import .Configuration;
-import .auth.*;
-import .models.*;
-import openapi.AccountAPI;
+```go
+package main
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("http://api.cpaaslabs.net");
-        
-        // Configure API key authorization: BearerAuth
-        ApiKeyAuth BearerAuth = (ApiKeyAuth) defaultClient.getAuthentication("BearerAuth");
-        BearerAuth.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //BearerAuth.setApiKeyPrefix("Token");
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
 
-        AccountAPI apiInstance = new AccountAPI(defaultClient);
-        string accountid = accountid_example; // string | Account ID, 32 alpha numeric
-        ServiceVOIPAccountAddData account = ; // ServiceVOIPAccountAddData | account fields
-        try {
-            ServiceDocsAccountGetSingle result = apiInstance.V1AccountAccountidPost(accountid, account);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling AccountAPI#V1AccountAccountidPost");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+func main() {
+	accountid := "accountid_example" // string | Account ID, 32 alpha numeric
+	account := *openapiclient.NewServiceVOIPAccountAddData("Name_example", "Timezone_example") // ServiceVOIPAccountAddData | account fields
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.V1AccountAccountidPost(context.Background(), accountid).Account(account).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.V1AccountAccountidPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountAccountidPost`: ServiceDocsAccountGetSingle
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.V1AccountAccountidPost`: %v\n", resp)
 }
 ```
 
-### Parameters
+### Path Parameters
 
 
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **accountid** | **string**| Account ID, 32 alpha numeric | |
-| **account** | [**ServiceVOIPAccountAddData**](ServiceVOIPAccountAddData.md)| account fields | |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountid** | **string** | Account ID, 32 alpha numeric | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountAccountidPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **account** | [**ServiceVOIPAccountAddData**](ServiceVOIPAccountAddData.md) | account fields | 
 
 ### Return type
 
@@ -688,68 +655,64 @@ public class Example {
 - **Content-Type**: application/json
 - **Accept**: application/json
 
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-| **400** | Bad Request |  -  |
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## V1AccountAccountidPut
 
-> ServiceDocsAccountGetSingle V1AccountAccountidPut(accountid, account)
+> ServiceDocsAccountGetSingle V1AccountAccountidPut(ctx, accountid).Account(account).Execute()
 
 Update Account
 
-Modify pertinent account data.
+
 
 ### Example
 
-```java
-// Import classes:
-import .ApiClient;
-import .ApiException;
-import .Configuration;
-import .auth.*;
-import .models.*;
-import openapi.AccountAPI;
+```go
+package main
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("http://api.cpaaslabs.net");
-        
-        // Configure API key authorization: BearerAuth
-        ApiKeyAuth BearerAuth = (ApiKeyAuth) defaultClient.getAuthentication("BearerAuth");
-        BearerAuth.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //BearerAuth.setApiKeyPrefix("Token");
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
 
-        AccountAPI apiInstance = new AccountAPI(defaultClient);
-        string accountid = accountid_example; // string | Account ID, 32 alpha numeric
-        ServiceVOIPAccountEditData account = ; // ServiceVOIPAccountEditData | account fields
-        try {
-            ServiceDocsAccountGetSingle result = apiInstance.V1AccountAccountidPut(accountid, account);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling AccountAPI#V1AccountAccountidPut");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+func main() {
+	accountid := "accountid_example" // string | Account ID, 32 alpha numeric
+	account := *openapiclient.NewServiceVOIPAccountEditData("Name_example", "Timezone_example") // ServiceVOIPAccountEditData | account fields
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.V1AccountAccountidPut(context.Background(), accountid).Account(account).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.V1AccountAccountidPut``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountAccountidPut`: ServiceDocsAccountGetSingle
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.V1AccountAccountidPut`: %v\n", resp)
 }
 ```
 
-### Parameters
+### Path Parameters
 
 
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **accountid** | **string**| Account ID, 32 alpha numeric | |
-| **account** | [**ServiceVOIPAccountEditData**](ServiceVOIPAccountEditData.md)| account fields | |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountid** | **string** | Account ID, 32 alpha numeric | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountAccountidPutRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **account** | [**ServiceVOIPAccountEditData**](ServiceVOIPAccountEditData.md) | account fields | 
 
 ### Return type
 
@@ -764,62 +727,53 @@ public class Example {
 - **Content-Type**: application/json
 - **Accept**: application/json
 
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-| **400** | Bad Request |  -  |
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## V1AccountApikeyGet
 
-> ServiceDocsAccountAPIKey V1AccountApikeyGet()
+> ServiceDocsAccountAPIKey V1AccountApikeyGet(ctx).Execute()
 
 
 
-Authenticate an application or user request to get the client ID and client secret for a CPaaS account.
+
 
 ### Example
 
-```java
-// Import classes:
-import .ApiClient;
-import .ApiException;
-import .Configuration;
-import .auth.*;
-import .models.*;
-import openapi.AccountAPI;
+```go
+package main
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("http://api.cpaaslabs.net");
-        
-        // Configure API key authorization: BearerAuth
-        ApiKeyAuth BearerAuth = (ApiKeyAuth) defaultClient.getAuthentication("BearerAuth");
-        BearerAuth.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //BearerAuth.setApiKeyPrefix("Token");
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
 
-        AccountAPI apiInstance = new AccountAPI(defaultClient);
-        try {
-            ServiceDocsAccountAPIKey result = apiInstance.V1AccountApikeyGet();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling AccountAPI#V1AccountApikeyGet");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.V1AccountApikeyGet(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.V1AccountApikeyGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountApikeyGet`: ServiceDocsAccountAPIKey
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.V1AccountApikeyGet`: %v\n", resp)
 }
 ```
 
-### Parameters
+### Path Parameters
 
 This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountApikeyGetRequest struct via the builder pattern
+
 
 ### Return type
 
@@ -834,68 +788,60 @@ This endpoint does not need any parameter.
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-| **400** | Bad Request |  -  |
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## V1AccountGet
 
-> ServiceDocsAccountGetAll V1AccountGet(startKey, pageSize)
+> ServiceDocsAccountGetAll V1AccountGet(ctx).StartKey(startKey).PageSize(pageSize).Execute()
 
 Get Account List
 
-Retrieve a list of all CPaaS accounts that exist within your organization.
+
 
 ### Example
 
-```java
-// Import classes:
-import .ApiClient;
-import .ApiException;
-import .Configuration;
-import .auth.*;
-import .models.*;
-import openapi.AccountAPI;
+```go
+package main
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("http://api.cpaaslabs.net");
-        
-        // Configure API key authorization: BearerAuth
-        ApiKeyAuth BearerAuth = (ApiKeyAuth) defaultClient.getAuthentication("BearerAuth");
-        BearerAuth.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //BearerAuth.setApiKeyPrefix("Token");
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
 
-        AccountAPI apiInstance = new AccountAPI(defaultClient);
-        string startKey = startKey_example; // string | start_key for pagination that was returned as next_start_key from your previous call
-        int32 pageSize = 56; // int32 | number of records to return, range 1 to 50
-        try {
-            ServiceDocsAccountGetAll result = apiInstance.V1AccountGet(startKey, pageSize);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling AccountAPI#V1AccountGet");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+func main() {
+	startKey := "startKey_example" // string | start_key for pagination that was returned as next_start_key from your previous call (optional)
+	pageSize := int32(56) // int32 | number of records to return, range 1 to 50 (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.V1AccountGet(context.Background()).StartKey(startKey).PageSize(pageSize).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.V1AccountGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountGet`: ServiceDocsAccountGetAll
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.V1AccountGet`: %v\n", resp)
 }
 ```
 
-### Parameters
+### Path Parameters
 
 
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **startKey** | **string**| start_key for pagination that was returned as next_start_key from your previous call | [optional] |
-| **pageSize** | **int32**| number of records to return, range 1 to 50 | [optional] |
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **startKey** | **string** | start_key for pagination that was returned as next_start_key from your previous call | 
+ **pageSize** | **int32** | number of records to return, range 1 to 50 | 
 
 ### Return type
 
@@ -910,66 +856,58 @@ public class Example {
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-| **400** | Bad Request |  -  |
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## V1AccountPost
 
-> ServiceDocsAccountGetSingle V1AccountPost(account)
+> ServiceDocsAccountGetSingle V1AccountPost(ctx).Account(account).Execute()
 
 Create Account
 
-Create an account.
+
 
 ### Example
 
-```java
-// Import classes:
-import .ApiClient;
-import .ApiException;
-import .Configuration;
-import .auth.*;
-import .models.*;
-import openapi.AccountAPI;
+```go
+package main
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("http://api.cpaaslabs.net");
-        
-        // Configure API key authorization: BearerAuth
-        ApiKeyAuth BearerAuth = (ApiKeyAuth) defaultClient.getAuthentication("BearerAuth");
-        BearerAuth.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //BearerAuth.setApiKeyPrefix("Token");
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
 
-        AccountAPI apiInstance = new AccountAPI(defaultClient);
-        ServiceVOIPAccountAddData account = ; // ServiceVOIPAccountAddData | account fields
-        try {
-            ServiceDocsAccountGetSingle result = apiInstance.V1AccountPost(account);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling AccountAPI#V1AccountPost");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+func main() {
+	account := *openapiclient.NewServiceVOIPAccountAddData("Name_example", "Timezone_example") // ServiceVOIPAccountAddData | account fields
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.V1AccountPost(context.Background()).Account(account).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.V1AccountPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountPost`: ServiceDocsAccountGetSingle
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.V1AccountPost`: %v\n", resp)
 }
 ```
 
-### Parameters
+### Path Parameters
 
 
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **account** | [**ServiceVOIPAccountAddData**](ServiceVOIPAccountAddData.md)| account fields | |
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account** | [**ServiceVOIPAccountAddData**](ServiceVOIPAccountAddData.md) | account fields | 
 
 ### Return type
 
@@ -984,10 +922,7 @@ public class Example {
 - **Content-Type**: application/json
 - **Accept**: application/json
 
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-| **400** | Bad Request |  -  |
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 

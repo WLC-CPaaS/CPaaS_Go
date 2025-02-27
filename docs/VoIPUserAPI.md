@@ -1,73 +1,72 @@
-# VoIPUserAPI
+# \VoIPUserAPI
 
 All URIs are relative to *http://api.cpaaslabs.net*
 
-| Method | HTTP request | Description |
-|------------- | ------------- | -------------|
-| [**V1AccountAccountidUserGet**](VoIPUserAPI.md#V1AccountAccountidUserGet) | **Get** /v1/account/{accountid}/user | Get User List |
-| [**V1AccountAccountidUserPost**](VoIPUserAPI.md#V1AccountAccountidUserPost) | **Post** /v1/account/{accountid}/user | Create User |
-| [**V1AccountAccountidUserUseridDelete**](VoIPUserAPI.md#V1AccountAccountidUserUseridDelete) | **Delete** /v1/account/{accountid}/user/{userid} | Delete User |
-| [**V1AccountAccountidUserUseridGet**](VoIPUserAPI.md#V1AccountAccountidUserUseridGet) | **Get** /v1/account/{accountid}/user/{userid} | Get User Details |
-| [**V1AccountAccountidUserUseridPut**](VoIPUserAPI.md#V1AccountAccountidUserUseridPut) | **Put** /v1/account/{accountid}/user/{userid} | Update User |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**V1AccountAccountidUserGet**](VoIPUserAPI.md#V1AccountAccountidUserGet) | **Get** /v1/account/{accountid}/user | Get User List
+[**V1AccountAccountidUserPost**](VoIPUserAPI.md#V1AccountAccountidUserPost) | **Post** /v1/account/{accountid}/user | Create User
+[**V1AccountAccountidUserUseridDelete**](VoIPUserAPI.md#V1AccountAccountidUserUseridDelete) | **Delete** /v1/account/{accountid}/user/{userid} | Delete User
+[**V1AccountAccountidUserUseridGet**](VoIPUserAPI.md#V1AccountAccountidUserUseridGet) | **Get** /v1/account/{accountid}/user/{userid} | Get User Details
+[**V1AccountAccountidUserUseridPut**](VoIPUserAPI.md#V1AccountAccountidUserUseridPut) | **Put** /v1/account/{accountid}/user/{userid} | Update User
 
 
 
 ## V1AccountAccountidUserGet
 
-> ServiceDocsUserGetAll V1AccountAccountidUserGet(accountid, startKey, pageSize)
+> ServiceDocsUserGetAll V1AccountAccountidUserGet(ctx, accountid).StartKey(startKey).PageSize(pageSize).Execute()
 
 Get User List
 
-Get a list of all VoIP users that includes first and last names, email addresses, extensions, and account statuses.
+
 
 ### Example
 
-```java
-// Import classes:
-import .ApiClient;
-import .ApiException;
-import .Configuration;
-import .auth.*;
-import .models.*;
-import openapi.VoIPUserAPI;
+```go
+package main
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("http://api.cpaaslabs.net");
-        
-        // Configure API key authorization: BearerAuth
-        ApiKeyAuth BearerAuth = (ApiKeyAuth) defaultClient.getAuthentication("BearerAuth");
-        BearerAuth.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //BearerAuth.setApiKeyPrefix("Token");
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
 
-        VoIPUserAPI apiInstance = new VoIPUserAPI(defaultClient);
-        string accountid = accountid_example; // string | Account ID, 32 alpha numeric
-        string startKey = startKey_example; // string | start_key for pagination that was returned as next_start_key from your previous call
-        int32 pageSize = 56; // int32 | number of records to return, range 1 to 50
-        try {
-            ServiceDocsUserGetAll result = apiInstance.V1AccountAccountidUserGet(accountid, startKey, pageSize);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling VoIPUserAPI#V1AccountAccountidUserGet");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+func main() {
+	accountid := "accountid_example" // string | Account ID, 32 alpha numeric
+	startKey := "startKey_example" // string | start_key for pagination that was returned as next_start_key from your previous call (optional)
+	pageSize := int32(56) // int32 | number of records to return, range 1 to 50 (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VoIPUserAPI.V1AccountAccountidUserGet(context.Background(), accountid).StartKey(startKey).PageSize(pageSize).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VoIPUserAPI.V1AccountAccountidUserGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountAccountidUserGet`: ServiceDocsUserGetAll
+	fmt.Fprintf(os.Stdout, "Response from `VoIPUserAPI.V1AccountAccountidUserGet`: %v\n", resp)
 }
 ```
 
-### Parameters
+### Path Parameters
 
 
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **accountid** | **string**| Account ID, 32 alpha numeric | |
-| **startKey** | **string**| start_key for pagination that was returned as next_start_key from your previous call | [optional] |
-| **pageSize** | **int32**| number of records to return, range 1 to 50 | [optional] |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountid** | **string** | Account ID, 32 alpha numeric | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountAccountidUserGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **startKey** | **string** | start_key for pagination that was returned as next_start_key from your previous call | 
+ **pageSize** | **int32** | number of records to return, range 1 to 50 | 
 
 ### Return type
 
@@ -82,68 +81,64 @@ public class Example {
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-| **400** | Bad Request |  -  |
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## V1AccountAccountidUserPost
 
-> ServiceDocsUserGetSingle V1AccountAccountidUserPost(accountid, user)
+> ServiceDocsUserGetSingle V1AccountAccountidUserPost(ctx, accountid).User(user).Execute()
 
 Create User
 
-Add new users to the account. When a user is added, the system generates their unique 32 alpha numeric ID.
+
 
 ### Example
 
-```java
-// Import classes:
-import .ApiClient;
-import .ApiException;
-import .Configuration;
-import .auth.*;
-import .models.*;
-import openapi.VoIPUserAPI;
+```go
+package main
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("http://api.cpaaslabs.net");
-        
-        // Configure API key authorization: BearerAuth
-        ApiKeyAuth BearerAuth = (ApiKeyAuth) defaultClient.getAuthentication("BearerAuth");
-        BearerAuth.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //BearerAuth.setApiKeyPrefix("Token");
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
 
-        VoIPUserAPI apiInstance = new VoIPUserAPI(defaultClient);
-        string accountid = accountid_example; // string | Account ID, 32 alpha numeric
-        ServiceVOIPUserAdd2 user = ; // ServiceVOIPUserAdd2 | user fields
-        try {
-            ServiceDocsUserGetSingle result = apiInstance.V1AccountAccountidUserPost(accountid, user);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling VoIPUserAPI#V1AccountAccountidUserPost");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+func main() {
+	accountid := "accountid_example" // string | Account ID, 32 alpha numeric
+	user := *openapiclient.NewServiceVOIPUserAdd2("Email_example", "FirstName_example", "LastName_example") // ServiceVOIPUserAdd2 | user fields
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VoIPUserAPI.V1AccountAccountidUserPost(context.Background(), accountid).User(user).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VoIPUserAPI.V1AccountAccountidUserPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountAccountidUserPost`: ServiceDocsUserGetSingle
+	fmt.Fprintf(os.Stdout, "Response from `VoIPUserAPI.V1AccountAccountidUserPost`: %v\n", resp)
 }
 ```
 
-### Parameters
+### Path Parameters
 
 
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **accountid** | **string**| Account ID, 32 alpha numeric | |
-| **user** | [**ServiceVOIPUserAdd2**](ServiceVOIPUserAdd2.md)| user fields | |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountid** | **string** | Account ID, 32 alpha numeric | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountAccountidUserPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **user** | [**ServiceVOIPUserAdd2**](ServiceVOIPUserAdd2.md) | user fields | 
 
 ### Return type
 
@@ -158,68 +153,65 @@ public class Example {
 - **Content-Type**: application/json
 - **Accept**: application/json
 
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-| **400** | Bad Request |  -  |
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## V1AccountAccountidUserUseridDelete
 
-> ServiceDocsUserGetSingle V1AccountAccountidUserUseridDelete(accountid, userid)
+> ServiceDocsUserGetSingle V1AccountAccountidUserUseridDelete(ctx, accountid, userid).Execute()
 
 Delete User
 
-Delete VoIP user access to maintain the security of your accounts.
+
 
 ### Example
 
-```java
-// Import classes:
-import .ApiClient;
-import .ApiException;
-import .Configuration;
-import .auth.*;
-import .models.*;
-import openapi.VoIPUserAPI;
+```go
+package main
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("http://api.cpaaslabs.net");
-        
-        // Configure API key authorization: BearerAuth
-        ApiKeyAuth BearerAuth = (ApiKeyAuth) defaultClient.getAuthentication("BearerAuth");
-        BearerAuth.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //BearerAuth.setApiKeyPrefix("Token");
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
 
-        VoIPUserAPI apiInstance = new VoIPUserAPI(defaultClient);
-        string accountid = accountid_example; // string | Account ID, 32 alpha numeric
-        string userid = userid_example; // string | User ID, 32 alpha numeric
-        try {
-            ServiceDocsUserGetSingle result = apiInstance.V1AccountAccountidUserUseridDelete(accountid, userid);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling VoIPUserAPI#V1AccountAccountidUserUseridDelete");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+func main() {
+	accountid := "accountid_example" // string | Account ID, 32 alpha numeric
+	userid := "userid_example" // string | User ID, 32 alpha numeric
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VoIPUserAPI.V1AccountAccountidUserUseridDelete(context.Background(), accountid, userid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VoIPUserAPI.V1AccountAccountidUserUseridDelete``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountAccountidUserUseridDelete`: ServiceDocsUserGetSingle
+	fmt.Fprintf(os.Stdout, "Response from `VoIPUserAPI.V1AccountAccountidUserUseridDelete`: %v\n", resp)
 }
 ```
 
-### Parameters
+### Path Parameters
 
 
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **accountid** | **string**| Account ID, 32 alpha numeric | |
-| **userid** | **string**| User ID, 32 alpha numeric | |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountid** | **string** | Account ID, 32 alpha numeric | 
+**userid** | **string** | User ID, 32 alpha numeric | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountAccountidUserUseridDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
 
 ### Return type
 
@@ -234,68 +226,65 @@ public class Example {
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-| **400** | Bad Request |  -  |
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## V1AccountAccountidUserUseridGet
 
-> ServiceDocsUserGetSingle V1AccountAccountidUserUseridGet(accountid, userid)
+> ServiceDocsUserGetSingle V1AccountAccountidUserUseridGet(ctx, accountid, userid).Execute()
 
 Get User Details
 
-View specific user details.
+
 
 ### Example
 
-```java
-// Import classes:
-import .ApiClient;
-import .ApiException;
-import .Configuration;
-import .auth.*;
-import .models.*;
-import openapi.VoIPUserAPI;
+```go
+package main
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("http://api.cpaaslabs.net");
-        
-        // Configure API key authorization: BearerAuth
-        ApiKeyAuth BearerAuth = (ApiKeyAuth) defaultClient.getAuthentication("BearerAuth");
-        BearerAuth.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //BearerAuth.setApiKeyPrefix("Token");
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
 
-        VoIPUserAPI apiInstance = new VoIPUserAPI(defaultClient);
-        string accountid = accountid_example; // string | Account ID, 32 alpha numeric
-        string userid = userid_example; // string | User ID, 32 alpha numeric
-        try {
-            ServiceDocsUserGetSingle result = apiInstance.V1AccountAccountidUserUseridGet(accountid, userid);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling VoIPUserAPI#V1AccountAccountidUserUseridGet");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+func main() {
+	accountid := "accountid_example" // string | Account ID, 32 alpha numeric
+	userid := "userid_example" // string | User ID, 32 alpha numeric
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VoIPUserAPI.V1AccountAccountidUserUseridGet(context.Background(), accountid, userid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VoIPUserAPI.V1AccountAccountidUserUseridGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountAccountidUserUseridGet`: ServiceDocsUserGetSingle
+	fmt.Fprintf(os.Stdout, "Response from `VoIPUserAPI.V1AccountAccountidUserUseridGet`: %v\n", resp)
 }
 ```
 
-### Parameters
+### Path Parameters
 
 
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **accountid** | **string**| Account ID, 32 alpha numeric | |
-| **userid** | **string**| User ID, 32 alpha numeric | |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountid** | **string** | Account ID, 32 alpha numeric | 
+**userid** | **string** | User ID, 32 alpha numeric | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountAccountidUserUseridGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
 
 ### Return type
 
@@ -310,70 +299,67 @@ public class Example {
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-| **400** | Bad Request |  -  |
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## V1AccountAccountidUserUseridPut
 
-> ServiceDocsUserGetSingle V1AccountAccountidUserUseridPut(accountid, userid, user)
+> ServiceDocsUserGetSingle V1AccountAccountidUserUseridPut(ctx, accountid, userid).User(user).Execute()
 
 Update User
 
-Keep user information current. Modify the first and last name, extension, and other pertinent information.
+
 
 ### Example
 
-```java
-// Import classes:
-import .ApiClient;
-import .ApiException;
-import .Configuration;
-import .auth.*;
-import .models.*;
-import openapi.VoIPUserAPI;
+```go
+package main
 
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("http://api.cpaaslabs.net");
-        
-        // Configure API key authorization: BearerAuth
-        ApiKeyAuth BearerAuth = (ApiKeyAuth) defaultClient.getAuthentication("BearerAuth");
-        BearerAuth.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //BearerAuth.setApiKeyPrefix("Token");
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
 
-        VoIPUserAPI apiInstance = new VoIPUserAPI(defaultClient);
-        string accountid = accountid_example; // string | Account ID, 32 alpha numeric
-        string userid = userid_example; // string | User ID, 32 alpha numeric
-        ServiceVOIPUserAdd2 user = ; // ServiceVOIPUserAdd2 | user fields
-        try {
-            ServiceDocsUserGetSingle result = apiInstance.V1AccountAccountidUserUseridPut(accountid, userid, user);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling VoIPUserAPI#V1AccountAccountidUserUseridPut");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
+func main() {
+	accountid := "accountid_example" // string | Account ID, 32 alpha numeric
+	userid := "userid_example" // string | User ID, 32 alpha numeric
+	user := *openapiclient.NewServiceVOIPUserAdd2("Email_example", "FirstName_example", "LastName_example") // ServiceVOIPUserAdd2 | user fields
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VoIPUserAPI.V1AccountAccountidUserUseridPut(context.Background(), accountid, userid).User(user).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VoIPUserAPI.V1AccountAccountidUserUseridPut``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountAccountidUserUseridPut`: ServiceDocsUserGetSingle
+	fmt.Fprintf(os.Stdout, "Response from `VoIPUserAPI.V1AccountAccountidUserUseridPut`: %v\n", resp)
 }
 ```
 
-### Parameters
+### Path Parameters
 
 
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **accountid** | **string**| Account ID, 32 alpha numeric | |
-| **userid** | **string**| User ID, 32 alpha numeric | |
-| **user** | [**ServiceVOIPUserAdd2**](ServiceVOIPUserAdd2.md)| user fields | |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountid** | **string** | Account ID, 32 alpha numeric | 
+**userid** | **string** | User ID, 32 alpha numeric | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountAccountidUserUseridPutRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **user** | [**ServiceVOIPUserAdd2**](ServiceVOIPUserAdd2.md) | user fields | 
 
 ### Return type
 
@@ -388,10 +374,7 @@ public class Example {
 - **Content-Type**: application/json
 - **Accept**: application/json
 
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-| **400** | Bad Request |  -  |
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
