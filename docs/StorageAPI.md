@@ -1,52 +1,67 @@
-# WhiteLabelCommunicationsCPaasApiDocumentation.StorageApi
+# \StorageAPI
 
 All URIs are relative to *http://api.cpaaslabs.net*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v1AccountAccountIDStorageDelete**](StorageApi.md#v1AccountAccountIDStorageDelete) | **DELETE** /v1/account/{accountID}/storage | Delete Storage
-[**v1AccountAccountIDStorageGet**](StorageApi.md#v1AccountAccountIDStorageGet) | **GET** /v1/account/{accountID}/storage | Get Storage Details
-[**v1AccountAccountIDStoragePost**](StorageApi.md#v1AccountAccountIDStoragePost) | **POST** /v1/account/{accountID}/storage | Create Storage
-[**v1AccountAccountIDStoragePut**](StorageApi.md#v1AccountAccountIDStoragePut) | **PUT** /v1/account/{accountID}/storage | Update Storage
+[**V1AccountAccountIDStorageDelete**](StorageAPI.md#V1AccountAccountIDStorageDelete) | **Delete** /v1/account/{accountID}/storage | Delete Storage
+[**V1AccountAccountIDStorageGet**](StorageAPI.md#V1AccountAccountIDStorageGet) | **Get** /v1/account/{accountID}/storage | Get Storage Details
+[**V1AccountAccountIDStoragePost**](StorageAPI.md#V1AccountAccountIDStoragePost) | **Post** /v1/account/{accountID}/storage | Create Storage
+[**V1AccountAccountIDStoragePut**](StorageAPI.md#V1AccountAccountIDStoragePut) | **Put** /v1/account/{accountID}/storage | Update Storage
 
 
 
-## v1AccountAccountIDStorageDelete
+## V1AccountAccountIDStorageDelete
 
-> ServiceDocsStorageGet v1AccountAccountIDStorageDelete(accountID)
+> ServiceDocsStorageGet V1AccountAccountIDStorageDelete(ctx, accountID).Execute()
 
 Delete Storage
 
-Delete items that are stored in an account.
+
 
 ### Example
 
-```javascript
-import WhiteLabelCommunicationsCPaasApiDocumentation from 'white_label_communications_c_paas_api_documentation';
-let defaultClient = WhiteLabelCommunicationsCPaasApiDocumentation.ApiClient.instance;
-// Configure API key authorization: BearerAuth
-let BearerAuth = defaultClient.authentications['BearerAuth'];
-BearerAuth.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//BearerAuth.apiKeyPrefix = 'Token';
+```go
+package main
 
-let apiInstance = new WhiteLabelCommunicationsCPaasApiDocumentation.StorageApi();
-let accountID = "accountID_example"; // String | Account ID, 32 alpha numeric
-apiInstance.v1AccountAccountIDStorageDelete(accountID, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	accountID := "accountID_example" // string | Account ID, 32 alpha numeric
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.StorageAPI.V1AccountAccountIDStorageDelete(context.Background(), accountID).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `StorageAPI.V1AccountAccountIDStorageDelete``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountAccountIDStorageDelete`: ServiceDocsStorageGet
+	fmt.Fprintf(os.Stdout, "Response from `StorageAPI.V1AccountAccountIDStorageDelete`: %v\n", resp)
+}
 ```
 
-### Parameters
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountID** | **String**| Account ID, 32 alpha numeric | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountID** | **string** | Account ID, 32 alpha numeric | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountAccountIDStorageDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
 
 ### Return type
 
@@ -61,43 +76,62 @@ Name | Type | Description  | Notes
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-## v1AccountAccountIDStorageGet
 
-> ServiceDocsStorageGet v1AccountAccountIDStorageGet(accountID)
+## V1AccountAccountIDStorageGet
+
+> ServiceDocsStorageGet V1AccountAccountIDStorageGet(ctx, accountID).Execute()
 
 Get Storage Details
 
-Retrieve storage details for an account.
+
 
 ### Example
 
-```javascript
-import WhiteLabelCommunicationsCPaasApiDocumentation from 'white_label_communications_c_paas_api_documentation';
-let defaultClient = WhiteLabelCommunicationsCPaasApiDocumentation.ApiClient.instance;
-// Configure API key authorization: BearerAuth
-let BearerAuth = defaultClient.authentications['BearerAuth'];
-BearerAuth.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//BearerAuth.apiKeyPrefix = 'Token';
+```go
+package main
 
-let apiInstance = new WhiteLabelCommunicationsCPaasApiDocumentation.StorageApi();
-let accountID = "accountID_example"; // String | Account ID, 32 alpha numeric
-apiInstance.v1AccountAccountIDStorageGet(accountID, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	accountID := "accountID_example" // string | Account ID, 32 alpha numeric
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.StorageAPI.V1AccountAccountIDStorageGet(context.Background(), accountID).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `StorageAPI.V1AccountAccountIDStorageGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountAccountIDStorageGet`: ServiceDocsStorageGet
+	fmt.Fprintf(os.Stdout, "Response from `StorageAPI.V1AccountAccountIDStorageGet`: %v\n", resp)
+}
 ```
 
-### Parameters
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountID** | **String**| Account ID, 32 alpha numeric | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountID** | **string** | Account ID, 32 alpha numeric | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountAccountIDStorageGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
 
 ### Return type
 
@@ -112,45 +146,64 @@ Name | Type | Description  | Notes
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-## v1AccountAccountIDStoragePost
 
-> ServiceDocsStorageGet v1AccountAccountIDStoragePost(accountID, reqBody)
+## V1AccountAccountIDStoragePost
+
+> ServiceDocsStorageGet V1AccountAccountIDStoragePost(ctx, accountID).ReqBody(reqBody).Execute()
 
 Create Storage
 
-Create storage in an account for voicemails, call recordings, faxes, etc.
+
 
 ### Example
 
-```javascript
-import WhiteLabelCommunicationsCPaasApiDocumentation from 'white_label_communications_c_paas_api_documentation';
-let defaultClient = WhiteLabelCommunicationsCPaasApiDocumentation.ApiClient.instance;
-// Configure API key authorization: BearerAuth
-let BearerAuth = defaultClient.authentications['BearerAuth'];
-BearerAuth.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//BearerAuth.apiKeyPrefix = 'Token';
+```go
+package main
 
-let apiInstance = new WhiteLabelCommunicationsCPaasApiDocumentation.StorageApi();
-let accountID = "accountID_example"; // String | Account ID, 32 alpha numeric
-let reqBody = new WhiteLabelCommunicationsCPaasApiDocumentation.ServiceVOIPStorageAddEditData(); // ServiceVOIPStorageAddEditData | payload fields
-apiInstance.v1AccountAccountIDStoragePost(accountID, reqBody, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	accountID := "accountID_example" // string | Account ID, 32 alpha numeric
+	reqBody := *openapiclient.NewServiceVOIPStorageAddEditData() // ServiceVOIPStorageAddEditData | payload fields
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.StorageAPI.V1AccountAccountIDStoragePost(context.Background(), accountID).ReqBody(reqBody).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `StorageAPI.V1AccountAccountIDStoragePost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountAccountIDStoragePost`: ServiceDocsStorageGet
+	fmt.Fprintf(os.Stdout, "Response from `StorageAPI.V1AccountAccountIDStoragePost`: %v\n", resp)
+}
 ```
 
-### Parameters
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountID** | **String**| Account ID, 32 alpha numeric | 
- **reqBody** | [**ServiceVOIPStorageAddEditData**](ServiceVOIPStorageAddEditData.md)| payload fields | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountID** | **string** | Account ID, 32 alpha numeric | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountAccountIDStoragePostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **reqBody** | [**ServiceVOIPStorageAddEditData**](ServiceVOIPStorageAddEditData.md) | payload fields | 
 
 ### Return type
 
@@ -165,45 +218,64 @@ Name | Type | Description  | Notes
 - **Content-Type**: application/json
 - **Accept**: application/json
 
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-## v1AccountAccountIDStoragePut
 
-> ServiceDocsStorageGet v1AccountAccountIDStoragePut(accountID, reqBody)
+## V1AccountAccountIDStoragePut
+
+> ServiceDocsStorageGet V1AccountAccountIDStoragePut(ctx, accountID).ReqBody(reqBody).Execute()
 
 Update Storage
 
-Modify the names of metadata to make it easier to locate (e.g., change the name of voicemail_storage to voicemail_and_callrecordings_storage, etc.).
+
 
 ### Example
 
-```javascript
-import WhiteLabelCommunicationsCPaasApiDocumentation from 'white_label_communications_c_paas_api_documentation';
-let defaultClient = WhiteLabelCommunicationsCPaasApiDocumentation.ApiClient.instance;
-// Configure API key authorization: BearerAuth
-let BearerAuth = defaultClient.authentications['BearerAuth'];
-BearerAuth.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//BearerAuth.apiKeyPrefix = 'Token';
+```go
+package main
 
-let apiInstance = new WhiteLabelCommunicationsCPaasApiDocumentation.StorageApi();
-let accountID = "accountID_example"; // String | Account ID, 32 alpha numeric
-let reqBody = new WhiteLabelCommunicationsCPaasApiDocumentation.ServiceVOIPStorageAddEditData(); // ServiceVOIPStorageAddEditData | payload fields
-apiInstance.v1AccountAccountIDStoragePut(accountID, reqBody, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	accountID := "accountID_example" // string | Account ID, 32 alpha numeric
+	reqBody := *openapiclient.NewServiceVOIPStorageAddEditData() // ServiceVOIPStorageAddEditData | payload fields
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.StorageAPI.V1AccountAccountIDStoragePut(context.Background(), accountID).ReqBody(reqBody).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `StorageAPI.V1AccountAccountIDStoragePut``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountAccountIDStoragePut`: ServiceDocsStorageGet
+	fmt.Fprintf(os.Stdout, "Response from `StorageAPI.V1AccountAccountIDStoragePut`: %v\n", resp)
+}
 ```
 
-### Parameters
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountID** | **String**| Account ID, 32 alpha numeric | 
- **reqBody** | [**ServiceVOIPStorageAddEditData**](ServiceVOIPStorageAddEditData.md)| payload fields | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountID** | **string** | Account ID, 32 alpha numeric | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountAccountIDStoragePutRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **reqBody** | [**ServiceVOIPStorageAddEditData**](ServiceVOIPStorageAddEditData.md) | payload fields | 
 
 ### Return type
 
@@ -217,4 +289,8 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: application/json
 - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 

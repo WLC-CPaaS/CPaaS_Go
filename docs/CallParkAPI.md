@@ -1,49 +1,64 @@
-# WhiteLabelCommunicationsCPaasApiDocumentation.CallParkApi
+# \CallParkAPI
 
 All URIs are relative to *http://api.cpaaslabs.net*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v1AccountAccountIDParkedcallGet**](CallParkApi.md#v1AccountAccountIDParkedcallGet) | **GET** /v1/account/{accountID}/parkedcall | Get Call Park List
+[**V1AccountAccountIDParkedcallGet**](CallParkAPI.md#V1AccountAccountIDParkedcallGet) | **Get** /v1/account/{accountID}/parkedcall | Get Call Park List
 
 
 
-## v1AccountAccountIDParkedcallGet
+## V1AccountAccountIDParkedcallGet
 
-> ServiceDocsParkedcallGet v1AccountAccountIDParkedcallGet(accountID)
+> ServiceDocsParkedcallGet V1AccountAccountIDParkedcallGet(ctx, accountID).Execute()
 
 Get Call Park List
 
-Retrieve a list of calls parked on hold in a numbered slot.
+
 
 ### Example
 
-```javascript
-import WhiteLabelCommunicationsCPaasApiDocumentation from 'white_label_communications_c_paas_api_documentation';
-let defaultClient = WhiteLabelCommunicationsCPaasApiDocumentation.ApiClient.instance;
-// Configure API key authorization: BearerAuth
-let BearerAuth = defaultClient.authentications['BearerAuth'];
-BearerAuth.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//BearerAuth.apiKeyPrefix = 'Token';
+```go
+package main
 
-let apiInstance = new WhiteLabelCommunicationsCPaasApiDocumentation.CallParkApi();
-let accountID = "accountID_example"; // String | Account ID, 32 alpha numeric
-apiInstance.v1AccountAccountIDParkedcallGet(accountID, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	accountID := "accountID_example" // string | Account ID, 32 alpha numeric
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CallParkAPI.V1AccountAccountIDParkedcallGet(context.Background(), accountID).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CallParkAPI.V1AccountAccountIDParkedcallGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountAccountIDParkedcallGet`: ServiceDocsParkedcallGet
+	fmt.Fprintf(os.Stdout, "Response from `CallParkAPI.V1AccountAccountIDParkedcallGet`: %v\n", resp)
+}
 ```
 
-### Parameters
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountID** | **String**| Account ID, 32 alpha numeric | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountID** | **string** | Account ID, 32 alpha numeric | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountAccountIDParkedcallGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
 
 ### Return type
 
@@ -57,4 +72,8 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 

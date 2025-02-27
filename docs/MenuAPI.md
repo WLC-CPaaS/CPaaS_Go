@@ -1,59 +1,72 @@
-# WhiteLabelCommunicationsCPaasApiDocumentation.MenuApi
+# \MenuAPI
 
 All URIs are relative to *http://api.cpaaslabs.net*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v1AccountAccountIDMenuGet**](MenuApi.md#v1AccountAccountIDMenuGet) | **GET** /v1/account/{accountID}/menu | Get Menu List
-[**v1AccountAccountIDMenuMenuIDDelete**](MenuApi.md#v1AccountAccountIDMenuMenuIDDelete) | **DELETE** /v1/account/{accountID}/menu/{menuID} | Delete Menu
-[**v1AccountAccountIDMenuMenuIDGet**](MenuApi.md#v1AccountAccountIDMenuMenuIDGet) | **GET** /v1/account/{accountID}/menu/{menuID} | Get Menu Details
-[**v1AccountAccountIDMenuMenuIDPut**](MenuApi.md#v1AccountAccountIDMenuMenuIDPut) | **PUT** /v1/account/{accountID}/menu/{menuID} | Update Menu
-[**v1AccountAccountIDMenuPost**](MenuApi.md#v1AccountAccountIDMenuPost) | **POST** /v1/account/{accountID}/menu | Create Menu
+[**V1AccountAccountIDMenuGet**](MenuAPI.md#V1AccountAccountIDMenuGet) | **Get** /v1/account/{accountID}/menu | Get Menu List
+[**V1AccountAccountIDMenuMenuIDDelete**](MenuAPI.md#V1AccountAccountIDMenuMenuIDDelete) | **Delete** /v1/account/{accountID}/menu/{menuID} | Delete Menu
+[**V1AccountAccountIDMenuMenuIDGet**](MenuAPI.md#V1AccountAccountIDMenuMenuIDGet) | **Get** /v1/account/{accountID}/menu/{menuID} | Get Menu Details
+[**V1AccountAccountIDMenuMenuIDPut**](MenuAPI.md#V1AccountAccountIDMenuMenuIDPut) | **Put** /v1/account/{accountID}/menu/{menuID} | Update Menu
+[**V1AccountAccountIDMenuPost**](MenuAPI.md#V1AccountAccountIDMenuPost) | **Post** /v1/account/{accountID}/menu | Create Menu
 
 
 
-## v1AccountAccountIDMenuGet
+## V1AccountAccountIDMenuGet
 
-> ServiceDocsMenuGetAll v1AccountAccountIDMenuGet(accountID, opts)
+> ServiceDocsMenuGetAll V1AccountAccountIDMenuGet(ctx, accountID).StartKey(startKey).PageSize(pageSize).Execute()
 
 Get Menu List
 
-Users can access data about all menus in an account.
+
 
 ### Example
 
-```javascript
-import WhiteLabelCommunicationsCPaasApiDocumentation from 'white_label_communications_c_paas_api_documentation';
-let defaultClient = WhiteLabelCommunicationsCPaasApiDocumentation.ApiClient.instance;
-// Configure API key authorization: BearerAuth
-let BearerAuth = defaultClient.authentications['BearerAuth'];
-BearerAuth.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//BearerAuth.apiKeyPrefix = 'Token';
+```go
+package main
 
-let apiInstance = new WhiteLabelCommunicationsCPaasApiDocumentation.MenuApi();
-let accountID = "accountID_example"; // String | Account ID, 32 alpha numeric
-let opts = {
-  'startKey': "startKey_example", // String | start_key for pagination that was returned as next_start_key from your previous call
-  'pageSize': 56 // Number | number of records to return, range 1 to 50
-};
-apiInstance.v1AccountAccountIDMenuGet(accountID, opts, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	accountID := "accountID_example" // string | Account ID, 32 alpha numeric
+	startKey := "startKey_example" // string | start_key for pagination that was returned as next_start_key from your previous call (optional)
+	pageSize := int32(56) // int32 | number of records to return, range 1 to 50 (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MenuAPI.V1AccountAccountIDMenuGet(context.Background(), accountID).StartKey(startKey).PageSize(pageSize).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MenuAPI.V1AccountAccountIDMenuGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountAccountIDMenuGet`: ServiceDocsMenuGetAll
+	fmt.Fprintf(os.Stdout, "Response from `MenuAPI.V1AccountAccountIDMenuGet`: %v\n", resp)
+}
 ```
 
-### Parameters
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountID** | **String**| Account ID, 32 alpha numeric | 
- **startKey** | **String**| start_key for pagination that was returned as next_start_key from your previous call | [optional] 
- **pageSize** | **Number**| number of records to return, range 1 to 50 | [optional] 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountID** | **string** | Account ID, 32 alpha numeric | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountAccountIDMenuGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **startKey** | **string** | start_key for pagination that was returned as next_start_key from your previous call | 
+ **pageSize** | **int32** | number of records to return, range 1 to 50 | 
 
 ### Return type
 
@@ -68,45 +81,65 @@ Name | Type | Description  | Notes
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-## v1AccountAccountIDMenuMenuIDDelete
 
-> ServiceDocsMenuGetSingle v1AccountAccountIDMenuMenuIDDelete(accountID, menuID)
+## V1AccountAccountIDMenuMenuIDDelete
+
+> ServiceDocsMenuGetSingle V1AccountAccountIDMenuMenuIDDelete(ctx, accountID, menuID).Execute()
 
 Delete Menu
 
-Delete a menu from an account.
+
 
 ### Example
 
-```javascript
-import WhiteLabelCommunicationsCPaasApiDocumentation from 'white_label_communications_c_paas_api_documentation';
-let defaultClient = WhiteLabelCommunicationsCPaasApiDocumentation.ApiClient.instance;
-// Configure API key authorization: BearerAuth
-let BearerAuth = defaultClient.authentications['BearerAuth'];
-BearerAuth.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//BearerAuth.apiKeyPrefix = 'Token';
+```go
+package main
 
-let apiInstance = new WhiteLabelCommunicationsCPaasApiDocumentation.MenuApi();
-let accountID = "accountID_example"; // String | Account ID, 32 alpha numeric
-let menuID = "menuID_example"; // String | Menu ID, 32 alpha numeric
-apiInstance.v1AccountAccountIDMenuMenuIDDelete(accountID, menuID, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	accountID := "accountID_example" // string | Account ID, 32 alpha numeric
+	menuID := "menuID_example" // string | Menu ID, 32 alpha numeric
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MenuAPI.V1AccountAccountIDMenuMenuIDDelete(context.Background(), accountID, menuID).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MenuAPI.V1AccountAccountIDMenuMenuIDDelete``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountAccountIDMenuMenuIDDelete`: ServiceDocsMenuGetSingle
+	fmt.Fprintf(os.Stdout, "Response from `MenuAPI.V1AccountAccountIDMenuMenuIDDelete`: %v\n", resp)
+}
 ```
 
-### Parameters
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountID** | **String**| Account ID, 32 alpha numeric | 
- **menuID** | **String**| Menu ID, 32 alpha numeric | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountID** | **string** | Account ID, 32 alpha numeric | 
+**menuID** | **string** | Menu ID, 32 alpha numeric | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountAccountIDMenuMenuIDDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
 
 ### Return type
 
@@ -121,45 +154,65 @@ Name | Type | Description  | Notes
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-## v1AccountAccountIDMenuMenuIDGet
 
-> ServiceDocsMenuGetSingle v1AccountAccountIDMenuMenuIDGet(accountID, menuID)
+## V1AccountAccountIDMenuMenuIDGet
+
+> ServiceDocsMenuGetSingle V1AccountAccountIDMenuMenuIDGet(ctx, accountID, menuID).Execute()
 
 Get Menu Details
 
-Get details about a menu in an account.
+
 
 ### Example
 
-```javascript
-import WhiteLabelCommunicationsCPaasApiDocumentation from 'white_label_communications_c_paas_api_documentation';
-let defaultClient = WhiteLabelCommunicationsCPaasApiDocumentation.ApiClient.instance;
-// Configure API key authorization: BearerAuth
-let BearerAuth = defaultClient.authentications['BearerAuth'];
-BearerAuth.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//BearerAuth.apiKeyPrefix = 'Token';
+```go
+package main
 
-let apiInstance = new WhiteLabelCommunicationsCPaasApiDocumentation.MenuApi();
-let accountID = "accountID_example"; // String | Account ID, 32 alpha numeric
-let menuID = "menuID_example"; // String | Menu ID, 32 alpha numeric
-apiInstance.v1AccountAccountIDMenuMenuIDGet(accountID, menuID, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	accountID := "accountID_example" // string | Account ID, 32 alpha numeric
+	menuID := "menuID_example" // string | Menu ID, 32 alpha numeric
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MenuAPI.V1AccountAccountIDMenuMenuIDGet(context.Background(), accountID, menuID).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MenuAPI.V1AccountAccountIDMenuMenuIDGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountAccountIDMenuMenuIDGet`: ServiceDocsMenuGetSingle
+	fmt.Fprintf(os.Stdout, "Response from `MenuAPI.V1AccountAccountIDMenuMenuIDGet`: %v\n", resp)
+}
 ```
 
-### Parameters
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountID** | **String**| Account ID, 32 alpha numeric | 
- **menuID** | **String**| Menu ID, 32 alpha numeric | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountID** | **string** | Account ID, 32 alpha numeric | 
+**menuID** | **string** | Menu ID, 32 alpha numeric | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountAccountIDMenuMenuIDGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
 
 ### Return type
 
@@ -174,47 +227,67 @@ Name | Type | Description  | Notes
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-## v1AccountAccountIDMenuMenuIDPut
 
-> ServiceDocsMenuGetSingle v1AccountAccountIDMenuMenuIDPut(accountID, menuID, reqBody)
+## V1AccountAccountIDMenuMenuIDPut
+
+> ServiceDocsMenuGetSingle V1AccountAccountIDMenuMenuIDPut(ctx, accountID, menuID).ReqBody(reqBody).Execute()
 
 Update Menu
 
-Edit an account menu.
+
 
 ### Example
 
-```javascript
-import WhiteLabelCommunicationsCPaasApiDocumentation from 'white_label_communications_c_paas_api_documentation';
-let defaultClient = WhiteLabelCommunicationsCPaasApiDocumentation.ApiClient.instance;
-// Configure API key authorization: BearerAuth
-let BearerAuth = defaultClient.authentications['BearerAuth'];
-BearerAuth.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//BearerAuth.apiKeyPrefix = 'Token';
+```go
+package main
 
-let apiInstance = new WhiteLabelCommunicationsCPaasApiDocumentation.MenuApi();
-let accountID = "accountID_example"; // String | Account ID, 32 alpha numeric
-let menuID = "menuID_example"; // String | Menu ID, 32 alpha numeric
-let reqBody = new WhiteLabelCommunicationsCPaasApiDocumentation.ServiceVOIPMenuAddEditData(); // ServiceVOIPMenuAddEditData | payload fields
-apiInstance.v1AccountAccountIDMenuMenuIDPut(accountID, menuID, reqBody, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	accountID := "accountID_example" // string | Account ID, 32 alpha numeric
+	menuID := "menuID_example" // string | Menu ID, 32 alpha numeric
+	reqBody := *openapiclient.NewServiceVOIPMenuAddEditData("Name_example") // ServiceVOIPMenuAddEditData | payload fields
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MenuAPI.V1AccountAccountIDMenuMenuIDPut(context.Background(), accountID, menuID).ReqBody(reqBody).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MenuAPI.V1AccountAccountIDMenuMenuIDPut``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountAccountIDMenuMenuIDPut`: ServiceDocsMenuGetSingle
+	fmt.Fprintf(os.Stdout, "Response from `MenuAPI.V1AccountAccountIDMenuMenuIDPut`: %v\n", resp)
+}
 ```
 
-### Parameters
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountID** | **String**| Account ID, 32 alpha numeric | 
- **menuID** | **String**| Menu ID, 32 alpha numeric | 
- **reqBody** | [**ServiceVOIPMenuAddEditData**](ServiceVOIPMenuAddEditData.md)| payload fields | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountID** | **string** | Account ID, 32 alpha numeric | 
+**menuID** | **string** | Menu ID, 32 alpha numeric | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountAccountIDMenuMenuIDPutRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **reqBody** | [**ServiceVOIPMenuAddEditData**](ServiceVOIPMenuAddEditData.md) | payload fields | 
 
 ### Return type
 
@@ -229,45 +302,64 @@ Name | Type | Description  | Notes
 - **Content-Type**: application/json
 - **Accept**: application/json
 
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-## v1AccountAccountIDMenuPost
 
-> ServiceDocsMenuGetSingle v1AccountAccountIDMenuPost(accountID, menu)
+## V1AccountAccountIDMenuPost
+
+> ServiceDocsMenuGetSingle V1AccountAccountIDMenuPost(ctx, accountID).Menu(menu).Execute()
 
 Create Menu
 
-Create a new menu for an account.
+
 
 ### Example
 
-```javascript
-import WhiteLabelCommunicationsCPaasApiDocumentation from 'white_label_communications_c_paas_api_documentation';
-let defaultClient = WhiteLabelCommunicationsCPaasApiDocumentation.ApiClient.instance;
-// Configure API key authorization: BearerAuth
-let BearerAuth = defaultClient.authentications['BearerAuth'];
-BearerAuth.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//BearerAuth.apiKeyPrefix = 'Token';
+```go
+package main
 
-let apiInstance = new WhiteLabelCommunicationsCPaasApiDocumentation.MenuApi();
-let accountID = "accountID_example"; // String | Account ID, 32 alphanumeric
-let menu = new WhiteLabelCommunicationsCPaasApiDocumentation.ServiceVOIPMenuAddEditData(); // ServiceVOIPMenuAddEditData | Menu data
-apiInstance.v1AccountAccountIDMenuPost(accountID, menu, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	accountID := "accountID_example" // string | Account ID, 32 alphanumeric
+	menu := *openapiclient.NewServiceVOIPMenuAddEditData("Name_example") // ServiceVOIPMenuAddEditData | Menu data
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MenuAPI.V1AccountAccountIDMenuPost(context.Background(), accountID).Menu(menu).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MenuAPI.V1AccountAccountIDMenuPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountAccountIDMenuPost`: ServiceDocsMenuGetSingle
+	fmt.Fprintf(os.Stdout, "Response from `MenuAPI.V1AccountAccountIDMenuPost`: %v\n", resp)
+}
 ```
 
-### Parameters
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountID** | **String**| Account ID, 32 alphanumeric | 
- **menu** | [**ServiceVOIPMenuAddEditData**](ServiceVOIPMenuAddEditData.md)| Menu data | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountID** | **string** | Account ID, 32 alphanumeric | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountAccountIDMenuPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **menu** | [**ServiceVOIPMenuAddEditData**](ServiceVOIPMenuAddEditData.md) | Menu data | 
 
 ### Return type
 
@@ -281,4 +373,8 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: application/json
 - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 

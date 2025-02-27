@@ -1,53 +1,68 @@
-# WhiteLabelCommunicationsCPaasApiDocumentation.CallQueueMembershipApi
+# \CallQueueMembershipAPI
 
 All URIs are relative to *http://api.cpaaslabs.net*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v1AccountAccountIDQueuemembershipPost**](CallQueueMembershipApi.md#v1AccountAccountIDQueuemembershipPost) | **POST** /v1/account/{accountID}/queuemembership | Grant Queue Membership to User
-[**v1AccountAccountIDQueuemembershipRecipientIDDisablePost**](CallQueueMembershipApi.md#v1AccountAccountIDQueuemembershipRecipientIDDisablePost) | **POST** /v1/account/{accountID}/queuemembership/{recipientID}/disable | Disable Queue Membership
-[**v1AccountAccountIDQueuemembershipRecipientIDEnablePost**](CallQueueMembershipApi.md#v1AccountAccountIDQueuemembershipRecipientIDEnablePost) | **POST** /v1/account/{accountID}/queuemembership/{recipientID}/enable | Enable Queue Membership
+[**V1AccountAccountIDQueuemembershipPost**](CallQueueMembershipAPI.md#V1AccountAccountIDQueuemembershipPost) | **Post** /v1/account/{accountID}/queuemembership | Grant Queue Membership to User
+[**V1AccountAccountIDQueuemembershipRecipientIDDisablePost**](CallQueueMembershipAPI.md#V1AccountAccountIDQueuemembershipRecipientIDDisablePost) | **Post** /v1/account/{accountID}/queuemembership/{recipientID}/disable | Disable Queue Membership
+[**V1AccountAccountIDQueuemembershipRecipientIDEnablePost**](CallQueueMembershipAPI.md#V1AccountAccountIDQueuemembershipRecipientIDEnablePost) | **Post** /v1/account/{accountID}/queuemembership/{recipientID}/enable | Enable Queue Membership
 
 
 
-## v1AccountAccountIDQueuemembershipPost
+## V1AccountAccountIDQueuemembershipPost
 
-> ServiceDocsCallQueueMemberGetSingle v1AccountAccountIDQueuemembershipPost(accountID, reqBody)
+> ServiceDocsCallQueueMemberGetSingle V1AccountAccountIDQueuemembershipPost(ctx, accountID).ReqBody(reqBody).Execute()
 
 Grant Queue Membership to User
 
-Allow users to create queue memberships for recipients.
+
 
 ### Example
 
-```javascript
-import WhiteLabelCommunicationsCPaasApiDocumentation from 'white_label_communications_c_paas_api_documentation';
-let defaultClient = WhiteLabelCommunicationsCPaasApiDocumentation.ApiClient.instance;
-// Configure API key authorization: BearerAuth
-let BearerAuth = defaultClient.authentications['BearerAuth'];
-BearerAuth.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//BearerAuth.apiKeyPrefix = 'Token';
+```go
+package main
 
-let apiInstance = new WhiteLabelCommunicationsCPaasApiDocumentation.CallQueueMembershipApi();
-let accountID = "accountID_example"; // String | Account ID, 32 alpha numeric
-let reqBody = new WhiteLabelCommunicationsCPaasApiDocumentation.ServiceVOIPQueueMembershipAddData(); // ServiceVOIPQueueMembershipAddData | payload fields
-apiInstance.v1AccountAccountIDQueuemembershipPost(accountID, reqBody, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	accountID := "accountID_example" // string | Account ID, 32 alpha numeric
+	reqBody := *openapiclient.NewServiceVOIPQueueMembershipAddData("RecipientId_example") // ServiceVOIPQueueMembershipAddData | payload fields
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CallQueueMembershipAPI.V1AccountAccountIDQueuemembershipPost(context.Background(), accountID).ReqBody(reqBody).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CallQueueMembershipAPI.V1AccountAccountIDQueuemembershipPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountAccountIDQueuemembershipPost`: ServiceDocsCallQueueMemberGetSingle
+	fmt.Fprintf(os.Stdout, "Response from `CallQueueMembershipAPI.V1AccountAccountIDQueuemembershipPost`: %v\n", resp)
+}
 ```
 
-### Parameters
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountID** | **String**| Account ID, 32 alpha numeric | 
- **reqBody** | [**ServiceVOIPQueueMembershipAddData**](ServiceVOIPQueueMembershipAddData.md)| payload fields | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountID** | **string** | Account ID, 32 alpha numeric | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountAccountIDQueuemembershipPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **reqBody** | [**ServiceVOIPQueueMembershipAddData**](ServiceVOIPQueueMembershipAddData.md) | payload fields | 
 
 ### Return type
 
@@ -62,45 +77,65 @@ Name | Type | Description  | Notes
 - **Content-Type**: application/json
 - **Accept**: application/json
 
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-## v1AccountAccountIDQueuemembershipRecipientIDDisablePost
 
-> ServiceAPIResponse v1AccountAccountIDQueuemembershipRecipientIDDisablePost(accountID, recipientID)
+## V1AccountAccountIDQueuemembershipRecipientIDDisablePost
+
+> ServiceAPIResponse V1AccountAccountIDQueuemembershipRecipientIDDisablePost(ctx, accountID, recipientID).Execute()
 
 Disable Queue Membership
 
-Deactivate queue membership for a recipient.
+
 
 ### Example
 
-```javascript
-import WhiteLabelCommunicationsCPaasApiDocumentation from 'white_label_communications_c_paas_api_documentation';
-let defaultClient = WhiteLabelCommunicationsCPaasApiDocumentation.ApiClient.instance;
-// Configure API key authorization: BearerAuth
-let BearerAuth = defaultClient.authentications['BearerAuth'];
-BearerAuth.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//BearerAuth.apiKeyPrefix = 'Token';
+```go
+package main
 
-let apiInstance = new WhiteLabelCommunicationsCPaasApiDocumentation.CallQueueMembershipApi();
-let accountID = "accountID_example"; // String | Account ID, 32 alpha numeric
-let recipientID = "recipientID_example"; // String | Recipient ID, 32 alpha numeric
-apiInstance.v1AccountAccountIDQueuemembershipRecipientIDDisablePost(accountID, recipientID, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	accountID := "accountID_example" // string | Account ID, 32 alpha numeric
+	recipientID := "recipientID_example" // string | Recipient ID, 32 alpha numeric
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CallQueueMembershipAPI.V1AccountAccountIDQueuemembershipRecipientIDDisablePost(context.Background(), accountID, recipientID).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CallQueueMembershipAPI.V1AccountAccountIDQueuemembershipRecipientIDDisablePost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountAccountIDQueuemembershipRecipientIDDisablePost`: ServiceAPIResponse
+	fmt.Fprintf(os.Stdout, "Response from `CallQueueMembershipAPI.V1AccountAccountIDQueuemembershipRecipientIDDisablePost`: %v\n", resp)
+}
 ```
 
-### Parameters
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountID** | **String**| Account ID, 32 alpha numeric | 
- **recipientID** | **String**| Recipient ID, 32 alpha numeric | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountID** | **string** | Account ID, 32 alpha numeric | 
+**recipientID** | **string** | Recipient ID, 32 alpha numeric | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountAccountIDQueuemembershipRecipientIDDisablePostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
 
 ### Return type
 
@@ -115,47 +150,67 @@ Name | Type | Description  | Notes
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-## v1AccountAccountIDQueuemembershipRecipientIDEnablePost
 
-> ServiceAPIResponse v1AccountAccountIDQueuemembershipRecipientIDEnablePost(accountID, recipientID, reqBody)
+## V1AccountAccountIDQueuemembershipRecipientIDEnablePost
+
+> ServiceAPIResponse V1AccountAccountIDQueuemembershipRecipientIDEnablePost(ctx, accountID, recipientID).ReqBody(reqBody).Execute()
 
 Enable Queue Membership
 
-Activate queue membership for a recipient.
+
 
 ### Example
 
-```javascript
-import WhiteLabelCommunicationsCPaasApiDocumentation from 'white_label_communications_c_paas_api_documentation';
-let defaultClient = WhiteLabelCommunicationsCPaasApiDocumentation.ApiClient.instance;
-// Configure API key authorization: BearerAuth
-let BearerAuth = defaultClient.authentications['BearerAuth'];
-BearerAuth.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//BearerAuth.apiKeyPrefix = 'Token';
+```go
+package main
 
-let apiInstance = new WhiteLabelCommunicationsCPaasApiDocumentation.CallQueueMembershipApi();
-let accountID = "accountID_example"; // String | Account ID, 32 alpha numeric
-let recipientID = "recipientID_example"; // String | Recipient ID, 32 alpha numeric
-let reqBody = new WhiteLabelCommunicationsCPaasApiDocumentation.ServiceVOIPCallQueueEnableMembershipData(); // ServiceVOIPCallQueueEnableMembershipData | payload fields
-apiInstance.v1AccountAccountIDQueuemembershipRecipientIDEnablePost(accountID, recipientID, reqBody, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	accountID := "accountID_example" // string | Account ID, 32 alpha numeric
+	recipientID := "recipientID_example" // string | Recipient ID, 32 alpha numeric
+	reqBody := *openapiclient.NewServiceVOIPCallQueueEnableMembershipData(false) // ServiceVOIPCallQueueEnableMembershipData | payload fields
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CallQueueMembershipAPI.V1AccountAccountIDQueuemembershipRecipientIDEnablePost(context.Background(), accountID, recipientID).ReqBody(reqBody).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CallQueueMembershipAPI.V1AccountAccountIDQueuemembershipRecipientIDEnablePost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountAccountIDQueuemembershipRecipientIDEnablePost`: ServiceAPIResponse
+	fmt.Fprintf(os.Stdout, "Response from `CallQueueMembershipAPI.V1AccountAccountIDQueuemembershipRecipientIDEnablePost`: %v\n", resp)
+}
 ```
 
-### Parameters
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountID** | **String**| Account ID, 32 alpha numeric | 
- **recipientID** | **String**| Recipient ID, 32 alpha numeric | 
- **reqBody** | [**ServiceVOIPCallQueueEnableMembershipData**](ServiceVOIPCallQueueEnableMembershipData.md)| payload fields | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountID** | **string** | Account ID, 32 alpha numeric | 
+**recipientID** | **string** | Recipient ID, 32 alpha numeric | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountAccountIDQueuemembershipRecipientIDEnablePostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **reqBody** | [**ServiceVOIPCallQueueEnableMembershipData**](ServiceVOIPCallQueueEnableMembershipData.md) | payload fields | 
 
 ### Return type
 
@@ -169,4 +224,8 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: application/json
 - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 

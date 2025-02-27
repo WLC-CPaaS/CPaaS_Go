@@ -1,47 +1,57 @@
-# WhiteLabelCommunicationsCPaasApiDocumentation.SystemStatusApi
+# \SystemStatusAPI
 
 All URIs are relative to *http://api.cpaaslabs.net*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v1PingGet**](SystemStatusApi.md#v1PingGet) | **GET** /v1/ping | Ping Backend
-[**v1PingseccognitoGet**](SystemStatusApi.md#v1PingseccognitoGet) | **GET** /v1/pingseccognito | Ping Cognito
-[**v1SystemStatusGet**](SystemStatusApi.md#v1SystemStatusGet) | **GET** /v1/system_status | Get System Status
+[**V1PingGet**](SystemStatusAPI.md#V1PingGet) | **Get** /v1/ping | Ping Backend
+[**V1PingseccognitoGet**](SystemStatusAPI.md#V1PingseccognitoGet) | **Get** /v1/pingseccognito | Ping Cognito
+[**V1SystemStatusGet**](SystemStatusAPI.md#V1SystemStatusGet) | **Get** /v1/system_status | Get System Status
 
 
 
-## v1PingGet
+## V1PingGet
 
-> ServiceDocsPingGet v1PingGet()
+> ServiceDocsPingGet V1PingGet(ctx).Execute()
 
 Ping Backend
 
-Get the ping message.
+
 
 ### Example
 
-```javascript
-import WhiteLabelCommunicationsCPaasApiDocumentation from 'white_label_communications_c_paas_api_documentation';
-let defaultClient = WhiteLabelCommunicationsCPaasApiDocumentation.ApiClient.instance;
-// Configure API key authorization: BearerAuth
-let BearerAuth = defaultClient.authentications['BearerAuth'];
-BearerAuth.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//BearerAuth.apiKeyPrefix = 'Token';
+```go
+package main
 
-let apiInstance = new WhiteLabelCommunicationsCPaasApiDocumentation.SystemStatusApi();
-apiInstance.v1PingGet((error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SystemStatusAPI.V1PingGet(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SystemStatusAPI.V1PingGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1PingGet`: ServiceDocsPingGet
+	fmt.Fprintf(os.Stdout, "Response from `SystemStatusAPI.V1PingGet`: %v\n", resp)
+}
 ```
 
-### Parameters
+### Path Parameters
 
 This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1PingGetRequest struct via the builder pattern
+
 
 ### Return type
 
@@ -56,39 +66,53 @@ This endpoint does not need any parameter.
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-## v1PingseccognitoGet
 
-> ServiceDocsPingGet v1PingseccognitoGet()
+## V1PingseccognitoGet
+
+> ServiceDocsPingGet V1PingseccognitoGet(ctx).Execute()
 
 Ping Cognito
 
-Get a secure ping message.
+
 
 ### Example
 
-```javascript
-import WhiteLabelCommunicationsCPaasApiDocumentation from 'white_label_communications_c_paas_api_documentation';
-let defaultClient = WhiteLabelCommunicationsCPaasApiDocumentation.ApiClient.instance;
-// Configure API key authorization: BearerAuth
-let BearerAuth = defaultClient.authentications['BearerAuth'];
-BearerAuth.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//BearerAuth.apiKeyPrefix = 'Token';
+```go
+package main
 
-let apiInstance = new WhiteLabelCommunicationsCPaasApiDocumentation.SystemStatusApi();
-apiInstance.v1PingseccognitoGet((error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SystemStatusAPI.V1PingseccognitoGet(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SystemStatusAPI.V1PingseccognitoGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1PingseccognitoGet`: ServiceDocsPingGet
+	fmt.Fprintf(os.Stdout, "Response from `SystemStatusAPI.V1PingseccognitoGet`: %v\n", resp)
+}
 ```
 
-### Parameters
+### Path Parameters
 
 This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1PingseccognitoGetRequest struct via the builder pattern
+
 
 ### Return type
 
@@ -103,39 +127,53 @@ This endpoint does not need any parameter.
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-## v1SystemStatusGet
 
-> ServiceDocsSystemStatusGetSingle v1SystemStatusGet()
+## V1SystemStatusGet
+
+> ServiceDocsSystemStatusGetSingle V1SystemStatusGet(ctx).Execute()
 
 Get System Status
 
-Get the system status.
+
 
 ### Example
 
-```javascript
-import WhiteLabelCommunicationsCPaasApiDocumentation from 'white_label_communications_c_paas_api_documentation';
-let defaultClient = WhiteLabelCommunicationsCPaasApiDocumentation.ApiClient.instance;
-// Configure API key authorization: BearerAuth
-let BearerAuth = defaultClient.authentications['BearerAuth'];
-BearerAuth.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//BearerAuth.apiKeyPrefix = 'Token';
+```go
+package main
 
-let apiInstance = new WhiteLabelCommunicationsCPaasApiDocumentation.SystemStatusApi();
-apiInstance.v1SystemStatusGet((error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SystemStatusAPI.V1SystemStatusGet(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SystemStatusAPI.V1SystemStatusGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1SystemStatusGet`: ServiceDocsSystemStatusGetSingle
+	fmt.Fprintf(os.Stdout, "Response from `SystemStatusAPI.V1SystemStatusGet`: %v\n", resp)
+}
 ```
 
-### Parameters
+### Path Parameters
 
 This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1SystemStatusGetRequest struct via the builder pattern
+
 
 ### Return type
 
@@ -149,4 +187,8 @@ This endpoint does not need any parameter.
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 

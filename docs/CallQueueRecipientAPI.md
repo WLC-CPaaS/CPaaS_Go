@@ -1,55 +1,71 @@
-# WhiteLabelCommunicationsCPaasApiDocumentation.CallQueueRecipientApi
+# \CallQueueRecipientAPI
 
 All URIs are relative to *http://api.cpaaslabs.net*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v1AccountAccountIDLoginrecipientRecipientIDPost**](CallQueueRecipientApi.md#v1AccountAccountIDLoginrecipientRecipientIDPost) | **POST** /v1/account/{accountID}/loginrecipient/{recipientID} | Login as Recipient
-[**v1AccountAccountIDQueuerecipientGet**](CallQueueRecipientApi.md#v1AccountAccountIDQueuerecipientGet) | **GET** /v1/account/{accountID}/queuerecipient | Change Recipient Status
-[**v1AccountAccountIDRecipientRecipientIDStatusPost**](CallQueueRecipientApi.md#v1AccountAccountIDRecipientRecipientIDStatusPost) | **POST** /v1/account/{accountID}/recipient/{recipientID}/status | Get Recipient List
+[**V1AccountAccountIDLoginrecipientRecipientIDPost**](CallQueueRecipientAPI.md#V1AccountAccountIDLoginrecipientRecipientIDPost) | **Post** /v1/account/{accountID}/loginrecipient/{recipientID} | Login as Recipient
+[**V1AccountAccountIDQueuerecipientGet**](CallQueueRecipientAPI.md#V1AccountAccountIDQueuerecipientGet) | **Get** /v1/account/{accountID}/queuerecipient | Change Recipient Status
+[**V1AccountAccountIDRecipientRecipientIDStatusPost**](CallQueueRecipientAPI.md#V1AccountAccountIDRecipientRecipientIDStatusPost) | **Post** /v1/account/{accountID}/recipient/{recipientID}/status | Get Recipient List
 
 
 
-## v1AccountAccountIDLoginrecipientRecipientIDPost
+## V1AccountAccountIDLoginrecipientRecipientIDPost
 
-> ServiceDocsCallQueueResponseShort v1AccountAccountIDLoginrecipientRecipientIDPost(accountID, recipientID, reqBody)
+> ServiceDocsCallQueueResponseShort V1AccountAccountIDLoginrecipientRecipientIDPost(ctx, accountID, recipientID).ReqBody(reqBody).Execute()
 
 Login as Recipient
 
-Agents must log in to receive calls. Depending on their membership, they can log in to one or more queues. (If an agent is a member of more than one queue, they will receive calls from all the queues they are a part of.)
+
 
 ### Example
 
-```javascript
-import WhiteLabelCommunicationsCPaasApiDocumentation from 'white_label_communications_c_paas_api_documentation';
-let defaultClient = WhiteLabelCommunicationsCPaasApiDocumentation.ApiClient.instance;
-// Configure API key authorization: BearerAuth
-let BearerAuth = defaultClient.authentications['BearerAuth'];
-BearerAuth.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//BearerAuth.apiKeyPrefix = 'Token';
+```go
+package main
 
-let apiInstance = new WhiteLabelCommunicationsCPaasApiDocumentation.CallQueueRecipientApi();
-let accountID = "accountID_example"; // String | Account ID, 32 alpha numeric
-let recipientID = "recipientID_example"; // String | Recipient ID, 32 alpha numeric
-let reqBody = new WhiteLabelCommunicationsCPaasApiDocumentation.ServiceVOIPCallQueueRecipientLoginLogoutData(); // ServiceVOIPCallQueueRecipientLoginLogoutData | payload fields
-apiInstance.v1AccountAccountIDLoginrecipientRecipientIDPost(accountID, recipientID, reqBody, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	accountID := "accountID_example" // string | Account ID, 32 alpha numeric
+	recipientID := "recipientID_example" // string | Recipient ID, 32 alpha numeric
+	reqBody := *openapiclient.NewServiceVOIPCallQueueRecipientLoginLogoutData("Action_example") // ServiceVOIPCallQueueRecipientLoginLogoutData | payload fields
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CallQueueRecipientAPI.V1AccountAccountIDLoginrecipientRecipientIDPost(context.Background(), accountID, recipientID).ReqBody(reqBody).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CallQueueRecipientAPI.V1AccountAccountIDLoginrecipientRecipientIDPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountAccountIDLoginrecipientRecipientIDPost`: ServiceDocsCallQueueResponseShort
+	fmt.Fprintf(os.Stdout, "Response from `CallQueueRecipientAPI.V1AccountAccountIDLoginrecipientRecipientIDPost`: %v\n", resp)
+}
 ```
 
-### Parameters
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountID** | **String**| Account ID, 32 alpha numeric | 
- **recipientID** | **String**| Recipient ID, 32 alpha numeric | 
- **reqBody** | [**ServiceVOIPCallQueueRecipientLoginLogoutData**](ServiceVOIPCallQueueRecipientLoginLogoutData.md)| payload fields | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountID** | **string** | Account ID, 32 alpha numeric | 
+**recipientID** | **string** | Recipient ID, 32 alpha numeric | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountAccountIDLoginrecipientRecipientIDPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **reqBody** | [**ServiceVOIPCallQueueRecipientLoginLogoutData**](ServiceVOIPCallQueueRecipientLoginLogoutData.md) | payload fields | 
 
 ### Return type
 
@@ -64,43 +80,62 @@ Name | Type | Description  | Notes
 - **Content-Type**: application/json
 - **Accept**: application/json
 
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-## v1AccountAccountIDQueuerecipientGet
 
-> ServiceDocsGetQueueRecipients v1AccountAccountIDQueuerecipientGet(accountID)
+## V1AccountAccountIDQueuerecipientGet
+
+> ServiceDocsGetQueueRecipients V1AccountAccountIDQueuerecipientGet(ctx, accountID).Execute()
 
 Change Recipient Status
 
-Get a list of all recipients in an account.
+
 
 ### Example
 
-```javascript
-import WhiteLabelCommunicationsCPaasApiDocumentation from 'white_label_communications_c_paas_api_documentation';
-let defaultClient = WhiteLabelCommunicationsCPaasApiDocumentation.ApiClient.instance;
-// Configure API key authorization: BearerAuth
-let BearerAuth = defaultClient.authentications['BearerAuth'];
-BearerAuth.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//BearerAuth.apiKeyPrefix = 'Token';
+```go
+package main
 
-let apiInstance = new WhiteLabelCommunicationsCPaasApiDocumentation.CallQueueRecipientApi();
-let accountID = "accountID_example"; // String | Account ID, 32 alpha numeric
-apiInstance.v1AccountAccountIDQueuerecipientGet(accountID, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	accountID := "accountID_example" // string | Account ID, 32 alpha numeric
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CallQueueRecipientAPI.V1AccountAccountIDQueuerecipientGet(context.Background(), accountID).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CallQueueRecipientAPI.V1AccountAccountIDQueuerecipientGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountAccountIDQueuerecipientGet`: ServiceDocsGetQueueRecipients
+	fmt.Fprintf(os.Stdout, "Response from `CallQueueRecipientAPI.V1AccountAccountIDQueuerecipientGet`: %v\n", resp)
+}
 ```
 
-### Parameters
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountID** | **String**| Account ID, 32 alpha numeric | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountID** | **string** | Account ID, 32 alpha numeric | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountAccountIDQueuerecipientGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
 
 ### Return type
 
@@ -115,47 +150,67 @@ Name | Type | Description  | Notes
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-## v1AccountAccountIDRecipientRecipientIDStatusPost
 
-> ServiceAPIResponse v1AccountAccountIDRecipientRecipientIDStatusPost(accountID, recipientID, reqBody)
+## V1AccountAccountIDRecipientRecipientIDStatusPost
+
+> ServiceAPIResponse V1AccountAccountIDRecipientRecipientIDStatusPost(ctx, accountID, recipientID).ReqBody(reqBody).Execute()
 
 Get Recipient List
 
-Change the status of a recipient to ready, away, etc.
+
 
 ### Example
 
-```javascript
-import WhiteLabelCommunicationsCPaasApiDocumentation from 'white_label_communications_c_paas_api_documentation';
-let defaultClient = WhiteLabelCommunicationsCPaasApiDocumentation.ApiClient.instance;
-// Configure API key authorization: BearerAuth
-let BearerAuth = defaultClient.authentications['BearerAuth'];
-BearerAuth.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//BearerAuth.apiKeyPrefix = 'Token';
+```go
+package main
 
-let apiInstance = new WhiteLabelCommunicationsCPaasApiDocumentation.CallQueueRecipientApi();
-let accountID = "accountID_example"; // String | Account ID, 32 alpha numeric
-let recipientID = "recipientID_example"; // String | Recipient ID, 32 alpha numeric
-let reqBody = new WhiteLabelCommunicationsCPaasApiDocumentation.ServiceVOIPCallQueueRecipientStatusData(); // ServiceVOIPCallQueueRecipientStatusData | payload fields
-apiInstance.v1AccountAccountIDRecipientRecipientIDStatusPost(accountID, recipientID, reqBody, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	accountID := "accountID_example" // string | Account ID, 32 alpha numeric
+	recipientID := "recipientID_example" // string | Recipient ID, 32 alpha numeric
+	reqBody := *openapiclient.NewServiceVOIPCallQueueRecipientStatusData("Status_example") // ServiceVOIPCallQueueRecipientStatusData | payload fields
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CallQueueRecipientAPI.V1AccountAccountIDRecipientRecipientIDStatusPost(context.Background(), accountID, recipientID).ReqBody(reqBody).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CallQueueRecipientAPI.V1AccountAccountIDRecipientRecipientIDStatusPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountAccountIDRecipientRecipientIDStatusPost`: ServiceAPIResponse
+	fmt.Fprintf(os.Stdout, "Response from `CallQueueRecipientAPI.V1AccountAccountIDRecipientRecipientIDStatusPost`: %v\n", resp)
+}
 ```
 
-### Parameters
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountID** | **String**| Account ID, 32 alpha numeric | 
- **recipientID** | **String**| Recipient ID, 32 alpha numeric | 
- **reqBody** | [**ServiceVOIPCallQueueRecipientStatusData**](ServiceVOIPCallQueueRecipientStatusData.md)| payload fields | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountID** | **string** | Account ID, 32 alpha numeric | 
+**recipientID** | **string** | Recipient ID, 32 alpha numeric | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountAccountIDRecipientRecipientIDStatusPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **reqBody** | [**ServiceVOIPCallQueueRecipientStatusData**](ServiceVOIPCallQueueRecipientStatusData.md) | payload fields | 
 
 ### Return type
 
@@ -169,4 +224,8 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: application/json
 - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 

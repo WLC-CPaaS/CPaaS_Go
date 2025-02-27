@@ -1,61 +1,74 @@
-# WhiteLabelCommunicationsCPaasApiDocumentation.PhoneNumberApi
+# \PhoneNumberAPI
 
 All URIs are relative to *http://api.cpaaslabs.net*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v1AccountAccountidPhonenumberGet**](PhoneNumberApi.md#v1AccountAccountidPhonenumberGet) | **GET** /v1/account/{accountid}/phonenumber | Get Assigned Numbers List
-[**v1AccountPhonenumberAssignPost**](PhoneNumberApi.md#v1AccountPhonenumberAssignPost) | **POST** /v1/account/phonenumber/assign | Assign Number
-[**v1AccountPhonenumberDisconnectPost**](PhoneNumberApi.md#v1AccountPhonenumberDisconnectPost) | **POST** /v1/account/phonenumber/disconnect | Disconnect Number
-[**v1AccountPhonenumberGet**](PhoneNumberApi.md#v1AccountPhonenumberGet) | **GET** /v1/account/phonenumber | Get Unassigned Numbers List
-[**v1AccountPhonenumberPost**](PhoneNumberApi.md#v1AccountPhonenumberPost) | **POST** /v1/account/phonenumber | Purchase Number
-[**v1AccountPhonenumberUnassignPost**](PhoneNumberApi.md#v1AccountPhonenumberUnassignPost) | **POST** /v1/account/phonenumber/unassign | Unassign Number
-[**v1PhonenumberSearchGet**](PhoneNumberApi.md#v1PhonenumberSearchGet) | **GET** /v1/phonenumber/search | Search New Numbers
+[**V1AccountAccountidPhonenumberGet**](PhoneNumberAPI.md#V1AccountAccountidPhonenumberGet) | **Get** /v1/account/{accountid}/phonenumber | Get Assigned Numbers List
+[**V1AccountPhonenumberAssignPost**](PhoneNumberAPI.md#V1AccountPhonenumberAssignPost) | **Post** /v1/account/phonenumber/assign | Assign Number
+[**V1AccountPhonenumberDisconnectPost**](PhoneNumberAPI.md#V1AccountPhonenumberDisconnectPost) | **Post** /v1/account/phonenumber/disconnect | Disconnect Number
+[**V1AccountPhonenumberGet**](PhoneNumberAPI.md#V1AccountPhonenumberGet) | **Get** /v1/account/phonenumber | Get Unassigned Numbers List
+[**V1AccountPhonenumberPost**](PhoneNumberAPI.md#V1AccountPhonenumberPost) | **Post** /v1/account/phonenumber | Purchase Number
+[**V1AccountPhonenumberUnassignPost**](PhoneNumberAPI.md#V1AccountPhonenumberUnassignPost) | **Post** /v1/account/phonenumber/unassign | Unassign Number
+[**V1PhonenumberSearchGet**](PhoneNumberAPI.md#V1PhonenumberSearchGet) | **Get** /v1/phonenumber/search | Search New Numbers
 
 
 
-## v1AccountAccountidPhonenumberGet
+## V1AccountAccountidPhonenumberGet
 
-> ServiceDocsAccountPhonenumberGetAll v1AccountAccountidPhonenumberGet(accountid, opts)
+> ServiceDocsAccountPhonenumberGetAll V1AccountAccountidPhonenumberGet(ctx, accountid).StartKey(startKey).PageSize(pageSize).Execute()
 
 Get Assigned Numbers List
 
-Access all phone numbers assigned to a CPaaS account.
+
 
 ### Example
 
-```javascript
-import WhiteLabelCommunicationsCPaasApiDocumentation from 'white_label_communications_c_paas_api_documentation';
-let defaultClient = WhiteLabelCommunicationsCPaasApiDocumentation.ApiClient.instance;
-// Configure API key authorization: BearerAuth
-let BearerAuth = defaultClient.authentications['BearerAuth'];
-BearerAuth.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//BearerAuth.apiKeyPrefix = 'Token';
+```go
+package main
 
-let apiInstance = new WhiteLabelCommunicationsCPaasApiDocumentation.PhoneNumberApi();
-let accountid = "accountid_example"; // String | Account ID, 32 alpha numeric
-let opts = {
-  'startKey': "startKey_example", // String | Start key for pagination, obtained from previous responses
-  'pageSize': 56 // Number | Number of records to return per page (range: 1 to 50)
-};
-apiInstance.v1AccountAccountidPhonenumberGet(accountid, opts, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	accountid := "accountid_example" // string | Account ID, 32 alpha numeric
+	startKey := "startKey_example" // string | Start key for pagination, obtained from previous responses (optional)
+	pageSize := int32(56) // int32 | Number of records to return per page (range: 1 to 50) (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.PhoneNumberAPI.V1AccountAccountidPhonenumberGet(context.Background(), accountid).StartKey(startKey).PageSize(pageSize).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PhoneNumberAPI.V1AccountAccountidPhonenumberGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountAccountidPhonenumberGet`: ServiceDocsAccountPhonenumberGetAll
+	fmt.Fprintf(os.Stdout, "Response from `PhoneNumberAPI.V1AccountAccountidPhonenumberGet`: %v\n", resp)
+}
 ```
 
-### Parameters
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountid** | **String**| Account ID, 32 alpha numeric | 
- **startKey** | **String**| Start key for pagination, obtained from previous responses | [optional] 
- **pageSize** | **Number**| Number of records to return per page (range: 1 to 50) | [optional] 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountid** | **string** | Account ID, 32 alpha numeric | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountAccountidPhonenumberGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **startKey** | **string** | Start key for pagination, obtained from previous responses | 
+ **pageSize** | **int32** | Number of records to return per page (range: 1 to 50) | 
 
 ### Return type
 
@@ -70,43 +83,58 @@ Name | Type | Description  | Notes
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-## v1AccountPhonenumberAssignPost
 
-> ServiceAPIResponseStatusCodeOnly v1AccountPhonenumberAssignPost(payload)
+## V1AccountPhonenumberAssignPost
+
+> ServiceAPIResponseStatusCodeOnly V1AccountPhonenumberAssignPost(ctx).Payload(payload).Execute()
 
 Assign Number
 
-Assign a purchased phone number to an account.
+
 
 ### Example
 
-```javascript
-import WhiteLabelCommunicationsCPaasApiDocumentation from 'white_label_communications_c_paas_api_documentation';
-let defaultClient = WhiteLabelCommunicationsCPaasApiDocumentation.ApiClient.instance;
-// Configure API key authorization: BearerAuth
-let BearerAuth = defaultClient.authentications['BearerAuth'];
-BearerAuth.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//BearerAuth.apiKeyPrefix = 'Token';
+```go
+package main
 
-let apiInstance = new WhiteLabelCommunicationsCPaasApiDocumentation.PhoneNumberApi();
-let payload = new WhiteLabelCommunicationsCPaasApiDocumentation.ServiceDocsPhonenumberAssignPayload(); // ServiceDocsPhonenumberAssignPayload | assignment payload
-apiInstance.v1AccountPhonenumberAssignPost(payload, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	payload := *openapiclient.NewServiceDocsPhonenumberAssignPayload() // ServiceDocsPhonenumberAssignPayload | assignment payload
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.PhoneNumberAPI.V1AccountPhonenumberAssignPost(context.Background()).Payload(payload).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PhoneNumberAPI.V1AccountPhonenumberAssignPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountPhonenumberAssignPost`: ServiceAPIResponseStatusCodeOnly
+	fmt.Fprintf(os.Stdout, "Response from `PhoneNumberAPI.V1AccountPhonenumberAssignPost`: %v\n", resp)
+}
 ```
 
-### Parameters
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountPhonenumberAssignPostRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payload** | [**ServiceDocsPhonenumberAssignPayload**](ServiceDocsPhonenumberAssignPayload.md)| assignment payload | 
+ **payload** | [**ServiceDocsPhonenumberAssignPayload**](ServiceDocsPhonenumberAssignPayload.md) | assignment payload | 
 
 ### Return type
 
@@ -121,43 +149,58 @@ Name | Type | Description  | Notes
 - **Content-Type**: application/json
 - **Accept**: application/json
 
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-## v1AccountPhonenumberDisconnectPost
 
-> ServiceAPIResponseStatusCodeOnly v1AccountPhonenumberDisconnectPost(payload)
+## V1AccountPhonenumberDisconnectPost
+
+> ServiceAPIResponseStatusCodeOnly V1AccountPhonenumberDisconnectPost(ctx).Payload(payload).Execute()
 
 Disconnect Number
 
-Disconnecting a phone number from a CPaaS account relinquishes ownership of the number back to the carrier.
+
 
 ### Example
 
-```javascript
-import WhiteLabelCommunicationsCPaasApiDocumentation from 'white_label_communications_c_paas_api_documentation';
-let defaultClient = WhiteLabelCommunicationsCPaasApiDocumentation.ApiClient.instance;
-// Configure API key authorization: BearerAuth
-let BearerAuth = defaultClient.authentications['BearerAuth'];
-BearerAuth.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//BearerAuth.apiKeyPrefix = 'Token';
+```go
+package main
 
-let apiInstance = new WhiteLabelCommunicationsCPaasApiDocumentation.PhoneNumberApi();
-let payload = new WhiteLabelCommunicationsCPaasApiDocumentation.ServiceDocsPhonenumberUnassignPayload(); // ServiceDocsPhonenumberUnassignPayload | disconnect payload
-apiInstance.v1AccountPhonenumberDisconnectPost(payload, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	payload := *openapiclient.NewServiceDocsPhonenumberUnassignPayload() // ServiceDocsPhonenumberUnassignPayload | disconnect payload
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.PhoneNumberAPI.V1AccountPhonenumberDisconnectPost(context.Background()).Payload(payload).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PhoneNumberAPI.V1AccountPhonenumberDisconnectPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountPhonenumberDisconnectPost`: ServiceAPIResponseStatusCodeOnly
+	fmt.Fprintf(os.Stdout, "Response from `PhoneNumberAPI.V1AccountPhonenumberDisconnectPost`: %v\n", resp)
+}
 ```
 
-### Parameters
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountPhonenumberDisconnectPostRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payload** | [**ServiceDocsPhonenumberUnassignPayload**](ServiceDocsPhonenumberUnassignPayload.md)| disconnect payload | 
+ **payload** | [**ServiceDocsPhonenumberUnassignPayload**](ServiceDocsPhonenumberUnassignPayload.md) | disconnect payload | 
 
 ### Return type
 
@@ -172,47 +215,60 @@ Name | Type | Description  | Notes
 - **Content-Type**: application/json
 - **Accept**: application/json
 
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-## v1AccountPhonenumberGet
 
-> ServiceDocsAccountPhonenumberGetAll v1AccountPhonenumberGet(opts)
+## V1AccountPhonenumberGet
+
+> ServiceDocsAccountPhonenumberGetAll V1AccountPhonenumberGet(ctx).StartKey(startKey).PageSize(pageSize).Execute()
 
 Get Unassigned Numbers List
 
-Obtain all phone numbers that have not been assigned to a CPaaS account within your organization.
+
 
 ### Example
 
-```javascript
-import WhiteLabelCommunicationsCPaasApiDocumentation from 'white_label_communications_c_paas_api_documentation';
-let defaultClient = WhiteLabelCommunicationsCPaasApiDocumentation.ApiClient.instance;
-// Configure API key authorization: BearerAuth
-let BearerAuth = defaultClient.authentications['BearerAuth'];
-BearerAuth.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//BearerAuth.apiKeyPrefix = 'Token';
+```go
+package main
 
-let apiInstance = new WhiteLabelCommunicationsCPaasApiDocumentation.PhoneNumberApi();
-let opts = {
-  'startKey': "startKey_example", // String | Start key for pagination, obtained from previous responses
-  'pageSize': 56 // Number | Number of records to return per page (range: 1 to 50)
-};
-apiInstance.v1AccountPhonenumberGet(opts, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	startKey := "startKey_example" // string | Start key for pagination, obtained from previous responses (optional)
+	pageSize := int32(56) // int32 | Number of records to return per page (range: 1 to 50) (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.PhoneNumberAPI.V1AccountPhonenumberGet(context.Background()).StartKey(startKey).PageSize(pageSize).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PhoneNumberAPI.V1AccountPhonenumberGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountPhonenumberGet`: ServiceDocsAccountPhonenumberGetAll
+	fmt.Fprintf(os.Stdout, "Response from `PhoneNumberAPI.V1AccountPhonenumberGet`: %v\n", resp)
+}
 ```
 
-### Parameters
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountPhonenumberGetRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **startKey** | **String**| Start key for pagination, obtained from previous responses | [optional] 
- **pageSize** | **Number**| Number of records to return per page (range: 1 to 50) | [optional] 
+ **startKey** | **string** | Start key for pagination, obtained from previous responses | 
+ **pageSize** | **int32** | Number of records to return per page (range: 1 to 50) | 
 
 ### Return type
 
@@ -227,43 +283,58 @@ Name | Type | Description  | Notes
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-## v1AccountPhonenumberPost
 
-> ServiceDocsOrderPhonenumber v1AccountPhonenumberPost(phonenumber)
+## V1AccountPhonenumberPost
+
+> ServiceDocsOrderPhonenumber V1AccountPhonenumberPost(ctx).Phonenumber(phonenumber).Execute()
 
 Purchase Number
 
-Purchase or activate a phone number for CPaaS accounts within your business.
+
 
 ### Example
 
-```javascript
-import WhiteLabelCommunicationsCPaasApiDocumentation from 'white_label_communications_c_paas_api_documentation';
-let defaultClient = WhiteLabelCommunicationsCPaasApiDocumentation.ApiClient.instance;
-// Configure API key authorization: BearerAuth
-let BearerAuth = defaultClient.authentications['BearerAuth'];
-BearerAuth.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//BearerAuth.apiKeyPrefix = 'Token';
+```go
+package main
 
-let apiInstance = new WhiteLabelCommunicationsCPaasApiDocumentation.PhoneNumberApi();
-let phonenumber = new WhiteLabelCommunicationsCPaasApiDocumentation.ServiceTelephoneNumberList(); // ServiceTelephoneNumberList | phonenumber fields
-apiInstance.v1AccountPhonenumberPost(phonenumber, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	phonenumber := *openapiclient.NewServiceTelephoneNumberList() // ServiceTelephoneNumberList | phonenumber fields
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.PhoneNumberAPI.V1AccountPhonenumberPost(context.Background()).Phonenumber(phonenumber).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PhoneNumberAPI.V1AccountPhonenumberPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountPhonenumberPost`: ServiceDocsOrderPhonenumber
+	fmt.Fprintf(os.Stdout, "Response from `PhoneNumberAPI.V1AccountPhonenumberPost`: %v\n", resp)
+}
 ```
 
-### Parameters
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountPhonenumberPostRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **phonenumber** | [**ServiceTelephoneNumberList**](ServiceTelephoneNumberList.md)| phonenumber fields | 
+ **phonenumber** | [**ServiceTelephoneNumberList**](ServiceTelephoneNumberList.md) | phonenumber fields | 
 
 ### Return type
 
@@ -278,43 +349,58 @@ Name | Type | Description  | Notes
 - **Content-Type**: application/json
 - **Accept**: application/json
 
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-## v1AccountPhonenumberUnassignPost
 
-> ServiceAPIResponseStatusCodeOnly v1AccountPhonenumberUnassignPost(payload)
+## V1AccountPhonenumberUnassignPost
+
+> ServiceAPIResponseStatusCodeOnly V1AccountPhonenumberUnassignPost(ctx).Payload(payload).Execute()
 
 Unassign Number
 
-Remove a phone number from an account and place it back on the list of unassigned phone numbers.
+
 
 ### Example
 
-```javascript
-import WhiteLabelCommunicationsCPaasApiDocumentation from 'white_label_communications_c_paas_api_documentation';
-let defaultClient = WhiteLabelCommunicationsCPaasApiDocumentation.ApiClient.instance;
-// Configure API key authorization: BearerAuth
-let BearerAuth = defaultClient.authentications['BearerAuth'];
-BearerAuth.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//BearerAuth.apiKeyPrefix = 'Token';
+```go
+package main
 
-let apiInstance = new WhiteLabelCommunicationsCPaasApiDocumentation.PhoneNumberApi();
-let payload = new WhiteLabelCommunicationsCPaasApiDocumentation.ServiceDocsPhonenumberUnassignPayload(); // ServiceDocsPhonenumberUnassignPayload | unassign payload
-apiInstance.v1AccountPhonenumberUnassignPost(payload, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	payload := *openapiclient.NewServiceDocsPhonenumberUnassignPayload() // ServiceDocsPhonenumberUnassignPayload | unassign payload
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.PhoneNumberAPI.V1AccountPhonenumberUnassignPost(context.Background()).Payload(payload).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PhoneNumberAPI.V1AccountPhonenumberUnassignPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountPhonenumberUnassignPost`: ServiceAPIResponseStatusCodeOnly
+	fmt.Fprintf(os.Stdout, "Response from `PhoneNumberAPI.V1AccountPhonenumberUnassignPost`: %v\n", resp)
+}
 ```
 
-### Parameters
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountPhonenumberUnassignPostRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payload** | [**ServiceDocsPhonenumberUnassignPayload**](ServiceDocsPhonenumberUnassignPayload.md)| unassign payload | 
+ **payload** | [**ServiceDocsPhonenumberUnassignPayload**](ServiceDocsPhonenumberUnassignPayload.md) | unassign payload | 
 
 ### Return type
 
@@ -329,47 +415,60 @@ Name | Type | Description  | Notes
 - **Content-Type**: application/json
 - **Accept**: application/json
 
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-## v1PhonenumberSearchGet
 
-> ServiceDocsPhonenumberSearchGetAll v1PhonenumberSearchGet(areaCode, opts)
+## V1PhonenumberSearchGet
+
+> ServiceDocsPhonenumberSearchGetAll V1PhonenumberSearchGet(ctx).AreaCode(areaCode).Quantity(quantity).Execute()
 
 Search New Numbers
 
-Conduct a search for available phone numbers for purchase within an area code.
+
 
 ### Example
 
-```javascript
-import WhiteLabelCommunicationsCPaasApiDocumentation from 'white_label_communications_c_paas_api_documentation';
-let defaultClient = WhiteLabelCommunicationsCPaasApiDocumentation.ApiClient.instance;
-// Configure API key authorization: BearerAuth
-let BearerAuth = defaultClient.authentications['BearerAuth'];
-BearerAuth.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//BearerAuth.apiKeyPrefix = 'Token';
+```go
+package main
 
-let apiInstance = new WhiteLabelCommunicationsCPaasApiDocumentation.PhoneNumberApi();
-let areaCode = "areaCode_example"; // String | Area code (exactly 3 numeric characters) example: 610 or 484
-let opts = {
-  'quantity': 100 // Number | Number of records to return (range: 1 to 100, defaults to 100 if not provided)
-};
-apiInstance.v1PhonenumberSearchGet(areaCode, opts, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	areaCode := "areaCode_example" // string | Area code (exactly 3 numeric characters) example: 610 or 484
+	quantity := int32(56) // int32 | Number of records to return (range: 1 to 100, defaults to 100 if not provided) (optional) (default to 100)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.PhoneNumberAPI.V1PhonenumberSearchGet(context.Background()).AreaCode(areaCode).Quantity(quantity).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PhoneNumberAPI.V1PhonenumberSearchGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1PhonenumberSearchGet`: ServiceDocsPhonenumberSearchGetAll
+	fmt.Fprintf(os.Stdout, "Response from `PhoneNumberAPI.V1PhonenumberSearchGet`: %v\n", resp)
+}
 ```
 
-### Parameters
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1PhonenumberSearchGetRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **areaCode** | **String**| Area code (exactly 3 numeric characters) example: 610 or 484 | 
- **quantity** | **Number**| Number of records to return (range: 1 to 100, defaults to 100 if not provided) | [optional] [default to 100]
+ **areaCode** | **string** | Area code (exactly 3 numeric characters) example: 610 or 484 | 
+ **quantity** | **int32** | Number of records to return (range: 1 to 100, defaults to 100 if not provided) | [default to 100]
 
 ### Return type
 
@@ -383,4 +482,8 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 

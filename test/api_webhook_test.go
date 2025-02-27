@@ -85,7 +85,7 @@ func Test_openapi_WebhookAPIService(t *testing.T) {
 		t.Skip("skip test")  // remove to run test
 
 		var accountID string
-		var webhookID int32
+		var webhookID string
 
 		resp, httpRes, err := apiClient.WebhookAPI.V1WebhookAccountAccountIDWebhookIDPut(context.Background(), accountID, webhookID).Execute()
 
