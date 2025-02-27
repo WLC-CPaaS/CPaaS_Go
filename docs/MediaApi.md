@@ -1,72 +1,72 @@
-# \MediaAPI
+# MediaAPI
 
 All URIs are relative to *http://api.cpaaslabs.net*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**V1AccountAccountIDMediaMediaIDFileGet**](MediaAPI.md#V1AccountAccountIDMediaMediaIDFileGet) | **Get** /v1/account/{accountID}/media/{mediaID}/file | Get Media File
-[**V1AccountAccountIDMediaMediaIDFilePost**](MediaAPI.md#V1AccountAccountIDMediaMediaIDFilePost) | **Post** /v1/account/{accountID}/media/{mediaID}/file | Add Media File
-[**V1AccountAccountidMediaGet**](MediaAPI.md#V1AccountAccountidMediaGet) | **Get** /v1/account/{accountid}/media | Get Media List
-[**V1AccountAccountidMediaMediaidDelete**](MediaAPI.md#V1AccountAccountidMediaMediaidDelete) | **Delete** /v1/account/{accountid}/media/{mediaid} | Delete Media
-[**V1AccountAccountidMediaMediaidGet**](MediaAPI.md#V1AccountAccountidMediaMediaidGet) | **Get** /v1/account/{accountid}/media/{mediaid} | Get Media Details
-[**V1AccountAccountidMediaPost**](MediaAPI.md#V1AccountAccountidMediaPost) | **Post** /v1/account/{accountid}/media | Create Media
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**V1AccountAccountIDMediaMediaIDFileGet**](MediaAPI.md#V1AccountAccountIDMediaMediaIDFileGet) | **Get** /v1/account/{accountID}/media/{mediaID}/file | Get Media File |
+| [**V1AccountAccountIDMediaMediaIDFilePost**](MediaAPI.md#V1AccountAccountIDMediaMediaIDFilePost) | **Post** /v1/account/{accountID}/media/{mediaID}/file | Add Media File |
+| [**V1AccountAccountidMediaGet**](MediaAPI.md#V1AccountAccountidMediaGet) | **Get** /v1/account/{accountid}/media | Get Media List |
+| [**V1AccountAccountidMediaMediaidDelete**](MediaAPI.md#V1AccountAccountidMediaMediaidDelete) | **Delete** /v1/account/{accountid}/media/{mediaid} | Delete Media |
+| [**V1AccountAccountidMediaMediaidGet**](MediaAPI.md#V1AccountAccountidMediaMediaidGet) | **Get** /v1/account/{accountid}/media/{mediaid} | Get Media Details |
+| [**V1AccountAccountidMediaPost**](MediaAPI.md#V1AccountAccountidMediaPost) | **Post** /v1/account/{accountid}/media | Create Media |
 
 
 
 ## V1AccountAccountIDMediaMediaIDFileGet
 
-> *os.File V1AccountAccountIDMediaMediaIDFileGet(ctx, accountID, mediaID).Execute()
+> *os.File V1AccountAccountIDMediaMediaIDFileGet(accountID, mediaID)
 
 Get Media File
 
-
+Gather data about the media objects in an account.
 
 ### Example
 
-```go
-package main
+```java
+// Import classes:
+import .ApiClient;
+import .ApiException;
+import .Configuration;
+import .auth.*;
+import .models.*;
+import openapi.MediaAPI;
 
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://api.cpaaslabs.net");
+        
+        // Configure API key authorization: BearerAuth
+        ApiKeyAuth BearerAuth = (ApiKeyAuth) defaultClient.getAuthentication("BearerAuth");
+        BearerAuth.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //BearerAuth.setApiKeyPrefix("Token");
 
-func main() {
-	accountID := "accountID_example" // string | Account ID, 32 alpha numeric
-	mediaID := "mediaID_example" // string | Media ID, 32 alpha numeric
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MediaAPI.V1AccountAccountIDMediaMediaIDFileGet(context.Background(), accountID, mediaID).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `MediaAPI.V1AccountAccountIDMediaMediaIDFileGet``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `V1AccountAccountIDMediaMediaIDFileGet`: *os.File
-	fmt.Fprintf(os.Stdout, "Response from `MediaAPI.V1AccountAccountIDMediaMediaIDFileGet`: %v\n", resp)
+        MediaAPI apiInstance = new MediaAPI(defaultClient);
+        string accountID = accountID_example; // string | Account ID, 32 alpha numeric
+        string mediaID = mediaID_example; // string | Media ID, 32 alpha numeric
+        try {
+            *os.File result = apiInstance.V1AccountAccountIDMediaMediaIDFileGet(accountID, mediaID);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling MediaAPI#V1AccountAccountIDMediaMediaIDFileGet");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
-### Path Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**accountID** | **string** | Account ID, 32 alpha numeric | 
-**mediaID** | **string** | Media ID, 32 alpha numeric | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiV1AccountAccountIDMediaMediaIDFileGetRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **accountID** | **string**| Account ID, 32 alpha numeric | |
+| **mediaID** | **string**| Media ID, 32 alpha numeric | |
 
 ### Return type
 
@@ -81,67 +81,70 @@ Name | Type | Description  | Notes
 - **Content-Type**: Not defined
 - **Accept**: application/json, audio/mp3, audio/mpeg, audio/mpeg3, audio/x-wav, audio/wav, audio/ogg, video/x-flv, video/h264, video/mpeg, video/quicktime, video/mp4, video/webm
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
 
 
 ## V1AccountAccountIDMediaMediaIDFilePost
 
-> ServiceDocsMediaGetSingle V1AccountAccountIDMediaMediaIDFilePost(ctx, accountID, mediaID).File(file).Execute()
+> ServiceDocsMediaGetSingle V1AccountAccountIDMediaMediaIDFilePost(accountID, mediaID, file)
 
 Add Media File
 
-
+Include a media file that is connected to a media object in an account.
 
 ### Example
 
-```go
-package main
+```java
+// Import classes:
+import .ApiClient;
+import .ApiException;
+import .Configuration;
+import .auth.*;
+import .models.*;
+import openapi.MediaAPI;
 
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://api.cpaaslabs.net");
+        
+        // Configure API key authorization: BearerAuth
+        ApiKeyAuth BearerAuth = (ApiKeyAuth) defaultClient.getAuthentication("BearerAuth");
+        BearerAuth.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //BearerAuth.setApiKeyPrefix("Token");
 
-func main() {
-	accountID := "accountID_example" // string | Account ID, 32 alpha numeric
-	mediaID := "mediaID_example" // string | Media ID, 32 alpha numeric
-	file := os.NewFile(1234, "some_file") // *os.File | Media file
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MediaAPI.V1AccountAccountIDMediaMediaIDFilePost(context.Background(), accountID, mediaID).File(file).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `MediaAPI.V1AccountAccountIDMediaMediaIDFilePost``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `V1AccountAccountIDMediaMediaIDFilePost`: ServiceDocsMediaGetSingle
-	fmt.Fprintf(os.Stdout, "Response from `MediaAPI.V1AccountAccountIDMediaMediaIDFilePost`: %v\n", resp)
+        MediaAPI apiInstance = new MediaAPI(defaultClient);
+        string accountID = accountID_example; // string | Account ID, 32 alpha numeric
+        string mediaID = mediaID_example; // string | Media ID, 32 alpha numeric
+        *os.File file = BINARY_DATA_HERE; // *os.File | Media file
+        try {
+            ServiceDocsMediaGetSingle result = apiInstance.V1AccountAccountIDMediaMediaIDFilePost(accountID, mediaID, file);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling MediaAPI#V1AccountAccountIDMediaMediaIDFilePost");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
-### Path Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**accountID** | **string** | Account ID, 32 alpha numeric | 
-**mediaID** | **string** | Media ID, 32 alpha numeric | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiV1AccountAccountIDMediaMediaIDFilePostRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- **file** | ***os.File** | Media file | 
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **accountID** | **string**| Account ID, 32 alpha numeric | |
+| **mediaID** | **string**| Media ID, 32 alpha numeric | |
+| **file** | ***os.File**| Media file | |
 
 ### Return type
 
@@ -156,66 +159,70 @@ Name | Type | Description  | Notes
 - **Content-Type**: multipart/form-data
 - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
 
 
 ## V1AccountAccountidMediaGet
 
-> ServiceDocsMediaGetAll V1AccountAccountidMediaGet(ctx, accountid).StartKey(startKey).PageSize(pageSize).Execute()
+> ServiceDocsMediaGetAll V1AccountAccountidMediaGet(accountid, startKey, pageSize)
 
 Get Media List
 
-
+View all media files for an account in your organization.
 
 ### Example
 
-```go
-package main
+```java
+// Import classes:
+import .ApiClient;
+import .ApiException;
+import .Configuration;
+import .auth.*;
+import .models.*;
+import openapi.MediaAPI;
 
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://api.cpaaslabs.net");
+        
+        // Configure API key authorization: BearerAuth
+        ApiKeyAuth BearerAuth = (ApiKeyAuth) defaultClient.getAuthentication("BearerAuth");
+        BearerAuth.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //BearerAuth.setApiKeyPrefix("Token");
 
-func main() {
-	accountid := "accountid_example" // string | Account ID, 32 alpha numeric
-	startKey := "startKey_example" // string | start_key for pagination that was returned as next_start_key from your previous call (optional)
-	pageSize := int32(56) // int32 | number of records to return, range 1 to 50 (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MediaAPI.V1AccountAccountidMediaGet(context.Background(), accountid).StartKey(startKey).PageSize(pageSize).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `MediaAPI.V1AccountAccountidMediaGet``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `V1AccountAccountidMediaGet`: ServiceDocsMediaGetAll
-	fmt.Fprintf(os.Stdout, "Response from `MediaAPI.V1AccountAccountidMediaGet`: %v\n", resp)
+        MediaAPI apiInstance = new MediaAPI(defaultClient);
+        string accountid = accountid_example; // string | Account ID, 32 alpha numeric
+        string startKey = startKey_example; // string | start_key for pagination that was returned as next_start_key from your previous call
+        int32 pageSize = 56; // int32 | number of records to return, range 1 to 50
+        try {
+            ServiceDocsMediaGetAll result = apiInstance.V1AccountAccountidMediaGet(accountid, startKey, pageSize);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling MediaAPI#V1AccountAccountidMediaGet");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
-### Path Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**accountid** | **string** | Account ID, 32 alpha numeric | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiV1AccountAccountidMediaGetRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **startKey** | **string** | start_key for pagination that was returned as next_start_key from your previous call | 
- **pageSize** | **int32** | number of records to return, range 1 to 50 | 
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **accountid** | **string**| Account ID, 32 alpha numeric | |
+| **startKey** | **string**| start_key for pagination that was returned as next_start_key from your previous call | [optional] |
+| **pageSize** | **int32**| number of records to return, range 1 to 50 | [optional] |
 
 ### Return type
 
@@ -230,65 +237,68 @@ Name | Type | Description  | Notes
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
 
 
 ## V1AccountAccountidMediaMediaidDelete
 
-> ServiceDocsMediaGetSingle V1AccountAccountidMediaMediaidDelete(ctx, accountid, mediaid).Execute()
+> ServiceDocsMediaGetSingle V1AccountAccountidMediaMediaidDelete(accountid, mediaid)
 
 Delete Media
 
-
+Remove a media file that is no longer in use from an account.
 
 ### Example
 
-```go
-package main
+```java
+// Import classes:
+import .ApiClient;
+import .ApiException;
+import .Configuration;
+import .auth.*;
+import .models.*;
+import openapi.MediaAPI;
 
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://api.cpaaslabs.net");
+        
+        // Configure API key authorization: BearerAuth
+        ApiKeyAuth BearerAuth = (ApiKeyAuth) defaultClient.getAuthentication("BearerAuth");
+        BearerAuth.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //BearerAuth.setApiKeyPrefix("Token");
 
-func main() {
-	accountid := "accountid_example" // string | Account ID, 32 alpha numeric
-	mediaid := "mediaid_example" // string | Device ID, 32 alpha numeric
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MediaAPI.V1AccountAccountidMediaMediaidDelete(context.Background(), accountid, mediaid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `MediaAPI.V1AccountAccountidMediaMediaidDelete``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `V1AccountAccountidMediaMediaidDelete`: ServiceDocsMediaGetSingle
-	fmt.Fprintf(os.Stdout, "Response from `MediaAPI.V1AccountAccountidMediaMediaidDelete`: %v\n", resp)
+        MediaAPI apiInstance = new MediaAPI(defaultClient);
+        string accountid = accountid_example; // string | Account ID, 32 alpha numeric
+        string mediaid = mediaid_example; // string | Device ID, 32 alpha numeric
+        try {
+            ServiceDocsMediaGetSingle result = apiInstance.V1AccountAccountidMediaMediaidDelete(accountid, mediaid);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling MediaAPI#V1AccountAccountidMediaMediaidDelete");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
-### Path Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**accountid** | **string** | Account ID, 32 alpha numeric | 
-**mediaid** | **string** | Device ID, 32 alpha numeric | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiV1AccountAccountidMediaMediaidDeleteRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **accountid** | **string**| Account ID, 32 alpha numeric | |
+| **mediaid** | **string**| Device ID, 32 alpha numeric | |
 
 ### Return type
 
@@ -303,65 +313,68 @@ Name | Type | Description  | Notes
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
 
 
 ## V1AccountAccountidMediaMediaidGet
 
-> ServiceDocsMediaGetSingle V1AccountAccountidMediaMediaidGet(ctx, accountid, mediaid).Execute()
+> ServiceDocsMediaGetSingle V1AccountAccountidMediaMediaidGet(accountid, mediaid)
 
 Get Media Details
 
-
+Permit users to view an account&#39;s specific media information.
 
 ### Example
 
-```go
-package main
+```java
+// Import classes:
+import .ApiClient;
+import .ApiException;
+import .Configuration;
+import .auth.*;
+import .models.*;
+import openapi.MediaAPI;
 
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://api.cpaaslabs.net");
+        
+        // Configure API key authorization: BearerAuth
+        ApiKeyAuth BearerAuth = (ApiKeyAuth) defaultClient.getAuthentication("BearerAuth");
+        BearerAuth.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //BearerAuth.setApiKeyPrefix("Token");
 
-func main() {
-	accountid := "accountid_example" // string | Account ID, 32 alpha numeric
-	mediaid := "mediaid_example" // string | Media ID, 32 alpha numeric
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MediaAPI.V1AccountAccountidMediaMediaidGet(context.Background(), accountid, mediaid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `MediaAPI.V1AccountAccountidMediaMediaidGet``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `V1AccountAccountidMediaMediaidGet`: ServiceDocsMediaGetSingle
-	fmt.Fprintf(os.Stdout, "Response from `MediaAPI.V1AccountAccountidMediaMediaidGet`: %v\n", resp)
+        MediaAPI apiInstance = new MediaAPI(defaultClient);
+        string accountid = accountid_example; // string | Account ID, 32 alpha numeric
+        string mediaid = mediaid_example; // string | Media ID, 32 alpha numeric
+        try {
+            ServiceDocsMediaGetSingle result = apiInstance.V1AccountAccountidMediaMediaidGet(accountid, mediaid);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling MediaAPI#V1AccountAccountidMediaMediaidGet");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
-### Path Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**accountid** | **string** | Account ID, 32 alpha numeric | 
-**mediaid** | **string** | Media ID, 32 alpha numeric | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiV1AccountAccountidMediaMediaidGetRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **accountid** | **string**| Account ID, 32 alpha numeric | |
+| **mediaid** | **string**| Media ID, 32 alpha numeric | |
 
 ### Return type
 
@@ -376,64 +389,68 @@ Name | Type | Description  | Notes
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
 
 
 ## V1AccountAccountidMediaPost
 
-> ServiceDocsMediaGetSingle V1AccountAccountidMediaPost(ctx, accountid).Media(media).Execute()
+> ServiceDocsMediaGetSingle V1AccountAccountidMediaPost(accountid, media)
 
 Create Media
 
-
+Generate a media object to allow users to upload a media file in an account.
 
 ### Example
 
-```go
-package main
+```java
+// Import classes:
+import .ApiClient;
+import .ApiException;
+import .Configuration;
+import .auth.*;
+import .models.*;
+import openapi.MediaAPI;
 
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://api.cpaaslabs.net");
+        
+        // Configure API key authorization: BearerAuth
+        ApiKeyAuth BearerAuth = (ApiKeyAuth) defaultClient.getAuthentication("BearerAuth");
+        BearerAuth.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //BearerAuth.setApiKeyPrefix("Token");
 
-func main() {
-	accountid := "accountid_example" // string | Account ID, 32 alpha numeric
-	media := *openapiclient.NewServiceVOIPMediaAddEditData("Name_example") // ServiceVOIPMediaAddEditData | Media creation or update payload
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MediaAPI.V1AccountAccountidMediaPost(context.Background(), accountid).Media(media).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `MediaAPI.V1AccountAccountidMediaPost``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `V1AccountAccountidMediaPost`: ServiceDocsMediaGetSingle
-	fmt.Fprintf(os.Stdout, "Response from `MediaAPI.V1AccountAccountidMediaPost`: %v\n", resp)
+        MediaAPI apiInstance = new MediaAPI(defaultClient);
+        string accountid = accountid_example; // string | Account ID, 32 alpha numeric
+        ServiceVOIPMediaAddEditData media = ; // ServiceVOIPMediaAddEditData | Media creation or update payload
+        try {
+            ServiceDocsMediaGetSingle result = apiInstance.V1AccountAccountidMediaPost(accountid, media);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling MediaAPI#V1AccountAccountidMediaPost");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
-### Path Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**accountid** | **string** | Account ID, 32 alpha numeric | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiV1AccountAccountidMediaPostRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **media** | [**ServiceVOIPMediaAddEditData**](ServiceVOIPMediaAddEditData.md) | Media creation or update payload | 
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **accountid** | **string**| Account ID, 32 alpha numeric | |
+| **media** | [**ServiceVOIPMediaAddEditData**](ServiceVOIPMediaAddEditData.md)| Media creation or update payload | |
 
 ### Return type
 
@@ -448,7 +465,10 @@ Name | Type | Description  | Notes
 - **Content-Type**: application/json
 - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
 

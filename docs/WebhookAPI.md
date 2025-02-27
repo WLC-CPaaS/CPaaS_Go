@@ -1,72 +1,73 @@
-# \WebhookAPI
+# WebhookAPI
 
 All URIs are relative to *http://api.cpaaslabs.net*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**V1WebhookAccountAccountIDGet**](WebhookAPI.md#V1WebhookAccountAccountIDGet) | **Get** /v1/webhook/account/{accountID} | Get Webhook List
-[**V1WebhookAccountAccountIDPost**](WebhookAPI.md#V1WebhookAccountAccountIDPost) | **Post** /v1/webhook/account/{accountID} | Create Webhook
-[**V1WebhookAccountAccountIDWebhookIDDelete**](WebhookAPI.md#V1WebhookAccountAccountIDWebhookIDDelete) | **Delete** /v1/webhook/account/{accountID}/{webhookID} | Delete Webhook
-[**V1WebhookAccountAccountIDWebhookIDGet**](WebhookAPI.md#V1WebhookAccountAccountIDWebhookIDGet) | **Get** /v1/webhook/account/{accountID}/{webhookID} | Get Webhook Details
-[**V1WebhookAccountAccountIDWebhookIDPut**](WebhookAPI.md#V1WebhookAccountAccountIDWebhookIDPut) | **Put** /v1/webhook/account/{accountID}/{webhookID} | Update Webhook
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**V1WebhookAccountAccountIDGet**](WebhookAPI.md#V1WebhookAccountAccountIDGet) | **Get** /v1/webhook/account/{accountID} | Get Webhook List |
+| [**V1WebhookAccountAccountIDPost**](WebhookAPI.md#V1WebhookAccountAccountIDPost) | **Post** /v1/webhook/account/{accountID} | Create Webhook |
+| [**V1WebhookAccountAccountIDWebhookIDDelete**](WebhookAPI.md#V1WebhookAccountAccountIDWebhookIDDelete) | **Delete** /v1/webhook/account/{accountID}/{webhookID} | Delete Webhook |
+| [**V1WebhookAccountAccountIDWebhookIDGet**](WebhookAPI.md#V1WebhookAccountAccountIDWebhookIDGet) | **Get** /v1/webhook/account/{accountID}/{webhookID} | Get Webhook Details |
+| [**V1WebhookAccountAccountIDWebhookIDPut**](WebhookAPI.md#V1WebhookAccountAccountIDWebhookIDPut) | **Put** /v1/webhook/account/{accountID}/{webhookID} | Update Webhook |
 
 
 
 ## V1WebhookAccountAccountIDGet
 
-> ServiceDocsWebhookGetAll V1WebhookAccountAccountIDGet(ctx, accountID).PageSize(pageSize).CurrentPage(currentPage).Execute()
+> ServiceDocsWebhookGetAll V1WebhookAccountAccountIDGet(accountID, pageSize, currentPage)
 
 Get Webhook List
 
-
+Retrieve the webhook list in an account.
 
 ### Example
 
-```go
-package main
+```java
+// Import classes:
+import .ApiClient;
+import .ApiException;
+import .Configuration;
+import .auth.*;
+import .models.*;
+import openapi.WebhookAPI;
 
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://api.cpaaslabs.net");
+        
+        // Configure API key authorization: BearerAuth
+        ApiKeyAuth BearerAuth = (ApiKeyAuth) defaultClient.getAuthentication("BearerAuth");
+        BearerAuth.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //BearerAuth.setApiKeyPrefix("Token");
 
-func main() {
-	accountID := "accountID_example" // string | Account ID
-	pageSize := int32(56) // int32 | number of records to return, range 1 to 50 (optional)
-	currentPage := int32(56) // int32 | Current Page (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.WebhookAPI.V1WebhookAccountAccountIDGet(context.Background(), accountID).PageSize(pageSize).CurrentPage(currentPage).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `WebhookAPI.V1WebhookAccountAccountIDGet``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `V1WebhookAccountAccountIDGet`: ServiceDocsWebhookGetAll
-	fmt.Fprintf(os.Stdout, "Response from `WebhookAPI.V1WebhookAccountAccountIDGet`: %v\n", resp)
+        WebhookAPI apiInstance = new WebhookAPI(defaultClient);
+        string accountID = accountID_example; // string | Account ID
+        int32 pageSize = 56; // int32 | number of records to return, range 1 to 50
+        int32 currentPage = 56; // int32 | Current Page
+        try {
+            ServiceDocsWebhookGetAll result = apiInstance.V1WebhookAccountAccountIDGet(accountID, pageSize, currentPage);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling WebhookAPI#V1WebhookAccountAccountIDGet");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
-### Path Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**accountID** | **string** | Account ID | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiV1WebhookAccountAccountIDGetRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **pageSize** | **int32** | number of records to return, range 1 to 50 | 
- **currentPage** | **int32** | Current Page | 
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **accountID** | **string**| Account ID | |
+| **pageSize** | **int32**| number of records to return, range 1 to 50 | [optional] |
+| **currentPage** | **int32**| Current Page | [optional] |
 
 ### Return type
 
@@ -81,64 +82,70 @@ Name | Type | Description  | Notes
 - **Content-Type**: Not defined
 - **Accept**: */*
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
+| **500** | Internal Server Error |  -  |
 
 
 ## V1WebhookAccountAccountIDPost
 
-> ServiceDocsWebhookGetSingle V1WebhookAccountAccountIDPost(ctx, accountID).Body(body).Execute()
+> ServiceDocsWebhookGetSingle V1WebhookAccountAccountIDPost(accountID, body)
 
 Create Webhook
 
-
+Create a webhook for a specific account ID.
 
 ### Example
 
-```go
-package main
+```java
+// Import classes:
+import .ApiClient;
+import .ApiException;
+import .Configuration;
+import .auth.*;
+import .models.*;
+import openapi.WebhookAPI;
 
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://api.cpaaslabs.net");
+        
+        // Configure API key authorization: BearerAuth
+        ApiKeyAuth BearerAuth = (ApiKeyAuth) defaultClient.getAuthentication("BearerAuth");
+        BearerAuth.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //BearerAuth.setApiKeyPrefix("Token");
 
-func main() {
-	accountID := "accountID_example" // string | Account ID
-	body := *openapiclient.NewServiceWebhookAdd("CallbackMethod_example", "CallbackUrl_example", "Title_example", "WebhookType_example") // ServiceWebhookAdd | Webhook data
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.WebhookAPI.V1WebhookAccountAccountIDPost(context.Background(), accountID).Body(body).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `WebhookAPI.V1WebhookAccountAccountIDPost``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `V1WebhookAccountAccountIDPost`: ServiceDocsWebhookGetSingle
-	fmt.Fprintf(os.Stdout, "Response from `WebhookAPI.V1WebhookAccountAccountIDPost`: %v\n", resp)
+        WebhookAPI apiInstance = new WebhookAPI(defaultClient);
+        string accountID = accountID_example; // string | Account ID
+        ServiceWebhookAdd body = ; // ServiceWebhookAdd | Webhook data
+        try {
+            ServiceDocsWebhookGetSingle result = apiInstance.V1WebhookAccountAccountIDPost(accountID, body);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling WebhookAPI#V1WebhookAccountAccountIDPost");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
-### Path Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**accountID** | **string** | Account ID | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiV1WebhookAccountAccountIDPostRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **body** | [**ServiceWebhookAdd**](ServiceWebhookAdd.md) | Webhook data | 
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **accountID** | **string**| Account ID | |
+| **body** | [**ServiceWebhookAdd**](ServiceWebhookAdd.md)| Webhook data | |
 
 ### Return type
 
@@ -153,65 +160,69 @@ Name | Type | Description  | Notes
 - **Content-Type**: Not defined
 - **Accept**: */*
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **500** | Internal Server Error |  -  |
 
 
 ## V1WebhookAccountAccountIDWebhookIDDelete
 
-> ServiceDocsWebhookDelete V1WebhookAccountAccountIDWebhookIDDelete(ctx, accountID, webhookID).Execute()
+> ServiceDocsWebhookDelete V1WebhookAccountAccountIDWebhookIDDelete(accountID, webhookID)
 
 Delete Webhook
 
-
+Remove a webhook identified by its ID for a particular account ID.
 
 ### Example
 
-```go
-package main
+```java
+// Import classes:
+import .ApiClient;
+import .ApiException;
+import .Configuration;
+import .auth.*;
+import .models.*;
+import openapi.WebhookAPI;
 
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://api.cpaaslabs.net");
+        
+        // Configure API key authorization: BearerAuth
+        ApiKeyAuth BearerAuth = (ApiKeyAuth) defaultClient.getAuthentication("BearerAuth");
+        BearerAuth.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //BearerAuth.setApiKeyPrefix("Token");
 
-func main() {
-	accountID := "accountID_example" // string | Account ID
-	webhookID := int32(56) // int32 | Webhook ID
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.WebhookAPI.V1WebhookAccountAccountIDWebhookIDDelete(context.Background(), accountID, webhookID).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `WebhookAPI.V1WebhookAccountAccountIDWebhookIDDelete``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `V1WebhookAccountAccountIDWebhookIDDelete`: ServiceDocsWebhookDelete
-	fmt.Fprintf(os.Stdout, "Response from `WebhookAPI.V1WebhookAccountAccountIDWebhookIDDelete`: %v\n", resp)
+        WebhookAPI apiInstance = new WebhookAPI(defaultClient);
+        string accountID = accountID_example; // string | Account ID
+        int32 webhookID = 56; // int32 | Webhook ID
+        try {
+            ServiceDocsWebhookDelete result = apiInstance.V1WebhookAccountAccountIDWebhookIDDelete(accountID, webhookID);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling WebhookAPI#V1WebhookAccountAccountIDWebhookIDDelete");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
-### Path Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**accountID** | **string** | Account ID | 
-**webhookID** | **int32** | Webhook ID | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiV1WebhookAccountAccountIDWebhookIDDeleteRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **accountID** | **string**| Account ID | |
+| **webhookID** | **int32**| Webhook ID | |
 
 ### Return type
 
@@ -226,65 +237,70 @@ Name | Type | Description  | Notes
 - **Content-Type**: Not defined
 - **Accept**: */*
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
+| **500** | Internal Server Error |  -  |
 
 
 ## V1WebhookAccountAccountIDWebhookIDGet
 
-> ServiceDocsWebhookGetSingle V1WebhookAccountAccountIDWebhookIDGet(ctx, accountID, webhookID).Execute()
+> ServiceDocsWebhookGetSingle V1WebhookAccountAccountIDWebhookIDGet(accountID, webhookID)
 
 Get Webhook Details
 
-
+Access details about a single webhook ID for an individual account ID.
 
 ### Example
 
-```go
-package main
+```java
+// Import classes:
+import .ApiClient;
+import .ApiException;
+import .Configuration;
+import .auth.*;
+import .models.*;
+import openapi.WebhookAPI;
 
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://api.cpaaslabs.net");
+        
+        // Configure API key authorization: BearerAuth
+        ApiKeyAuth BearerAuth = (ApiKeyAuth) defaultClient.getAuthentication("BearerAuth");
+        BearerAuth.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //BearerAuth.setApiKeyPrefix("Token");
 
-func main() {
-	accountID := "accountID_example" // string | Account ID
-	webhookID := int32(56) // int32 | Webhook ID
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.WebhookAPI.V1WebhookAccountAccountIDWebhookIDGet(context.Background(), accountID, webhookID).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `WebhookAPI.V1WebhookAccountAccountIDWebhookIDGet``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `V1WebhookAccountAccountIDWebhookIDGet`: ServiceDocsWebhookGetSingle
-	fmt.Fprintf(os.Stdout, "Response from `WebhookAPI.V1WebhookAccountAccountIDWebhookIDGet`: %v\n", resp)
+        WebhookAPI apiInstance = new WebhookAPI(defaultClient);
+        string accountID = accountID_example; // string | Account ID
+        int32 webhookID = 56; // int32 | Webhook ID
+        try {
+            ServiceDocsWebhookGetSingle result = apiInstance.V1WebhookAccountAccountIDWebhookIDGet(accountID, webhookID);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling WebhookAPI#V1WebhookAccountAccountIDWebhookIDGet");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
-### Path Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**accountID** | **string** | Account ID | 
-**webhookID** | **int32** | Webhook ID | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiV1WebhookAccountAccountIDWebhookIDGetRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **accountID** | **string**| Account ID | |
+| **webhookID** | **int32**| Webhook ID | |
 
 ### Return type
 
@@ -299,67 +315,72 @@ Name | Type | Description  | Notes
 - **Content-Type**: Not defined
 - **Accept**: */*
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
+| **500** | Internal Server Error |  -  |
 
 
 ## V1WebhookAccountAccountIDWebhookIDPut
 
-> ServiceDocsWebhookGetSingle V1WebhookAccountAccountIDWebhookIDPut(ctx, accountID, webhookID).Body(body).Execute()
+> ServiceDocsWebhookGetSingle V1WebhookAccountAccountIDWebhookIDPut(accountID, webhookID, body)
 
 Update Webhook
 
-
+Update a webhook identified by its ID for a distinct account ID.
 
 ### Example
 
-```go
-package main
+```java
+// Import classes:
+import .ApiClient;
+import .ApiException;
+import .Configuration;
+import .auth.*;
+import .models.*;
+import openapi.WebhookAPI;
 
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://api.cpaaslabs.net");
+        
+        // Configure API key authorization: BearerAuth
+        ApiKeyAuth BearerAuth = (ApiKeyAuth) defaultClient.getAuthentication("BearerAuth");
+        BearerAuth.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //BearerAuth.setApiKeyPrefix("Token");
 
-func main() {
-	accountID := "accountID_example" // string | Account ID
-	webhookID := "webhookID_example" // string | Webhook ID
-	body := *openapiclient.NewServiceWebhookEdit("CallbackMethod_example", "CallbackUrl_example", "Title_example", "WebhookType_example") // ServiceWebhookEdit | Updated webhook data
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.WebhookAPI.V1WebhookAccountAccountIDWebhookIDPut(context.Background(), accountID, webhookID).Body(body).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `WebhookAPI.V1WebhookAccountAccountIDWebhookIDPut``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `V1WebhookAccountAccountIDWebhookIDPut`: ServiceDocsWebhookGetSingle
-	fmt.Fprintf(os.Stdout, "Response from `WebhookAPI.V1WebhookAccountAccountIDWebhookIDPut`: %v\n", resp)
+        WebhookAPI apiInstance = new WebhookAPI(defaultClient);
+        string accountID = accountID_example; // string | Account ID
+        string webhookID = webhookID_example; // string | Webhook ID
+        ServiceWebhookEdit body = ; // ServiceWebhookEdit | Updated webhook data
+        try {
+            ServiceDocsWebhookGetSingle result = apiInstance.V1WebhookAccountAccountIDWebhookIDPut(accountID, webhookID, body);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling WebhookAPI#V1WebhookAccountAccountIDWebhookIDPut");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
-### Path Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**accountID** | **string** | Account ID | 
-**webhookID** | **string** | Webhook ID | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiV1WebhookAccountAccountIDWebhookIDPutRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- **body** | [**ServiceWebhookEdit**](ServiceWebhookEdit.md) | Updated webhook data | 
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **accountID** | **string**| Account ID | |
+| **webhookID** | **string**| Webhook ID | |
+| **body** | [**ServiceWebhookEdit**](ServiceWebhookEdit.md)| Updated webhook data | |
 
 ### Return type
 
@@ -374,7 +395,12 @@ Name | Type | Description  | Notes
 - **Content-Type**: Not defined
 - **Accept**: */*
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
+| **500** | Internal Server Error |  -  |
 

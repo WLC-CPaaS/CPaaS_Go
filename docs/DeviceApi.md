@@ -1,71 +1,71 @@
-# \DeviceAPI
+# DeviceAPI
 
 All URIs are relative to *http://api.cpaaslabs.net*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**V1AccountAccountidDeviceDeviceidDelete**](DeviceAPI.md#V1AccountAccountidDeviceDeviceidDelete) | **Delete** /v1/account/{accountid}/device/{deviceid} | Delete Device
-[**V1AccountAccountidDeviceDeviceidGet**](DeviceAPI.md#V1AccountAccountidDeviceDeviceidGet) | **Get** /v1/account/{accountid}/device/{deviceid} | Get Device Details
-[**V1AccountAccountidDeviceDeviceidPut**](DeviceAPI.md#V1AccountAccountidDeviceDeviceidPut) | **Put** /v1/account/{accountid}/device/{deviceid} | Update Device
-[**V1AccountAccountidDeviceGet**](DeviceAPI.md#V1AccountAccountidDeviceGet) | **Get** /v1/account/{accountid}/device | Get Device List
-[**V1AccountAccountidDevicePost**](DeviceAPI.md#V1AccountAccountidDevicePost) | **Post** /v1/account/{accountid}/device | Create Device
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**V1AccountAccountidDeviceDeviceidDelete**](DeviceAPI.md#V1AccountAccountidDeviceDeviceidDelete) | **Delete** /v1/account/{accountid}/device/{deviceid} | Delete Device |
+| [**V1AccountAccountidDeviceDeviceidGet**](DeviceAPI.md#V1AccountAccountidDeviceDeviceidGet) | **Get** /v1/account/{accountid}/device/{deviceid} | Get Device Details |
+| [**V1AccountAccountidDeviceDeviceidPut**](DeviceAPI.md#V1AccountAccountidDeviceDeviceidPut) | **Put** /v1/account/{accountid}/device/{deviceid} | Update Device |
+| [**V1AccountAccountidDeviceGet**](DeviceAPI.md#V1AccountAccountidDeviceGet) | **Get** /v1/account/{accountid}/device | Get Device List |
+| [**V1AccountAccountidDevicePost**](DeviceAPI.md#V1AccountAccountidDevicePost) | **Post** /v1/account/{accountid}/device | Create Device |
 
 
 
 ## V1AccountAccountidDeviceDeviceidDelete
 
-> ServiceDocsDeviceGetSingle V1AccountAccountidDeviceDeviceidDelete(ctx, accountid, deviceid).Execute()
+> ServiceDocsDeviceGetSingle V1AccountAccountidDeviceDeviceidDelete(accountid, deviceid)
 
 Delete Device
 
-
+Remove one device from a CPaaS account.
 
 ### Example
 
-```go
-package main
+```java
+// Import classes:
+import .ApiClient;
+import .ApiException;
+import .Configuration;
+import .auth.*;
+import .models.*;
+import openapi.DeviceAPI;
 
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://api.cpaaslabs.net");
+        
+        // Configure API key authorization: BearerAuth
+        ApiKeyAuth BearerAuth = (ApiKeyAuth) defaultClient.getAuthentication("BearerAuth");
+        BearerAuth.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //BearerAuth.setApiKeyPrefix("Token");
 
-func main() {
-	accountid := "accountid_example" // string | Account ID, 32 alpha numeric
-	deviceid := "deviceid_example" // string | Device ID, 32 alpha numeric
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DeviceAPI.V1AccountAccountidDeviceDeviceidDelete(context.Background(), accountid, deviceid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DeviceAPI.V1AccountAccountidDeviceDeviceidDelete``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `V1AccountAccountidDeviceDeviceidDelete`: ServiceDocsDeviceGetSingle
-	fmt.Fprintf(os.Stdout, "Response from `DeviceAPI.V1AccountAccountidDeviceDeviceidDelete`: %v\n", resp)
+        DeviceAPI apiInstance = new DeviceAPI(defaultClient);
+        string accountid = accountid_example; // string | Account ID, 32 alpha numeric
+        string deviceid = deviceid_example; // string | Device ID, 32 alpha numeric
+        try {
+            ServiceDocsDeviceGetSingle result = apiInstance.V1AccountAccountidDeviceDeviceidDelete(accountid, deviceid);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling DeviceAPI#V1AccountAccountidDeviceDeviceidDelete");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
-### Path Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**accountid** | **string** | Account ID, 32 alpha numeric | 
-**deviceid** | **string** | Device ID, 32 alpha numeric | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiV1AccountAccountidDeviceDeviceidDeleteRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **accountid** | **string**| Account ID, 32 alpha numeric | |
+| **deviceid** | **string**| Device ID, 32 alpha numeric | |
 
 ### Return type
 
@@ -80,65 +80,68 @@ Name | Type | Description  | Notes
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
 
 
 ## V1AccountAccountidDeviceDeviceidGet
 
-> ServiceDocsDeviceGetSingle V1AccountAccountidDeviceDeviceidGet(ctx, accountid, deviceid).Execute()
+> ServiceDocsDeviceGetSingle V1AccountAccountidDeviceDeviceidGet(accountid, deviceid)
 
 Get Device Details
 
-
+Permit a user to view specific device details.
 
 ### Example
 
-```go
-package main
+```java
+// Import classes:
+import .ApiClient;
+import .ApiException;
+import .Configuration;
+import .auth.*;
+import .models.*;
+import openapi.DeviceAPI;
 
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://api.cpaaslabs.net");
+        
+        // Configure API key authorization: BearerAuth
+        ApiKeyAuth BearerAuth = (ApiKeyAuth) defaultClient.getAuthentication("BearerAuth");
+        BearerAuth.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //BearerAuth.setApiKeyPrefix("Token");
 
-func main() {
-	accountid := "accountid_example" // string | Account ID, 32 alpha numeric
-	deviceid := "deviceid_example" // string | Device ID, 32 alpha numeric
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DeviceAPI.V1AccountAccountidDeviceDeviceidGet(context.Background(), accountid, deviceid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DeviceAPI.V1AccountAccountidDeviceDeviceidGet``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `V1AccountAccountidDeviceDeviceidGet`: ServiceDocsDeviceGetSingle
-	fmt.Fprintf(os.Stdout, "Response from `DeviceAPI.V1AccountAccountidDeviceDeviceidGet`: %v\n", resp)
+        DeviceAPI apiInstance = new DeviceAPI(defaultClient);
+        string accountid = accountid_example; // string | Account ID, 32 alpha numeric
+        string deviceid = deviceid_example; // string | Device ID, 32 alpha numeric
+        try {
+            ServiceDocsDeviceGetSingle result = apiInstance.V1AccountAccountidDeviceDeviceidGet(accountid, deviceid);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling DeviceAPI#V1AccountAccountidDeviceDeviceidGet");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
-### Path Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**accountid** | **string** | Account ID, 32 alpha numeric | 
-**deviceid** | **string** | Device ID, 32 alpha numeric | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiV1AccountAccountidDeviceDeviceidGetRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **accountid** | **string**| Account ID, 32 alpha numeric | |
+| **deviceid** | **string**| Device ID, 32 alpha numeric | |
 
 ### Return type
 
@@ -153,67 +156,70 @@ Name | Type | Description  | Notes
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
 
 
 ## V1AccountAccountidDeviceDeviceidPut
 
-> ServiceDocsDeviceGetSingle V1AccountAccountidDeviceDeviceidPut(ctx, accountid, deviceid).Device(device).Execute()
+> ServiceDocsDeviceGetSingle V1AccountAccountidDeviceDeviceidPut(accountid, deviceid, device)
 
 Update Device
 
-
+Edit specifics about the device, such as the device type, name, and owner.
 
 ### Example
 
-```go
-package main
+```java
+// Import classes:
+import .ApiClient;
+import .ApiException;
+import .Configuration;
+import .auth.*;
+import .models.*;
+import openapi.DeviceAPI;
 
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://api.cpaaslabs.net");
+        
+        // Configure API key authorization: BearerAuth
+        ApiKeyAuth BearerAuth = (ApiKeyAuth) defaultClient.getAuthentication("BearerAuth");
+        BearerAuth.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //BearerAuth.setApiKeyPrefix("Token");
 
-func main() {
-	accountid := "accountid_example" // string | Account ID, 32 alpha numeric
-	deviceid := "deviceid_example" // string | Device ID, 32 alpha numeric
-	device := *openapiclient.NewServiceVOIPDeviceAddEdit2("Name_example", *openapiclient.NewServiceVOIPDeviceAddEdit3a("InviteFormat_example", "Username_example")) // ServiceVOIPDeviceAddEdit2 | device fields
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DeviceAPI.V1AccountAccountidDeviceDeviceidPut(context.Background(), accountid, deviceid).Device(device).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DeviceAPI.V1AccountAccountidDeviceDeviceidPut``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `V1AccountAccountidDeviceDeviceidPut`: ServiceDocsDeviceGetSingle
-	fmt.Fprintf(os.Stdout, "Response from `DeviceAPI.V1AccountAccountidDeviceDeviceidPut`: %v\n", resp)
+        DeviceAPI apiInstance = new DeviceAPI(defaultClient);
+        string accountid = accountid_example; // string | Account ID, 32 alpha numeric
+        string deviceid = deviceid_example; // string | Device ID, 32 alpha numeric
+        ServiceVOIPDeviceAddEdit2 device = ; // ServiceVOIPDeviceAddEdit2 | device fields
+        try {
+            ServiceDocsDeviceGetSingle result = apiInstance.V1AccountAccountidDeviceDeviceidPut(accountid, deviceid, device);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling DeviceAPI#V1AccountAccountidDeviceDeviceidPut");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
-### Path Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**accountid** | **string** | Account ID, 32 alpha numeric | 
-**deviceid** | **string** | Device ID, 32 alpha numeric | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiV1AccountAccountidDeviceDeviceidPutRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- **device** | [**ServiceVOIPDeviceAddEdit2**](ServiceVOIPDeviceAddEdit2.md) | device fields | 
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **accountid** | **string**| Account ID, 32 alpha numeric | |
+| **deviceid** | **string**| Device ID, 32 alpha numeric | |
+| **device** | [**ServiceVOIPDeviceAddEdit2**](ServiceVOIPDeviceAddEdit2.md)| device fields | |
 
 ### Return type
 
@@ -228,66 +234,70 @@ Name | Type | Description  | Notes
 - **Content-Type**: application/json
 - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
 
 
 ## V1AccountAccountidDeviceGet
 
-> ServiceDocsDeviceGetAll V1AccountAccountidDeviceGet(ctx, accountid).StartKey(startKey).PageSize(pageSize).Execute()
+> ServiceDocsDeviceGetAll V1AccountAccountidDeviceGet(accountid, startKey, pageSize)
 
 Get Device List
 
-
+Obtain a list of all devices associated with an account such as fax machines, cell phones, and soft phones.
 
 ### Example
 
-```go
-package main
+```java
+// Import classes:
+import .ApiClient;
+import .ApiException;
+import .Configuration;
+import .auth.*;
+import .models.*;
+import openapi.DeviceAPI;
 
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://api.cpaaslabs.net");
+        
+        // Configure API key authorization: BearerAuth
+        ApiKeyAuth BearerAuth = (ApiKeyAuth) defaultClient.getAuthentication("BearerAuth");
+        BearerAuth.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //BearerAuth.setApiKeyPrefix("Token");
 
-func main() {
-	accountid := "accountid_example" // string | Account ID, 32 alpha numeric
-	startKey := "startKey_example" // string | start_key for pagination that was returned as next_start_key from your previous call (optional)
-	pageSize := int32(56) // int32 | number of records to return, range 1 to 50 (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DeviceAPI.V1AccountAccountidDeviceGet(context.Background(), accountid).StartKey(startKey).PageSize(pageSize).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DeviceAPI.V1AccountAccountidDeviceGet``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `V1AccountAccountidDeviceGet`: ServiceDocsDeviceGetAll
-	fmt.Fprintf(os.Stdout, "Response from `DeviceAPI.V1AccountAccountidDeviceGet`: %v\n", resp)
+        DeviceAPI apiInstance = new DeviceAPI(defaultClient);
+        string accountid = accountid_example; // string | Account ID, 32 alpha numeric
+        string startKey = startKey_example; // string | start_key for pagination that was returned as next_start_key from your previous call
+        int32 pageSize = 56; // int32 | number of records to return, range 1 to 50
+        try {
+            ServiceDocsDeviceGetAll result = apiInstance.V1AccountAccountidDeviceGet(accountid, startKey, pageSize);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling DeviceAPI#V1AccountAccountidDeviceGet");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
-### Path Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**accountid** | **string** | Account ID, 32 alpha numeric | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiV1AccountAccountidDeviceGetRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **startKey** | **string** | start_key for pagination that was returned as next_start_key from your previous call | 
- **pageSize** | **int32** | number of records to return, range 1 to 50 | 
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **accountid** | **string**| Account ID, 32 alpha numeric | |
+| **startKey** | **string**| start_key for pagination that was returned as next_start_key from your previous call | [optional] |
+| **pageSize** | **int32**| number of records to return, range 1 to 50 | [optional] |
 
 ### Return type
 
@@ -302,64 +312,68 @@ Name | Type | Description  | Notes
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
 
 
 ## V1AccountAccountidDevicePost
 
-> ServiceDocsDeviceGetSingle V1AccountAccountidDevicePost(ctx, accountid).Device(device).Execute()
+> ServiceDocsDeviceGetSingle V1AccountAccountidDevicePost(accountid, device)
 
 Create Device
 
-
+Connect a new device to an account to enhance communication methods.
 
 ### Example
 
-```go
-package main
+```java
+// Import classes:
+import .ApiClient;
+import .ApiException;
+import .Configuration;
+import .auth.*;
+import .models.*;
+import openapi.DeviceAPI;
 
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://api.cpaaslabs.net");
+        
+        // Configure API key authorization: BearerAuth
+        ApiKeyAuth BearerAuth = (ApiKeyAuth) defaultClient.getAuthentication("BearerAuth");
+        BearerAuth.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //BearerAuth.setApiKeyPrefix("Token");
 
-func main() {
-	accountid := "accountid_example" // string | Account ID, 32 alpha numeric
-	device := *openapiclient.NewServiceVOIPDeviceAddEdit2("Name_example", *openapiclient.NewServiceVOIPDeviceAddEdit3a("InviteFormat_example", "Username_example")) // ServiceVOIPDeviceAddEdit2 | device fields
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DeviceAPI.V1AccountAccountidDevicePost(context.Background(), accountid).Device(device).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DeviceAPI.V1AccountAccountidDevicePost``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `V1AccountAccountidDevicePost`: ServiceDocsDeviceGetSingle
-	fmt.Fprintf(os.Stdout, "Response from `DeviceAPI.V1AccountAccountidDevicePost`: %v\n", resp)
+        DeviceAPI apiInstance = new DeviceAPI(defaultClient);
+        string accountid = accountid_example; // string | Account ID, 32 alpha numeric
+        ServiceVOIPDeviceAddEdit2 device = ; // ServiceVOIPDeviceAddEdit2 | device fields
+        try {
+            ServiceDocsDeviceGetSingle result = apiInstance.V1AccountAccountidDevicePost(accountid, device);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling DeviceAPI#V1AccountAccountidDevicePost");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
-### Path Parameters
+### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**accountid** | **string** | Account ID, 32 alpha numeric | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiV1AccountAccountidDevicePostRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **device** | [**ServiceVOIPDeviceAddEdit2**](ServiceVOIPDeviceAddEdit2.md) | device fields | 
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **accountid** | **string**| Account ID, 32 alpha numeric | |
+| **device** | [**ServiceVOIPDeviceAddEdit2**](ServiceVOIPDeviceAddEdit2.md)| device fields | |
 
 ### Return type
 
@@ -374,7 +388,10 @@ Name | Type | Description  | Notes
 - **Content-Type**: application/json
 - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
 
