@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**[]ServiceAccountOutput**](ServiceAccountOutput.md) |  | [optional] 
-**NextStartKey** | Pointer to **string** |  | [optional] 
-**PageSize** | Pointer to **int32** |  | [optional] 
-**RequestId** | Pointer to **string** |  | [optional] 
-**StartKey** | Pointer to **string** |  | [optional] 
-**StatusCode** | Pointer to **int32** |  | [optional] 
+**Data** | Pointer to [**[]ServiceAccountOutputShort**](ServiceAccountOutputShort.md) |  | [optional] 
+**NextStartKey** | Pointer to **string** | List Pagination: Used to get the next page of results. Will not exist if this is the last page. | [optional] 
+**PageSize** | Pointer to **int32** | List Pagination: The number of results returned in this page | [optional] 
+**RequestId** | Pointer to **string** | Unique id for each request | [optional] 
+**StartKey** | Pointer to **string** | List Pagination: Code for paged results | [optional] 
+**StatusCode** | Pointer to **int32** | HTTP response status code | [optional] 
 
 ## Methods
 
@@ -32,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *ServiceDocsAccountGetAll) GetData() []ServiceAccountOutput`
+`func (o *ServiceDocsAccountGetAll) GetData() []ServiceAccountOutputShort`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *ServiceDocsAccountGetAll) GetDataOk() (*[]ServiceAccountOutput, bool)`
+`func (o *ServiceDocsAccountGetAll) GetDataOk() (*[]ServiceAccountOutputShort, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *ServiceDocsAccountGetAll) SetData(v []ServiceAccountOutput)`
+`func (o *ServiceDocsAccountGetAll) SetData(v []ServiceAccountOutputShort)`
 
 SetData sets Data field to given value.
 

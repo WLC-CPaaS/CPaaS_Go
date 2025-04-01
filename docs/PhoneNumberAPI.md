@@ -309,7 +309,7 @@ import (
 )
 
 func main() {
-	phonenumber := *openapiclient.NewServiceTelephoneNumberList() // ServiceTelephoneNumberList | phonenumber fields
+	phonenumber := []string{"Property_example"} // []string | phonenumber fields
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -334,7 +334,7 @@ Other parameters are passed through a pointer to a apiV1AccountPhonenumberPostRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **phonenumber** | [**ServiceTelephoneNumberList**](ServiceTelephoneNumberList.md) | phonenumber fields | 
+ **phonenumber** | **[]string** | phonenumber fields | 
 
 ### Return type
 

@@ -21,7 +21,9 @@ var _ MappedNullable = &ServiceDocsVoicemailGetSingle{}
 // ServiceDocsVoicemailGetSingle struct for ServiceDocsVoicemailGetSingle
 type ServiceDocsVoicemailGetSingle struct {
 	Data *ServiceVoicemailOutput `json:"data,omitempty"`
+	// Unique id for each request
 	RequestId *string `json:"request_id,omitempty"`
+	// HTTP response status code
 	StatusCode *int32 `json:"status_code,omitempty"`
 }
 

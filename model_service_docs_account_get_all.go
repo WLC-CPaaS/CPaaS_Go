@@ -20,11 +20,16 @@ var _ MappedNullable = &ServiceDocsAccountGetAll{}
 
 // ServiceDocsAccountGetAll struct for ServiceDocsAccountGetAll
 type ServiceDocsAccountGetAll struct {
-	Data []ServiceAccountOutput `json:"data,omitempty"`
+	Data []ServiceAccountOutputShort `json:"data,omitempty"`
+	// List Pagination: Used to get the next page of results. Will not exist if this is the last page.
 	NextStartKey *string `json:"next_start_key,omitempty"`
+	// List Pagination: The number of results returned in this page
 	PageSize *int32 `json:"page_size,omitempty"`
+	// Unique id for each request
 	RequestId *string `json:"request_id,omitempty"`
+	// List Pagination: Code for paged results
 	StartKey *string `json:"start_key,omitempty"`
+	// HTTP response status code
 	StatusCode *int32 `json:"status_code,omitempty"`
 }
 
@@ -46,9 +51,9 @@ func NewServiceDocsAccountGetAllWithDefaults() *ServiceDocsAccountGetAll {
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *ServiceDocsAccountGetAll) GetData() []ServiceAccountOutput {
+func (o *ServiceDocsAccountGetAll) GetData() []ServiceAccountOutputShort {
 	if o == nil || IsNil(o.Data) {
-		var ret []ServiceAccountOutput
+		var ret []ServiceAccountOutputShort
 		return ret
 	}
 	return o.Data
@@ -56,7 +61,7 @@ func (o *ServiceDocsAccountGetAll) GetData() []ServiceAccountOutput {
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ServiceDocsAccountGetAll) GetDataOk() ([]ServiceAccountOutput, bool) {
+func (o *ServiceDocsAccountGetAll) GetDataOk() ([]ServiceAccountOutputShort, bool) {
 	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
@@ -72,8 +77,8 @@ func (o *ServiceDocsAccountGetAll) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given []ServiceAccountOutput and assigns it to the Data field.
-func (o *ServiceDocsAccountGetAll) SetData(v []ServiceAccountOutput) {
+// SetData gets a reference to the given []ServiceAccountOutputShort and assigns it to the Data field.
+func (o *ServiceDocsAccountGetAll) SetData(v []ServiceAccountOutputShort) {
 	o.Data = v
 }
 

@@ -147,7 +147,7 @@ func (a *VoIPUserAPIService) V1AccountAccountidUserGetExecute(r ApiV1AccountAcco
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v UtilCPAASError
+			var v CPAASError
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -286,7 +286,7 @@ func (a *VoIPUserAPIService) V1AccountAccountidUserPostExecute(r ApiV1AccountAcc
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v UtilCPAASError
+			var v CPAASError
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -417,7 +417,7 @@ func (a *VoIPUserAPIService) V1AccountAccountidUserUseridDeleteExecute(r ApiV1Ac
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v UtilCPAASError
+			var v CPAASError
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -548,7 +548,7 @@ func (a *VoIPUserAPIService) V1AccountAccountidUserUseridGetExecute(r ApiV1Accou
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v UtilCPAASError
+			var v CPAASError
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -691,7 +691,7 @@ func (a *VoIPUserAPIService) V1AccountAccountidUserUseridPutExecute(r ApiV1Accou
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v UtilCPAASError
+			var v CPAASError
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

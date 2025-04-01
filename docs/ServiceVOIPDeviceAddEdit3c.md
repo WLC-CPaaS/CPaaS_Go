@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Emergency** | Pointer to [**ServiceVOIPDeviceAddEdit4**](ServiceVOIPDeviceAddEdit4.md) |  | [optional] 
 **External** | Pointer to [**ServiceVOIPDeviceAddEdit4**](ServiceVOIPDeviceAddEdit4.md) |  | [optional] 
+**Internal** | Pointer to [**ServiceVOIPDeviceAddEdit4**](ServiceVOIPDeviceAddEdit4.md) |  | [optional] 
 
 ## Methods
 
@@ -75,6 +76,31 @@ SetExternal sets External field to given value.
 `func (o *ServiceVOIPDeviceAddEdit3c) HasExternal() bool`
 
 HasExternal returns a boolean if a field has been set.
+
+### GetInternal
+
+`func (o *ServiceVOIPDeviceAddEdit3c) GetInternal() ServiceVOIPDeviceAddEdit4`
+
+GetInternal returns the Internal field if non-nil, zero value otherwise.
+
+### GetInternalOk
+
+`func (o *ServiceVOIPDeviceAddEdit3c) GetInternalOk() (*ServiceVOIPDeviceAddEdit4, bool)`
+
+GetInternalOk returns a tuple with the Internal field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInternal
+
+`func (o *ServiceVOIPDeviceAddEdit3c) SetInternal(v ServiceVOIPDeviceAddEdit4)`
+
+SetInternal sets Internal field to given value.
+
+### HasInternal
+
+`func (o *ServiceVOIPDeviceAddEdit3c) HasInternal() bool`
+
+HasInternal returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

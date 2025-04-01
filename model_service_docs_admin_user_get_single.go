@@ -21,7 +21,9 @@ var _ MappedNullable = &ServiceDocsAdminUserGetSingle{}
 // ServiceDocsAdminUserGetSingle struct for ServiceDocsAdminUserGetSingle
 type ServiceDocsAdminUserGetSingle struct {
 	Data *ServiceAdminUserOutput `json:"data,omitempty"`
+	// Unique id for each request
 	RequestId *string `json:"request_id,omitempty"`
+	// HTTP response status code
 	StatusCode *int32 `json:"status_code,omitempty"`
 }
 

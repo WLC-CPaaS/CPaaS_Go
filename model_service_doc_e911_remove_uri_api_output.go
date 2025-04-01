@@ -21,7 +21,9 @@ var _ MappedNullable = &ServiceDocE911RemoveURIApiOutput{}
 // ServiceDocE911RemoveURIApiOutput struct for ServiceDocE911RemoveURIApiOutput
 type ServiceDocE911RemoveURIApiOutput struct {
 	Data *ServiceRemoveURIApiOutput `json:"data,omitempty"`
+	// Unique id for each request
 	RequestId *string `json:"request_id,omitempty"`
+	// HTTP response status code
 	StatusCode *int32 `json:"status_code,omitempty"`
 }
 

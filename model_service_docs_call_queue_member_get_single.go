@@ -21,7 +21,9 @@ var _ MappedNullable = &ServiceDocsCallQueueMemberGetSingle{}
 // ServiceDocsCallQueueMemberGetSingle struct for ServiceDocsCallQueueMemberGetSingle
 type ServiceDocsCallQueueMemberGetSingle struct {
 	Data map[string]interface{} `json:"data,omitempty"`
+	// Unique id for each request
 	RequestId *string `json:"request_id,omitempty"`
+	// HTTP response status code
 	StatusCode *int32 `json:"status_code,omitempty"`
 }
 

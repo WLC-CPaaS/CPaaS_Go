@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CallRecording** | Pointer to [**ServiceVOIPAccountCallRecording**](ServiceVOIPAccountCallRecording.md) |  | [optional] 
+**CallerId** | Pointer to [**ServiceVOIPAccountOutputFullCallerid**](ServiceVOIPAccountOutputFullCallerid.md) |  | [optional] 
 **DoNotDisturb** | Pointer to [**ServiceVOIPSharedDoNotDisturb**](ServiceVOIPSharedDoNotDisturb.md) |  | [optional] 
-**Enabled** | Pointer to **bool** |  | [optional] 
 **MusicOnHold** | Pointer to [**ServiceVOIPAccountMusicOnHold**](ServiceVOIPAccountMusicOnHold.md) |  | [optional] 
 **Name** | **string** |  | 
 **Realm** | Pointer to **string** |  | [optional] 
@@ -56,6 +56,31 @@ SetCallRecording sets CallRecording field to given value.
 
 HasCallRecording returns a boolean if a field has been set.
 
+### GetCallerId
+
+`func (o *ServiceVOIPAccountAddData) GetCallerId() ServiceVOIPAccountOutputFullCallerid`
+
+GetCallerId returns the CallerId field if non-nil, zero value otherwise.
+
+### GetCallerIdOk
+
+`func (o *ServiceVOIPAccountAddData) GetCallerIdOk() (*ServiceVOIPAccountOutputFullCallerid, bool)`
+
+GetCallerIdOk returns a tuple with the CallerId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCallerId
+
+`func (o *ServiceVOIPAccountAddData) SetCallerId(v ServiceVOIPAccountOutputFullCallerid)`
+
+SetCallerId sets CallerId field to given value.
+
+### HasCallerId
+
+`func (o *ServiceVOIPAccountAddData) HasCallerId() bool`
+
+HasCallerId returns a boolean if a field has been set.
+
 ### GetDoNotDisturb
 
 `func (o *ServiceVOIPAccountAddData) GetDoNotDisturb() ServiceVOIPSharedDoNotDisturb`
@@ -80,31 +105,6 @@ SetDoNotDisturb sets DoNotDisturb field to given value.
 `func (o *ServiceVOIPAccountAddData) HasDoNotDisturb() bool`
 
 HasDoNotDisturb returns a boolean if a field has been set.
-
-### GetEnabled
-
-`func (o *ServiceVOIPAccountAddData) GetEnabled() bool`
-
-GetEnabled returns the Enabled field if non-nil, zero value otherwise.
-
-### GetEnabledOk
-
-`func (o *ServiceVOIPAccountAddData) GetEnabledOk() (*bool, bool)`
-
-GetEnabledOk returns a tuple with the Enabled field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEnabled
-
-`func (o *ServiceVOIPAccountAddData) SetEnabled(v bool)`
-
-SetEnabled sets Enabled field to given value.
-
-### HasEnabled
-
-`func (o *ServiceVOIPAccountAddData) HasEnabled() bool`
-
-HasEnabled returns a boolean if a field has been set.
 
 ### GetMusicOnHold
 

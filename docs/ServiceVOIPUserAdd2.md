@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CallForward** | Pointer to [**ServiceCallForward**](ServiceCallForward.md) |  | [optional] 
 **CallRecording** | Pointer to [**ServiceCallRecordingSettings**](ServiceCallRecordingSettings.md) |  | [optional] 
+**CallerId** | Pointer to [**ServiceUserOutputFullCallerid**](ServiceUserOutputFullCallerid.md) |  | [optional] 
 **DoNotDisturb** | Pointer to [**ServiceVOIPSharedDoNotDisturb**](ServiceVOIPSharedDoNotDisturb.md) |  | [optional] 
 **Email** | **string** |  | 
 **Enabled** | Pointer to **bool** |  | [optional] 
@@ -84,6 +85,31 @@ SetCallRecording sets CallRecording field to given value.
 `func (o *ServiceVOIPUserAdd2) HasCallRecording() bool`
 
 HasCallRecording returns a boolean if a field has been set.
+
+### GetCallerId
+
+`func (o *ServiceVOIPUserAdd2) GetCallerId() ServiceUserOutputFullCallerid`
+
+GetCallerId returns the CallerId field if non-nil, zero value otherwise.
+
+### GetCallerIdOk
+
+`func (o *ServiceVOIPUserAdd2) GetCallerIdOk() (*ServiceUserOutputFullCallerid, bool)`
+
+GetCallerIdOk returns a tuple with the CallerId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCallerId
+
+`func (o *ServiceVOIPUserAdd2) SetCallerId(v ServiceUserOutputFullCallerid)`
+
+SetCallerId sets CallerId field to given value.
+
+### HasCallerId
+
+`func (o *ServiceVOIPUserAdd2) HasCallerId() bool`
+
+HasCallerId returns a boolean if a field has been set.
 
 ### GetDoNotDisturb
 

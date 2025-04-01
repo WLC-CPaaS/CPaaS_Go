@@ -28,6 +28,7 @@ type ServiceDeviceOutputFull struct {
 	Enabled *bool `json:"enabled,omitempty"`
 	Id *string `json:"id,omitempty"`
 	MacAddress *string `json:"mac_address,omitempty"`
+	Media *ServiceDeviceOutputFullMedia `json:"media,omitempty"`
 	// Provision  *DeviceOutputFullProvision `json:\"provision\"`
 	MusicOnHold *ServiceMusicOnHold `json:"music_on_hold,omitempty"`
 	Name *string `json:"name,omitempty"`
@@ -308,6 +309,38 @@ func (o *ServiceDeviceOutputFull) SetMacAddress(v string) {
 	o.MacAddress = &v
 }
 
+// GetMedia returns the Media field value if set, zero value otherwise.
+func (o *ServiceDeviceOutputFull) GetMedia() ServiceDeviceOutputFullMedia {
+	if o == nil || IsNil(o.Media) {
+		var ret ServiceDeviceOutputFullMedia
+		return ret
+	}
+	return *o.Media
+}
+
+// GetMediaOk returns a tuple with the Media field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ServiceDeviceOutputFull) GetMediaOk() (*ServiceDeviceOutputFullMedia, bool) {
+	if o == nil || IsNil(o.Media) {
+		return nil, false
+	}
+	return o.Media, true
+}
+
+// HasMedia returns a boolean if a field has been set.
+func (o *ServiceDeviceOutputFull) HasMedia() bool {
+	if o != nil && !IsNil(o.Media) {
+		return true
+	}
+
+	return false
+}
+
+// SetMedia gets a reference to the given ServiceDeviceOutputFullMedia and assigns it to the Media field.
+func (o *ServiceDeviceOutputFull) SetMedia(v ServiceDeviceOutputFullMedia) {
+	o.Media = &v
+}
+
 // GetMusicOnHold returns the MusicOnHold field value if set, zero value otherwise.
 func (o *ServiceDeviceOutputFull) GetMusicOnHold() ServiceMusicOnHold {
 	if o == nil || IsNil(o.MusicOnHold) {
@@ -469,6 +502,9 @@ func (o ServiceDeviceOutputFull) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.MacAddress) {
 		toSerialize["mac_address"] = o.MacAddress
+	}
+	if !IsNil(o.Media) {
+		toSerialize["media"] = o.Media
 	}
 	if !IsNil(o.MusicOnHold) {
 		toSerialize["music_on_hold"] = o.MusicOnHold

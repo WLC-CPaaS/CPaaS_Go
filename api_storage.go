@@ -127,7 +127,7 @@ func (a *StorageAPIService) V1AccountAccountIDStorageDeleteExecute(r ApiV1Accoun
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v UtilCPAASError
+			var v CPAASError
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -254,7 +254,7 @@ func (a *StorageAPIService) V1AccountAccountIDStorageGetExecute(r ApiV1AccountAc
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v UtilCPAASError
+			var v CPAASError
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -393,7 +393,7 @@ func (a *StorageAPIService) V1AccountAccountIDStoragePostExecute(r ApiV1AccountA
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v UtilCPAASError
+			var v CPAASError
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -532,7 +532,7 @@ func (a *StorageAPIService) V1AccountAccountIDStoragePutExecute(r ApiV1AccountAc
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v UtilCPAASError
+			var v CPAASError
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

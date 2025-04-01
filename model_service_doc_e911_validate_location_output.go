@@ -21,7 +21,9 @@ var _ MappedNullable = &ServiceDocE911ValidateLocationOutput{}
 // ServiceDocE911ValidateLocationOutput struct for ServiceDocE911ValidateLocationOutput
 type ServiceDocE911ValidateLocationOutput struct {
 	Data *ServiceE911ValidateLocationOutput `json:"data,omitempty"`
+	// Unique id for each request
 	RequestId *string `json:"request_id,omitempty"`
+	// HTTP response status code
 	StatusCode *int32 `json:"status_code,omitempty"`
 }
 

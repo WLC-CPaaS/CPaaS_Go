@@ -21,7 +21,9 @@ var _ MappedNullable = &ServiceDocsCampaignImportOutput{}
 // ServiceDocsCampaignImportOutput struct for ServiceDocsCampaignImportOutput
 type ServiceDocsCampaignImportOutput struct {
 	Data *ServiceCampaignImportOutput `json:"data,omitempty"`
+	// Unique id for each request
 	RequestId *string `json:"request_id,omitempty"`
+	// HTTP response status code
 	StatusCode *int32 `json:"status_code,omitempty"`
 }
 

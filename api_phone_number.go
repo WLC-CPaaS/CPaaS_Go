@@ -147,7 +147,7 @@ func (a *PhoneNumberAPIService) V1AccountAccountidPhonenumberGetExecute(r ApiV1A
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v UtilCPAASError
+			var v CPAASError
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -282,7 +282,7 @@ func (a *PhoneNumberAPIService) V1AccountPhonenumberAssignPostExecute(r ApiV1Acc
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v UtilCPAASError
+			var v CPAASError
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -417,7 +417,7 @@ func (a *PhoneNumberAPIService) V1AccountPhonenumberDisconnectPostExecute(r ApiV
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v UtilCPAASError
+			var v CPAASError
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -560,7 +560,7 @@ func (a *PhoneNumberAPIService) V1AccountPhonenumberGetExecute(r ApiV1AccountPho
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v UtilCPAASError
+			var v CPAASError
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -587,11 +587,11 @@ func (a *PhoneNumberAPIService) V1AccountPhonenumberGetExecute(r ApiV1AccountPho
 type ApiV1AccountPhonenumberPostRequest struct {
 	ctx context.Context
 	ApiService *PhoneNumberAPIService
-	phonenumber *ServiceTelephoneNumberList
+	phonenumber *[]string
 }
 
 // phonenumber fields
-func (r ApiV1AccountPhonenumberPostRequest) Phonenumber(phonenumber ServiceTelephoneNumberList) ApiV1AccountPhonenumberPostRequest {
+func (r ApiV1AccountPhonenumberPostRequest) Phonenumber(phonenumber []string) ApiV1AccountPhonenumberPostRequest {
 	r.phonenumber = &phonenumber
 	return r
 }
@@ -695,7 +695,7 @@ func (a *PhoneNumberAPIService) V1AccountPhonenumberPostExecute(r ApiV1AccountPh
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v UtilCPAASError
+			var v CPAASError
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -830,7 +830,7 @@ func (a *PhoneNumberAPIService) V1AccountPhonenumberUnassignPostExecute(r ApiV1A
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v UtilCPAASError
+			var v CPAASError
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -977,7 +977,7 @@ func (a *PhoneNumberAPIService) V1PhonenumberSearchGetExecute(r ApiV1Phonenumber
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v UtilCPAASError
+			var v CPAASError
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

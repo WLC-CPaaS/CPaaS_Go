@@ -21,10 +21,15 @@ var _ MappedNullable = &ServiceDocsParkedcallGet{}
 // ServiceDocsParkedcallGet struct for ServiceDocsParkedcallGet
 type ServiceDocsParkedcallGet struct {
 	Data []map[string]ServiceParkingSlotData `json:"data,omitempty"`
+	// List Pagination: Used to get the next page of results. Will not exist if this is the last page.
 	NextStartKey *string `json:"next_start_key,omitempty"`
+	// List Pagination: The number of results returned in this page
 	PageSize *int32 `json:"page_size,omitempty"`
+	// Unique id for each request
 	RequestId *string `json:"request_id,omitempty"`
+	// List Pagination: Code for paged results
 	StartKey *string `json:"start_key,omitempty"`
+	// HTTP response status code
 	StatusCode *int32 `json:"status_code,omitempty"`
 }
 

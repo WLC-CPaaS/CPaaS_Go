@@ -147,7 +147,7 @@ func (a *AccountAPIService) V1AccountAccountidChildrenGetExecute(r ApiV1AccountA
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v UtilCPAASError
+			var v CPAASError
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -274,7 +274,7 @@ func (a *AccountAPIService) V1AccountAccountidDeleteExecute(r ApiV1AccountAccoun
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v UtilCPAASError
+			var v CPAASError
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -309,7 +309,7 @@ func (r ApiV1AccountAccountidDnsrecordGetRequest) Execute() (*ServiceDocsAccount
 }
 
 /*
-V1AccountAccountidDnsrecordGet Method for V1AccountAccountidDnsrecordGet
+V1AccountAccountidDnsrecordGet Get Account DNS Record
 
 Get the DNS record of an account from the Route 53 entry.
 
@@ -401,7 +401,7 @@ func (a *AccountAPIService) V1AccountAccountidDnsrecordGetExecute(r ApiV1Account
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v UtilCPAASError
+			var v CPAASError
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -436,7 +436,7 @@ func (r ApiV1AccountAccountidDnsrecordPostRequest) Execute() (*ServiceDocsAccoun
 }
 
 /*
-V1AccountAccountidDnsrecordPost Method for V1AccountAccountidDnsrecordPost
+V1AccountAccountidDnsrecordPost Create Account DNS Record
 
 Create the DNS record of an account with the help realm in the Route 53 entry.
 
@@ -528,7 +528,7 @@ func (a *AccountAPIService) V1AccountAccountidDnsrecordPostExecute(r ApiV1Accoun
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v UtilCPAASError
+			var v CPAASError
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -570,7 +570,7 @@ func (r ApiV1AccountAccountidDnsrecordPutRequest) Execute() (*ServiceDocsAccount
 }
 
 /*
-V1AccountAccountidDnsrecordPut Method for V1AccountAccountidDnsrecordPut
+V1AccountAccountidDnsrecordPut Convert Account DNS Record
 
 Toggle the realm DNS record between srv and cname.
 
@@ -667,7 +667,7 @@ func (a *AccountAPIService) V1AccountAccountidDnsrecordPutExecute(r ApiV1Account
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v UtilCPAASError
+			var v CPAASError
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -794,7 +794,7 @@ func (a *AccountAPIService) V1AccountAccountidGetExecute(r ApiV1AccountAccountid
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v UtilCPAASError
+			var v CPAASError
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -921,7 +921,7 @@ func (a *AccountAPIService) V1AccountAccountidLimitGetExecute(r ApiV1AccountAcco
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v UtilCPAASError
+			var v CPAASError
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1060,7 +1060,7 @@ func (a *AccountAPIService) V1AccountAccountidLimitPutExecute(r ApiV1AccountAcco
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v UtilCPAASError
+			var v CPAASError
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1199,7 +1199,7 @@ func (a *AccountAPIService) V1AccountAccountidPostExecute(r ApiV1AccountAccounti
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v UtilCPAASError
+			var v CPAASError
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1338,7 +1338,7 @@ func (a *AccountAPIService) V1AccountAccountidPutExecute(r ApiV1AccountAccountid
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v UtilCPAASError
+			var v CPAASError
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1461,7 +1461,7 @@ func (a *AccountAPIService) V1AccountApikeyGetExecute(r ApiV1AccountApikeyGetReq
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v UtilCPAASError
+			var v CPAASError
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1604,7 +1604,7 @@ func (a *AccountAPIService) V1AccountGetExecute(r ApiV1AccountGetRequest) (*Serv
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v UtilCPAASError
+			var v CPAASError
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1739,7 +1739,7 @@ func (a *AccountAPIService) V1AccountPostExecute(r ApiV1AccountPostRequest) (*Se
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v UtilCPAASError
+			var v CPAASError
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

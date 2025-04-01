@@ -81,9 +81,9 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AccountAPI* | [**V1AccountAccountidChildrenGet**](docs/AccountAPI.md#v1accountaccountidchildrenget) | **Get** /v1/account/{accountid}/children | Get Sub Account List
 *AccountAPI* | [**V1AccountAccountidDelete**](docs/AccountAPI.md#v1accountaccountiddelete) | **Delete** /v1/account/{accountid} | Delete Account
-*AccountAPI* | [**V1AccountAccountidDnsrecordGet**](docs/AccountAPI.md#v1accountaccountiddnsrecordget) | **Get** /v1/account/{accountid}/dnsrecord | 
-*AccountAPI* | [**V1AccountAccountidDnsrecordPost**](docs/AccountAPI.md#v1accountaccountiddnsrecordpost) | **Post** /v1/account/{accountid}/dnsrecord | 
-*AccountAPI* | [**V1AccountAccountidDnsrecordPut**](docs/AccountAPI.md#v1accountaccountiddnsrecordput) | **Put** /v1/account/{accountid}/dnsrecord | 
+*AccountAPI* | [**V1AccountAccountidDnsrecordGet**](docs/AccountAPI.md#v1accountaccountiddnsrecordget) | **Get** /v1/account/{accountid}/dnsrecord | Get Account DNS Record
+*AccountAPI* | [**V1AccountAccountidDnsrecordPost**](docs/AccountAPI.md#v1accountaccountiddnsrecordpost) | **Post** /v1/account/{accountid}/dnsrecord | Create Account DNS Record
+*AccountAPI* | [**V1AccountAccountidDnsrecordPut**](docs/AccountAPI.md#v1accountaccountiddnsrecordput) | **Put** /v1/account/{accountid}/dnsrecord | Convert Account DNS Record
 *AccountAPI* | [**V1AccountAccountidGet**](docs/AccountAPI.md#v1accountaccountidget) | **Get** /v1/account/{accountid} | Get Account Details
 *AccountAPI* | [**V1AccountAccountidLimitGet**](docs/AccountAPI.md#v1accountaccountidlimitget) | **Get** /v1/account/{accountid}/limit | Get Account Limits
 *AccountAPI* | [**V1AccountAccountidLimitPut**](docs/AccountAPI.md#v1accountaccountidlimitput) | **Put** /v1/account/{accountid}/limit | Set Account Limits
@@ -127,6 +127,15 @@ Class | Method | HTTP request | Description
 *ChannelAPI* | [**V1AccountAccountIDChannelGet**](docs/ChannelAPI.md#v1accountaccountidchannelget) | **Get** /v1/account/{accountID}/channel | Get Account Channel List
 *ChannelAPI* | [**V1AccountAccountIDDeviceDeviceIDChannelGet**](docs/ChannelAPI.md#v1accountaccountiddevicedeviceidchannelget) | **Get** /v1/account/{accountID}/device/{deviceID}/channel | Get Device Channel List
 *ChannelAPI* | [**V1AccountAccountIDUserUserIDChannelGet**](docs/ChannelAPI.md#v1accountaccountiduseruseridchannelget) | **Get** /v1/account/{accountID}/user/{userID}/channel | Get User Channel List
+*DataAPI* | [**V1DataCallDailySummaryGet**](docs/DataAPI.md#v1datacalldailysummaryget) | **Get** /v1/data/call_daily_summary | Get Call Daily Summary List
+*DataAPI* | [**V1DataCallDetailGet**](docs/DataAPI.md#v1datacalldetailget) | **Get** /v1/data/call_detail | Get Call Detail List
+*DataAPI* | [**V1DataCallMonthlySummaryGet**](docs/DataAPI.md#v1datacallmonthlysummaryget) | **Get** /v1/data/call_monthly_summary | Get Call Detail List
+*DataAPI* | [**V1DataEndpointListGet**](docs/DataAPI.md#v1dataendpointlistget) | **Get** /v1/data/endpoint_list | Get Endpoint List
+*DataAPI* | [**V1DataEventDailySummaryGet**](docs/DataAPI.md#v1dataeventdailysummaryget) | **Get** /v1/data/event_daily_summary | Get Event Daily Summary List
+*DataAPI* | [**V1DataEventDetailGet**](docs/DataAPI.md#v1dataeventdetailget) | **Get** /v1/data/event_detail | Get Event Details
+*DataAPI* | [**V1DataEventMonthlySummaryGet**](docs/DataAPI.md#v1dataeventmonthlysummaryget) | **Get** /v1/data/event_monthly_summary | Get Event Monthly Summary List
+*DataAPI* | [**V1DataFeatureDailySummaryGet**](docs/DataAPI.md#v1datafeaturedailysummaryget) | **Get** /v1/data/feature_daily_summary | Get Feature Daily Summary List
+*DataAPI* | [**V1DataFeatureMonthlySummaryGet**](docs/DataAPI.md#v1datafeaturemonthlysummaryget) | **Get** /v1/data/feature_monthly_summary | Get Feature Monthly Summary List
 *DeviceAPI* | [**V1AccountAccountidDeviceDeviceidDelete**](docs/DeviceAPI.md#v1accountaccountiddevicedeviceiddelete) | **Delete** /v1/account/{accountid}/device/{deviceid} | Delete Device
 *DeviceAPI* | [**V1AccountAccountidDeviceDeviceidGet**](docs/DeviceAPI.md#v1accountaccountiddevicedeviceidget) | **Get** /v1/account/{accountid}/device/{deviceid} | Get Device Details
 *DeviceAPI* | [**V1AccountAccountidDeviceDeviceidPut**](docs/DeviceAPI.md#v1accountaccountiddevicedeviceidput) | **Put** /v1/account/{accountid}/device/{deviceid} | Update Device
@@ -145,9 +154,6 @@ Class | Method | HTTP request | Description
 *GroupAPI* | [**V1AccountAccountIDGroupGroupIDGet**](docs/GroupAPI.md#v1accountaccountidgroupgroupidget) | **Get** /v1/account/{accountID}/group/{groupID} | Get Group Details
 *GroupAPI* | [**V1AccountAccountIDGroupGroupIDPut**](docs/GroupAPI.md#v1accountaccountidgroupgroupidput) | **Put** /v1/account/{accountID}/group/{groupID} | Update Group
 *GroupAPI* | [**V1AccountAccountIDGroupPost**](docs/GroupAPI.md#v1accountaccountidgrouppost) | **Post** /v1/account/{accountID}/group | Create Group
-*InvoiceAPI* | [**V1FinanceDailyreportGet**](docs/InvoiceAPI.md#v1financedailyreportget) | **Get** /v1/finance/dailyreport | Get Daily Account Summary
-*InvoiceAPI* | [**V1FinanceInvoiceGet**](docs/InvoiceAPI.md#v1financeinvoiceget) | **Get** /v1/finance/invoice | Get Invoice Summary
-*InvoiceAPI* | [**V1FinanceMonthlysummaryGet**](docs/InvoiceAPI.md#v1financemonthlysummaryget) | **Get** /v1/finance/monthlysummary | Get Monthly Summary
 *MediaAPI* | [**V1AccountAccountIDMediaMediaIDFileGet**](docs/MediaAPI.md#v1accountaccountidmediamediaidfileget) | **Get** /v1/account/{accountID}/media/{mediaID}/file | Get Media File
 *MediaAPI* | [**V1AccountAccountIDMediaMediaIDFilePost**](docs/MediaAPI.md#v1accountaccountidmediamediaidfilepost) | **Post** /v1/account/{accountID}/media/{mediaID}/file | Add Media File
 *MediaAPI* | [**V1AccountAccountidMediaGet**](docs/MediaAPI.md#v1accountaccountidmediaget) | **Get** /v1/account/{accountid}/media | Get Media List
@@ -226,18 +232,33 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
- - [ModelAccountSummaryByDate](docs/ModelAccountSummaryByDate.md)
+ - [CPAASError](docs/CPAASError.md)
+ - [MenuInputData](docs/MenuInputData.md)
+ - [MenuOutputDetail](docs/MenuOutputDetail.md)
+ - [MenuOutputDetailData](docs/MenuOutputDetailData.md)
+ - [MenuOutputDetailMedia](docs/MenuOutputDetailMedia.md)
+ - [MenuOutputList](docs/MenuOutputList.md)
+ - [MenuOutputListData](docs/MenuOutputListData.md)
  - [ModelAccountWebhook](docs/ModelAccountWebhook.md)
- - [ModelDailyAccountSummary](docs/ModelDailyAccountSummary.md)
- - [ModelInvoice](docs/ModelInvoice.md)
- - [ModelMonthlySummaryComponentsData](docs/ModelMonthlySummaryComponentsData.md)
- - [ModelMonthlySummaryReport](docs/ModelMonthlySummaryReport.md)
+ - [ModelCallDailySummary](docs/ModelCallDailySummary.md)
+ - [ModelCallDetail](docs/ModelCallDetail.md)
+ - [ModelCallMonthlySummary](docs/ModelCallMonthlySummary.md)
+ - [ModelEndpointList](docs/ModelEndpointList.md)
+ - [ModelEventDailySummary](docs/ModelEventDailySummary.md)
+ - [ModelEventDetail](docs/ModelEventDetail.md)
+ - [ModelEventMonthlySummary](docs/ModelEventMonthlySummary.md)
+ - [ModelFeatureDailySummary](docs/ModelFeatureDailySummary.md)
+ - [ModelFeatureMonthlySummary](docs/ModelFeatureMonthlySummary.md)
  - [RepositoryLocationsResponse](docs/RepositoryLocationsResponse.md)
  - [ServiceAPIKey](docs/ServiceAPIKey.md)
  - [ServiceAPIResponse](docs/ServiceAPIResponse.md)
  - [ServiceAPIResponseStatusCodeOnly](docs/ServiceAPIResponseStatusCodeOnly.md)
  - [ServiceAccountLimitOutput](docs/ServiceAccountLimitOutput.md)
- - [ServiceAccountOutput](docs/ServiceAccountOutput.md)
+ - [ServiceAccountOutputFull](docs/ServiceAccountOutputFull.md)
+ - [ServiceAccountOutputFullCalleridEmergency](docs/ServiceAccountOutputFullCalleridEmergency.md)
+ - [ServiceAccountOutputFullCalleridExternal](docs/ServiceAccountOutputFullCalleridExternal.md)
+ - [ServiceAccountOutputFullCalleridInternal](docs/ServiceAccountOutputFullCalleridInternal.md)
+ - [ServiceAccountOutputShort](docs/ServiceAccountOutputShort.md)
  - [ServiceAdminUserAddData](docs/ServiceAdminUserAddData.md)
  - [ServiceAdminUserDeleteOutput](docs/ServiceAdminUserDeleteOutput.md)
  - [ServiceAdminUserEditData](docs/ServiceAdminUserEditData.md)
@@ -268,9 +289,11 @@ Class | Method | HTTP request | Description
  - [ServiceDeviceOutputFullCallerid](docs/ServiceDeviceOutputFullCallerid.md)
  - [ServiceDeviceOutputFullCalleridEmergency](docs/ServiceDeviceOutputFullCalleridEmergency.md)
  - [ServiceDeviceOutputFullCalleridExternal](docs/ServiceDeviceOutputFullCalleridExternal.md)
+ - [ServiceDeviceOutputFullCalleridInternal](docs/ServiceDeviceOutputFullCalleridInternal.md)
+ - [ServiceDeviceOutputFullMedia](docs/ServiceDeviceOutputFullMedia.md)
+ - [ServiceDeviceOutputFullMediaAudio](docs/ServiceDeviceOutputFullMediaAudio.md)
  - [ServiceDeviceOutputFullSIP](docs/ServiceDeviceOutputFullSIP.md)
  - [ServiceDeviceOutputShort](docs/ServiceDeviceOutputShort.md)
- - [ServiceDocDailyAccountSummaryOutput](docs/ServiceDocDailyAccountSummaryOutput.md)
  - [ServiceDocE911ActiveLocationOutput](docs/ServiceDocE911ActiveLocationOutput.md)
  - [ServiceDocE911ActiveLocationURIApiOutput](docs/ServiceDocE911ActiveLocationURIApiOutput.md)
  - [ServiceDocE911AddLocationOutput](docs/ServiceDocE911AddLocationOutput.md)
@@ -281,9 +304,7 @@ Class | Method | HTTP request | Description
  - [ServiceDocE911ValidateLocationOutput](docs/ServiceDocE911ValidateLocationOutput.md)
  - [ServiceDocGroupGetAll](docs/ServiceDocGroupGetAll.md)
  - [ServiceDocGroupGetSingle](docs/ServiceDocGroupGetSingle.md)
- - [ServiceDocInvoiceOutput](docs/ServiceDocInvoiceOutput.md)
  - [ServiceDocMetaflowGet](docs/ServiceDocMetaflowGet.md)
- - [ServiceDocMonthlySummaryOutput](docs/ServiceDocMonthlySummaryOutput.md)
  - [ServiceDocsAccountAPIKey](docs/ServiceDocsAccountAPIKey.md)
  - [ServiceDocsAccountGetAll](docs/ServiceDocsAccountGetAll.md)
  - [ServiceDocsAccountGetSingle](docs/ServiceDocsAccountGetSingle.md)
@@ -292,6 +313,9 @@ Class | Method | HTTP request | Description
  - [ServiceDocsAdminUserDelete](docs/ServiceDocsAdminUserDelete.md)
  - [ServiceDocsAdminUserGetAll](docs/ServiceDocsAdminUserGetAll.md)
  - [ServiceDocsAdminUserGetSingle](docs/ServiceDocsAdminUserGetSingle.md)
+ - [ServiceDocsCallDailySummary](docs/ServiceDocsCallDailySummary.md)
+ - [ServiceDocsCallDetail](docs/ServiceDocsCallDetail.md)
+ - [ServiceDocsCallMonthlySummary](docs/ServiceDocsCallMonthlySummary.md)
  - [ServiceDocsCallQueueGetAll](docs/ServiceDocsCallQueueGetAll.md)
  - [ServiceDocsCallQueueGetRoles](docs/ServiceDocsCallQueueGetRoles.md)
  - [ServiceDocsCallQueueGetSingle](docs/ServiceDocsCallQueueGetSingle.md)
@@ -310,11 +334,15 @@ Class | Method | HTTP request | Description
  - [ServiceDocsChannelGetSingle](docs/ServiceDocsChannelGetSingle.md)
  - [ServiceDocsDeviceGetAll](docs/ServiceDocsDeviceGetAll.md)
  - [ServiceDocsDeviceGetSingle](docs/ServiceDocsDeviceGetSingle.md)
+ - [ServiceDocsEndpointList](docs/ServiceDocsEndpointList.md)
+ - [ServiceDocsEventDailySummary](docs/ServiceDocsEventDailySummary.md)
+ - [ServiceDocsEventDetail](docs/ServiceDocsEventDetail.md)
+ - [ServiceDocsEventMonthlySummary](docs/ServiceDocsEventMonthlySummary.md)
+ - [ServiceDocsFeatureDailySummary](docs/ServiceDocsFeatureDailySummary.md)
+ - [ServiceDocsFeatureMonthlySummary](docs/ServiceDocsFeatureMonthlySummary.md)
  - [ServiceDocsGetQueueRecipients](docs/ServiceDocsGetQueueRecipients.md)
  - [ServiceDocsMediaGetAll](docs/ServiceDocsMediaGetAll.md)
  - [ServiceDocsMediaGetSingle](docs/ServiceDocsMediaGetSingle.md)
- - [ServiceDocsMenuGetAll](docs/ServiceDocsMenuGetAll.md)
- - [ServiceDocsMenuGetSingle](docs/ServiceDocsMenuGetSingle.md)
  - [ServiceDocsOrderPhonenumber](docs/ServiceDocsOrderPhonenumber.md)
  - [ServiceDocsParkedcallGet](docs/ServiceDocsParkedcallGet.md)
  - [ServiceDocsPhonenumberAssignPayload](docs/ServiceDocsPhonenumberAssignPayload.md)
@@ -359,9 +387,6 @@ Class | Method | HTTP request | Description
  - [ServiceGroupOutputShort](docs/ServiceGroupOutputShort.md)
  - [ServiceMediaOutputFull](docs/ServiceMediaOutputFull.md)
  - [ServiceMediaOutputShort](docs/ServiceMediaOutputShort.md)
- - [ServiceMenuOutputFull](docs/ServiceMenuOutputFull.md)
- - [ServiceMenuOutputFullMedia](docs/ServiceMenuOutputFullMedia.md)
- - [ServiceMenuOutputShort](docs/ServiceMenuOutputShort.md)
  - [ServiceMetaflowOutput](docs/ServiceMetaflowOutput.md)
  - [ServiceMetaflowPattern](docs/ServiceMetaflowPattern.md)
  - [ServiceMusicOnHold](docs/ServiceMusicOnHold.md)
@@ -387,19 +412,23 @@ Class | Method | HTTP request | Description
  - [ServiceSystemStatusSupportService](docs/ServiceSystemStatusSupportService.md)
  - [ServiceSystemStatusVOIPService](docs/ServiceSystemStatusVOIPService.md)
  - [ServiceTTS](docs/ServiceTTS.md)
- - [ServiceTelephoneNumberList](docs/ServiceTelephoneNumberList.md)
  - [ServiceTemporalRuleOutputFull](docs/ServiceTemporalRuleOutputFull.md)
  - [ServiceTemporalRuleOutputShort](docs/ServiceTemporalRuleOutputShort.md)
  - [ServiceTemporalRuleSetOutputFull](docs/ServiceTemporalRuleSetOutputFull.md)
  - [ServiceTemporalRuleSetOutputShort](docs/ServiceTemporalRuleSetOutputShort.md)
  - [ServiceUpdateRecordTypeForAccount](docs/ServiceUpdateRecordTypeForAccount.md)
  - [ServiceUserOutputFull](docs/ServiceUserOutputFull.md)
+ - [ServiceUserOutputFullCallerid](docs/ServiceUserOutputFullCallerid.md)
+ - [ServiceUserOutputFullCalleridEmergency](docs/ServiceUserOutputFullCalleridEmergency.md)
+ - [ServiceUserOutputFullCalleridExternal](docs/ServiceUserOutputFullCalleridExternal.md)
+ - [ServiceUserOutputFullCalleridInternal](docs/ServiceUserOutputFullCalleridInternal.md)
  - [ServiceUserOutputShort](docs/ServiceUserOutputShort.md)
  - [ServiceVOIPAccountAddData](docs/ServiceVOIPAccountAddData.md)
  - [ServiceVOIPAccountCallRecording](docs/ServiceVOIPAccountCallRecording.md)
  - [ServiceVOIPAccountEditData](docs/ServiceVOIPAccountEditData.md)
  - [ServiceVOIPAccountLimit2](docs/ServiceVOIPAccountLimit2.md)
  - [ServiceVOIPAccountMusicOnHold](docs/ServiceVOIPAccountMusicOnHold.md)
+ - [ServiceVOIPAccountOutputFullCallerid](docs/ServiceVOIPAccountOutputFullCallerid.md)
  - [ServiceVOIPCallQueueAddEditData](docs/ServiceVOIPCallQueueAddEditData.md)
  - [ServiceVOIPCallQueueEnableMembershipData](docs/ServiceVOIPCallQueueEnableMembershipData.md)
  - [ServiceVOIPCallQueueRecipientLoginLogoutData](docs/ServiceVOIPCallQueueRecipientLoginLogoutData.md)
@@ -408,10 +437,11 @@ Class | Method | HTTP request | Description
  - [ServiceVOIPDeviceAddEdit2](docs/ServiceVOIPDeviceAddEdit2.md)
  - [ServiceVOIPDeviceAddEdit3a](docs/ServiceVOIPDeviceAddEdit3a.md)
  - [ServiceVOIPDeviceAddEdit3c](docs/ServiceVOIPDeviceAddEdit3c.md)
+ - [ServiceVOIPDeviceAddEdit3d](docs/ServiceVOIPDeviceAddEdit3d.md)
  - [ServiceVOIPDeviceAddEdit4](docs/ServiceVOIPDeviceAddEdit4.md)
+ - [ServiceVOIPDeviceAddEdit5](docs/ServiceVOIPDeviceAddEdit5.md)
  - [ServiceVOIPGroupAddEdit2](docs/ServiceVOIPGroupAddEdit2.md)
  - [ServiceVOIPMediaAddEditData](docs/ServiceVOIPMediaAddEditData.md)
- - [ServiceVOIPMenuAddEditData](docs/ServiceVOIPMenuAddEditData.md)
  - [ServiceVOIPMetaflowAddData](docs/ServiceVOIPMetaflowAddData.md)
  - [ServiceVOIPPresenceSetResetEditData](docs/ServiceVOIPPresenceSetResetEditData.md)
  - [ServiceVOIPQueueMembershipAddData](docs/ServiceVOIPQueueMembershipAddData.md)
@@ -430,7 +460,6 @@ Class | Method | HTTP request | Description
  - [ServiceWebhookAdd](docs/ServiceWebhookAdd.md)
  - [ServiceWebhookDeleteOutput](docs/ServiceWebhookDeleteOutput.md)
  - [ServiceWebhookEdit](docs/ServiceWebhookEdit.md)
- - [UtilCPAASError](docs/UtilCPAASError.md)
 
 
 ## Documentation For Authorization

@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**ServiceAccountOutput**](ServiceAccountOutput.md) |  | [optional] 
-**RequestId** | Pointer to **string** |  | [optional] 
-**StatusCode** | Pointer to **int32** |  | [optional] 
+**Data** | Pointer to [**ServiceAccountOutputFull**](ServiceAccountOutputFull.md) |  | [optional] 
+**RequestId** | Pointer to **string** | Unique id for each request | [optional] 
+**StatusCode** | Pointer to **int32** | HTTP response status code | [optional] 
 
 ## Methods
 
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *ServiceDocsAccountGetSingle) GetData() ServiceAccountOutput`
+`func (o *ServiceDocsAccountGetSingle) GetData() ServiceAccountOutputFull`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *ServiceDocsAccountGetSingle) GetDataOk() (*ServiceAccountOutput, bool)`
+`func (o *ServiceDocsAccountGetSingle) GetDataOk() (*ServiceAccountOutputFull, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *ServiceDocsAccountGetSingle) SetData(v ServiceAccountOutput)`
+`func (o *ServiceDocsAccountGetSingle) SetData(v ServiceAccountOutputFull)`
 
 SetData sets Data field to given value.
 

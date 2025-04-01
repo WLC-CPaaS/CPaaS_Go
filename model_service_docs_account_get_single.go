@@ -20,8 +20,10 @@ var _ MappedNullable = &ServiceDocsAccountGetSingle{}
 
 // ServiceDocsAccountGetSingle struct for ServiceDocsAccountGetSingle
 type ServiceDocsAccountGetSingle struct {
-	Data *ServiceAccountOutput `json:"data,omitempty"`
+	Data *ServiceAccountOutputFull `json:"data,omitempty"`
+	// Unique id for each request
 	RequestId *string `json:"request_id,omitempty"`
+	// HTTP response status code
 	StatusCode *int32 `json:"status_code,omitempty"`
 }
 
@@ -43,9 +45,9 @@ func NewServiceDocsAccountGetSingleWithDefaults() *ServiceDocsAccountGetSingle {
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *ServiceDocsAccountGetSingle) GetData() ServiceAccountOutput {
+func (o *ServiceDocsAccountGetSingle) GetData() ServiceAccountOutputFull {
 	if o == nil || IsNil(o.Data) {
-		var ret ServiceAccountOutput
+		var ret ServiceAccountOutputFull
 		return ret
 	}
 	return *o.Data
@@ -53,7 +55,7 @@ func (o *ServiceDocsAccountGetSingle) GetData() ServiceAccountOutput {
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ServiceDocsAccountGetSingle) GetDataOk() (*ServiceAccountOutput, bool) {
+func (o *ServiceDocsAccountGetSingle) GetDataOk() (*ServiceAccountOutputFull, bool) {
 	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
@@ -69,8 +71,8 @@ func (o *ServiceDocsAccountGetSingle) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given ServiceAccountOutput and assigns it to the Data field.
-func (o *ServiceDocsAccountGetSingle) SetData(v ServiceAccountOutput) {
+// SetData gets a reference to the given ServiceAccountOutputFull and assigns it to the Data field.
+func (o *ServiceDocsAccountGetSingle) SetData(v ServiceAccountOutputFull) {
 	o.Data = &v
 }
 

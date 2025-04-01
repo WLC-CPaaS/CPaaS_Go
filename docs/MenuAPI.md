@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## V1AccountAccountIDMenuGet
 
-> ServiceDocsMenuGetAll V1AccountAccountIDMenuGet(ctx, accountID).StartKey(startKey).PageSize(pageSize).Execute()
+> MenuOutputList V1AccountAccountIDMenuGet(ctx, accountID).StartKey(startKey).PageSize(pageSize).Execute()
 
 Get Menu List
 
@@ -44,7 +44,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `MenuAPI.V1AccountAccountIDMenuGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1AccountAccountIDMenuGet`: ServiceDocsMenuGetAll
+	// response from `V1AccountAccountIDMenuGet`: MenuOutputList
 	fmt.Fprintf(os.Stdout, "Response from `MenuAPI.V1AccountAccountIDMenuGet`: %v\n", resp)
 }
 ```
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServiceDocsMenuGetAll**](ServiceDocsMenuGetAll.md)
+[**MenuOutputList**](MenuOutputList.md)
 
 ### Authorization
 
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDMenuMenuIDDelete
 
-> ServiceDocsMenuGetSingle V1AccountAccountIDMenuMenuIDDelete(ctx, accountID, menuID).Execute()
+> MenuOutputDetail V1AccountAccountIDMenuMenuIDDelete(ctx, accountID, menuID).Execute()
 
 Delete Menu
 
@@ -117,7 +117,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `MenuAPI.V1AccountAccountIDMenuMenuIDDelete``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1AccountAccountIDMenuMenuIDDelete`: ServiceDocsMenuGetSingle
+	// response from `V1AccountAccountIDMenuMenuIDDelete`: MenuOutputDetail
 	fmt.Fprintf(os.Stdout, "Response from `MenuAPI.V1AccountAccountIDMenuMenuIDDelete`: %v\n", resp)
 }
 ```
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServiceDocsMenuGetSingle**](ServiceDocsMenuGetSingle.md)
+[**MenuOutputDetail**](MenuOutputDetail.md)
 
 ### Authorization
 
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDMenuMenuIDGet
 
-> ServiceDocsMenuGetSingle V1AccountAccountIDMenuMenuIDGet(ctx, accountID, menuID).Execute()
+> MenuOutputDetail V1AccountAccountIDMenuMenuIDGet(ctx, accountID, menuID).Execute()
 
 Get Menu Details
 
@@ -190,7 +190,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `MenuAPI.V1AccountAccountIDMenuMenuIDGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1AccountAccountIDMenuMenuIDGet`: ServiceDocsMenuGetSingle
+	// response from `V1AccountAccountIDMenuMenuIDGet`: MenuOutputDetail
 	fmt.Fprintf(os.Stdout, "Response from `MenuAPI.V1AccountAccountIDMenuMenuIDGet`: %v\n", resp)
 }
 ```
@@ -216,7 +216,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServiceDocsMenuGetSingle**](ServiceDocsMenuGetSingle.md)
+[**MenuOutputDetail**](MenuOutputDetail.md)
 
 ### Authorization
 
@@ -234,7 +234,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDMenuMenuIDPut
 
-> ServiceDocsMenuGetSingle V1AccountAccountIDMenuMenuIDPut(ctx, accountID, menuID).ReqBody(reqBody).Execute()
+> MenuOutputDetail V1AccountAccountIDMenuMenuIDPut(ctx, accountID, menuID).ReqBody(reqBody).Execute()
 
 Update Menu
 
@@ -255,7 +255,7 @@ import (
 func main() {
 	accountID := "accountID_example" // string | Account ID, 32 alpha numeric
 	menuID := "menuID_example" // string | Menu ID, 32 alpha numeric
-	reqBody := *openapiclient.NewServiceVOIPMenuAddEditData("Name_example") // ServiceVOIPMenuAddEditData | payload fields
+	reqBody := *openapiclient.NewMenuInputData("Name_example") // MenuInputData | payload fields
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -264,7 +264,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `MenuAPI.V1AccountAccountIDMenuMenuIDPut``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1AccountAccountIDMenuMenuIDPut`: ServiceDocsMenuGetSingle
+	// response from `V1AccountAccountIDMenuMenuIDPut`: MenuOutputDetail
 	fmt.Fprintf(os.Stdout, "Response from `MenuAPI.V1AccountAccountIDMenuMenuIDPut`: %v\n", resp)
 }
 ```
@@ -287,11 +287,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **reqBody** | [**ServiceVOIPMenuAddEditData**](ServiceVOIPMenuAddEditData.md) | payload fields | 
+ **reqBody** | [**MenuInputData**](MenuInputData.md) | payload fields | 
 
 ### Return type
 
-[**ServiceDocsMenuGetSingle**](ServiceDocsMenuGetSingle.md)
+[**MenuOutputDetail**](MenuOutputDetail.md)
 
 ### Authorization
 
@@ -309,7 +309,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDMenuPost
 
-> ServiceDocsMenuGetSingle V1AccountAccountIDMenuPost(ctx, accountID).Menu(menu).Execute()
+> MenuOutputDetail V1AccountAccountIDMenuPost(ctx, accountID).Menu(menu).Execute()
 
 Create Menu
 
@@ -329,7 +329,7 @@ import (
 
 func main() {
 	accountID := "accountID_example" // string | Account ID, 32 alphanumeric
-	menu := *openapiclient.NewServiceVOIPMenuAddEditData("Name_example") // ServiceVOIPMenuAddEditData | Menu data
+	menu := *openapiclient.NewMenuInputData("Name_example") // MenuInputData | Menu data
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -338,7 +338,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `MenuAPI.V1AccountAccountIDMenuPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1AccountAccountIDMenuPost`: ServiceDocsMenuGetSingle
+	// response from `V1AccountAccountIDMenuPost`: MenuOutputDetail
 	fmt.Fprintf(os.Stdout, "Response from `MenuAPI.V1AccountAccountIDMenuPost`: %v\n", resp)
 }
 ```
@@ -359,11 +359,11 @@ Other parameters are passed through a pointer to a apiV1AccountAccountIDMenuPost
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **menu** | [**ServiceVOIPMenuAddEditData**](ServiceVOIPMenuAddEditData.md) | Menu data | 
+ **menu** | [**MenuInputData**](MenuInputData.md) | Menu data | 
 
 ### Return type
 
-[**ServiceDocsMenuGetSingle**](ServiceDocsMenuGetSingle.md)
+[**MenuOutputDetail**](MenuOutputDetail.md)
 
 ### Authorization
 

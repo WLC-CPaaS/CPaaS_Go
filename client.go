@@ -68,13 +68,13 @@ type APIClient struct {
 
 	ChannelAPI *ChannelAPIService
 
+	DataAPI *DataAPIService
+
 	DeviceAPI *DeviceAPIService
 
 	E911API *E911APIService
 
 	GroupAPI *GroupAPIService
-
-	InvoiceAPI *InvoiceAPIService
 
 	MediaAPI *MediaAPIService
 
@@ -128,10 +128,10 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.CallRecordingAPI = (*CallRecordingAPIService)(&c.common)
 	c.CallflowAPI = (*CallflowAPIService)(&c.common)
 	c.ChannelAPI = (*ChannelAPIService)(&c.common)
+	c.DataAPI = (*DataAPIService)(&c.common)
 	c.DeviceAPI = (*DeviceAPIService)(&c.common)
 	c.E911API = (*E911APIService)(&c.common)
 	c.GroupAPI = (*GroupAPIService)(&c.common)
-	c.InvoiceAPI = (*InvoiceAPIService)(&c.common)
 	c.MediaAPI = (*MediaAPIService)(&c.common)
 	c.MenuAPI = (*MenuAPIService)(&c.common)
 	c.MetaflowAPI = (*MetaflowAPIService)(&c.common)

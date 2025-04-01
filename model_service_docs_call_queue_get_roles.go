@@ -21,7 +21,9 @@ var _ MappedNullable = &ServiceDocsCallQueueGetRoles{}
 // ServiceDocsCallQueueGetRoles struct for ServiceDocsCallQueueGetRoles
 type ServiceDocsCallQueueGetRoles struct {
 	Data *ServiceCallQueueRolesOutput `json:"data,omitempty"`
+	// Unique id for each request
 	RequestId *string `json:"request_id,omitempty"`
+	// HTTP response status code
 	StatusCode *int32 `json:"status_code,omitempty"`
 }
 

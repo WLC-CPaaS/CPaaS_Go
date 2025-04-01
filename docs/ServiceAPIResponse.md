@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to **map[string]interface{}** |  | [optional] 
-**RequestId** | Pointer to **string** |  | [optional] 
-**StatusCode** | Pointer to **int32** |  | [optional] 
+**Data** | Pointer to **map[string]interface{}** | Data payload | [optional] 
+**RequestId** | Pointer to **string** | Unique id for each request | [optional] 
+**StatusCode** | Pointer to **int32** | HTTP response status code | [optional] 
 
 ## Methods
 

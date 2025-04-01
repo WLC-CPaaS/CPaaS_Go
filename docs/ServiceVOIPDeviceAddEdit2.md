@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **DoNotDisturb** | Pointer to [**ServiceVOIPSharedDoNotDisturb**](ServiceVOIPSharedDoNotDisturb.md) |  | [optional] 
 **Enabled** | Pointer to **bool** | cannot use required, else it has to be true and false is not allowed | [optional] 
 **MacAddress** | Pointer to **string** | dont use mac, it enforces :, which voip does not like | [optional] 
+**Media** | Pointer to [**ServiceVOIPDeviceAddEdit3d**](ServiceVOIPDeviceAddEdit3d.md) |  | [optional] 
 **MusicOnHold** | Pointer to [**ServiceMusicOnHold**](ServiceMusicOnHold.md) |  | [optional] 
 **Name** | **string** |  | 
 **OwnerId** | Pointer to **string** | json omitempty is needed else voip fails on \&quot;\&quot; for owner_id | [optional] 
@@ -209,6 +210,31 @@ SetMacAddress sets MacAddress field to given value.
 `func (o *ServiceVOIPDeviceAddEdit2) HasMacAddress() bool`
 
 HasMacAddress returns a boolean if a field has been set.
+
+### GetMedia
+
+`func (o *ServiceVOIPDeviceAddEdit2) GetMedia() ServiceVOIPDeviceAddEdit3d`
+
+GetMedia returns the Media field if non-nil, zero value otherwise.
+
+### GetMediaOk
+
+`func (o *ServiceVOIPDeviceAddEdit2) GetMediaOk() (*ServiceVOIPDeviceAddEdit3d, bool)`
+
+GetMediaOk returns a tuple with the Media field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMedia
+
+`func (o *ServiceVOIPDeviceAddEdit2) SetMedia(v ServiceVOIPDeviceAddEdit3d)`
+
+SetMedia sets Media field to given value.
+
+### HasMedia
+
+`func (o *ServiceVOIPDeviceAddEdit2) HasMedia() bool`
+
+HasMedia returns a boolean if a field has been set.
 
 ### GetMusicOnHold
 

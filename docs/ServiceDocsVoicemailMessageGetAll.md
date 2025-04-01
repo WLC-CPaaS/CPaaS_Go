@@ -5,11 +5,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Data** | Pointer to [**[]ServiceVoicemailMessageOutput**](ServiceVoicemailMessageOutput.md) |  | [optional] 
-**NextStartKey** | Pointer to **string** |  | [optional] 
-**PageSize** | Pointer to **int32** |  | [optional] 
-**RequestId** | Pointer to **string** |  | [optional] 
-**StartKey** | Pointer to **string** |  | [optional] 
-**StatusCode** | Pointer to **int32** |  | [optional] 
+**NextStartKey** | Pointer to **string** | List Pagination: Used to get the next page of results. Will not exist if this is the last page. | [optional] 
+**PageSize** | Pointer to **int32** | List Pagination: The number of results returned in this page | [optional] 
+**RequestId** | Pointer to **string** | Unique id for each request | [optional] 
+**StartKey** | Pointer to **string** | List Pagination: Code for paged results | [optional] 
+**StatusCode** | Pointer to **int32** | HTTP response status code | [optional] 
 
 ## Methods
 

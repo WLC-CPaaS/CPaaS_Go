@@ -22,6 +22,7 @@ var _ MappedNullable = &ServiceDeviceOutputFullCallerid{}
 type ServiceDeviceOutputFullCallerid struct {
 	Emergency *ServiceDeviceOutputFullCalleridEmergency `json:"emergency,omitempty"`
 	External *ServiceDeviceOutputFullCalleridExternal `json:"external,omitempty"`
+	Internal *ServiceDeviceOutputFullCalleridInternal `json:"internal,omitempty"`
 }
 
 // NewServiceDeviceOutputFullCallerid instantiates a new ServiceDeviceOutputFullCallerid object
@@ -105,6 +106,38 @@ func (o *ServiceDeviceOutputFullCallerid) SetExternal(v ServiceDeviceOutputFullC
 	o.External = &v
 }
 
+// GetInternal returns the Internal field value if set, zero value otherwise.
+func (o *ServiceDeviceOutputFullCallerid) GetInternal() ServiceDeviceOutputFullCalleridInternal {
+	if o == nil || IsNil(o.Internal) {
+		var ret ServiceDeviceOutputFullCalleridInternal
+		return ret
+	}
+	return *o.Internal
+}
+
+// GetInternalOk returns a tuple with the Internal field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ServiceDeviceOutputFullCallerid) GetInternalOk() (*ServiceDeviceOutputFullCalleridInternal, bool) {
+	if o == nil || IsNil(o.Internal) {
+		return nil, false
+	}
+	return o.Internal, true
+}
+
+// HasInternal returns a boolean if a field has been set.
+func (o *ServiceDeviceOutputFullCallerid) HasInternal() bool {
+	if o != nil && !IsNil(o.Internal) {
+		return true
+	}
+
+	return false
+}
+
+// SetInternal gets a reference to the given ServiceDeviceOutputFullCalleridInternal and assigns it to the Internal field.
+func (o *ServiceDeviceOutputFullCallerid) SetInternal(v ServiceDeviceOutputFullCalleridInternal) {
+	o.Internal = &v
+}
+
 func (o ServiceDeviceOutputFullCallerid) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -120,6 +153,9 @@ func (o ServiceDeviceOutputFullCallerid) ToMap() (map[string]interface{}, error)
 	}
 	if !IsNil(o.External) {
 		toSerialize["external"] = o.External
+	}
+	if !IsNil(o.Internal) {
+		toSerialize["internal"] = o.Internal
 	}
 	return toSerialize, nil
 }

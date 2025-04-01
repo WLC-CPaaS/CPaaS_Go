@@ -44,7 +44,7 @@ func (r ApiV1AccountAccountIDMenuGetRequest) PageSize(pageSize int32) ApiV1Accou
 	return r
 }
 
-func (r ApiV1AccountAccountIDMenuGetRequest) Execute() (*ServiceDocsMenuGetAll, *http.Response, error) {
+func (r ApiV1AccountAccountIDMenuGetRequest) Execute() (*MenuOutputList, *http.Response, error) {
 	return r.ApiService.V1AccountAccountIDMenuGetExecute(r)
 }
 
@@ -66,13 +66,13 @@ func (a *MenuAPIService) V1AccountAccountIDMenuGet(ctx context.Context, accountI
 }
 
 // Execute executes the request
-//  @return ServiceDocsMenuGetAll
-func (a *MenuAPIService) V1AccountAccountIDMenuGetExecute(r ApiV1AccountAccountIDMenuGetRequest) (*ServiceDocsMenuGetAll, *http.Response, error) {
+//  @return MenuOutputList
+func (a *MenuAPIService) V1AccountAccountIDMenuGetExecute(r ApiV1AccountAccountIDMenuGetRequest) (*MenuOutputList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ServiceDocsMenuGetAll
+		localVarReturnValue  *MenuOutputList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MenuAPIService.V1AccountAccountIDMenuGet")
@@ -147,7 +147,7 @@ func (a *MenuAPIService) V1AccountAccountIDMenuGetExecute(r ApiV1AccountAccountI
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v UtilCPAASError
+			var v CPAASError
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -178,7 +178,7 @@ type ApiV1AccountAccountIDMenuMenuIDDeleteRequest struct {
 	menuID string
 }
 
-func (r ApiV1AccountAccountIDMenuMenuIDDeleteRequest) Execute() (*ServiceDocsMenuGetSingle, *http.Response, error) {
+func (r ApiV1AccountAccountIDMenuMenuIDDeleteRequest) Execute() (*MenuOutputDetail, *http.Response, error) {
 	return r.ApiService.V1AccountAccountIDMenuMenuIDDeleteExecute(r)
 }
 
@@ -202,13 +202,13 @@ func (a *MenuAPIService) V1AccountAccountIDMenuMenuIDDelete(ctx context.Context,
 }
 
 // Execute executes the request
-//  @return ServiceDocsMenuGetSingle
-func (a *MenuAPIService) V1AccountAccountIDMenuMenuIDDeleteExecute(r ApiV1AccountAccountIDMenuMenuIDDeleteRequest) (*ServiceDocsMenuGetSingle, *http.Response, error) {
+//  @return MenuOutputDetail
+func (a *MenuAPIService) V1AccountAccountIDMenuMenuIDDeleteExecute(r ApiV1AccountAccountIDMenuMenuIDDeleteRequest) (*MenuOutputDetail, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ServiceDocsMenuGetSingle
+		localVarReturnValue  *MenuOutputDetail
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MenuAPIService.V1AccountAccountIDMenuMenuIDDelete")
@@ -278,7 +278,7 @@ func (a *MenuAPIService) V1AccountAccountIDMenuMenuIDDeleteExecute(r ApiV1Accoun
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v UtilCPAASError
+			var v CPAASError
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -309,7 +309,7 @@ type ApiV1AccountAccountIDMenuMenuIDGetRequest struct {
 	menuID string
 }
 
-func (r ApiV1AccountAccountIDMenuMenuIDGetRequest) Execute() (*ServiceDocsMenuGetSingle, *http.Response, error) {
+func (r ApiV1AccountAccountIDMenuMenuIDGetRequest) Execute() (*MenuOutputDetail, *http.Response, error) {
 	return r.ApiService.V1AccountAccountIDMenuMenuIDGetExecute(r)
 }
 
@@ -333,13 +333,13 @@ func (a *MenuAPIService) V1AccountAccountIDMenuMenuIDGet(ctx context.Context, ac
 }
 
 // Execute executes the request
-//  @return ServiceDocsMenuGetSingle
-func (a *MenuAPIService) V1AccountAccountIDMenuMenuIDGetExecute(r ApiV1AccountAccountIDMenuMenuIDGetRequest) (*ServiceDocsMenuGetSingle, *http.Response, error) {
+//  @return MenuOutputDetail
+func (a *MenuAPIService) V1AccountAccountIDMenuMenuIDGetExecute(r ApiV1AccountAccountIDMenuMenuIDGetRequest) (*MenuOutputDetail, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ServiceDocsMenuGetSingle
+		localVarReturnValue  *MenuOutputDetail
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MenuAPIService.V1AccountAccountIDMenuMenuIDGet")
@@ -409,7 +409,7 @@ func (a *MenuAPIService) V1AccountAccountIDMenuMenuIDGetExecute(r ApiV1AccountAc
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v UtilCPAASError
+			var v CPAASError
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -438,16 +438,16 @@ type ApiV1AccountAccountIDMenuMenuIDPutRequest struct {
 	ApiService *MenuAPIService
 	accountID string
 	menuID string
-	reqBody *ServiceVOIPMenuAddEditData
+	reqBody *MenuInputData
 }
 
 // payload fields
-func (r ApiV1AccountAccountIDMenuMenuIDPutRequest) ReqBody(reqBody ServiceVOIPMenuAddEditData) ApiV1AccountAccountIDMenuMenuIDPutRequest {
+func (r ApiV1AccountAccountIDMenuMenuIDPutRequest) ReqBody(reqBody MenuInputData) ApiV1AccountAccountIDMenuMenuIDPutRequest {
 	r.reqBody = &reqBody
 	return r
 }
 
-func (r ApiV1AccountAccountIDMenuMenuIDPutRequest) Execute() (*ServiceDocsMenuGetSingle, *http.Response, error) {
+func (r ApiV1AccountAccountIDMenuMenuIDPutRequest) Execute() (*MenuOutputDetail, *http.Response, error) {
 	return r.ApiService.V1AccountAccountIDMenuMenuIDPutExecute(r)
 }
 
@@ -471,13 +471,13 @@ func (a *MenuAPIService) V1AccountAccountIDMenuMenuIDPut(ctx context.Context, ac
 }
 
 // Execute executes the request
-//  @return ServiceDocsMenuGetSingle
-func (a *MenuAPIService) V1AccountAccountIDMenuMenuIDPutExecute(r ApiV1AccountAccountIDMenuMenuIDPutRequest) (*ServiceDocsMenuGetSingle, *http.Response, error) {
+//  @return MenuOutputDetail
+func (a *MenuAPIService) V1AccountAccountIDMenuMenuIDPutExecute(r ApiV1AccountAccountIDMenuMenuIDPutRequest) (*MenuOutputDetail, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ServiceDocsMenuGetSingle
+		localVarReturnValue  *MenuOutputDetail
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MenuAPIService.V1AccountAccountIDMenuMenuIDPut")
@@ -552,7 +552,7 @@ func (a *MenuAPIService) V1AccountAccountIDMenuMenuIDPutExecute(r ApiV1AccountAc
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v UtilCPAASError
+			var v CPAASError
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -580,16 +580,16 @@ type ApiV1AccountAccountIDMenuPostRequest struct {
 	ctx context.Context
 	ApiService *MenuAPIService
 	accountID string
-	menu *ServiceVOIPMenuAddEditData
+	menu *MenuInputData
 }
 
 // Menu data
-func (r ApiV1AccountAccountIDMenuPostRequest) Menu(menu ServiceVOIPMenuAddEditData) ApiV1AccountAccountIDMenuPostRequest {
+func (r ApiV1AccountAccountIDMenuPostRequest) Menu(menu MenuInputData) ApiV1AccountAccountIDMenuPostRequest {
 	r.menu = &menu
 	return r
 }
 
-func (r ApiV1AccountAccountIDMenuPostRequest) Execute() (*ServiceDocsMenuGetSingle, *http.Response, error) {
+func (r ApiV1AccountAccountIDMenuPostRequest) Execute() (*MenuOutputDetail, *http.Response, error) {
 	return r.ApiService.V1AccountAccountIDMenuPostExecute(r)
 }
 
@@ -611,13 +611,13 @@ func (a *MenuAPIService) V1AccountAccountIDMenuPost(ctx context.Context, account
 }
 
 // Execute executes the request
-//  @return ServiceDocsMenuGetSingle
-func (a *MenuAPIService) V1AccountAccountIDMenuPostExecute(r ApiV1AccountAccountIDMenuPostRequest) (*ServiceDocsMenuGetSingle, *http.Response, error) {
+//  @return MenuOutputDetail
+func (a *MenuAPIService) V1AccountAccountIDMenuPostExecute(r ApiV1AccountAccountIDMenuPostRequest) (*MenuOutputDetail, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ServiceDocsMenuGetSingle
+		localVarReturnValue  *MenuOutputDetail
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MenuAPIService.V1AccountAccountIDMenuPost")
@@ -691,7 +691,7 @@ func (a *MenuAPIService) V1AccountAccountIDMenuPostExecute(r ApiV1AccountAccount
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v UtilCPAASError
+			var v CPAASError
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

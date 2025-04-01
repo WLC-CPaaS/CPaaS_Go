@@ -36,7 +36,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -63,7 +63,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -86,7 +86,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -118,7 +118,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -132,7 +132,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/service.TelephoneNumberList'
+              items:
+                type: string
+              type: array
         description: phonenumber fields
         required: true
       responses:
@@ -146,7 +148,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -175,7 +177,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -205,7 +207,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -235,7 +237,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -275,7 +277,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -309,7 +311,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -344,7 +346,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -377,7 +379,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -417,7 +419,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -446,7 +448,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -480,7 +482,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -515,7 +517,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -549,7 +551,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -589,7 +591,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -626,7 +628,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -654,7 +656,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -688,7 +690,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -728,7 +730,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -769,7 +771,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -804,7 +806,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -838,7 +840,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -871,7 +873,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -911,7 +913,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -951,7 +953,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -985,7 +987,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -1020,7 +1022,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -1053,7 +1055,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -1094,7 +1096,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -1139,7 +1141,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -1223,43 +1225,43 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
             audio/mp3:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
             audio/mpeg:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
             audio/mpeg3:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
             audio/x-wav:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
             audio/wav:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
             audio/ogg:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
             video/x-flv:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
             video/h264:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
             video/mpeg:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
             video/quicktime:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
             video/mp4:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
             video/webm:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -1299,7 +1301,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -1332,13 +1334,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/service.DocsMenuGetAll'
+                $ref: '#/components/schemas/MenuOutputList'
           description: OK
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -1358,7 +1360,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/service.VOIPMenuAddEditData'
+              $ref: '#/components/schemas/MenuInputData'
         description: Menu data
         required: true
       responses:
@@ -1366,13 +1368,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/service.DocsMenuGetSingle'
+                $ref: '#/components/schemas/MenuOutputDetail'
           description: OK
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -1401,13 +1403,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/service.DocsMenuGetSingle'
+                $ref: '#/components/schemas/MenuOutputDetail'
           description: OK
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -1434,13 +1436,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/service.DocsMenuGetSingle'
+                $ref: '#/components/schemas/MenuOutputDetail'
           description: OK
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -1466,7 +1468,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/service.VOIPMenuAddEditData'
+              $ref: '#/components/schemas/MenuInputData'
         description: payload fields
         required: true
       responses:
@@ -1474,13 +1476,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/service.DocsMenuGetSingle'
+                $ref: '#/components/schemas/MenuOutputDetail'
           description: OK
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -1509,7 +1511,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -1536,7 +1538,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -1570,7 +1572,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -1599,7 +1601,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -1627,7 +1629,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -1668,7 +1670,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -1704,7 +1706,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -1739,7 +1741,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -1780,7 +1782,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -1809,7 +1811,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -1837,7 +1839,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -1878,7 +1880,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -1920,7 +1922,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -1949,7 +1951,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -1983,7 +1985,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -2032,22 +2034,22 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
             audio/mp3:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
             audio/mpeg:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
             audio/mpeg3:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
             audio/x-wav:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
             audio/wav:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -2075,7 +2077,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -2102,7 +2104,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -2137,7 +2139,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -2174,7 +2176,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -2214,7 +2216,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -2248,7 +2250,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -2283,7 +2285,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -2316,7 +2318,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -2356,7 +2358,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -2396,7 +2398,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -2430,7 +2432,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -2465,7 +2467,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -2498,7 +2500,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -2538,7 +2540,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -2573,7 +2575,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -2607,7 +2609,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -2640,7 +2642,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -2680,7 +2682,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -2722,7 +2724,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -2757,7 +2759,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -2796,7 +2798,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -2830,7 +2832,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -2865,7 +2867,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -2898,7 +2900,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -2939,7 +2941,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -2985,7 +2987,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -3026,7 +3028,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -3067,7 +3069,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -3107,7 +3109,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -3154,7 +3156,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -3199,7 +3201,7 @@ paths:
           content:
             application/octet-stream:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -3246,7 +3248,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -3274,7 +3276,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -3302,7 +3304,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -3337,7 +3339,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -3372,7 +3374,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -3412,7 +3414,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -3452,7 +3454,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -3486,7 +3488,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -3521,7 +3523,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -3554,7 +3556,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -3595,7 +3597,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -3624,10 +3626,11 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
+      summary: Get Account DNS Record
       tags:
       - Account
     post:
@@ -3651,10 +3654,11 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
+      summary: Create Account DNS Record
       tags:
       - Account
     put:
@@ -3684,10 +3688,11 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
+      summary: Convert Account DNS Record
       tags:
       - Account
       x-codegen-request-body-name: dnsrecord
@@ -3712,7 +3717,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -3747,7 +3752,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -3787,7 +3792,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -3822,7 +3827,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -3857,7 +3862,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -3890,7 +3895,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -3928,7 +3933,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -3968,7 +3973,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -4003,7 +4008,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -4038,7 +4043,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -4071,7 +4076,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -4112,7 +4117,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -4120,6 +4125,578 @@ paths:
       tags:
       - VoIP User
       x-codegen-request-body-name: user
+  /v1/data/call_daily_summary:
+    get:
+      description: Retrieve a paginated list of call daily summary based on query
+        parameters.
+      parameters:
+      - in: query
+        name: account_id
+        schema:
+          type: string
+      - in: query
+        name: call_type
+        schema:
+          type: string
+      - in: query
+        name: end_date
+        schema:
+          type: string
+      - in: query
+        name: page_size
+        schema:
+          type: integer
+      - in: query
+        name: start_date
+        schema:
+          type: string
+      - in: query
+        name: start_key
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/service.DocsCallDailySummary'
+          description: OK
+        "400":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/CPAASError'
+          description: Bad Request
+        "404":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/CPAASError'
+          description: Not Found
+        "500":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/CPAASError'
+          description: Internal Server Error
+      security:
+      - BearerAuth: []
+      summary: Get Call Daily Summary List
+      tags:
+      - Data
+  /v1/data/call_detail:
+    get:
+      description: Retrieve a paginated list of call details based on query parameters.
+      parameters:
+      - in: query
+        name: account
+        schema:
+          type: string
+      - in: query
+        name: call_type
+        schema:
+          type: string
+      - in: query
+        name: callee_name
+        schema:
+          type: string
+      - in: query
+        name: callee_number
+        schema:
+          type: string
+      - in: query
+        name: caller_name
+        schema:
+          type: string
+      - in: query
+        name: caller_number
+        schema:
+          type: string
+      - in: query
+        name: end_date
+        schema:
+          type: string
+      - in: query
+        name: page_size
+        schema:
+          type: integer
+      - in: query
+        name: start_date
+        schema:
+          type: string
+      - in: query
+        name: start_key
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/service.DocsCallDetail'
+          description: OK
+        "400":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/CPAASError'
+          description: Bad Request
+        "404":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/CPAASError'
+          description: Not Found
+        "500":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/CPAASError'
+          description: Internal Server Error
+      security:
+      - BearerAuth: []
+      summary: Get Call Detail List
+      tags:
+      - Data
+  /v1/data/call_monthly_summary:
+    get:
+      description: Retrieve a paginated list of call monthly summary based on query
+        parameters.
+      parameters:
+      - in: query
+        name: account
+        schema:
+          type: string
+      - in: query
+        name: call_type
+        schema:
+          type: string
+      - in: query
+        name: end_month
+        schema:
+          type: integer
+      - in: query
+        name: end_year
+        schema:
+          type: integer
+      - in: query
+        name: page_size
+        schema:
+          type: integer
+      - in: query
+        name: start_key
+        schema:
+          type: string
+      - in: query
+        name: start_month
+        schema:
+          type: integer
+      - in: query
+        name: start_year
+        schema:
+          type: integer
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/service.DocsCallMonthlySummary'
+          description: OK
+        "400":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/CPAASError'
+          description: Bad Request
+        "404":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/CPAASError'
+          description: Not Found
+        "500":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/CPAASError'
+          description: Internal Server Error
+      security:
+      - BearerAuth: []
+      summary: Get Call Detail List
+      tags:
+      - Data
+  /v1/data/endpoint_list:
+    get:
+      description: Retrieve a paginated list of endpoints based on query parameters.
+      parameters:
+      - in: query
+        name: endpoint_name
+        schema:
+          type: string
+      - in: query
+        name: feature_name
+        schema:
+          type: string
+      - in: query
+        name: page_size
+        schema:
+          type: integer
+      - in: query
+        name: start_key
+        schema:
+          type: string
+      - in: query
+        name: transaction_type
+        schema:
+          type: string
+      - in: query
+        name: version
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/service.DocsEndpointList'
+          description: OK
+        "400":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/CPAASError'
+          description: Bad Request
+        "404":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/CPAASError'
+          description: Not Found
+        "500":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/CPAASError'
+          description: Internal Server Error
+      security:
+      - BearerAuth: []
+      summary: Get Endpoint List
+      tags:
+      - Data
+  /v1/data/event_daily_summary:
+    get:
+      description: Retrieve a paginated list of event daily summaries based on query
+        parameters.
+      parameters:
+      - in: query
+        name: account_id
+        schema:
+          type: string
+      - in: query
+        name: component
+        schema:
+          type: string
+      - in: query
+        name: end_date
+        schema:
+          type: string
+      - in: query
+        name: page_size
+        schema:
+          type: integer
+      - in: query
+        name: start_date
+        schema:
+          type: string
+      - in: query
+        name: start_key
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/service.DocsEventDailySummary'
+          description: OK
+        "400":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/CPAASError'
+          description: Bad Request
+        "404":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/CPAASError'
+          description: Not Found
+        "500":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/CPAASError'
+          description: Internal Server Error
+      security:
+      - BearerAuth: []
+      summary: Get Event Daily Summary List
+      tags:
+      - Data
+  /v1/data/event_detail:
+    get:
+      description: Retrieve a paginated list of event detail based on query parameters.
+      parameters:
+      - in: query
+        name: account_id
+        schema:
+          type: string
+      - in: query
+        name: component
+        schema:
+          type: string
+      - in: query
+        name: end_date_time
+        schema:
+          type: string
+      - in: query
+        name: event_name
+        schema:
+          type: string
+      - in: query
+        name: exec_status
+        schema:
+          type: string
+      - in: query
+        name: page_size
+        schema:
+          type: integer
+      - in: query
+        name: start_date_time
+        schema:
+          type: string
+      - in: query
+        name: start_key
+        schema:
+          type: string
+      - in: query
+        name: username
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/service.DocsEventDetail'
+          description: OK
+        "400":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/CPAASError'
+          description: Bad Request
+        "404":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/CPAASError'
+          description: Not Found
+        "500":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/CPAASError'
+          description: Internal Server Error
+      security:
+      - BearerAuth: []
+      summary: Get Event Details
+      tags:
+      - Data
+  /v1/data/event_monthly_summary:
+    get:
+      description: Retrieve a paginated list of event monthly summaries based on query
+        parameters.
+      parameters:
+      - in: query
+        name: account_id
+        schema:
+          type: string
+      - in: query
+        name: component
+        schema:
+          type: string
+      - in: query
+        name: end_month
+        schema:
+          type: integer
+      - in: query
+        name: end_year
+        schema:
+          type: integer
+      - in: query
+        name: page_size
+        schema:
+          type: integer
+      - in: query
+        name: start_key
+        schema:
+          type: string
+      - in: query
+        name: start_month
+        schema:
+          type: integer
+      - in: query
+        name: start_year
+        schema:
+          type: integer
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/service.DocsEventMonthlySummary'
+          description: OK
+        "400":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/CPAASError'
+          description: Bad Request
+        "404":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/CPAASError'
+          description: Not Found
+        "500":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/CPAASError'
+          description: Internal Server Error
+      security:
+      - BearerAuth: []
+      summary: Get Event Monthly Summary List
+      tags:
+      - Data
+  /v1/data/feature_daily_summary:
+    get:
+      description: Retrieve a paginated list of feature daily summary based on query
+        parameters.
+      parameters:
+      - in: query
+        name: end_date
+        schema:
+          type: string
+      - in: query
+        name: feature_name
+        schema:
+          type: string
+      - in: query
+        name: page_size
+        schema:
+          type: integer
+      - in: query
+        name: start_date
+        schema:
+          type: string
+      - in: query
+        name: start_key
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/service.DocsFeatureDailySummary'
+          description: OK
+        "400":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/CPAASError'
+          description: Bad Request
+        "404":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/CPAASError'
+          description: Not Found
+        "500":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/CPAASError'
+          description: Internal Server Error
+      security:
+      - BearerAuth: []
+      summary: Get Feature Daily Summary List
+      tags:
+      - Data
+  /v1/data/feature_monthly_summary:
+    get:
+      description: Retrieve a paginated list of feature monthly summary based on query
+        parameters.
+      parameters:
+      - in: query
+        name: end_month
+        schema:
+          type: integer
+      - in: query
+        name: end_year
+        schema:
+          type: integer
+      - in: query
+        name: feature_name
+        schema:
+          type: string
+      - in: query
+        name: page_size
+        schema:
+          type: integer
+      - in: query
+        name: start_key
+        schema:
+          type: string
+      - in: query
+        name: start_month
+        schema:
+          type: integer
+      - in: query
+        name: start_year
+        schema:
+          type: integer
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/service.DocsFeatureMonthlySummary'
+          description: OK
+        "400":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/CPAASError'
+          description: Bad Request
+        "404":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/CPAASError'
+          description: Not Found
+        "500":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/CPAASError'
+          description: Internal Server Error
+      security:
+      - BearerAuth: []
+      summary: Get Feature Monthly Summary List
+      tags:
+      - Data
   /v1/e911:
     get:
       description: Obtain e911 URIs associated with the provided account ID.
@@ -4134,13 +4711,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Authorization failed or root account not allowed
         "500":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: "Internal server error, including environment credential issues,\
             \ HTTP request failures, or XML unmarshaling errors"
       summary: Get E911 List
@@ -4166,13 +4743,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Authorization failed or root account not allowed
         "500":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: "Internal server error, including environment credential issues,\
             \ HTTP request failures, or XML unmarshaling errors"
       summary: Create an E911 Location
@@ -4200,13 +4777,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Authorization failed or root account not allowed
         "500":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: "Internal server error, including environment credential issues,\
             \ HTTP request failures, or XML unmarshaling errors"
       summary: Validate a Location
@@ -4234,13 +4811,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Authorization failed or root account not allowed
         "500":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: "Internal server error, including environment credential issues,\
             \ HTTP request failures, or XML unmarshaling errors"
       summary: Delete E911 Location
@@ -4267,13 +4844,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Authorization failed or root account not allowed
         "500":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: "Internal server error, including environment credential issues,\
             \ HTTP request failures, or XML unmarshaling errors"
       summary: Activate E911 Location
@@ -4300,13 +4877,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Authorization failed or root account not allowed
         "500":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: "Internal server error, including environment credential issues,\
             \ HTTP request failures, or XML unmarshaling errors"
       summary: Delete E911 Phone Number
@@ -4334,13 +4911,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Authorization failed or root account not allowed
         "500":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: "Internal server error, including environment credential issues,\
             \ HTTP request failures, or XML unmarshaling errors"
       summary: Get Location List for Phone Number
@@ -4367,144 +4944,18 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Authorization failed or root account not allowed
         "500":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: "Internal server error, including environment credential issues,\
             \ HTTP request failures, or XML unmarshaling errors"
       summary: Get Actvie Location for a Phone Number
       tags:
       - E911
-  /v1/finance/dailyreport:
-    get:
-      description: "Retrieve the daily account summary for the month, year, and component."
-      parameters:
-      - description: Year of the century
-        in: query
-        name: year
-        required: true
-        schema:
-          type: string
-      - description: Month of the year
-        in: query
-        name: month
-        required: true
-        schema:
-          type: string
-      - description: Component id of the routes
-        in: query
-        name: component_id
-        required: true
-        schema:
-          type: string
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/service.DocDailyAccountSummaryOutput'
-          description: OK
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/util.CPAASError'
-          description: Bad Request
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/util.CPAASError'
-          description: Internal Server Error
-      security:
-      - BearerAuth: []
-      summary: Get Daily Account Summary
-      tags:
-      - Invoice
-  /v1/finance/invoice:
-    get:
-      description: "Get the invoice summary for the given month, year, and client."
-      parameters:
-      - description: Invoice year
-        in: query
-        name: year
-        required: true
-        schema:
-          type: string
-      - description: Invoice Month
-        in: query
-        name: month
-        required: true
-        schema:
-          type: string
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/service.DocInvoiceOutput'
-          description: OK
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/util.CPAASError'
-          description: Bad Request
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/util.CPAASError'
-          description: Internal Server Error
-      security:
-      - BearerAuth: []
-      summary: Get Invoice Summary
-      tags:
-      - Invoice
-  /v1/finance/monthlysummary:
-    get:
-      description: "Obtain the monthly account summary for the month, year, and client."
-      parameters:
-      - description: Invoice year
-        in: query
-        name: year
-        required: true
-        schema:
-          type: string
-      - description: Invoice month
-        in: query
-        name: month
-        required: true
-        schema:
-          type: string
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/service.DocMonthlySummaryOutput'
-          description: OK
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/util.CPAASError'
-          description: Bad Request
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/util.CPAASError'
-          description: Internal Server Error
-      security:
-      - BearerAuth: []
-      summary: Get Monthly Summary
-      tags:
-      - Invoice
   /v1/mgmt/user:
     get:
       description: Retrieve a list of all CPaaS users in an account.
@@ -4556,19 +5007,19 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
         "404":
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Not Found
         "500":
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Internal Server Error
       security:
       - BearerAuth: []
@@ -4595,19 +5046,19 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
         "404":
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Not Found
         "500":
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Internal Server Error
       security:
       - BearerAuth: []
@@ -4636,19 +5087,19 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
         "404":
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Not Found
         "500":
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Internal Server Error
       security:
       - BearerAuth: []
@@ -4675,19 +5126,19 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
         "404":
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Not Found
         "500":
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Internal Server Error
       security:
       - BearerAuth: []
@@ -4721,19 +5172,19 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
         "404":
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Not Found
         "500":
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Internal Server Error
       security:
       - BearerAuth: []
@@ -4770,7 +5221,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -4791,7 +5242,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -4812,7 +5263,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -4850,7 +5301,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -4883,7 +5334,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -4915,7 +5366,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -4958,7 +5409,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -4997,7 +5448,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -5018,7 +5469,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
       security:
       - BearerAuth: []
@@ -5056,19 +5507,19 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
         "404":
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Not Found
         "500":
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Internal Server Error
       security:
       - BearerAuth: []
@@ -5102,13 +5553,13 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
         "500":
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Internal Server Error
       security:
       - BearerAuth: []
@@ -5144,19 +5595,19 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
         "404":
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Not Found
         "500":
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Internal Server Error
       security:
       - BearerAuth: []
@@ -5190,19 +5641,19 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
         "404":
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Not Found
         "500":
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Internal Server Error
       security:
       - BearerAuth: []
@@ -5242,19 +5693,19 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Bad Request
         "404":
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Not Found
         "500":
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/util.CPAASError'
+                $ref: '#/components/schemas/CPAASError'
           description: Internal Server Error
       security:
       - BearerAuth: []
@@ -5264,18 +5715,180 @@ paths:
       x-codegen-request-body-name: body
 components:
   schemas:
-    model.AccountSummaryByDate:
+    CPAASError:
       example:
-        date: date
-        cost: 0.8008281904610115
-        transaction_count: 6
+        status_code: 5
+        error_code: 5
+        message: message
+        errors:
+        - "{}"
+        - "{}"
       properties:
-        cost:
-          type: number
-        date:
-          type: string
-        transaction_count:
+        error_code:
+          description: Error Code
           type: integer
+        errors:
+          description: Error details
+          items:
+            type: object
+          type: array
+        message:
+          description: Error Message
+          type: string
+        status_code:
+          description: HTTP response status code
+          type: integer
+      type: object
+    MenuInputData:
+      example:
+        name: name
+        media: "{}"
+        timeout: 4805
+      properties:
+        media:
+          allOf:
+          - $ref: '#/components/schemas/MenuOutputDetailMedia'
+          description: The media (prompt) parameters
+          type: object
+        name:
+          description: A friendly name for the menu
+          maxLength: 128
+          type: string
+        timeout:
+          description: The amount of time (in milliseconds) to wait for the caller
+            to begin entering digits
+          maximum: 60000
+          minimum: 1
+          type: integer
+      required:
+      - name
+      type: object
+    MenuOutputDetail:
+      example:
+        status_code: 0
+        data: "{}"
+        request_id: request_id
+      properties:
+        data:
+          allOf:
+          - $ref: '#/components/schemas/MenuOutputDetailData'
+          description: Data Payload
+          type: object
+        request_id:
+          description: Unique id for each request
+          type: string
+        status_code:
+          description: HTTP response status code
+          type: integer
+      type: object
+    MenuOutputDetailData:
+      properties:
+        id:
+          description: ID of the menu
+          type: string
+        media:
+          allOf:
+          - $ref: '#/components/schemas/MenuOutputDetailMedia'
+          description: The media (prompt) parameters
+          type: object
+        name:
+          description: A friendly name for the menu
+          type: string
+        timeout:
+          description: The amount of time (in milliseconds) to wait for the caller
+            to begin entering digits
+          type: integer
+      type: object
+    MenuOutputDetailMedia:
+      properties:
+        greeting:
+          description: The ID of a media object that should be used as the menu greeting
+          maxLength: 2048
+          minLength: 3
+          type: string
+        invalid_media:
+          description: When the collected digits don't result in a match or hunt this
+            media can be played
+          type: object
+        transfer_media:
+          description: "When a call is transferred from the menu, either after all\
+            \ retries exhausted or a successful hunt, this media can be played"
+          type: object
+      type: object
+    MenuOutputList:
+      example:
+        status_code: 6
+        data:
+        - features:
+          - features
+          - features
+          flags:
+          - flags
+          - flags
+          name: name
+          id: id
+        - features:
+          - features
+          - features
+          flags:
+          - flags
+          - flags
+          name: name
+          id: id
+        next_start_key: next_start_key
+        start_key: start_key
+        request_id: request_id
+        page_size: 0
+      properties:
+        data:
+          description: Data Payload
+          items:
+            $ref: '#/components/schemas/MenuOutputListData'
+          type: array
+        next_start_key:
+          description: "List Pagination: Used to get the next page of results. Will\
+            \ not exist if this is the last page."
+          type: string
+        page_size:
+          description: "List Pagination: The number of results returned in this page"
+          type: integer
+        request_id:
+          description: Unique id for each request
+          type: string
+        start_key:
+          description: "List Pagination: Code for paged results"
+          type: string
+        status_code:
+          description: HTTP response status code
+          type: integer
+      type: object
+    MenuOutputListData:
+      example:
+        features:
+        - features
+        - features
+        flags:
+        - flags
+        - flags
+        name: name
+        id: id
+      properties:
+        features:
+          description: Features used in this menu
+          items:
+            type: string
+          type: array
+        flags:
+          description: Flags set by external applications
+          items:
+            type: string
+          type: array
+        id:
+          description: ID of the menu
+          type: string
+        name:
+          description: A friendly name for the menu
+          type: string
       type: object
     model.AccountWebhook:
       example:
@@ -5313,78 +5926,202 @@ components:
         webhook_type:
           type: string
       type: object
-    model.DailyAccountSummary:
+    model.CallDailySummary:
       example:
-        component_id: 1
-        account_summary_by_date:
-        - date: date
-          cost: 0.8008281904610115
-          transaction_count: 6
-        - date: date
-          cost: 0.8008281904610115
-          transaction_count: 6
+        call_date: call_date
+        account_id: account_id
+        total_call_duration: total_call_duration
+        created_at: created_at
+        call_type: call_type
       properties:
-        account_summary_by_date:
-          items:
-            $ref: '#/components/schemas/model.AccountSummaryByDate'
-          type: array
-        component_id:
-          type: integer
-      type: object
-    model.Invoice:
-      example:
-        invoice_cost: 5.637376656633329
-        call_minute_cost: 1.4658129805029452
-        api_call_cost: 0.8008281904610115
-        month: 2
-        year: 7
-        call_minute_count: 5
-        api_call_count: 6
-      properties:
-        api_call_cost:
-          type: number
-        api_call_count:
-          type: integer
-        call_minute_cost:
-          type: number
-        call_minute_count:
-          type: integer
-        invoice_cost:
-          type: number
-        month:
-          type: integer
-        year:
-          type: integer
-      type: object
-    model.MonthlySummaryComponentsData:
-      example:
-        transaction_cost: 0.8008281904610115
-        component_id: component_id
-        transaction_count: 6
-      properties:
-        component_id:
+        account_id:
           type: string
-        transaction_cost:
-          type: number
+        call_date:
+          type: string
+        call_type:
+          type: string
+        created_at:
+          type: string
+        total_call_duration:
+          type: string
+      type: object
+    model.CallDetail:
+      example:
+        caller_name: caller_name
+        account_id: account_id
+        callee_name: callee_name
+        call_time: call_time
+        created_at: created_at
+        callee_number: callee_number
+        call_type: call_type
+        caller_number: caller_number
+        call_duration: call_duration
+        call_id: call_id
+      properties:
+        account_id:
+          type: string
+        call_duration:
+          type: string
+        call_id:
+          type: string
+        call_time:
+          type: string
+        call_type:
+          type: string
+        callee_name:
+          type: string
+        callee_number:
+          type: string
+        caller_name:
+          type: string
+        caller_number:
+          type: string
+        created_at:
+          type: string
+      type: object
+    model.CallMonthlySummary:
+      example:
+        account_id: account_id
+        call_year: 6
+        total_call_duration: total_call_duration
+        created_at: created_at
+        call_month: 0
+        call_type: call_type
+      properties:
+        account_id:
+          type: string
+        call_month:
+          type: integer
+        call_type:
+          type: string
+        call_year:
+          type: integer
+        created_at:
+          type: string
+        total_call_duration:
+          type: string
+      type: object
+    model.EndpointList:
+      example:
+        feature_name: feature_name
+        endpoint_name: endpoint_name
+        created_at: created_at
+        id: 0
+        transaction_type: transaction_type
+        version: version
+      properties:
+        created_at:
+          type: string
+        endpoint_name:
+          type: string
+        feature_name:
+          type: string
+        id:
+          type: integer
+        transaction_type:
+          type: string
+        version:
+          type: string
+      type: object
+    model.EventDailySummary:
+      example:
+        transaction_date: transaction_date
+        component: component
+        account_id: account_id
+        transaction_count: 0
+        created_at: created_at
+      properties:
+        account_id:
+          type: string
+        component:
+          type: string
+        created_at:
+          type: string
         transaction_count:
           type: integer
+        transaction_date:
+          type: string
       type: object
-    model.MonthlySummaryReport:
+    model.EventDetail:
       example:
-        components:
-        - transaction_cost: 0.8008281904610115
-          component_id: component_id
-          transaction_count: 6
-        - transaction_cost: 0.8008281904610115
-          component_id: component_id
-          transaction_count: 6
-        transaction_year: 5
-        transaction_month: 1
+        component: component
+        account_id: account_id
+        log_date: log_date
+        created_at: created_at
+        event_name: event_name
+        exec_status: exec_status
+        log_time: log_time
+        username: username
       properties:
-        components:
-          items:
-            $ref: '#/components/schemas/model.MonthlySummaryComponentsData'
-          type: array
+        account_id:
+          type: string
+        component:
+          type: string
+        created_at:
+          type: string
+        event_name:
+          type: string
+        exec_status:
+          type: string
+        log_date:
+          type: string
+        log_time:
+          type: string
+        username:
+          type: string
+      type: object
+    model.EventMonthlySummary:
+      example:
+        component: component
+        account_id: account_id
+        transaction_year: 1
+        transaction_count: 0
+        created_at: created_at
+        transaction_month: 6
+      properties:
+        account_id:
+          type: string
+        component:
+          type: string
+        created_at:
+          type: string
+        transaction_count:
+          type: integer
+        transaction_month:
+          type: integer
+        transaction_year:
+          type: integer
+      type: object
+    model.FeatureDailySummary:
+      example:
+        feature_name: feature_name
+        log_date: log_date
+        created_at: created_at
+        feature_count: 0
+      properties:
+        created_at:
+          type: string
+        feature_count:
+          type: integer
+        feature_name:
+          type: string
+        log_date:
+          type: string
+      type: object
+    model.FeatureMonthlySummary:
+      example:
+        feature_name: feature_name
+        transaction_year: 1
+        created_at: created_at
+        feature_count: 0
+        transaction_month: 6
+      properties:
+        created_at:
+          type: string
+        feature_count:
+          type: integer
+        feature_name:
+          type: string
         transaction_month:
           type: integer
         transaction_year:
@@ -5420,10 +6157,13 @@ components:
         request_id: request_id
       properties:
         data:
+          description: Data payload
           type: object
         request_id:
+          description: Unique id for each request
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.APIResponseStatusCodeOnly:
@@ -5449,7 +6189,7 @@ components:
         twoway_trunks:
           type: integer
       type: object
-    service.AccountOutput:
+    service.AccountOutputFull:
       example:
         call_recording:
           endpoint:
@@ -5624,6 +6364,13 @@ components:
                 url: url
         music_on_hold:
           media_id: media_id
+        caller_id:
+          external:
+            number: number
+          internal:
+            number: number
+          emergency:
+            number: number
         timezone: timezone
         name: name
         realm: realm
@@ -5634,6 +6381,8 @@ components:
       properties:
         call_recording:
           $ref: '#/components/schemas/service.VOIPAccountCallRecording'
+        caller_id:
+          $ref: '#/components/schemas/service.VOIPAccountOutputFullCallerid'
         do_not_disturb:
           $ref: '#/components/schemas/service.VOIPSharedDoNotDisturb'
         enabled:
@@ -5647,6 +6396,50 @@ components:
         realm:
           type: string
         timezone:
+          type: string
+      type: object
+    service.AccountOutputFullCalleridEmergency:
+      example:
+        number: number
+      properties:
+        number:
+          type: string
+      type: object
+    service.AccountOutputFullCalleridExternal:
+      example:
+        number: number
+      properties:
+        number:
+          type: string
+      type: object
+    service.AccountOutputFullCalleridInternal:
+      example:
+        number: number
+      properties:
+        number:
+          type: string
+      type: object
+    service.AccountOutputShort:
+      example:
+        flags:
+        - flags
+        - flags
+        name: name
+        realm: realm
+        descendants_count: 0
+        id: id
+      properties:
+        descendants_count:
+          type: integer
+        flags:
+          items:
+            type: string
+          type: array
+        id:
+          type: string
+        name:
+          type: string
+        realm:
           type: string
       type: object
     service.AdminUserAddData:
@@ -6472,27 +7265,34 @@ components:
               format: mp3
               enabled: true
               url: url
+        owner_id: owner_id
+        device_type: device_type
+        do_not_disturb:
+          enabled: true
+        media:
+          audio:
+            codecs:
+            - codecs
+            - codecs
+        call_forward:
+          number: number
+          enabled: true
+        enabled: true
         music_on_hold: "{}"
         caller_id:
           external:
             number: number
+          internal:
+            number: number
           emergency:
             number: number
         mac_address: mac_address
-        owner_id: owner_id
         name: name
-        device_type: device_type
-        do_not_disturb:
-          enabled: true
         id: id
         sip:
           password: password
           invite_format: invite_format
           username: username
-        call_forward:
-          number: number
-          enabled: true
-        enabled: true
       properties:
         call_forward:
           $ref: '#/components/schemas/service.CallForward'
@@ -6510,6 +7310,8 @@ components:
           type: string
         mac_address:
           type: string
+        media:
+          $ref: '#/components/schemas/service.DeviceOutputFullMedia'
         music_on_hold:
           allOf:
           - $ref: '#/components/schemas/service.MusicOnHold'
@@ -6526,6 +7328,8 @@ components:
       example:
         external:
           number: number
+        internal:
+          number: number
         emergency:
           number: number
       properties:
@@ -6533,6 +7337,8 @@ components:
           $ref: '#/components/schemas/service.DeviceOutputFullCalleridEmergency'
         external:
           $ref: '#/components/schemas/service.DeviceOutputFullCalleridExternal'
+        internal:
+          $ref: '#/components/schemas/service.DeviceOutputFullCalleridInternal'
       type: object
     service.DeviceOutputFullCalleridEmergency:
       example:
@@ -6547,6 +7353,34 @@ components:
       properties:
         number:
           type: string
+      type: object
+    service.DeviceOutputFullCalleridInternal:
+      example:
+        number: number
+      properties:
+        number:
+          type: string
+      type: object
+    service.DeviceOutputFullMedia:
+      example:
+        audio:
+          codecs:
+          - codecs
+          - codecs
+      properties:
+        audio:
+          $ref: '#/components/schemas/service.DeviceOutputFullMediaAudio'
+      type: object
+    service.DeviceOutputFullMediaAudio:
+      example:
+        codecs:
+        - codecs
+        - codecs
+      properties:
+        codecs:
+          items:
+            type: string
+          type: array
       type: object
     service.DeviceOutputFullSIP:
       example:
@@ -6688,36 +7522,6 @@ components:
         username:
           type: string
       type: object
-    service.DocDailyAccountSummaryOutput:
-      example:
-        status_code: 5
-        data:
-          component_id: 1
-          account_summary_by_date:
-          - date: date
-            cost: 0.8008281904610115
-            transaction_count: 6
-          - date: date
-            cost: 0.8008281904610115
-            transaction_count: 6
-        next_start_key: next_start_key
-        start_key: start_key
-        request_id: request_id
-        page_size: 5
-      properties:
-        data:
-          $ref: '#/components/schemas/model.DailyAccountSummary'
-        next_start_key:
-          type: string
-        page_size:
-          type: integer
-        request_id:
-          type: string
-        start_key:
-          type: string
-        status_code:
-          type: integer
-      type: object
     service.DocE911ActiveLocationOutput:
       example:
         status_code: 0
@@ -6730,8 +7534,10 @@ components:
         data:
           $ref: '#/components/schemas/service.E911ActiveLocationOutput'
         request_id:
+          description: Unique id for each request
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocE911ActiveLocationURIApiOutput:
@@ -6766,8 +7572,10 @@ components:
         data:
           $ref: '#/components/schemas/service.E911LocationURI'
         request_id:
+          description: Unique id for each request
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocE911AddLocationOutput:
@@ -6803,8 +7611,10 @@ components:
         data:
           $ref: '#/components/schemas/service.E911AddLocationOutput'
         request_id:
+          description: Unique id for each request
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocE911LocationsURIApiOutput:
@@ -6864,8 +7674,10 @@ components:
             $ref: '#/components/schemas/service.E911LocationURI'
           type: array
         request_id:
+          description: Unique id for each request
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocE911RemoveLocationOutput:
@@ -6880,8 +7692,10 @@ components:
         data:
           $ref: '#/components/schemas/service.E911RemoveLocationOutput'
         request_id:
+          description: Unique id for each request
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocE911RemoveURIApiOutput:
@@ -6896,8 +7710,10 @@ components:
         data:
           $ref: '#/components/schemas/service.RemoveURIApiOutput'
         request_id:
+          description: Unique id for each request
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocE911URIsApiOutput:
@@ -6915,8 +7731,10 @@ components:
             $ref: '#/components/schemas/repository.LocationsResponse'
           type: array
         request_id:
+          description: Unique id for each request
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocE911ValidateLocationOutput:
@@ -6952,8 +7770,10 @@ components:
         data:
           $ref: '#/components/schemas/service.E911ValidateLocationOutput'
         request_id:
+          description: Unique id for each request
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocGroupGetAll:
@@ -6977,8 +7797,10 @@ components:
         data:
           $ref: '#/components/schemas/service.GroupOutputShort'
         request_id:
+          description: Unique id for each request
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocGroupGetSingle:
@@ -6995,28 +7817,10 @@ components:
         data:
           $ref: '#/components/schemas/service.GroupOutputFull'
         request_id:
+          description: Unique id for each request
           type: string
         status_code:
-          type: integer
-      type: object
-    service.DocInvoiceOutput:
-      example:
-        status_code: 9
-        data:
-          invoice_cost: 5.637376656633329
-          call_minute_cost: 1.4658129805029452
-          api_call_cost: 0.8008281904610115
-          month: 2
-          year: 7
-          call_minute_count: 5
-          api_call_count: 6
-        request_id: request_id
-      properties:
-        data:
-          $ref: '#/components/schemas/model.Invoice'
-        request_id:
-          type: string
-        status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocMetaflowGet:
@@ -7043,39 +7847,10 @@ components:
         data:
           $ref: '#/components/schemas/service.MetaflowOutput'
         request_id:
+          description: Unique id for each request
           type: string
         status_code:
-          type: integer
-      type: object
-    service.DocMonthlySummaryOutput:
-      example:
-        status_code: 2
-        data:
-          components:
-          - transaction_cost: 0.8008281904610115
-            component_id: component_id
-            transaction_count: 6
-          - transaction_cost: 0.8008281904610115
-            component_id: component_id
-            transaction_count: 6
-          transaction_year: 5
-          transaction_month: 1
-        next_start_key: next_start_key
-        start_key: start_key
-        request_id: request_id
-        page_size: 5
-      properties:
-        data:
-          $ref: '#/components/schemas/model.MonthlySummaryReport'
-        next_start_key:
-          type: string
-        page_size:
-          type: integer
-        request_id:
-          type: string
-        start_key:
-          type: string
-        status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocsAccountAPIKey:
@@ -7089,397 +7864,59 @@ components:
         data:
           $ref: '#/components/schemas/service.APIKey'
         request_id:
+          description: Unique id for each request
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocsAccountGetAll:
       example:
-        status_code: 5
+        status_code: 1
         data:
-        - call_recording:
-            endpoint:
-              inbound:
-                onnet:
-                  record_sample_rate: 6
-                  record_on_answer: true
-                  time_limit: 1587
-                  record_min_sec: 0
-                  record_on_bridge: true
-                  format: mp3
-                  enabled: true
-                  url: url
-                offnet:
-                  record_sample_rate: 6
-                  record_on_answer: true
-                  time_limit: 1587
-                  record_min_sec: 0
-                  record_on_bridge: true
-                  format: mp3
-                  enabled: true
-                  url: url
-                any:
-                  record_sample_rate: 6
-                  record_on_answer: true
-                  time_limit: 1587
-                  record_min_sec: 0
-                  record_on_bridge: true
-                  format: mp3
-                  enabled: true
-                  url: url
-              outbound:
-                onnet:
-                  record_sample_rate: 6
-                  record_on_answer: true
-                  time_limit: 1587
-                  record_min_sec: 0
-                  record_on_bridge: true
-                  format: mp3
-                  enabled: true
-                  url: url
-                offnet:
-                  record_sample_rate: 6
-                  record_on_answer: true
-                  time_limit: 1587
-                  record_min_sec: 0
-                  record_on_bridge: true
-                  format: mp3
-                  enabled: true
-                  url: url
-                any:
-                  record_sample_rate: 6
-                  record_on_answer: true
-                  time_limit: 1587
-                  record_min_sec: 0
-                  record_on_bridge: true
-                  format: mp3
-                  enabled: true
-                  url: url
-              any:
-                onnet:
-                  record_sample_rate: 6
-                  record_on_answer: true
-                  time_limit: 1587
-                  record_min_sec: 0
-                  record_on_bridge: true
-                  format: mp3
-                  enabled: true
-                  url: url
-                offnet:
-                  record_sample_rate: 6
-                  record_on_answer: true
-                  time_limit: 1587
-                  record_min_sec: 0
-                  record_on_bridge: true
-                  format: mp3
-                  enabled: true
-                  url: url
-                any:
-                  record_sample_rate: 6
-                  record_on_answer: true
-                  time_limit: 1587
-                  record_min_sec: 0
-                  record_on_bridge: true
-                  format: mp3
-                  enabled: true
-                  url: url
-            account:
-              inbound:
-                onnet:
-                  record_sample_rate: 6
-                  record_on_answer: true
-                  time_limit: 1587
-                  record_min_sec: 0
-                  record_on_bridge: true
-                  format: mp3
-                  enabled: true
-                  url: url
-                offnet:
-                  record_sample_rate: 6
-                  record_on_answer: true
-                  time_limit: 1587
-                  record_min_sec: 0
-                  record_on_bridge: true
-                  format: mp3
-                  enabled: true
-                  url: url
-                any:
-                  record_sample_rate: 6
-                  record_on_answer: true
-                  time_limit: 1587
-                  record_min_sec: 0
-                  record_on_bridge: true
-                  format: mp3
-                  enabled: true
-                  url: url
-              outbound:
-                onnet:
-                  record_sample_rate: 6
-                  record_on_answer: true
-                  time_limit: 1587
-                  record_min_sec: 0
-                  record_on_bridge: true
-                  format: mp3
-                  enabled: true
-                  url: url
-                offnet:
-                  record_sample_rate: 6
-                  record_on_answer: true
-                  time_limit: 1587
-                  record_min_sec: 0
-                  record_on_bridge: true
-                  format: mp3
-                  enabled: true
-                  url: url
-                any:
-                  record_sample_rate: 6
-                  record_on_answer: true
-                  time_limit: 1587
-                  record_min_sec: 0
-                  record_on_bridge: true
-                  format: mp3
-                  enabled: true
-                  url: url
-              any:
-                onnet:
-                  record_sample_rate: 6
-                  record_on_answer: true
-                  time_limit: 1587
-                  record_min_sec: 0
-                  record_on_bridge: true
-                  format: mp3
-                  enabled: true
-                  url: url
-                offnet:
-                  record_sample_rate: 6
-                  record_on_answer: true
-                  time_limit: 1587
-                  record_min_sec: 0
-                  record_on_bridge: true
-                  format: mp3
-                  enabled: true
-                  url: url
-                any:
-                  record_sample_rate: 6
-                  record_on_answer: true
-                  time_limit: 1587
-                  record_min_sec: 0
-                  record_on_bridge: true
-                  format: mp3
-                  enabled: true
-                  url: url
-          music_on_hold:
-            media_id: media_id
-          timezone: timezone
+        - flags:
+          - flags
+          - flags
           name: name
           realm: realm
-          do_not_disturb:
-            enabled: true
+          descendants_count: 0
           id: id
-          enabled: true
-        - call_recording:
-            endpoint:
-              inbound:
-                onnet:
-                  record_sample_rate: 6
-                  record_on_answer: true
-                  time_limit: 1587
-                  record_min_sec: 0
-                  record_on_bridge: true
-                  format: mp3
-                  enabled: true
-                  url: url
-                offnet:
-                  record_sample_rate: 6
-                  record_on_answer: true
-                  time_limit: 1587
-                  record_min_sec: 0
-                  record_on_bridge: true
-                  format: mp3
-                  enabled: true
-                  url: url
-                any:
-                  record_sample_rate: 6
-                  record_on_answer: true
-                  time_limit: 1587
-                  record_min_sec: 0
-                  record_on_bridge: true
-                  format: mp3
-                  enabled: true
-                  url: url
-              outbound:
-                onnet:
-                  record_sample_rate: 6
-                  record_on_answer: true
-                  time_limit: 1587
-                  record_min_sec: 0
-                  record_on_bridge: true
-                  format: mp3
-                  enabled: true
-                  url: url
-                offnet:
-                  record_sample_rate: 6
-                  record_on_answer: true
-                  time_limit: 1587
-                  record_min_sec: 0
-                  record_on_bridge: true
-                  format: mp3
-                  enabled: true
-                  url: url
-                any:
-                  record_sample_rate: 6
-                  record_on_answer: true
-                  time_limit: 1587
-                  record_min_sec: 0
-                  record_on_bridge: true
-                  format: mp3
-                  enabled: true
-                  url: url
-              any:
-                onnet:
-                  record_sample_rate: 6
-                  record_on_answer: true
-                  time_limit: 1587
-                  record_min_sec: 0
-                  record_on_bridge: true
-                  format: mp3
-                  enabled: true
-                  url: url
-                offnet:
-                  record_sample_rate: 6
-                  record_on_answer: true
-                  time_limit: 1587
-                  record_min_sec: 0
-                  record_on_bridge: true
-                  format: mp3
-                  enabled: true
-                  url: url
-                any:
-                  record_sample_rate: 6
-                  record_on_answer: true
-                  time_limit: 1587
-                  record_min_sec: 0
-                  record_on_bridge: true
-                  format: mp3
-                  enabled: true
-                  url: url
-            account:
-              inbound:
-                onnet:
-                  record_sample_rate: 6
-                  record_on_answer: true
-                  time_limit: 1587
-                  record_min_sec: 0
-                  record_on_bridge: true
-                  format: mp3
-                  enabled: true
-                  url: url
-                offnet:
-                  record_sample_rate: 6
-                  record_on_answer: true
-                  time_limit: 1587
-                  record_min_sec: 0
-                  record_on_bridge: true
-                  format: mp3
-                  enabled: true
-                  url: url
-                any:
-                  record_sample_rate: 6
-                  record_on_answer: true
-                  time_limit: 1587
-                  record_min_sec: 0
-                  record_on_bridge: true
-                  format: mp3
-                  enabled: true
-                  url: url
-              outbound:
-                onnet:
-                  record_sample_rate: 6
-                  record_on_answer: true
-                  time_limit: 1587
-                  record_min_sec: 0
-                  record_on_bridge: true
-                  format: mp3
-                  enabled: true
-                  url: url
-                offnet:
-                  record_sample_rate: 6
-                  record_on_answer: true
-                  time_limit: 1587
-                  record_min_sec: 0
-                  record_on_bridge: true
-                  format: mp3
-                  enabled: true
-                  url: url
-                any:
-                  record_sample_rate: 6
-                  record_on_answer: true
-                  time_limit: 1587
-                  record_min_sec: 0
-                  record_on_bridge: true
-                  format: mp3
-                  enabled: true
-                  url: url
-              any:
-                onnet:
-                  record_sample_rate: 6
-                  record_on_answer: true
-                  time_limit: 1587
-                  record_min_sec: 0
-                  record_on_bridge: true
-                  format: mp3
-                  enabled: true
-                  url: url
-                offnet:
-                  record_sample_rate: 6
-                  record_on_answer: true
-                  time_limit: 1587
-                  record_min_sec: 0
-                  record_on_bridge: true
-                  format: mp3
-                  enabled: true
-                  url: url
-                any:
-                  record_sample_rate: 6
-                  record_on_answer: true
-                  time_limit: 1587
-                  record_min_sec: 0
-                  record_on_bridge: true
-                  format: mp3
-                  enabled: true
-                  url: url
-          music_on_hold:
-            media_id: media_id
-          timezone: timezone
+        - flags:
+          - flags
+          - flags
           name: name
           realm: realm
-          do_not_disturb:
-            enabled: true
+          descendants_count: 0
           id: id
-          enabled: true
         next_start_key: next_start_key
         start_key: start_key
         request_id: request_id
-        page_size: 5
+        page_size: 6
       properties:
         data:
           items:
-            $ref: '#/components/schemas/service.AccountOutput'
+            $ref: '#/components/schemas/service.AccountOutputShort'
           type: array
         next_start_key:
+          description: "List Pagination: Used to get the next page of results. Will\
+            \ not exist if this is the last page."
           type: string
         page_size:
+          description: "List Pagination: The number of results returned in this page"
           type: integer
         request_id:
+          description: Unique id for each request
           type: string
         start_key:
+          description: "List Pagination: Code for paged results"
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocsAccountGetSingle:
       example:
-        status_code: 0
+        status_code: 5
         data:
           call_recording:
             endpoint:
@@ -7654,6 +8091,13 @@ components:
                   url: url
           music_on_hold:
             media_id: media_id
+          caller_id:
+            external:
+              number: number
+            internal:
+              number: number
+            emergency:
+              number: number
           timezone: timezone
           name: name
           realm: realm
@@ -7664,10 +8108,12 @@ components:
         request_id: request_id
       properties:
         data:
-          $ref: '#/components/schemas/service.AccountOutput'
+          $ref: '#/components/schemas/service.AccountOutputFull'
         request_id:
+          description: Unique id for each request
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocsAccountLimit:
@@ -7682,8 +8128,10 @@ components:
         data:
           $ref: '#/components/schemas/service.AccountLimitOutput'
         request_id:
+          description: Unique id for each request
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocsAccountPhonenumberGetAll:
@@ -7702,14 +8150,20 @@ components:
             $ref: '#/components/schemas/service.PhonenumberOutput'
           type: array
         next_start_key:
+          description: "List Pagination: Used to get the next page of results. Will\
+            \ not exist if this is the last page."
           type: string
         page_size:
+          description: "List Pagination: The number of results returned in this page"
           type: integer
         request_id:
+          description: Unique id for each request
           type: string
         start_key:
+          description: "List Pagination: Code for paged results"
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocsAdminUserDelete:
@@ -7722,8 +8176,10 @@ components:
         data:
           $ref: '#/components/schemas/service.AdminUserDeleteOutput'
         request_id:
+          description: Unique id for each request
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocsAdminUserGetAll:
@@ -7745,8 +8201,10 @@ components:
             $ref: '#/components/schemas/service.AdminUserOutput'
           type: array
         request_id:
+          description: Unique id for each request
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocsAdminUserGetSingle:
@@ -7762,8 +8220,142 @@ components:
         data:
           $ref: '#/components/schemas/service.AdminUserOutput'
         request_id:
+          description: Unique id for each request
           type: string
         status_code:
+          description: HTTP response status code
+          type: integer
+      type: object
+    service.DocsCallDailySummary:
+      example:
+        status_code: 6
+        data:
+        - call_date: call_date
+          account_id: account_id
+          total_call_duration: total_call_duration
+          created_at: created_at
+          call_type: call_type
+        - call_date: call_date
+          account_id: account_id
+          total_call_duration: total_call_duration
+          created_at: created_at
+          call_type: call_type
+        next_start_key: next_start_key
+        start_key: start_key
+        request_id: request_id
+        page_size: 0
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/model.CallDailySummary'
+          type: array
+        next_start_key:
+          description: "List Pagination: Used to get the next page of results. Will\
+            \ not exist if this is the last page."
+          type: string
+        page_size:
+          description: "List Pagination: The number of results returned in this page"
+          type: integer
+        request_id:
+          description: Unique id for each request
+          type: string
+        start_key:
+          description: "List Pagination: Code for paged results"
+          type: string
+        status_code:
+          description: HTTP response status code
+          type: integer
+      type: object
+    service.DocsCallDetail:
+      example:
+        status_code: 6
+        data:
+        - caller_name: caller_name
+          account_id: account_id
+          callee_name: callee_name
+          call_time: call_time
+          created_at: created_at
+          callee_number: callee_number
+          call_type: call_type
+          caller_number: caller_number
+          call_duration: call_duration
+          call_id: call_id
+        - caller_name: caller_name
+          account_id: account_id
+          callee_name: callee_name
+          call_time: call_time
+          created_at: created_at
+          callee_number: callee_number
+          call_type: call_type
+          caller_number: caller_number
+          call_duration: call_duration
+          call_id: call_id
+        next_start_key: next_start_key
+        start_key: start_key
+        request_id: request_id
+        page_size: 0
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/model.CallDetail'
+          type: array
+        next_start_key:
+          description: "List Pagination: Used to get the next page of results. Will\
+            \ not exist if this is the last page."
+          type: string
+        page_size:
+          description: "List Pagination: The number of results returned in this page"
+          type: integer
+        request_id:
+          description: Unique id for each request
+          type: string
+        start_key:
+          description: "List Pagination: Code for paged results"
+          type: string
+        status_code:
+          description: HTTP response status code
+          type: integer
+      type: object
+    service.DocsCallMonthlySummary:
+      example:
+        status_code: 5
+        data:
+        - account_id: account_id
+          call_year: 6
+          total_call_duration: total_call_duration
+          created_at: created_at
+          call_month: 0
+          call_type: call_type
+        - account_id: account_id
+          call_year: 6
+          total_call_duration: total_call_duration
+          created_at: created_at
+          call_month: 0
+          call_type: call_type
+        next_start_key: next_start_key
+        start_key: start_key
+        request_id: request_id
+        page_size: 1
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/model.CallMonthlySummary'
+          type: array
+        next_start_key:
+          description: "List Pagination: Used to get the next page of results. Will\
+            \ not exist if this is the last page."
+          type: string
+        page_size:
+          description: "List Pagination: The number of results returned in this page"
+          type: integer
+        request_id:
+          description: Unique id for each request
+          type: string
+        start_key:
+          description: "List Pagination: Code for paged results"
+          type: string
+        status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocsCallQueueGetAll:
@@ -7788,14 +8380,20 @@ components:
             $ref: '#/components/schemas/service.CallQueueOutputShort'
           type: array
         next_start_key:
+          description: "List Pagination: Used to get the next page of results. Will\
+            \ not exist if this is the last page."
           type: string
         page_size:
+          description: "List Pagination: The number of results returned in this page"
           type: integer
         request_id:
+          description: Unique id for each request
           type: string
         start_key:
+          description: "List Pagination: Code for paged results"
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocsCallQueueGetRoles:
@@ -7809,8 +8407,10 @@ components:
         data:
           $ref: '#/components/schemas/service.CallQueueRolesOutput'
         request_id:
+          description: Unique id for each request
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocsCallQueueGetSingle:
@@ -7832,8 +8432,10 @@ components:
         data:
           $ref: '#/components/schemas/service.CallQueueOutputFull'
         request_id:
+          description: Unique id for each request
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocsCallQueueGetSingleStatus:
@@ -7857,8 +8459,10 @@ components:
         data:
           $ref: '#/components/schemas/service.CallQueueStatusOutput'
         request_id:
+          description: Unique id for each request
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocsCallQueueMemberGetSingle:
@@ -7872,8 +8476,10 @@ components:
           additionalProperties: true
           type: object
         request_id:
+          description: Unique id for each request
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocsCallQueueResponseShort:
@@ -7887,8 +8493,10 @@ components:
           additionalProperties: true
           type: object
         request_id:
+          description: Unique id for each request
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocsCallRecordingGetAll:
@@ -7959,14 +8567,20 @@ components:
             $ref: '#/components/schemas/service.CallRecordingOutput'
           type: array
         next_start_key:
+          description: "List Pagination: Used to get the next page of results. Will\
+            \ not exist if this is the last page."
           type: string
         page_size:
+          description: "List Pagination: The number of results returned in this page"
           type: integer
         request_id:
+          description: Unique id for each request
           type: string
         start_key:
+          description: "List Pagination: Code for paged results"
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocsCallRecordingGetSingle:
@@ -8005,8 +8619,10 @@ components:
         data:
           $ref: '#/components/schemas/service.CallRecordingOutput'
         request_id:
+          description: Unique id for each request
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocsCallflowGetAll:
@@ -8032,14 +8648,20 @@ components:
         data:
           $ref: '#/components/schemas/service.CallflowOutputShort'
         next_start_key:
+          description: "List Pagination: Used to get the next page of results. Will\
+            \ not exist if this is the last page."
           type: string
         page_size:
+          description: "List Pagination: The number of results returned in this page"
           type: integer
         request_id:
+          description: Unique id for each request
           type: string
         start_key:
+          description: "List Pagination: Code for paged results"
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocsCallflowGetSingle:
@@ -8068,8 +8690,10 @@ components:
         data:
           $ref: '#/components/schemas/service.CallflowOutputFull'
         request_id:
+          description: Unique id for each request
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocsCampaignImportOutput:
@@ -8094,8 +8718,10 @@ components:
         data:
           $ref: '#/components/schemas/service.CampaignImportOutput'
         request_id:
+          description: Unique id for each request
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocsCampaignImportedGetAllOutput:
@@ -8135,8 +8761,10 @@ components:
             $ref: '#/components/schemas/service.CampaignImportOutput'
           type: array
         request_id:
+          description: Unique id for each request
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocsCampaignPhoneNumberOutput:
@@ -8152,8 +8780,10 @@ components:
         data:
           $ref: '#/components/schemas/service.CampaignPhoneNumberOutput'
         request_id:
+          description: Unique id for each request
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocsCampaignTagDetagPhonenumbersOutput:
@@ -8167,8 +8797,10 @@ components:
         data:
           $ref: '#/components/schemas/service.CampaignTagDetagPhonenumbersOutput'
         request_id:
+          description: Unique id for each request
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocsChannelGet:
@@ -8240,8 +8872,10 @@ components:
             $ref: '#/components/schemas/service.ChannelOutput'
           type: array
         request_id:
+          description: Unique id for each request
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocsChannelGetSingle:
@@ -8282,8 +8916,10 @@ components:
         data:
           $ref: '#/components/schemas/service.ChannelOutput'
         request_id:
+          description: Unique id for each request
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocsDeviceGetAll:
@@ -8498,14 +9134,20 @@ components:
             $ref: '#/components/schemas/service.DeviceOutputShort'
           type: array
         next_start_key:
+          description: "List Pagination: Used to get the next page of results. Will\
+            \ not exist if this is the last page."
           type: string
         page_size:
+          description: "List Pagination: The number of results returned in this page"
           type: integer
         request_id:
+          description: Unique id for each request
           type: string
         start_key:
+          description: "List Pagination: Code for paged results"
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocsDeviceGetSingle:
@@ -8597,34 +9239,291 @@ components:
                 format: mp3
                 enabled: true
                 url: url
+          owner_id: owner_id
+          device_type: device_type
+          do_not_disturb:
+            enabled: true
+          media:
+            audio:
+              codecs:
+              - codecs
+              - codecs
+          call_forward:
+            number: number
+            enabled: true
+          enabled: true
           music_on_hold: "{}"
           caller_id:
             external:
               number: number
+            internal:
+              number: number
             emergency:
               number: number
           mac_address: mac_address
-          owner_id: owner_id
           name: name
-          device_type: device_type
-          do_not_disturb:
-            enabled: true
           id: id
           sip:
             password: password
             invite_format: invite_format
             username: username
-          call_forward:
-            number: number
-            enabled: true
-          enabled: true
         request_id: request_id
       properties:
         data:
           $ref: '#/components/schemas/service.DeviceOutputFull'
         request_id:
+          description: Unique id for each request
           type: string
         status_code:
+          description: HTTP response status code
+          type: integer
+      type: object
+    service.DocsEndpointList:
+      example:
+        status_code: 1
+        data:
+        - feature_name: feature_name
+          endpoint_name: endpoint_name
+          created_at: created_at
+          id: 0
+          transaction_type: transaction_type
+          version: version
+        - feature_name: feature_name
+          endpoint_name: endpoint_name
+          created_at: created_at
+          id: 0
+          transaction_type: transaction_type
+          version: version
+        next_start_key: next_start_key
+        start_key: start_key
+        request_id: request_id
+        page_size: 6
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/model.EndpointList'
+          type: array
+        next_start_key:
+          description: "List Pagination: Used to get the next page of results. Will\
+            \ not exist if this is the last page."
+          type: string
+        page_size:
+          description: "List Pagination: The number of results returned in this page"
+          type: integer
+        request_id:
+          description: Unique id for each request
+          type: string
+        start_key:
+          description: "List Pagination: Code for paged results"
+          type: string
+        status_code:
+          description: HTTP response status code
+          type: integer
+      type: object
+    service.DocsEventDailySummary:
+      example:
+        status_code: 1
+        data:
+        - transaction_date: transaction_date
+          component: component
+          account_id: account_id
+          transaction_count: 0
+          created_at: created_at
+        - transaction_date: transaction_date
+          component: component
+          account_id: account_id
+          transaction_count: 0
+          created_at: created_at
+        next_start_key: next_start_key
+        start_key: start_key
+        request_id: request_id
+        page_size: 6
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/model.EventDailySummary'
+          type: array
+        next_start_key:
+          description: "List Pagination: Used to get the next page of results. Will\
+            \ not exist if this is the last page."
+          type: string
+        page_size:
+          description: "List Pagination: The number of results returned in this page"
+          type: integer
+        request_id:
+          description: Unique id for each request
+          type: string
+        start_key:
+          description: "List Pagination: Code for paged results"
+          type: string
+        status_code:
+          description: HTTP response status code
+          type: integer
+      type: object
+    service.DocsEventDetail:
+      example:
+        status_code: 6
+        data:
+        - component: component
+          account_id: account_id
+          log_date: log_date
+          created_at: created_at
+          event_name: event_name
+          exec_status: exec_status
+          log_time: log_time
+          username: username
+        - component: component
+          account_id: account_id
+          log_date: log_date
+          created_at: created_at
+          event_name: event_name
+          exec_status: exec_status
+          log_time: log_time
+          username: username
+        next_start_key: next_start_key
+        start_key: start_key
+        request_id: request_id
+        page_size: 0
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/model.EventDetail'
+          type: array
+        next_start_key:
+          description: "List Pagination: Used to get the next page of results. Will\
+            \ not exist if this is the last page."
+          type: string
+        page_size:
+          description: "List Pagination: The number of results returned in this page"
+          type: integer
+        request_id:
+          description: Unique id for each request
+          type: string
+        start_key:
+          description: "List Pagination: Code for paged results"
+          type: string
+        status_code:
+          description: HTTP response status code
+          type: integer
+      type: object
+    service.DocsEventMonthlySummary:
+      example:
+        status_code: 5
+        data:
+        - component: component
+          account_id: account_id
+          transaction_year: 1
+          transaction_count: 0
+          created_at: created_at
+          transaction_month: 6
+        - component: component
+          account_id: account_id
+          transaction_year: 1
+          transaction_count: 0
+          created_at: created_at
+          transaction_month: 6
+        next_start_key: next_start_key
+        start_key: start_key
+        request_id: request_id
+        page_size: 5
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/model.EventMonthlySummary'
+          type: array
+        next_start_key:
+          description: "List Pagination: Used to get the next page of results. Will\
+            \ not exist if this is the last page."
+          type: string
+        page_size:
+          description: "List Pagination: The number of results returned in this page"
+          type: integer
+        request_id:
+          description: Unique id for each request
+          type: string
+        start_key:
+          description: "List Pagination: Code for paged results"
+          type: string
+        status_code:
+          description: HTTP response status code
+          type: integer
+      type: object
+    service.DocsFeatureDailySummary:
+      example:
+        status_code: 1
+        data:
+        - feature_name: feature_name
+          log_date: log_date
+          created_at: created_at
+          feature_count: 0
+        - feature_name: feature_name
+          log_date: log_date
+          created_at: created_at
+          feature_count: 0
+        next_start_key: next_start_key
+        start_key: start_key
+        request_id: request_id
+        page_size: 6
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/model.FeatureDailySummary'
+          type: array
+        next_start_key:
+          description: "List Pagination: Used to get the next page of results. Will\
+            \ not exist if this is the last page."
+          type: string
+        page_size:
+          description: "List Pagination: The number of results returned in this page"
+          type: integer
+        request_id:
+          description: Unique id for each request
+          type: string
+        start_key:
+          description: "List Pagination: Code for paged results"
+          type: string
+        status_code:
+          description: HTTP response status code
+          type: integer
+      type: object
+    service.DocsFeatureMonthlySummary:
+      example:
+        status_code: 5
+        data:
+        - feature_name: feature_name
+          transaction_year: 1
+          created_at: created_at
+          feature_count: 0
+          transaction_month: 6
+        - feature_name: feature_name
+          transaction_year: 1
+          created_at: created_at
+          feature_count: 0
+          transaction_month: 6
+        next_start_key: next_start_key
+        start_key: start_key
+        request_id: request_id
+        page_size: 5
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/model.FeatureMonthlySummary'
+          type: array
+        next_start_key:
+          description: "List Pagination: Used to get the next page of results. Will\
+            \ not exist if this is the last page."
+          type: string
+        page_size:
+          description: "List Pagination: The number of results returned in this page"
+          type: integer
+        request_id:
+          description: Unique id for each request
+          type: string
+        start_key:
+          description: "List Pagination: Code for paged results"
+          type: string
+        status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocsGetQueueRecipients:
@@ -8648,14 +9547,20 @@ components:
         data:
           $ref: '#/components/schemas/service.QueueRecipientOutputFull'
         next_start_key:
+          description: "List Pagination: Used to get the next page of results. Will\
+            \ not exist if this is the last page."
           type: string
         page_size:
+          description: "List Pagination: The number of results returned in this page"
           type: integer
         request_id:
+          description: Unique id for each request
           type: string
         start_key:
+          description: "List Pagination: Code for paged results"
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocsMediaGetAll:
@@ -8682,14 +9587,20 @@ components:
             $ref: '#/components/schemas/service.MediaOutputShort'
           type: array
         next_start_key:
+          description: "List Pagination: Used to get the next page of results. Will\
+            \ not exist if this is the last page."
           type: string
         page_size:
+          description: "List Pagination: The number of results returned in this page"
           type: integer
         request_id:
+          description: Unique id for each request
           type: string
         start_key:
+          description: "List Pagination: Code for paged results"
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocsMediaGetSingle:
@@ -8712,68 +9623,10 @@ components:
         data:
           $ref: '#/components/schemas/service.MediaOutputFull'
         request_id:
+          description: Unique id for each request
           type: string
         status_code:
-          type: integer
-      type: object
-    service.DocsMenuGetAll:
-      example:
-        status_code: 6
-        data:
-        - features:
-          - features
-          - features
-          flags:
-          - flags
-          - flags
-          name: name
-          id: id
-        - features:
-          - features
-          - features
-          flags:
-          - flags
-          - flags
-          name: name
-          id: id
-        next_start_key: next_start_key
-        start_key: start_key
-        request_id: request_id
-        page_size: 0
-      properties:
-        data:
-          items:
-            $ref: '#/components/schemas/service.MenuOutputShort'
-          type: array
-        next_start_key:
-          type: string
-        page_size:
-          type: integer
-        request_id:
-          type: string
-        start_key:
-          type: string
-        status_code:
-          type: integer
-      type: object
-    service.DocsMenuGetSingle:
-      example:
-        status_code: 6
-        data:
-          name: name
-          id: id
-          media:
-            greeting: greeting
-            transfer_media: "{}"
-            invalid_media: "{}"
-          timeout: 0
-        request_id: request_id
-      properties:
-        data:
-          $ref: '#/components/schemas/service.MenuOutputFull'
-        request_id:
-          type: string
-        status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocsOrderPhonenumber:
@@ -8793,8 +9646,10 @@ components:
             $ref: '#/components/schemas/service.PhoneNumberResult'
           type: array
         request_id:
+          description: Unique id for each request
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocsParkedcallGet:
@@ -8813,14 +9668,20 @@ components:
             $ref: '#/components/schemas/service.ParkedcallOutput'
           type: array
         next_start_key:
+          description: "List Pagination: Used to get the next page of results. Will\
+            \ not exist if this is the last page."
           type: string
         page_size:
+          description: "List Pagination: The number of results returned in this page"
           type: integer
         request_id:
+          description: Unique id for each request
           type: string
         start_key:
+          description: "List Pagination: Code for paged results"
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocsPhonenumberAssignPayload:
@@ -8843,8 +9704,10 @@ components:
             $ref: '#/components/schemas/service.PhoneNumberSearchOutput'
           type: array
         request_id:
+          description: Unique id for each request
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocsPhonenumberUnassignPayload:
@@ -8862,8 +9725,10 @@ components:
         data:
           $ref: '#/components/schemas/service.PingOutput'
         request_id:
+          description: Unique id for each request
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocsPresenceGet:
@@ -8877,8 +9742,10 @@ components:
           additionalProperties: true
           type: object
         request_id:
+          description: Unique id for each request
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocsStorageGet:
@@ -9092,8 +9959,10 @@ components:
         data:
           $ref: '#/components/schemas/service.StorageOutput'
         request_id:
+          description: Unique id for each request
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocsSystemStatusGetSingle:
@@ -9122,8 +9991,10 @@ components:
         data:
           $ref: '#/components/schemas/service.SystemStatusOutput'
         request_id:
+          description: Unique id for each request
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
         system_status:
           type: string
@@ -9160,14 +10031,20 @@ components:
             $ref: '#/components/schemas/service.TemporalRuleOutputShort'
           type: array
         next_start_key:
+          description: "List Pagination: Used to get the next page of results. Will\
+            \ not exist if this is the last page."
           type: string
         page_size:
+          description: "List Pagination: The number of results returned in this page"
           type: integer
         request_id:
+          description: Unique id for each request
           type: string
         start_key:
+          description: "List Pagination: Code for paged results"
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocsTemporalRuleGetSingle:
@@ -9195,8 +10072,10 @@ components:
         data:
           $ref: '#/components/schemas/service.TemporalRuleOutputFull'
         request_id:
+          description: Unique id for each request
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocsTemporalRuleSetGetAll:
@@ -9235,14 +10114,20 @@ components:
             $ref: '#/components/schemas/service.TemporalRuleSetOutputShort'
           type: array
         next_start_key:
+          description: "List Pagination: Used to get the next page of results. Will\
+            \ not exist if this is the last page."
           type: string
         page_size:
+          description: "List Pagination: The number of results returned in this page"
           type: integer
         request_id:
+          description: Unique id for each request
           type: string
         start_key:
+          description: "List Pagination: Code for paged results"
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocsTemporalRuleSetGetSingle:
@@ -9259,8 +10144,10 @@ components:
         data:
           $ref: '#/components/schemas/service.TemporalRuleSetOutputFull'
         request_id:
+          description: Unique id for each request
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocsUserGetAll:
@@ -9475,14 +10362,20 @@ components:
             $ref: '#/components/schemas/service.UserOutputShort'
           type: array
         next_start_key:
+          description: "List Pagination: Used to get the next page of results. Will\
+            \ not exist if this is the last page."
           type: string
         page_size:
+          description: "List Pagination: The number of results returned in this page"
           type: integer
         request_id:
+          description: Unique id for each request
           type: string
         start_key:
+          description: "List Pagination: Code for paged results"
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocsUserGetSingle:
@@ -9574,28 +10467,37 @@ components:
                 format: mp3
                 enabled: true
                 url: url
-          music_on_hold:
-            media_id: media_id
           timezone: timezone
           verified: true
           last_name: last_name
           presence_id: presence_id
           do_not_disturb:
             enabled: true
-          id: id
           call_forward:
             number: number
             enabled: true
+          enabled: true
+          music_on_hold:
+            media_id: media_id
+          caller_id:
+            external:
+              number: number
+            internal:
+              number: number
+            emergency:
+              number: number
+          id: id
           first_name: first_name
           email: email
-          enabled: true
         request_id: request_id
       properties:
         data:
           $ref: '#/components/schemas/service.UserOutputFull'
         request_id:
+          description: Unique id for each request
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocsVoicemailGetAll:
@@ -9621,14 +10523,20 @@ components:
         data:
           $ref: '#/components/schemas/service.VoicemailOutputShort'
         next_start_key:
+          description: "List Pagination: Used to get the next page of results. Will\
+            \ not exist if this is the last page."
           type: string
         page_size:
+          description: "List Pagination: The number of results returned in this page"
           type: integer
         request_id:
+          description: Unique id for each request
           type: string
         start_key:
+          description: "List Pagination: Code for paged results"
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocsVoicemailGetSingle:
@@ -9651,8 +10559,10 @@ components:
         data:
           $ref: '#/components/schemas/service.VoicemailOutput'
         request_id:
+          description: Unique id for each request
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocsVoicemailMessageGetAll:
@@ -9693,14 +10603,20 @@ components:
             $ref: '#/components/schemas/service.VoicemailMessageOutput'
           type: array
         next_start_key:
+          description: "List Pagination: Used to get the next page of results. Will\
+            \ not exist if this is the last page."
           type: string
         page_size:
+          description: "List Pagination: The number of results returned in this page"
           type: integer
         request_id:
+          description: Unique id for each request
           type: string
         start_key:
+          description: "List Pagination: Code for paged results"
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocsVoicemailMessageGetSingle:
@@ -9724,8 +10640,10 @@ components:
         data:
           $ref: '#/components/schemas/service.VoicemailMessageOutput'
         request_id:
+          description: Unique id for each request
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocsWebhookDelete:
@@ -9738,8 +10656,10 @@ components:
         data:
           $ref: '#/components/schemas/service.WebhookDeleteOutput'
         request_id:
+          description: Unique id for each request
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocsWebhookGetAll:
@@ -9775,8 +10695,10 @@ components:
             $ref: '#/components/schemas/model.AccountWebhook'
           type: array
         request_id:
+          description: Unique id for each request
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.DocsWebhookGetSingle:
@@ -9799,8 +10721,10 @@ components:
         data:
           $ref: '#/components/schemas/model.AccountWebhook'
         request_id:
+          description: Unique id for each request
           type: string
         status_code:
+          description: HTTP response status code
           type: integer
       type: object
     service.E911ActiveLocationOutput:
@@ -10218,64 +11142,6 @@ components:
         language:
           type: string
         media_source:
-          type: string
-        name:
-          type: string
-      type: object
-    service.MenuOutputFull:
-      example:
-        name: name
-        id: id
-        media:
-          greeting: greeting
-          transfer_media: "{}"
-          invalid_media: "{}"
-        timeout: 0
-      properties:
-        id:
-          type: string
-        media:
-          $ref: '#/components/schemas/service.MenuOutputFullMedia'
-        name:
-          type: string
-        timeout:
-          type: integer
-      type: object
-    service.MenuOutputFullMedia:
-      example:
-        greeting: greeting
-        transfer_media: "{}"
-        invalid_media: "{}"
-      properties:
-        greeting:
-          maxLength: 2048
-          minLength: 3
-          type: string
-        invalid_media:
-          type: object
-        transfer_media:
-          type: object
-      type: object
-    service.MenuOutputShort:
-      example:
-        features:
-        - features
-        - features
-        flags:
-        - flags
-        - flags
-        name: name
-        id: id
-      properties:
-        features:
-          items:
-            type: string
-          type: array
-        flags:
-          items:
-            type: string
-          type: array
-        id:
           type: string
         name:
           type: string
@@ -11241,13 +12107,6 @@ components:
       required:
       - text
       type: object
-    service.TelephoneNumberList:
-      properties:
-        TelephoneNumber:
-          items:
-            type: string
-          type: array
-      type: object
     service.TemporalRuleOutputFull:
       example:
         month: 1
@@ -11465,26 +12324,35 @@ components:
               format: mp3
               enabled: true
               url: url
-        music_on_hold:
-          media_id: media_id
         timezone: timezone
         verified: true
         last_name: last_name
         presence_id: presence_id
         do_not_disturb:
           enabled: true
-        id: id
         call_forward:
           number: number
           enabled: true
+        enabled: true
+        music_on_hold:
+          media_id: media_id
+        caller_id:
+          external:
+            number: number
+          internal:
+            number: number
+          emergency:
+            number: number
+        id: id
         first_name: first_name
         email: email
-        enabled: true
       properties:
         call_forward:
           $ref: '#/components/schemas/service.CallForward'
         call_recording:
           $ref: '#/components/schemas/service.CallRecordingSettings'
+        caller_id:
+          $ref: '#/components/schemas/service.UserOutputFullCallerid'
         do_not_disturb:
           $ref: '#/components/schemas/service.VOIPSharedDoNotDisturb'
         email:
@@ -11505,6 +12373,43 @@ components:
           type: string
         verified:
           type: boolean
+      type: object
+    service.UserOutputFullCallerid:
+      example:
+        external:
+          number: number
+        internal:
+          number: number
+        emergency:
+          number: number
+      properties:
+        emergency:
+          $ref: '#/components/schemas/service.UserOutputFullCalleridEmergency'
+        external:
+          $ref: '#/components/schemas/service.UserOutputFullCalleridExternal'
+        internal:
+          $ref: '#/components/schemas/service.UserOutputFullCalleridInternal'
+      type: object
+    service.UserOutputFullCalleridEmergency:
+      example:
+        number: number
+      properties:
+        number:
+          type: string
+      type: object
+    service.UserOutputFullCalleridExternal:
+      example:
+        number: number
+      properties:
+        number:
+          type: string
+      type: object
+    service.UserOutputFullCalleridInternal:
+      example:
+        number: number
+      properties:
+        number:
+          type: string
       type: object
     service.UserOutputShort:
       example:
@@ -11637,20 +12542,22 @@ components:
       properties:
         call_recording:
           $ref: '#/components/schemas/service.VOIPAccountCallRecording'
+        caller_id:
+          $ref: '#/components/schemas/service.VOIPAccountOutputFullCallerid'
         do_not_disturb:
           $ref: '#/components/schemas/service.VOIPSharedDoNotDisturb'
-        enabled:
-          type: boolean
         music_on_hold:
           $ref: '#/components/schemas/service.VOIPAccountMusicOnHold'
         name:
           maxLength: 128
           type: string
         realm:
+          maxLength: 50
+          minLength: 3
           type: string
         timezone:
           maxLength: 32
-          minLength: 3
+          minLength: 5
           type: string
       required:
       - name
@@ -11838,6 +12745,8 @@ components:
       properties:
         call_recording:
           $ref: '#/components/schemas/service.VOIPAccountCallRecording'
+        caller_id:
+          $ref: '#/components/schemas/service.VOIPAccountOutputFullCallerid'
         do_not_disturb:
           $ref: '#/components/schemas/service.VOIPSharedDoNotDisturb'
         enabled:
@@ -11849,7 +12758,7 @@ components:
           type: string
         timezone:
           maxLength: 32
-          minLength: 3
+          minLength: 5
           type: string
       required:
       - name
@@ -11880,6 +12789,22 @@ components:
       properties:
         media_id:
           type: string
+      type: object
+    service.VOIPAccountOutputFullCallerid:
+      example:
+        external:
+          number: number
+        internal:
+          number: number
+        emergency:
+          number: number
+      properties:
+        emergency:
+          $ref: '#/components/schemas/service.AccountOutputFullCalleridEmergency'
+        external:
+          $ref: '#/components/schemas/service.AccountOutputFullCalleridExternal'
+        internal:
+          $ref: '#/components/schemas/service.AccountOutputFullCalleridInternal'
       type: object
     service.VOIPCallQueueAddEditData:
       properties:
@@ -11972,6 +12897,8 @@ components:
         mac_address:
           description: "dont use mac, it enforces :, which voip does not like"
           type: string
+        media:
+          $ref: '#/components/schemas/service.VOIPDeviceAddEdit3d'
         music_on_hold:
           $ref: '#/components/schemas/service.MusicOnHold'
         name:
@@ -12010,11 +12937,25 @@ components:
           $ref: '#/components/schemas/service.VOIPDeviceAddEdit4'
         external:
           $ref: '#/components/schemas/service.VOIPDeviceAddEdit4'
+        internal:
+          $ref: '#/components/schemas/service.VOIPDeviceAddEdit4'
+      type: object
+    service.VOIPDeviceAddEdit3d:
+      properties:
+        audio:
+          $ref: '#/components/schemas/service.VOIPDeviceAddEdit5'
       type: object
     service.VOIPDeviceAddEdit4:
       properties:
         number:
           type: string
+      type: object
+    service.VOIPDeviceAddEdit5:
+      properties:
+        codecs:
+          items:
+            type: string
+          type: array
       type: object
     service.VOIPGroupAddEdit2:
       properties:
@@ -12046,20 +12987,6 @@ components:
           type: string
         tts:
           $ref: '#/components/schemas/service.TTS'
-      required:
-      - name
-      type: object
-    service.VOIPMenuAddEditData:
-      properties:
-        media:
-          $ref: '#/components/schemas/service.MenuOutputFullMedia'
-        name:
-          maxLength: 128
-          type: string
-        timeout:
-          maximum: 60000
-          minimum: 1
-          type: integer
       required:
       - name
       type: object
@@ -12211,6 +13138,8 @@ components:
           $ref: '#/components/schemas/service.CallForward'
         call_recording:
           $ref: '#/components/schemas/service.CallRecordingSettings'
+        caller_id:
+          $ref: '#/components/schemas/service.UserOutputFullCallerid'
         do_not_disturb:
           $ref: '#/components/schemas/service.VOIPSharedDoNotDisturb'
         email:
@@ -12465,26 +13394,6 @@ components:
       - callback_url
       - title
       - webhook_type
-      type: object
-    util.CPAASError:
-      example:
-        status_code: 7
-        error_code: 2
-        message: message
-        errors:
-        - "{}"
-        - "{}"
-      properties:
-        error_code:
-          type: integer
-        errors:
-          items:
-            type: object
-          type: array
-        message:
-          type: string
-        status_code:
-          type: integer
       type: object
     _v1_account__accountID__media__mediaID__file_post_request:
       properties:

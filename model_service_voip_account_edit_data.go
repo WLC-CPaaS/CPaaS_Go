@@ -23,6 +23,7 @@ var _ MappedNullable = &ServiceVOIPAccountEditData{}
 // ServiceVOIPAccountEditData struct for ServiceVOIPAccountEditData
 type ServiceVOIPAccountEditData struct {
 	CallRecording *ServiceVOIPAccountCallRecording `json:"call_recording,omitempty"`
+	CallerId *ServiceVOIPAccountOutputFullCallerid `json:"caller_id,omitempty"`
 	DoNotDisturb *ServiceVOIPSharedDoNotDisturb `json:"do_not_disturb,omitempty"`
 	Enabled *bool `json:"enabled,omitempty"`
 	MusicOnHold *ServiceVOIPAccountMusicOnHold `json:"music_on_hold,omitempty"`
@@ -81,6 +82,38 @@ func (o *ServiceVOIPAccountEditData) HasCallRecording() bool {
 // SetCallRecording gets a reference to the given ServiceVOIPAccountCallRecording and assigns it to the CallRecording field.
 func (o *ServiceVOIPAccountEditData) SetCallRecording(v ServiceVOIPAccountCallRecording) {
 	o.CallRecording = &v
+}
+
+// GetCallerId returns the CallerId field value if set, zero value otherwise.
+func (o *ServiceVOIPAccountEditData) GetCallerId() ServiceVOIPAccountOutputFullCallerid {
+	if o == nil || IsNil(o.CallerId) {
+		var ret ServiceVOIPAccountOutputFullCallerid
+		return ret
+	}
+	return *o.CallerId
+}
+
+// GetCallerIdOk returns a tuple with the CallerId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ServiceVOIPAccountEditData) GetCallerIdOk() (*ServiceVOIPAccountOutputFullCallerid, bool) {
+	if o == nil || IsNil(o.CallerId) {
+		return nil, false
+	}
+	return o.CallerId, true
+}
+
+// HasCallerId returns a boolean if a field has been set.
+func (o *ServiceVOIPAccountEditData) HasCallerId() bool {
+	if o != nil && !IsNil(o.CallerId) {
+		return true
+	}
+
+	return false
+}
+
+// SetCallerId gets a reference to the given ServiceVOIPAccountOutputFullCallerid and assigns it to the CallerId field.
+func (o *ServiceVOIPAccountEditData) SetCallerId(v ServiceVOIPAccountOutputFullCallerid) {
+	o.CallerId = &v
 }
 
 // GetDoNotDisturb returns the DoNotDisturb field value if set, zero value otherwise.
@@ -239,6 +272,9 @@ func (o ServiceVOIPAccountEditData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.CallRecording) {
 		toSerialize["call_recording"] = o.CallRecording
+	}
+	if !IsNil(o.CallerId) {
+		toSerialize["caller_id"] = o.CallerId
 	}
 	if !IsNil(o.DoNotDisturb) {
 		toSerialize["do_not_disturb"] = o.DoNotDisturb

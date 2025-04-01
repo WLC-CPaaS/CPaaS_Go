@@ -21,7 +21,9 @@ var _ MappedNullable = &ServiceDocsWebhookDelete{}
 // ServiceDocsWebhookDelete struct for ServiceDocsWebhookDelete
 type ServiceDocsWebhookDelete struct {
 	Data *ServiceWebhookDeleteOutput `json:"data,omitempty"`
+	// Unique id for each request
 	RequestId *string `json:"request_id,omitempty"`
+	// HTTP response status code
 	StatusCode *int32 `json:"status_code,omitempty"`
 }
 

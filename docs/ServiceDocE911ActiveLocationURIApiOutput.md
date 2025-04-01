@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Data** | Pointer to [**ServiceE911LocationURI**](ServiceE911LocationURI.md) |  | [optional] 
-**RequestId** | Pointer to **string** |  | [optional] 
-**StatusCode** | Pointer to **int32** |  | [optional] 
+**RequestId** | Pointer to **string** | Unique id for each request | [optional] 
+**StatusCode** | Pointer to **int32** | HTTP response status code | [optional] 
 
 ## Methods
 

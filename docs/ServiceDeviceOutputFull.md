@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **Enabled** | Pointer to **bool** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **MacAddress** | Pointer to **string** |  | [optional] 
+**Media** | Pointer to [**ServiceDeviceOutputFullMedia**](ServiceDeviceOutputFullMedia.md) |  | [optional] 
 **MusicOnHold** | Pointer to [**ServiceMusicOnHold**](ServiceMusicOnHold.md) | Provision  *DeviceOutputFullProvision &#x60;json:\&quot;provision\&quot;&#x60; | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **OwnerId** | Pointer to **string** |  | [optional] 
@@ -235,6 +236,31 @@ SetMacAddress sets MacAddress field to given value.
 `func (o *ServiceDeviceOutputFull) HasMacAddress() bool`
 
 HasMacAddress returns a boolean if a field has been set.
+
+### GetMedia
+
+`func (o *ServiceDeviceOutputFull) GetMedia() ServiceDeviceOutputFullMedia`
+
+GetMedia returns the Media field if non-nil, zero value otherwise.
+
+### GetMediaOk
+
+`func (o *ServiceDeviceOutputFull) GetMediaOk() (*ServiceDeviceOutputFullMedia, bool)`
+
+GetMediaOk returns a tuple with the Media field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMedia
+
+`func (o *ServiceDeviceOutputFull) SetMedia(v ServiceDeviceOutputFullMedia)`
+
+SetMedia sets Media field to given value.
+
+### HasMedia
+
+`func (o *ServiceDeviceOutputFull) HasMedia() bool`
+
+HasMedia returns a boolean if a field has been set.
 
 ### GetMusicOnHold
 

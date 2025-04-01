@@ -22,6 +22,7 @@ var _ MappedNullable = &ServiceVOIPDeviceAddEdit3c{}
 type ServiceVOIPDeviceAddEdit3c struct {
 	Emergency *ServiceVOIPDeviceAddEdit4 `json:"emergency,omitempty"`
 	External *ServiceVOIPDeviceAddEdit4 `json:"external,omitempty"`
+	Internal *ServiceVOIPDeviceAddEdit4 `json:"internal,omitempty"`
 }
 
 // NewServiceVOIPDeviceAddEdit3c instantiates a new ServiceVOIPDeviceAddEdit3c object
@@ -105,6 +106,38 @@ func (o *ServiceVOIPDeviceAddEdit3c) SetExternal(v ServiceVOIPDeviceAddEdit4) {
 	o.External = &v
 }
 
+// GetInternal returns the Internal field value if set, zero value otherwise.
+func (o *ServiceVOIPDeviceAddEdit3c) GetInternal() ServiceVOIPDeviceAddEdit4 {
+	if o == nil || IsNil(o.Internal) {
+		var ret ServiceVOIPDeviceAddEdit4
+		return ret
+	}
+	return *o.Internal
+}
+
+// GetInternalOk returns a tuple with the Internal field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ServiceVOIPDeviceAddEdit3c) GetInternalOk() (*ServiceVOIPDeviceAddEdit4, bool) {
+	if o == nil || IsNil(o.Internal) {
+		return nil, false
+	}
+	return o.Internal, true
+}
+
+// HasInternal returns a boolean if a field has been set.
+func (o *ServiceVOIPDeviceAddEdit3c) HasInternal() bool {
+	if o != nil && !IsNil(o.Internal) {
+		return true
+	}
+
+	return false
+}
+
+// SetInternal gets a reference to the given ServiceVOIPDeviceAddEdit4 and assigns it to the Internal field.
+func (o *ServiceVOIPDeviceAddEdit3c) SetInternal(v ServiceVOIPDeviceAddEdit4) {
+	o.Internal = &v
+}
+
 func (o ServiceVOIPDeviceAddEdit3c) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -120,6 +153,9 @@ func (o ServiceVOIPDeviceAddEdit3c) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.External) {
 		toSerialize["external"] = o.External
+	}
+	if !IsNil(o.Internal) {
+		toSerialize["internal"] = o.Internal
 	}
 	return toSerialize, nil
 }

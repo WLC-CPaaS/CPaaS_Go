@@ -31,6 +31,7 @@ type ServiceVOIPDeviceAddEdit2 struct {
 	Enabled *bool `json:"enabled,omitempty"`
 	// dont use mac, it enforces :, which voip does not like
 	MacAddress *string `json:"mac_address,omitempty"`
+	Media *ServiceVOIPDeviceAddEdit3d `json:"media,omitempty"`
 	MusicOnHold *ServiceMusicOnHold `json:"music_on_hold,omitempty"`
 	Name string `json:"name"`
 	// json omitempty is needed else voip fails on \"\" for owner_id
@@ -283,6 +284,38 @@ func (o *ServiceVOIPDeviceAddEdit2) SetMacAddress(v string) {
 	o.MacAddress = &v
 }
 
+// GetMedia returns the Media field value if set, zero value otherwise.
+func (o *ServiceVOIPDeviceAddEdit2) GetMedia() ServiceVOIPDeviceAddEdit3d {
+	if o == nil || IsNil(o.Media) {
+		var ret ServiceVOIPDeviceAddEdit3d
+		return ret
+	}
+	return *o.Media
+}
+
+// GetMediaOk returns a tuple with the Media field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ServiceVOIPDeviceAddEdit2) GetMediaOk() (*ServiceVOIPDeviceAddEdit3d, bool) {
+	if o == nil || IsNil(o.Media) {
+		return nil, false
+	}
+	return o.Media, true
+}
+
+// HasMedia returns a boolean if a field has been set.
+func (o *ServiceVOIPDeviceAddEdit2) HasMedia() bool {
+	if o != nil && !IsNil(o.Media) {
+		return true
+	}
+
+	return false
+}
+
+// SetMedia gets a reference to the given ServiceVOIPDeviceAddEdit3d and assigns it to the Media field.
+func (o *ServiceVOIPDeviceAddEdit2) SetMedia(v ServiceVOIPDeviceAddEdit3d) {
+	o.Media = &v
+}
+
 // GetMusicOnHold returns the MusicOnHold field value if set, zero value otherwise.
 func (o *ServiceVOIPDeviceAddEdit2) GetMusicOnHold() ServiceMusicOnHold {
 	if o == nil || IsNil(o.MusicOnHold) {
@@ -425,6 +458,9 @@ func (o ServiceVOIPDeviceAddEdit2) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.MacAddress) {
 		toSerialize["mac_address"] = o.MacAddress
+	}
+	if !IsNil(o.Media) {
+		toSerialize["media"] = o.Media
 	}
 	if !IsNil(o.MusicOnHold) {
 		toSerialize["music_on_hold"] = o.MusicOnHold

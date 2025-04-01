@@ -6,9 +6,9 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**V1AccountAccountidChildrenGet**](AccountAPI.md#V1AccountAccountidChildrenGet) | **Get** /v1/account/{accountid}/children | Get Sub Account List
 [**V1AccountAccountidDelete**](AccountAPI.md#V1AccountAccountidDelete) | **Delete** /v1/account/{accountid} | Delete Account
-[**V1AccountAccountidDnsrecordGet**](AccountAPI.md#V1AccountAccountidDnsrecordGet) | **Get** /v1/account/{accountid}/dnsrecord | 
-[**V1AccountAccountidDnsrecordPost**](AccountAPI.md#V1AccountAccountidDnsrecordPost) | **Post** /v1/account/{accountid}/dnsrecord | 
-[**V1AccountAccountidDnsrecordPut**](AccountAPI.md#V1AccountAccountidDnsrecordPut) | **Put** /v1/account/{accountid}/dnsrecord | 
+[**V1AccountAccountidDnsrecordGet**](AccountAPI.md#V1AccountAccountidDnsrecordGet) | **Get** /v1/account/{accountid}/dnsrecord | Get Account DNS Record
+[**V1AccountAccountidDnsrecordPost**](AccountAPI.md#V1AccountAccountidDnsrecordPost) | **Post** /v1/account/{accountid}/dnsrecord | Create Account DNS Record
+[**V1AccountAccountidDnsrecordPut**](AccountAPI.md#V1AccountAccountidDnsrecordPut) | **Put** /v1/account/{accountid}/dnsrecord | Convert Account DNS Record
 [**V1AccountAccountidGet**](AccountAPI.md#V1AccountAccountidGet) | **Get** /v1/account/{accountid} | Get Account Details
 [**V1AccountAccountidLimitGet**](AccountAPI.md#V1AccountAccountidLimitGet) | **Get** /v1/account/{accountid}/limit | Get Account Limits
 [**V1AccountAccountidLimitPut**](AccountAPI.md#V1AccountAccountidLimitPut) | **Put** /v1/account/{accountid}/limit | Set Account Limits
@@ -168,7 +168,7 @@ Name | Type | Description  | Notes
 
 > ServiceDocsAccountGetSingle V1AccountAccountidDnsrecordGet(ctx, accountid).Execute()
 
-
+Get Account DNS Record
 
 
 
@@ -238,7 +238,7 @@ Name | Type | Description  | Notes
 
 > ServiceDocsAccountGetSingle V1AccountAccountidDnsrecordPost(ctx, accountid).Execute()
 
-
+Create Account DNS Record
 
 
 
@@ -308,7 +308,7 @@ Name | Type | Description  | Notes
 
 > ServiceDocsAccountGetSingle V1AccountAccountidDnsrecordPut(ctx, accountid).Dnsrecord(dnsrecord).Execute()
 
-
+Convert Account DNS Record
 
 
 
