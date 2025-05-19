@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 ## V1AccountAccountIDCallqueueGet
 
-> ServiceDocsCallQueueGetAll V1AccountAccountIDCallqueueGet(ctx, accountID).Execute()
+> ServiceDocsCallQueueGetAll v1accountaccountidcallqueueget(ctx, accountID).Execute()
 
 Get Call Queues
 
@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDCallqueuePost
 
-> ServiceDocsCallQueueGetSingle V1AccountAccountIDCallqueuePost(ctx, accountID).ReqBody(reqBody).Execute()
+> ServiceDocsCallQueueGetSingle v1accountaccountidcallqueuepost(ctx, accountID).ReqBody(reqBody).Execute()
 
 Create Call Queue
 
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDCallqueueQueueIDDelete
 
-> ServiceDocsCallQueueGetSingle V1AccountAccountIDCallqueueQueueIDDelete(ctx, accountID, queueID).Execute()
+> ServiceDocsCallQueueGetSingle v1accountaccountidcallqueuequeueiddelete(ctx, accountID, queueID).Execute()
 
 Delete Call Queue
 
@@ -232,7 +232,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDCallqueueQueueIDGet
 
-> ServiceDocsCallQueueGetSingle V1AccountAccountIDCallqueueQueueIDGet(ctx, accountID, queueID).Execute()
+> ServiceDocsCallQueueGetSingle v1accountaccountidcallqueuequeueidget(ctx, accountID, queueID).Execute()
 
 Get Call Queue Details
 
@@ -305,7 +305,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDCallqueueQueueIDPut
 
-> ServiceDocsCallQueueGetSingle V1AccountAccountIDCallqueueQueueIDPut(ctx, accountID, queueID).ReqBody(reqBody).Execute()
+> ServiceDocsCallQueueGetSingle v1accountaccountidcallqueuequeueidput(ctx, accountID, queueID).ReqBody(reqBody).Execute()
 
 Update Call Queue
 
@@ -380,7 +380,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDCallqueueQueueIDStatusGet
 
-> ServiceDocsCallQueueGetSingleStatus V1AccountAccountIDCallqueueQueueIDStatusGet(ctx, accountID, queueID).Execute()
+> ServiceDocsCallQueueGetSingleStatus v1accountaccountidcallqueuequeueidstatusget(ctx, accountID, queueID).Execute()
 
 Get Call Queue Status
 
@@ -453,7 +453,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDQueuerolesGet
 
-> ServiceDocsCallQueueGetRoles V1AccountAccountIDQueuerolesGet(ctx, accountID).Execute()
+> ServiceDocsCallQueueGetRoles v1accountaccountidqueuerolesget(ctx, accountID).Execute()
 
 Get Queue Roles of Account
 
@@ -523,7 +523,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDQueuerolesQueueIDPost
 
-> ServiceAPIResponse V1AccountAccountIDQueuerolesQueueIDPost(ctx, accountID, queueID).ReqBody(reqBody).Execute()
+> ServiceAPIResponse v1accountaccountidqueuerolesqueueidpost(ctx, accountID, queueID).ReqBody(reqBody).Execute()
 
 Assign Queue Role to Call Queue
 

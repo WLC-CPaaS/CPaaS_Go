@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## V1AccountAccountidUserGet
 
-> ServiceDocsUserGetAll V1AccountAccountidUserGet(ctx, accountid).StartKey(startKey).PageSize(pageSize).Execute()
+> ServiceDocsUserGetAll v1accountaccountiduserget(ctx, accountid).StartKey(startKey).PageSize(pageSize).Execute()
 
 Get User List
 
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountidUserPost
 
-> ServiceDocsUserGetSingle V1AccountAccountidUserPost(ctx, accountid).User(user).Execute()
+> ServiceDocsUserGetSingle v1accountaccountiduserpost(ctx, accountid).User(user).Execute()
 
 Create User
 
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountidUserUseridDelete
 
-> ServiceDocsUserGetSingle V1AccountAccountidUserUseridDelete(ctx, accountid, userid).Execute()
+> ServiceDocsUserGetSingle v1accountaccountiduseruseriddelete(ctx, accountid, userid).Execute()
 
 Delete User
 
@@ -233,7 +233,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountidUserUseridGet
 
-> ServiceDocsUserGetSingle V1AccountAccountidUserUseridGet(ctx, accountid, userid).Execute()
+> ServiceDocsUserGetSingle v1accountaccountiduseruseridget(ctx, accountid, userid).Execute()
 
 Get User Details
 
@@ -306,7 +306,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountidUserUseridPut
 
-> ServiceDocsUserGetSingle V1AccountAccountidUserUseridPut(ctx, accountid, userid).User(user).Execute()
+> ServiceDocsUserGetSingle v1accountaccountiduseruseridput(ctx, accountid, userid).User(user).Execute()
 
 Update User
 

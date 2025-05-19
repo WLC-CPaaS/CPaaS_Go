@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## V1PingGet
 
-> ServiceDocsPingGet V1PingGet(ctx).Execute()
+> ServiceDocsPingGet v1pingget(ctx).Execute()
 
 Ping Backend
 
@@ -73,7 +73,7 @@ Other parameters are passed through a pointer to a apiV1PingGetRequest struct vi
 
 ## V1PingseccognitoGet
 
-> ServiceDocsPingGet V1PingseccognitoGet(ctx).Execute()
+> ServiceDocsPingGet v1pingseccognitoget(ctx).Execute()
 
 Ping Cognito
 
@@ -134,7 +134,7 @@ Other parameters are passed through a pointer to a apiV1PingseccognitoGetRequest
 
 ## V1SystemStatusGet
 
-> ServiceDocsSystemStatusGetSingle V1SystemStatusGet(ctx).Execute()
+> ServiceDocsSystemStatusGetSingle v1systemstatusget(ctx).Execute()
 
 Get System Status
 

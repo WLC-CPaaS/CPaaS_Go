@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## V1AccountAccountIDStorageDelete
 
-> ServiceDocsStorageGet V1AccountAccountIDStorageDelete(ctx, accountID).Execute()
+> ServiceDocsStorageGet v1accountaccountidstoragedelete(ctx, accountID).Execute()
 
 Delete Storage
 
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDStorageGet
 
-> ServiceDocsStorageGet V1AccountAccountIDStorageGet(ctx, accountID).Execute()
+> ServiceDocsStorageGet v1accountaccountidstorageget(ctx, accountID).Execute()
 
 Get Storage Details
 
@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDStoragePost
 
-> ServiceDocsStorageGet V1AccountAccountIDStoragePost(ctx, accountID).ReqBody(reqBody).Execute()
+> ServiceDocsStorageGet v1accountaccountidstoragepost(ctx, accountID).ReqBody(reqBody).Execute()
 
 Create Storage
 
@@ -225,7 +225,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDStoragePut
 
-> ServiceDocsStorageGet V1AccountAccountIDStoragePut(ctx, accountID).ReqBody(reqBody).Execute()
+> ServiceDocsStorageGet v1accountaccountidstorageput(ctx, accountID).ReqBody(reqBody).Execute()
 
 Update Storage
 

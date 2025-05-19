@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 ## V1AccountAccountidPhonenumberGet
 
-> ServiceDocsAccountPhonenumberGetAll V1AccountAccountidPhonenumberGet(ctx, accountid).StartKey(startKey).PageSize(pageSize).Execute()
+> ServiceDocsAccountPhonenumberGetAll v1accountaccountidphonenumberget(ctx, accountid).StartKey(startKey).PageSize(pageSize).Execute()
 
 Get Assigned Numbers List
 
@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountPhonenumberAssignPost
 
-> ServiceAPIResponseStatusCodeOnly V1AccountPhonenumberAssignPost(ctx).Payload(payload).Execute()
+> ServiceAPIResponseStatusCodeOnly v1accountphonenumberassignpost(ctx).Payload(payload).Execute()
 
 Assign Number
 
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountPhonenumberDisconnectPost
 
-> ServiceAPIResponseStatusCodeOnly V1AccountPhonenumberDisconnectPost(ctx).Payload(payload).Execute()
+> ServiceAPIResponseStatusCodeOnly v1accountphonenumberdisconnectpost(ctx).Payload(payload).Execute()
 
 Disconnect Number
 
@@ -222,7 +222,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountPhonenumberGet
 
-> ServiceDocsAccountPhonenumberGetAll V1AccountPhonenumberGet(ctx).StartKey(startKey).PageSize(pageSize).Execute()
+> ServiceDocsAccountPhonenumberGetAll v1accountphonenumberget(ctx).StartKey(startKey).PageSize(pageSize).Execute()
 
 Get Unassigned Numbers List
 
@@ -290,7 +290,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountPhonenumberPost
 
-> ServiceDocsOrderPhonenumber V1AccountPhonenumberPost(ctx).Phonenumber(phonenumber).Execute()
+> ServiceDocsOrderPhonenumber v1accountphonenumberpost(ctx).Phonenumber(phonenumber).Execute()
 
 Purchase Number
 
@@ -356,7 +356,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountPhonenumberUnassignPost
 
-> ServiceAPIResponseStatusCodeOnly V1AccountPhonenumberUnassignPost(ctx).Payload(payload).Execute()
+> ServiceAPIResponseStatusCodeOnly v1accountphonenumberunassignpost(ctx).Payload(payload).Execute()
 
 Unassign Number
 
@@ -422,7 +422,7 @@ Name | Type | Description  | Notes
 
 ## V1PhonenumberSearchGet
 
-> ServiceDocsPhonenumberSearchGetAll V1PhonenumberSearchGet(ctx).AreaCode(areaCode).Quantity(quantity).Execute()
+> ServiceDocsPhonenumberSearchGetAll v1phonenumbersearchget(ctx).AreaCode(areaCode).Quantity(quantity).Execute()
 
 Search New Numbers
 

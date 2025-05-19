@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## V1AccountAccountIDChannelChannelIDGet
 
-> ServiceDocsChannelGetSingle V1AccountAccountIDChannelChannelIDGet(ctx, accountID, channelID).Execute()
+> ServiceDocsChannelGetSingle v1accountaccountidchannelchannelidget(ctx, accountID, channelID).Execute()
 
 Get Channel Details
 
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDChannelChannelIDPost
 
-> ServiceAPIResponse V1AccountAccountIDChannelChannelIDPost(ctx, accountID, channelID).ReqBody(reqBody).Execute()
+> ServiceAPIResponse v1accountaccountidchannelchannelidpost(ctx, accountID, channelID).ReqBody(reqBody).Execute()
 
 Associate Action to Channel
 
@@ -163,7 +163,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDChannelChannelIDPut
 
-> ServiceAPIResponse V1AccountAccountIDChannelChannelIDPut(ctx, accountID, channelID).ReqBody(reqBody).Execute()
+> ServiceAPIResponse v1accountaccountidchannelchannelidput(ctx, accountID, channelID).ReqBody(reqBody).Execute()
 
 Associate Metaflow to Channel
 
@@ -238,7 +238,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDChannelGet
 
-> ServiceDocsChannelGetAll V1AccountAccountIDChannelGet(ctx, accountID).Execute()
+> ServiceDocsChannelGetAll v1accountaccountidchannelget(ctx, accountID).Execute()
 
 Get Account Channel List
 
@@ -308,7 +308,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDDeviceDeviceIDChannelGet
 
-> ServiceDocsChannelGetAll V1AccountAccountIDDeviceDeviceIDChannelGet(ctx, accountID, deviceID).Execute()
+> ServiceDocsChannelGetAll v1accountaccountiddevicedeviceidchannelget(ctx, accountID, deviceID).Execute()
 
 Get Device Channel List
 
@@ -381,7 +381,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDUserUserIDChannelGet
 
-> ServiceDocsChannelGetAll V1AccountAccountIDUserUserIDChannelGet(ctx, accountID, userID).Execute()
+> ServiceDocsChannelGetAll v1accountaccountiduseruseridchannelget(ctx, accountID, userID).Execute()
 
 Get User Channel List
 

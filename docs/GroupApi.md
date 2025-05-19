@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## V1AccountAccountIDGroupGet
 
-> ServiceDocGroupGetAll V1AccountAccountIDGroupGet(ctx, accountID).StartKey(startKey).PageSize(pageSize).Execute()
+> ServiceDocGroupGetAll v1accountaccountidgroupget(ctx, accountID).StartKey(startKey).PageSize(pageSize).Execute()
 
 Get Group List
 
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDGroupGroupIDDelete
 
-> ServiceDocGroupGetSingle V1AccountAccountIDGroupGroupIDDelete(ctx, accountID, groupID).Execute()
+> ServiceDocGroupGetSingle v1accountaccountidgroupgroupiddelete(ctx, accountID, groupID).Execute()
 
 Delete Group
 
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDGroupGroupIDGet
 
-> ServiceDocGroupGetSingle V1AccountAccountIDGroupGroupIDGet(ctx, accountID, groupID).Execute()
+> ServiceDocGroupGetSingle v1accountaccountidgroupgroupidget(ctx, accountID, groupID).Execute()
 
 Get Group Details
 
@@ -234,7 +234,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDGroupGroupIDPut
 
-> ServiceDocGroupGetSingle V1AccountAccountIDGroupGroupIDPut(ctx, accountID, groupID).ReqBody(reqBody).Execute()
+> ServiceDocGroupGetSingle v1accountaccountidgroupgroupidput(ctx, accountID, groupID).ReqBody(reqBody).Execute()
 
 Update Group
 
@@ -309,7 +309,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDGroupPost
 
-> ServiceDocGroupGetSingle V1AccountAccountIDGroupPost(ctx, accountID).Group(group).Execute()
+> ServiceDocGroupGetSingle v1accountaccountidgrouppost(ctx, accountID).Group(group).Execute()
 
 Create Group
 

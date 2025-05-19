@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## V1AccountAccountIDMenuGet
 
-> MenuOutputList V1AccountAccountIDMenuGet(ctx, accountID).StartKey(startKey).PageSize(pageSize).Execute()
+> MenuOutputList v1accountaccountidmenuget(ctx, accountID).StartKey(startKey).PageSize(pageSize).Execute()
 
 Get Menu List
 
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDMenuMenuIDDelete
 
-> MenuOutputDetail V1AccountAccountIDMenuMenuIDDelete(ctx, accountID, menuID).Execute()
+> MenuOutputDetail v1accountaccountidmenumenuiddelete(ctx, accountID, menuID).Execute()
 
 Delete Menu
 
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDMenuMenuIDGet
 
-> MenuOutputDetail V1AccountAccountIDMenuMenuIDGet(ctx, accountID, menuID).Execute()
+> MenuOutputDetail v1accountaccountidmenumenuidget(ctx, accountID, menuID).Execute()
 
 Get Menu Details
 
@@ -234,7 +234,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDMenuMenuIDPut
 
-> MenuOutputDetail V1AccountAccountIDMenuMenuIDPut(ctx, accountID, menuID).ReqBody(reqBody).Execute()
+> MenuOutputDetail v1accountaccountidmenumenuidput(ctx, accountID, menuID).ReqBody(reqBody).Execute()
 
 Update Menu
 
@@ -309,7 +309,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDMenuPost
 
-> MenuOutputDetail V1AccountAccountIDMenuPost(ctx, accountID).Menu(menu).Execute()
+> MenuOutputDetail v1accountaccountidmenupost(ctx, accountID).Menu(menu).Execute()
 
 Create Menu
 

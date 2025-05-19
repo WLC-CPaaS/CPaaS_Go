@@ -24,7 +24,7 @@ Method | HTTP request | Description
 
 ## V1AccountAccountidChildrenGet
 
-> ServiceDocsAccountGetAll V1AccountAccountidChildrenGet(ctx, accountid).StartKey(startKey).PageSize(pageSize).Execute()
+> ServiceDocsAccountGetAll v1accountaccountidchildrenget(ctx, accountid).StartKey(startKey).PageSize(pageSize).Execute()
 
 Get Sub Account List
 
@@ -98,7 +98,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountidDelete
 
-> ServiceDocsAccountGetSingle V1AccountAccountidDelete(ctx, accountid).Execute()
+> ServiceDocsAccountGetSingle v1accountaccountiddelete(ctx, accountid).Execute()
 
 Delete Account
 
@@ -168,7 +168,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountidDnsrecordGet
 
-> ServiceDocsAccountGetSingle V1AccountAccountidDnsrecordGet(ctx, accountid).Execute()
+> ServiceDocsAccountGetSingle v1accountaccountiddnsrecordget(ctx, accountid).Execute()
 
 Get Account DNS Record
 
@@ -238,7 +238,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountidDnsrecordPost
 
-> ServiceDocsAccountGetSingle V1AccountAccountidDnsrecordPost(ctx, accountid).Execute()
+> ServiceDocsAccountGetSingle v1accountaccountiddnsrecordpost(ctx, accountid).Execute()
 
 Create Account DNS Record
 
@@ -308,7 +308,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountidDnsrecordPut
 
-> ServiceDocsAccountGetSingle V1AccountAccountidDnsrecordPut(ctx, accountid).Dnsrecord(dnsrecord).Execute()
+> ServiceDocsAccountGetSingle v1accountaccountiddnsrecordput(ctx, accountid).Dnsrecord(dnsrecord).Execute()
 
 Convert Account DNS Record
 
@@ -380,7 +380,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountidGet
 
-> ServiceDocsAccountGetSingle V1AccountAccountidGet(ctx, accountid).Execute()
+> ServiceDocsAccountGetSingle v1accountaccountidget(ctx, accountid).Execute()
 
 Get Account Details
 
@@ -450,7 +450,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountidLimitGet
 
-> ServiceDocsAccountLimit V1AccountAccountidLimitGet(ctx, accountid).Execute()
+> ServiceDocsAccountLimit v1accountaccountidlimitget(ctx, accountid).Execute()
 
 Get Account Limits
 
@@ -520,7 +520,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountidLimitPut
 
-> ServiceDocsAccountLimit V1AccountAccountidLimitPut(ctx, accountid).Limit(limit).Execute()
+> ServiceDocsAccountLimit v1accountaccountidlimitput(ctx, accountid).Limit(limit).Execute()
 
 Set Account Limits
 
@@ -592,7 +592,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountidPost
 
-> ServiceDocsAccountGetSingle V1AccountAccountidPost(ctx, accountid).Account(account).Execute()
+> ServiceDocsAccountGetSingle v1accountaccountidpost(ctx, accountid).Account(account).Execute()
 
 Create Sub Account
 
@@ -664,7 +664,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountidProvisioningdetailsGet
 
-> ServiceDocsAccountProvisioning V1AccountAccountidProvisioningdetailsGet(ctx, accountid).Execute()
+> ServiceDocsAccountProvisioning v1accountaccountidprovisioningdetailsget(ctx, accountid).Execute()
 
 Get Account Provisioning Details
 
@@ -734,7 +734,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountidProvisioningdetailsResetpwPut
 
-> ServiceDocsAccountProvisioning V1AccountAccountidProvisioningdetailsResetpwPut(ctx, accountid).Execute()
+> ServiceDocsAccountProvisioning v1accountaccountidprovisioningdetailsresetpwput(ctx, accountid).Execute()
 
 Reset the provisioning details password.
 
@@ -804,7 +804,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountidPut
 
-> ServiceDocsAccountGetSingle V1AccountAccountidPut(ctx, accountid).Account(account).Execute()
+> ServiceDocsAccountGetSingle v1accountaccountidput(ctx, accountid).Account(account).Execute()
 
 Update Account
 
@@ -876,7 +876,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountApikeyGet
 
-> ServiceDocsAccountAPIKey V1AccountApikeyGet(ctx).Execute()
+> ServiceDocsAccountAPIKey v1accountapikeyget(ctx).Execute()
 
 
 
@@ -937,7 +937,7 @@ Other parameters are passed through a pointer to a apiV1AccountApikeyGetRequest 
 
 ## V1AccountGet
 
-> ServiceDocsAccountGetAll V1AccountGet(ctx).StartKey(startKey).PageSize(pageSize).Execute()
+> ServiceDocsAccountGetAll v1accountget(ctx).StartKey(startKey).PageSize(pageSize).Execute()
 
 Get Account List
 
@@ -1005,7 +1005,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountPost
 
-> ServiceDocsAccountGetSingle V1AccountPost(ctx).Account(account).Execute()
+> ServiceDocsAccountGetSingle v1accountpost(ctx).Account(account).Execute()
 
 Create Account
 

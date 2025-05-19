@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 ## V1AccountAccountIDDeviceDeviceIDMetaflowDelete
 
-> ServiceDocMetaflowGet V1AccountAccountIDDeviceDeviceIDMetaflowDelete(ctx, accountID, deviceID).Execute()
+> ServiceDocMetaflowGet v1accountaccountiddevicedeviceidmetaflowdelete(ctx, accountID, deviceID).Execute()
 
 Delete Device Metaflow
 
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDDeviceDeviceIDMetaflowGet
 
-> ServiceDocMetaflowGet V1AccountAccountIDDeviceDeviceIDMetaflowGet(ctx, accountID, deviceID).Execute()
+> ServiceDocMetaflowGet v1accountaccountiddevicedeviceidmetaflowget(ctx, accountID, deviceID).Execute()
 
 Get Device Metaflow List
 
@@ -164,7 +164,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDDeviceDeviceIDMetaflowPost
 
-> ServiceDocMetaflowGet V1AccountAccountIDDeviceDeviceIDMetaflowPost(ctx, accountID, deviceID).ReqBody(reqBody).Execute()
+> ServiceDocMetaflowGet v1accountaccountiddevicedeviceidmetaflowpost(ctx, accountID, deviceID).ReqBody(reqBody).Execute()
 
 Create Device Metaflow
 
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDMetaflowDelete
 
-> ServiceDocMetaflowGet V1AccountAccountIDMetaflowDelete(ctx, accountID).Execute()
+> ServiceDocMetaflowGet v1accountaccountidmetaflowdelete(ctx, accountID).Execute()
 
 Delete Account Metaflow
 
@@ -309,7 +309,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDMetaflowGet
 
-> ServiceDocMetaflowGet V1AccountAccountIDMetaflowGet(ctx, accountID).Execute()
+> ServiceDocMetaflowGet v1accountaccountidmetaflowget(ctx, accountID).Execute()
 
 Get Account Metaflow List
 
@@ -379,7 +379,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDMetaflowPost
 
-> ServiceDocMetaflowGet V1AccountAccountIDMetaflowPost(ctx, accountID).Metaflow(metaflow).Execute()
+> ServiceDocMetaflowGet v1accountaccountidmetaflowpost(ctx, accountID).Metaflow(metaflow).Execute()
 
 Create Account Metaflow
 
@@ -451,7 +451,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDUserUserIDMetaflowDelete
 
-> ServiceDocMetaflowGet V1AccountAccountIDUserUserIDMetaflowDelete(ctx, accountID, userID).Execute()
+> ServiceDocMetaflowGet v1accountaccountiduseruseridmetaflowdelete(ctx, accountID, userID).Execute()
 
 Delete User Metaflow
 
@@ -524,7 +524,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDUserUserIDMetaflowGet
 
-> ServiceDocMetaflowGet V1AccountAccountIDUserUserIDMetaflowGet(ctx, accountID, userID).Execute()
+> ServiceDocMetaflowGet v1accountaccountiduseruseridmetaflowget(ctx, accountID, userID).Execute()
 
 Get User Metaflow List
 
@@ -597,7 +597,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDUserUserIDMetaflowPost
 
-> ServiceDocMetaflowGet V1AccountAccountIDUserUserIDMetaflowPost(ctx, accountID, userID).ReqBody(reqBody).Execute()
+> ServiceDocMetaflowGet v1accountaccountiduseruseridmetaflowpost(ctx, accountID, userID).ReqBody(reqBody).Execute()
 
 Create User Metaflow
 

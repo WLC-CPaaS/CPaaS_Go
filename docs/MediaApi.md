@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## V1AccountAccountIDMediaMediaIDFileGet
 
-> *os.File V1AccountAccountIDMediaMediaIDFileGet(ctx, accountID, mediaID).Execute()
+> *os.File v1accountaccountidmediamediaidfileget(ctx, accountID, mediaID).Execute()
 
 Get Media File
 
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDMediaMediaIDFilePost
 
-> ServiceDocsMediaGetSingle V1AccountAccountIDMediaMediaIDFilePost(ctx, accountID, mediaID).File(file).Execute()
+> ServiceDocsMediaGetSingle v1accountaccountidmediamediaidfilepost(ctx, accountID, mediaID).File(file).Execute()
 
 Add Media File
 
@@ -163,7 +163,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountidMediaGet
 
-> ServiceDocsMediaGetAll V1AccountAccountidMediaGet(ctx, accountid).StartKey(startKey).PageSize(pageSize).Execute()
+> ServiceDocsMediaGetAll v1accountaccountidmediaget(ctx, accountid).StartKey(startKey).PageSize(pageSize).Execute()
 
 Get Media List
 
@@ -237,7 +237,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountidMediaMediaidDelete
 
-> ServiceDocsMediaGetSingle V1AccountAccountidMediaMediaidDelete(ctx, accountid, mediaid).Execute()
+> ServiceDocsMediaGetSingle v1accountaccountidmediamediaiddelete(ctx, accountid, mediaid).Execute()
 
 Delete Media
 
@@ -310,7 +310,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountidMediaMediaidGet
 
-> ServiceDocsMediaGetSingle V1AccountAccountidMediaMediaidGet(ctx, accountid, mediaid).Execute()
+> ServiceDocsMediaGetSingle v1accountaccountidmediamediaidget(ctx, accountid, mediaid).Execute()
 
 Get Media Details
 
@@ -383,7 +383,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountidMediaPost
 
-> ServiceDocsMediaGetSingle V1AccountAccountidMediaPost(ctx, accountid).Media(media).Execute()
+> ServiceDocsMediaGetSingle v1accountaccountidmediapost(ctx, accountid).Media(media).Execute()
 
 Create Media
 

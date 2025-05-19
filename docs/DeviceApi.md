@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## V1AccountAccountidDeviceDeviceidDelete
 
-> ServiceDocsDeviceGetSingle V1AccountAccountidDeviceDeviceidDelete(ctx, accountid, deviceid).Execute()
+> ServiceDocsDeviceGetSingle v1accountaccountiddevicedeviceiddelete(ctx, accountid, deviceid).Execute()
 
 Delete Device
 
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountidDeviceDeviceidGet
 
-> ServiceDocsDeviceGetSingle V1AccountAccountidDeviceDeviceidGet(ctx, accountid, deviceid).Execute()
+> ServiceDocsDeviceGetSingle v1accountaccountiddevicedeviceidget(ctx, accountid, deviceid).Execute()
 
 Get Device Details
 
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountidDeviceDeviceidPut
 
-> ServiceDocsDeviceGetSingle V1AccountAccountidDeviceDeviceidPut(ctx, accountid, deviceid).Device(device).Execute()
+> ServiceDocsDeviceGetSingle v1accountaccountiddevicedeviceidput(ctx, accountid, deviceid).Device(device).Execute()
 
 Update Device
 
@@ -236,7 +236,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountidDeviceDeviceidRebootPost
 
-> ServiceDocsDeviceReboot V1AccountAccountidDeviceDeviceidRebootPost(ctx, accountid, deviceid).Execute()
+> ServiceDocsDeviceReboot v1accountaccountiddevicedeviceidrebootpost(ctx, accountid, deviceid).Execute()
 
 Reboot Device
 
@@ -309,7 +309,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountidDeviceGet
 
-> ServiceDocsDeviceGetAll V1AccountAccountidDeviceGet(ctx, accountid).StartKey(startKey).PageSize(pageSize).Execute()
+> ServiceDocsDeviceGetAll v1accountaccountiddeviceget(ctx, accountid).StartKey(startKey).PageSize(pageSize).Execute()
 
 Get Device List
 
@@ -383,7 +383,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountidDevicePost
 
-> ServiceDocsDeviceGetSingle V1AccountAccountidDevicePost(ctx, accountid).Device(device).Execute()
+> ServiceDocsDeviceGetSingle v1accountaccountiddevicepost(ctx, accountid).Device(device).Execute()
 
 Create Device
 

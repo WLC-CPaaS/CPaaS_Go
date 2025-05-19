@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## V1AccountAccountIDLoginrecipientRecipientIDPost
 
-> ServiceDocsCallQueueResponseShort V1AccountAccountIDLoginrecipientRecipientIDPost(ctx, accountID, recipientID).ReqBody(reqBody).Execute()
+> ServiceDocsCallQueueResponseShort v1accountaccountidloginrecipientrecipientidpost(ctx, accountID, recipientID).ReqBody(reqBody).Execute()
 
 Login as Recipient
 
@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDQueuerecipientGet
 
-> ServiceDocsGetQueueRecipients V1AccountAccountIDQueuerecipientGet(ctx, accountID).Execute()
+> ServiceDocsGetQueueRecipients v1accountaccountidqueuerecipientget(ctx, accountID).Execute()
 
 Change Recipient Status
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDRecipientRecipientIDStatusPost
 
-> ServiceAPIResponse V1AccountAccountIDRecipientRecipientIDStatusPost(ctx, accountID, recipientID).ReqBody(reqBody).Execute()
+> ServiceAPIResponse v1accountaccountidrecipientrecipientidstatuspost(ctx, accountID, recipientID).ReqBody(reqBody).Execute()
 
 Get Recipient List
 

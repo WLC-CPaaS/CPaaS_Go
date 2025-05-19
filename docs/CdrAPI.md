@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## V1AccountAccountIDCdrCdrIDGet
 
-> ServiceDocsCdrGetSingle V1AccountAccountIDCdrCdrIDGet(ctx, accountID, cdrID).Execute()
+> ServiceDocsCdrGetSingle v1accountaccountidcdrcdridget(ctx, accountID, cdrID).Execute()
 
 
 
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDCdrGet
 
-> ServiceDocsCdrGetAll V1AccountAccountIDCdrGet(ctx, accountID).PageSize(pageSize).StartKey(startKey).CreatedFrom(createdFrom).CreatedTo(createdTo).Execute()
+> ServiceDocsCdrGetAll v1accountaccountidcdrget(ctx, accountID).PageSize(pageSize).StartKey(startKey).CreatedFrom(createdFrom).CreatedTo(createdTo).Execute()
 
 
 

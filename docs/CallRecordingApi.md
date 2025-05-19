@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## V1AccountAccountIDRecordingGet
 
-> ServiceDocsCallRecordingGetAll V1AccountAccountIDRecordingGet(ctx, accountID).Execute()
+> ServiceDocsCallRecordingGetAll v1accountaccountidrecordingget(ctx, accountID).Execute()
 
 Get Account Call Recording
 
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDRecordingRecordingIDDelete
 
-> ServiceDocsCallRecordingGetSingle V1AccountAccountIDRecordingRecordingIDDelete(ctx, accountID, recordingID).Execute()
+> ServiceDocsCallRecordingGetSingle v1accountaccountidrecordingrecordingiddelete(ctx, accountID, recordingID).Execute()
 
 Delete Call Recording
 
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDRecordingRecordingIDGet
 
-> ServiceDocsCallRecordingGetSingle V1AccountAccountIDRecordingRecordingIDGet(ctx, accountID, recordingID).Execute()
+> ServiceDocsCallRecordingGetSingle v1accountaccountidrecordingrecordingidget(ctx, accountID, recordingID).Execute()
 
 Get Call Recording Details
 
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDUserUserIDRecordingGet
 
-> ServiceDocsCallRecordingGetAll V1AccountAccountIDUserUserIDRecordingGet(ctx, accountID, userID).Execute()
+> ServiceDocsCallRecordingGetAll v1accountaccountiduseruseridrecordingget(ctx, accountID, userID).Execute()
 
 Get User Call Recording
 

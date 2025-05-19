@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## V1MgmtUserGet
 
-> ServiceDocsAdminUserGetAll V1MgmtUserGet(ctx).PageSize(pageSize).StartKey(startKey).Sort(sort).Email(email).Role(role).FirstName(firstName).LastName(lastName).Execute()
+> ServiceDocsAdminUserGetAll v1mgmtuserget(ctx).PageSize(pageSize).StartKey(startKey).Sort(sort).Email(email).Role(role).FirstName(firstName).LastName(lastName).Execute()
 
 Get All CPaaS Users
 
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 
 ## V1MgmtUserPost
 
-> ServiceDocsAdminUserGetSingle V1MgmtUserPost(ctx).ReqBody(reqBody).Execute()
+> ServiceDocsAdminUserGetSingle v1mgmtuserpost(ctx).ReqBody(reqBody).Execute()
 
 Invite CPaaS User
 
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 
 ## V1MgmtUserUserIDDelete
 
-> ServiceDocsAdminUserDelete V1MgmtUserUserIDDelete(ctx, userID).Execute()
+> ServiceDocsAdminUserDelete v1mgmtuseruseriddelete(ctx, userID).Execute()
 
 Delete CPaaS User
 
@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 
 ## V1MgmtUserUserIDGet
 
-> ServiceDocsAdminUserGetSingle V1MgmtUserUserIDGet(ctx, userID).Execute()
+> ServiceDocsAdminUserGetSingle v1mgmtuseruseridget(ctx, userID).Execute()
 
 Get CPaaS User Details
 
@@ -298,7 +298,7 @@ Name | Type | Description  | Notes
 
 ## V1MgmtUserUserIDPut
 
-> ServiceDocsAdminUserGetSingle V1MgmtUserUserIDPut(ctx, userID).ReqBody(reqBody).Execute()
+> ServiceDocsAdminUserGetSingle v1mgmtuseruseridput(ctx, userID).ReqBody(reqBody).Execute()
 
 Update CPaaS User Role
 

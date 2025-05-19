@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## V1AccountAccountIDParkedcallGet
 
-> ServiceDocsParkedcallGet V1AccountAccountIDParkedcallGet(ctx, accountID).Execute()
+> ServiceDocsParkedcallGet v1accountaccountidparkedcallget(ctx, accountID).Execute()
 
 Get Call Park List
 

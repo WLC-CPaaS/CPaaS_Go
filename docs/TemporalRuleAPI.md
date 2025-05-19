@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## V1AccountAccountIDTemporalruleGet
 
-> ServiceDocsTemporalRuleGetAll V1AccountAccountIDTemporalruleGet(ctx, accountID).StartKey(startKey).PageSize(pageSize).Execute()
+> ServiceDocsTemporalRuleGetAll v1accountaccountidtemporalruleget(ctx, accountID).StartKey(startKey).PageSize(pageSize).Execute()
 
 Get Temporal Rule List
 
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDTemporalrulePost
 
-> ServiceDocsTemporalRuleGetSingle V1AccountAccountIDTemporalrulePost(ctx, accountID).Temporalrule(temporalrule).Execute()
+> ServiceDocsTemporalRuleGetSingle v1accountaccountidtemporalrulepost(ctx, accountID).Temporalrule(temporalrule).Execute()
 
 Create Temporal Rule
 
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDTemporalruleTemporalRuleIDDelete
 
-> ServiceDocsTemporalRuleGetSingle V1AccountAccountIDTemporalruleTemporalRuleIDDelete(ctx, accountID, temporalRuleID).Execute()
+> ServiceDocsTemporalRuleGetSingle v1accountaccountidtemporalruletemporalruleiddelete(ctx, accountID, temporalRuleID).Execute()
 
 Delete Temporal Rule
 
@@ -233,7 +233,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDTemporalruleTemporalRuleIDGet
 
-> ServiceDocsTemporalRuleGetSingle V1AccountAccountIDTemporalruleTemporalRuleIDGet(ctx, accountID, temporalRuleID).Execute()
+> ServiceDocsTemporalRuleGetSingle v1accountaccountidtemporalruletemporalruleidget(ctx, accountID, temporalRuleID).Execute()
 
 Get Temporal Rule Details
 
@@ -306,7 +306,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDTemporalruleTemporalRuleIDPut
 
-> ServiceDocsTemporalRuleGetSingle V1AccountAccountIDTemporalruleTemporalRuleIDPut(ctx, accountID, temporalRuleID).ReqBody(reqBody).Execute()
+> ServiceDocsTemporalRuleGetSingle v1accountaccountidtemporalruletemporalruleidput(ctx, accountID, temporalRuleID).ReqBody(reqBody).Execute()
 
 Update Temporal Rule
 

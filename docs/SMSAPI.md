@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## V1SmsAccountAccountIDCampaignCampaignIDImportGet
 
-> ServiceDocsCampaignImportOutput V1SmsAccountAccountIDCampaignCampaignIDImportGet(ctx, accountID, campaignID).Execute()
+> ServiceDocsCampaignImportOutput v1smsaccountaccountidcampaigncampaignidimportget(ctx, accountID, campaignID).Execute()
 
 
 
@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 
 ## V1SmsAccountAccountIDCampaignCampaignIDImportPost
 
-> ServiceDocsCampaignImportOutput V1SmsAccountAccountIDCampaignCampaignIDImportPost(ctx, accountID, campaignID).Execute()
+> ServiceDocsCampaignImportOutput v1smsaccountaccountidcampaigncampaignidimportpost(ctx, accountID, campaignID).Execute()
 
 
 
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 
 ## V1SmsAccountAccountIDCampaignCampaignIDPhonenumberGet
 
-> ServiceDocsCampaignPhoneNumberOutput V1SmsAccountAccountIDCampaignCampaignIDPhonenumberGet(ctx, accountID, campaignID).PageNum(pageNum).PageSize(pageSize).Execute()
+> ServiceDocsCampaignPhoneNumberOutput v1smsaccountaccountidcampaigncampaignidphonenumberget(ctx, accountID, campaignID).PageNum(pageNum).PageSize(pageSize).Execute()
 
 
 
@@ -237,7 +237,7 @@ Name | Type | Description  | Notes
 
 ## V1SmsAccountAccountIDCampaignCampaignIDPhonenumberPut
 
-> ServiceDocsCampaignTagDetagPhonenumbersOutput V1SmsAccountAccountIDCampaignCampaignIDPhonenumberPut(ctx, accountID, campaignID).ReqBody(reqBody).Execute()
+> ServiceDocsCampaignTagDetagPhonenumbersOutput v1smsaccountaccountidcampaigncampaignidphonenumberput(ctx, accountID, campaignID).ReqBody(reqBody).Execute()
 
 
 
@@ -312,7 +312,7 @@ Name | Type | Description  | Notes
 
 ## V1SmsAccountAccountIDCampaignImportGet
 
-> ServiceDocsCampaignImportedGetAllOutput V1SmsAccountAccountIDCampaignImportGet(ctx, accountID).PageNum(pageNum).PageSize(pageSize).Execute()
+> ServiceDocsCampaignImportedGetAllOutput v1smsaccountaccountidcampaignimportget(ctx, accountID).PageNum(pageNum).PageSize(pageSize).Execute()
 
 
 

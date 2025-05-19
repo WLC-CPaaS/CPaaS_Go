@@ -21,7 +21,7 @@ Method | HTTP request | Description
 
 ## V1AccountAccountIDVoicemailGet
 
-> ServiceDocsVoicemailGetAll V1AccountAccountIDVoicemailGet(ctx, accountID).StartKey(startKey).PageSize(pageSize).Execute()
+> ServiceDocsVoicemailGetAll v1accountaccountidvoicemailget(ctx, accountID).StartKey(startKey).PageSize(pageSize).Execute()
 
 Get Voicemail Box List
 
@@ -95,7 +95,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDVoicemailPost
 
-> ServiceDocsVoicemailGetSingle V1AccountAccountIDVoicemailPost(ctx, accountID).Voicemail(voicemail).Execute()
+> ServiceDocsVoicemailGetSingle v1accountaccountidvoicemailpost(ctx, accountID).Voicemail(voicemail).Execute()
 
 Create Voicemail Box
 
@@ -167,7 +167,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDVoicemailVoicemailIDDelete
 
-> ServiceDocsVoicemailGetSingle V1AccountAccountIDVoicemailVoicemailIDDelete(ctx, accountID, voicemailID).Execute()
+> ServiceDocsVoicemailGetSingle v1accountaccountidvoicemailvoicemailiddelete(ctx, accountID, voicemailID).Execute()
 
 Delete Voicemail Box
 
@@ -240,7 +240,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDVoicemailVoicemailIDGet
 
-> ServiceDocsVoicemailGetSingle V1AccountAccountIDVoicemailVoicemailIDGet(ctx, accountID, voicemailID).Execute()
+> ServiceDocsVoicemailGetSingle v1accountaccountidvoicemailvoicemailidget(ctx, accountID, voicemailID).Execute()
 
 Get Voicemail Box Details
 
@@ -313,7 +313,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDVoicemailVoicemailIDMessageGet
 
-> ServiceDocsVoicemailMessageGetAll V1AccountAccountIDVoicemailVoicemailIDMessageGet(ctx, accountID, voicemailID).StartKey(startKey).PageSize(pageSize).Execute()
+> ServiceDocsVoicemailMessageGetAll v1accountaccountidvoicemailvoicemailidmessageget(ctx, accountID, voicemailID).StartKey(startKey).PageSize(pageSize).Execute()
 
 Get Voicemail Message List
 
@@ -390,7 +390,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDVoicemailVoicemailIDMessageMessageIDDelete
 
-> ServiceDocsVoicemailMessageGetSingle V1AccountAccountIDVoicemailVoicemailIDMessageMessageIDDelete(ctx, accountID, voicemailID, messageID).Execute()
+> ServiceDocsVoicemailMessageGetSingle v1accountaccountidvoicemailvoicemailidmessagemessageiddelete(ctx, accountID, voicemailID, messageID).Execute()
 
 Delete Voicemail Message
 
@@ -466,7 +466,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDVoicemailVoicemailIDMessageMessageIDGet
 
-> ServiceDocsVoicemailMessageGetSingle V1AccountAccountIDVoicemailVoicemailIDMessageMessageIDGet(ctx, accountID, voicemailID, messageID).Execute()
+> ServiceDocsVoicemailMessageGetSingle v1accountaccountidvoicemailvoicemailidmessagemessageidget(ctx, accountID, voicemailID, messageID).Execute()
 
 Get Voicemail Message Details
 
@@ -542,7 +542,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDVoicemailVoicemailIDMessageMessageIDPut
 
-> ServiceDocsVoicemailMessageGetSingle V1AccountAccountIDVoicemailVoicemailIDMessageMessageIDPut(ctx, accountID, voicemailID, messageID).ReqBody(reqBody).Execute()
+> ServiceDocsVoicemailMessageGetSingle v1accountaccountidvoicemailvoicemailidmessagemessageidput(ctx, accountID, voicemailID, messageID).ReqBody(reqBody).Execute()
 
 Update Voicemail Message
 
@@ -620,7 +620,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDVoicemailVoicemailIDMessageMessageIDRawGet
 
-> *os.File V1AccountAccountIDVoicemailVoicemailIDMessageMessageIDRawGet(ctx, accountID, voicemailID, messageID).Execute()
+> *os.File v1accountaccountidvoicemailvoicemailidmessagemessageidrawget(ctx, accountID, voicemailID, messageID).Execute()
 
 Get Voicemail Message File
 
@@ -696,7 +696,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDVoicemailVoicemailIDMessageMessageIDRawPost
 
-> map[string]interface{} V1AccountAccountIDVoicemailVoicemailIDMessageMessageIDRawPost(ctx, accountID, voicemailID, messageID).File(file).Execute()
+> map[string]interface{} v1accountaccountidvoicemailvoicemailidmessagemessageidrawpost(ctx, accountID, voicemailID, messageID).File(file).Execute()
 
 Add Voicemail Message File
 
@@ -774,7 +774,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDVoicemailVoicemailIDMessagePost
 
-> ServiceDocsVoicemailMessageGetSingle V1AccountAccountIDVoicemailVoicemailIDMessagePost(ctx, accountID, voicemailID).Message(message).Execute()
+> ServiceDocsVoicemailMessageGetSingle v1accountaccountidvoicemailvoicemailidmessagepost(ctx, accountID, voicemailID).Message(message).Execute()
 
 Create Voicemail Message
 
@@ -849,7 +849,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDVoicemailVoicemailIDPut
 
-> ServiceDocsVoicemailGetSingle V1AccountAccountIDVoicemailVoicemailIDPut(ctx, accountID, voicemailID).ReqBody(reqBody).Execute()
+> ServiceDocsVoicemailGetSingle v1accountaccountidvoicemailvoicemailidput(ctx, accountID, voicemailID).ReqBody(reqBody).Execute()
 
 Update Voicemail Box
 

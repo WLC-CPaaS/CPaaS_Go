@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## V1AccountAccountIDPresenceExtensionPut
 
-> ServiceAPIResponse V1AccountAccountIDPresenceExtensionPut(ctx, accountID, extension).ReqBody(reqBody).Execute()
+> ServiceAPIResponse v1accountaccountidpresenceextensionput(ctx, accountID, extension).ReqBody(reqBody).Execute()
 
 Set/Reset Presence for Extension
 
@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDPresenceGet
 
-> ServiceDocsPresenceGet V1AccountAccountIDPresenceGet(ctx, accountID).Execute()
+> ServiceDocsPresenceGet v1accountaccountidpresenceget(ctx, accountID).Execute()
 
 Get Presence Details
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDUserUserIDPresencePut
 
-> ServiceAPIResponse V1AccountAccountIDUserUserIDPresencePut(ctx, accountID, userID).ReqBody(reqBody).Execute()
+> ServiceAPIResponse v1accountaccountiduseruseridpresenceput(ctx, accountID, userID).ReqBody(reqBody).Execute()
 
 Set/Reset Presence for User
 

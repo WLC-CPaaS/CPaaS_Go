@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## V1AccountAccountIDCallflowCallflowIDDelete
 
-> ServiceDocsCallflowGetSingle V1AccountAccountIDCallflowCallflowIDDelete(ctx, accountID, callflowID).Execute()
+> ServiceDocsCallflowGetSingle v1accountaccountidcallflowcallflowiddelete(ctx, accountID, callflowID).Execute()
 
 Delete Call Group
 
@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDCallflowCallflowIDGet
 
-> ServiceDocsCallflowGetSingle V1AccountAccountIDCallflowCallflowIDGet(ctx, accountID, callflowID).Execute()
+> ServiceDocsCallflowGetSingle v1accountaccountidcallflowcallflowidget(ctx, accountID, callflowID).Execute()
 
 Get Call Group Details
 
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDCallflowCallflowIDPut
 
-> ServiceDocsCallflowGetSingle V1AccountAccountIDCallflowCallflowIDPut(ctx, accountID, callflowID).ReqBody(reqBody).Execute()
+> ServiceDocsCallflowGetSingle v1accountaccountidcallflowcallflowidput(ctx, accountID, callflowID).ReqBody(reqBody).Execute()
 
 Update Call Group
 
@@ -235,7 +235,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDCallflowGet
 
-> ServiceDocsCallflowGetAll V1AccountAccountIDCallflowGet(ctx, accountID).StartKey(startKey).PageSize(pageSize).Execute()
+> ServiceDocsCallflowGetAll v1accountaccountidcallflowget(ctx, accountID).StartKey(startKey).PageSize(pageSize).Execute()
 
 Get Callflow List
 
@@ -309,7 +309,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDCallflowPost
 
-> ServiceDocsCallflowGetSingle V1AccountAccountIDCallflowPost(ctx, accountID).Request(request).Execute()
+> ServiceDocsCallflowGetSingle v1accountaccountidcallflowpost(ctx, accountID).Request(request).Execute()
 
 Create Call Group
 

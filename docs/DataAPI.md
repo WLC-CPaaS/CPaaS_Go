@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 ## V1DataCallDailySummaryGet
 
-> ServiceDocsCallDailySummary V1DataCallDailySummaryGet(ctx).AccountId(accountId).CallType(callType).EndDate(endDate).PageSize(pageSize).StartDate(startDate).StartKey(startKey).Execute()
+> ServiceDocsCallDailySummary v1datacalldailysummaryget(ctx).AccountId(accountId).CallType(callType).EndDate(endDate).PageSize(pageSize).StartDate(startDate).StartKey(startKey).Execute()
 
 Get Call Daily Summary List
 
@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 
 ## V1DataCallDetailGet
 
-> ServiceDocsCallDetail V1DataCallDetailGet(ctx).Account(account).CallType(callType).CalleeName(calleeName).CalleeNumber(calleeNumber).CallerName(callerName).CallerNumber(callerNumber).EndDate(endDate).PageSize(pageSize).StartDate(startDate).StartKey(startKey).Execute()
+> ServiceDocsCallDetail v1datacalldetailget(ctx).Account(account).CallType(callType).CalleeName(calleeName).CalleeNumber(calleeNumber).CallerName(callerName).CallerNumber(callerNumber).EndDate(endDate).PageSize(pageSize).StartDate(startDate).StartKey(startKey).Execute()
 
 Get Call Detail List
 
@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
 
 ## V1DataCallMonthlySummaryGet
 
-> ServiceDocsCallMonthlySummary V1DataCallMonthlySummaryGet(ctx).Account(account).CallType(callType).EndMonth(endMonth).EndYear(endYear).PageSize(pageSize).StartKey(startKey).StartMonth(startMonth).StartYear(startYear).Execute()
+> ServiceDocsCallMonthlySummary v1datacallmonthlysummaryget(ctx).Account(account).CallType(callType).EndMonth(endMonth).EndYear(endYear).PageSize(pageSize).StartKey(startKey).StartMonth(startMonth).StartYear(startYear).Execute()
 
 Get Call Detail List
 
@@ -258,7 +258,7 @@ Name | Type | Description  | Notes
 
 ## V1DataEndpointListGet
 
-> ServiceDocsEndpointList V1DataEndpointListGet(ctx).EndpointName(endpointName).FeatureName(featureName).PageSize(pageSize).StartKey(startKey).TransactionType(transactionType).Version(version).Execute()
+> ServiceDocsEndpointList v1dataendpointlistget(ctx).EndpointName(endpointName).FeatureName(featureName).PageSize(pageSize).StartKey(startKey).TransactionType(transactionType).Version(version).Execute()
 
 Get Endpoint List
 
@@ -334,7 +334,7 @@ Name | Type | Description  | Notes
 
 ## V1DataEventDailySummaryGet
 
-> ServiceDocsEventDailySummary V1DataEventDailySummaryGet(ctx).AccountId(accountId).Component(component).EndDate(endDate).PageSize(pageSize).StartDate(startDate).StartKey(startKey).Execute()
+> ServiceDocsEventDailySummary v1dataeventdailysummaryget(ctx).AccountId(accountId).Component(component).EndDate(endDate).PageSize(pageSize).StartDate(startDate).StartKey(startKey).Execute()
 
 Get Event Daily Summary List
 
@@ -410,7 +410,7 @@ Name | Type | Description  | Notes
 
 ## V1DataEventDetailGet
 
-> ServiceDocsEventDetail V1DataEventDetailGet(ctx).AccountId(accountId).Component(component).EndDateTime(endDateTime).EventName(eventName).ExecStatus(execStatus).PageSize(pageSize).StartDateTime(startDateTime).StartKey(startKey).Username(username).Execute()
+> ServiceDocsEventDetail v1dataeventdetailget(ctx).AccountId(accountId).Component(component).EndDateTime(endDateTime).EventName(eventName).ExecStatus(execStatus).PageSize(pageSize).StartDateTime(startDateTime).StartKey(startKey).Username(username).Execute()
 
 Get Event Details
 
@@ -492,7 +492,7 @@ Name | Type | Description  | Notes
 
 ## V1DataEventMonthlySummaryGet
 
-> ServiceDocsEventMonthlySummary V1DataEventMonthlySummaryGet(ctx).AccountId(accountId).Component(component).EndMonth(endMonth).EndYear(endYear).PageSize(pageSize).StartKey(startKey).StartMonth(startMonth).StartYear(startYear).Execute()
+> ServiceDocsEventMonthlySummary v1dataeventmonthlysummaryget(ctx).AccountId(accountId).Component(component).EndMonth(endMonth).EndYear(endYear).PageSize(pageSize).StartKey(startKey).StartMonth(startMonth).StartYear(startYear).Execute()
 
 Get Event Monthly Summary List
 
@@ -572,7 +572,7 @@ Name | Type | Description  | Notes
 
 ## V1DataFeatureDailySummaryGet
 
-> ServiceDocsFeatureDailySummary V1DataFeatureDailySummaryGet(ctx).EndDate(endDate).FeatureName(featureName).PageSize(pageSize).StartDate(startDate).StartKey(startKey).Execute()
+> ServiceDocsFeatureDailySummary v1datafeaturedailysummaryget(ctx).EndDate(endDate).FeatureName(featureName).PageSize(pageSize).StartDate(startDate).StartKey(startKey).Execute()
 
 Get Feature Daily Summary List
 
@@ -646,7 +646,7 @@ Name | Type | Description  | Notes
 
 ## V1DataFeatureMonthlySummaryGet
 
-> ServiceDocsFeatureMonthlySummary V1DataFeatureMonthlySummaryGet(ctx).EndMonth(endMonth).EndYear(endYear).FeatureName(featureName).PageSize(pageSize).StartKey(startKey).StartMonth(startMonth).StartYear(startYear).Execute()
+> ServiceDocsFeatureMonthlySummary v1datafeaturemonthlysummaryget(ctx).EndMonth(endMonth).EndYear(endYear).FeatureName(featureName).PageSize(pageSize).StartKey(startKey).StartMonth(startMonth).StartYear(startYear).Execute()
 
 Get Feature Monthly Summary List
 

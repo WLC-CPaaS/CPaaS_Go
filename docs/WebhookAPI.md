@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## V1WebhookAccountAccountIDGet
 
-> ServiceDocsWebhookGetAll V1WebhookAccountAccountIDGet(ctx, accountID).PageSize(pageSize).CurrentPage(currentPage).Execute()
+> ServiceDocsWebhookGetAll v1webhookaccountaccountidget(ctx, accountID).PageSize(pageSize).CurrentPage(currentPage).Execute()
 
 Get Webhook List
 
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ## V1WebhookAccountAccountIDPost
 
-> ServiceDocsWebhookGetSingle V1WebhookAccountAccountIDPost(ctx, accountID).Body(body).Execute()
+> ServiceDocsWebhookGetSingle v1webhookaccountaccountidpost(ctx, accountID).Body(body).Execute()
 
 Create Webhook
 
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 
 ## V1WebhookAccountAccountIDWebhookIDDelete
 
-> ServiceDocsWebhookDelete V1WebhookAccountAccountIDWebhookIDDelete(ctx, accountID, webhookID).Execute()
+> ServiceDocsWebhookDelete v1webhookaccountaccountidwebhookiddelete(ctx, accountID, webhookID).Execute()
 
 Delete Webhook
 
@@ -233,7 +233,7 @@ Name | Type | Description  | Notes
 
 ## V1WebhookAccountAccountIDWebhookIDGet
 
-> ServiceDocsWebhookGetSingle V1WebhookAccountAccountIDWebhookIDGet(ctx, accountID, webhookID).Execute()
+> ServiceDocsWebhookGetSingle v1webhookaccountaccountidwebhookidget(ctx, accountID, webhookID).Execute()
 
 Get Webhook Details
 
@@ -306,7 +306,7 @@ Name | Type | Description  | Notes
 
 ## V1WebhookAccountAccountIDWebhookIDPut
 
-> ServiceDocsWebhookGetSingle V1WebhookAccountAccountIDWebhookIDPut(ctx, accountID, webhookID).Body(body).Execute()
+> ServiceDocsWebhookGetSingle v1webhookaccountaccountidwebhookidput(ctx, accountID, webhookID).Body(body).Execute()
 
 Update Webhook
 

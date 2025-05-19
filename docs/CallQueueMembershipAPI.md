@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## V1AccountAccountIDQueuemembershipPost
 
-> ServiceDocsCallQueueMemberGetSingle V1AccountAccountIDQueuemembershipPost(ctx, accountID).ReqBody(reqBody).Execute()
+> ServiceDocsCallQueueMemberGetSingle v1accountaccountidqueuemembershippost(ctx, accountID).ReqBody(reqBody).Execute()
 
 Grant Queue Membership to User
 
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDQueuemembershipRecipientIDDisablePost
 
-> ServiceAPIResponse V1AccountAccountIDQueuemembershipRecipientIDDisablePost(ctx, accountID, recipientID).Execute()
+> ServiceAPIResponse v1accountaccountidqueuemembershiprecipientiddisablepost(ctx, accountID, recipientID).Execute()
 
 Disable Queue Membership
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDQueuemembershipRecipientIDEnablePost
 
-> ServiceAPIResponse V1AccountAccountIDQueuemembershipRecipientIDEnablePost(ctx, accountID, recipientID).ReqBody(reqBody).Execute()
+> ServiceAPIResponse v1accountaccountidqueuemembershiprecipientidenablepost(ctx, accountID, recipientID).ReqBody(reqBody).Execute()
 
 Enable Queue Membership
 

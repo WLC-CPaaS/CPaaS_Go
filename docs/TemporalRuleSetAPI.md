@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## V1AccountAccountIDTemporalrulesetGet
 
-> ServiceDocsTemporalRuleSetGetAll V1AccountAccountIDTemporalrulesetGet(ctx, accountID).StartKey(startKey).PageSize(pageSize).Execute()
+> ServiceDocsTemporalRuleSetGetAll v1accountaccountidtemporalrulesetget(ctx, accountID).StartKey(startKey).PageSize(pageSize).Execute()
 
 Get Temporal Rule Set List
 
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDTemporalrulesetPost
 
-> ServiceDocsTemporalRuleSetGetSingle V1AccountAccountIDTemporalrulesetPost(ctx, accountID).Temporalruleset(temporalruleset).Execute()
+> ServiceDocsTemporalRuleSetGetSingle v1accountaccountidtemporalrulesetpost(ctx, accountID).Temporalruleset(temporalruleset).Execute()
 
 Create Temporal Rule Set
 
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDTemporalrulesetTemporalRuleSetIDDelete
 
-> ServiceDocsTemporalRuleSetGetSingle V1AccountAccountIDTemporalrulesetTemporalRuleSetIDDelete(ctx, accountID, temporalRuleSetID).Execute()
+> ServiceDocsTemporalRuleSetGetSingle v1accountaccountidtemporalrulesettemporalrulesetiddelete(ctx, accountID, temporalRuleSetID).Execute()
 
 Delete Temporal Rule Set
 
@@ -233,7 +233,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDTemporalrulesetTemporalRuleSetIDGet
 
-> ServiceDocsTemporalRuleSetGetSingle V1AccountAccountIDTemporalrulesetTemporalRuleSetIDGet(ctx, accountID, temporalRuleSetID).Execute()
+> ServiceDocsTemporalRuleSetGetSingle v1accountaccountidtemporalrulesettemporalrulesetidget(ctx, accountID, temporalRuleSetID).Execute()
 
 Get Temporal Rule Set Details
 
@@ -306,7 +306,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDTemporalrulesetTemporalRuleSetIDPut
 
-> ServiceDocsTemporalRuleSetGetSingle V1AccountAccountIDTemporalrulesetTemporalRuleSetIDPut(ctx, accountID, temporalRuleSetID).ReqBody(reqBody).Execute()
+> ServiceDocsTemporalRuleSetGetSingle v1accountaccountidtemporalrulesettemporalrulesetidput(ctx, accountID, temporalRuleSetID).ReqBody(reqBody).Execute()
 
 Update Temporal Rule Set
 
