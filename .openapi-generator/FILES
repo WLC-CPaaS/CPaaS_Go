@@ -532,5 +532,4 @@ model_service_webhook_add.go
 model_service_webhook_delete_output.go
 model_service_webhook_edit.go
 response.go
-test/api_cdr_test.go
 utils.go
