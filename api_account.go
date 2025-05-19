@@ -1223,6 +1223,260 @@ func (a *AccountAPIService) V1AccountAccountidPostExecute(r ApiV1AccountAccounti
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ApiV1AccountAccountidProvisioningdetailsGetRequest struct {
+	ctx context.Context
+	ApiService *AccountAPIService
+	accountid string
+}
+
+func (r ApiV1AccountAccountidProvisioningdetailsGetRequest) Execute() (*ServiceDocsAccountProvisioning, *http.Response, error) {
+	return r.ApiService.V1AccountAccountidProvisioningdetailsGetExecute(r)
+}
+
+/*
+V1AccountAccountidProvisioningdetailsGet Get Account Provisioning Details
+
+Get the provisioning details of an account.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param accountid Account ID, 32 alpha numeric
+ @return ApiV1AccountAccountidProvisioningdetailsGetRequest
+*/
+func (a *AccountAPIService) V1AccountAccountidProvisioningdetailsGet(ctx context.Context, accountid string) ApiV1AccountAccountidProvisioningdetailsGetRequest {
+	return ApiV1AccountAccountidProvisioningdetailsGetRequest{
+		ApiService: a,
+		ctx: ctx,
+		accountid: accountid,
+	}
+}
+
+// Execute executes the request
+//  @return ServiceDocsAccountProvisioning
+func (a *AccountAPIService) V1AccountAccountidProvisioningdetailsGetExecute(r ApiV1AccountAccountidProvisioningdetailsGetRequest) (*ServiceDocsAccountProvisioning, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *ServiceDocsAccountProvisioning
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountAPIService.V1AccountAccountidProvisioningdetailsGet")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/v1/account/{accountid}/provisioningdetails"
+	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["BearerAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v CPAASError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiV1AccountAccountidProvisioningdetailsResetpwPutRequest struct {
+	ctx context.Context
+	ApiService *AccountAPIService
+	accountid string
+}
+
+func (r ApiV1AccountAccountidProvisioningdetailsResetpwPutRequest) Execute() (*ServiceDocsAccountProvisioning, *http.Response, error) {
+	return r.ApiService.V1AccountAccountidProvisioningdetailsResetpwPutExecute(r)
+}
+
+/*
+V1AccountAccountidProvisioningdetailsResetpwPut Reset the provisioning details password.
+
+Reset the existing provisioning details password and set it to a new one.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param accountid Account ID, 32 alpha numeric
+ @return ApiV1AccountAccountidProvisioningdetailsResetpwPutRequest
+*/
+func (a *AccountAPIService) V1AccountAccountidProvisioningdetailsResetpwPut(ctx context.Context, accountid string) ApiV1AccountAccountidProvisioningdetailsResetpwPutRequest {
+	return ApiV1AccountAccountidProvisioningdetailsResetpwPutRequest{
+		ApiService: a,
+		ctx: ctx,
+		accountid: accountid,
+	}
+}
+
+// Execute executes the request
+//  @return ServiceDocsAccountProvisioning
+func (a *AccountAPIService) V1AccountAccountidProvisioningdetailsResetpwPutExecute(r ApiV1AccountAccountidProvisioningdetailsResetpwPutRequest) (*ServiceDocsAccountProvisioning, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *ServiceDocsAccountProvisioning
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountAPIService.V1AccountAccountidProvisioningdetailsResetpwPut")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/v1/account/{accountid}/provisioningdetails/resetpw"
+	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["BearerAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v CPAASError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ApiV1AccountAccountidPutRequest struct {
 	ctx context.Context
 	ApiService *AccountAPIService

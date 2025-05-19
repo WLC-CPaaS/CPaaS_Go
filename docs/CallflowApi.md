@@ -181,7 +181,7 @@ import (
 func main() {
 	accountID := "accountID_example" // string | Account ID, 32 alpha numeric
 	callflowID := "callflowID_example" // string | Callflow ID, 32 alpha numeric
-	reqBody := *openapiclient.NewServiceCallflowAddEditData([]string{"Numbers_example"}, []string{"Patterns_example"}) // ServiceCallflowAddEditData | payload fields
+	reqBody := *openapiclient.NewServiceCallflowAddEditData(*openapiclient.NewServiceCallflowAddEditFlowData("Module_example"), []string{"Numbers_example"}, []string{"Patterns_example"}) // ServiceCallflowAddEditData | payload fields
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -329,7 +329,7 @@ import (
 
 func main() {
 	accountID := "accountID_example" // string | Account ID, 32 alpha-numeric
-	request := *openapiclient.NewServiceCallflowAddEditData([]string{"Numbers_example"}, []string{"Patterns_example"}) // ServiceCallflowAddEditData | Call flow configuration
+	request := *openapiclient.NewServiceCallflowAddEditData(*openapiclient.NewServiceCallflowAddEditFlowData("Module_example"), []string{"Numbers_example"}, []string{"Patterns_example"}) // ServiceCallflowAddEditData | Call flow configuration
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

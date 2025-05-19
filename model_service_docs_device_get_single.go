@@ -20,7 +20,7 @@ var _ MappedNullable = &ServiceDocsDeviceGetSingle{}
 
 // ServiceDocsDeviceGetSingle struct for ServiceDocsDeviceGetSingle
 type ServiceDocsDeviceGetSingle struct {
-	Data *ServiceDeviceOutputFull `json:"data,omitempty"`
+	Data *ModelsDeviceOutputFull `json:"data,omitempty"`
 	// Unique id for each request
 	RequestId *string `json:"request_id,omitempty"`
 	// HTTP response status code
@@ -45,9 +45,9 @@ func NewServiceDocsDeviceGetSingleWithDefaults() *ServiceDocsDeviceGetSingle {
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *ServiceDocsDeviceGetSingle) GetData() ServiceDeviceOutputFull {
+func (o *ServiceDocsDeviceGetSingle) GetData() ModelsDeviceOutputFull {
 	if o == nil || IsNil(o.Data) {
-		var ret ServiceDeviceOutputFull
+		var ret ModelsDeviceOutputFull
 		return ret
 	}
 	return *o.Data
@@ -55,7 +55,7 @@ func (o *ServiceDocsDeviceGetSingle) GetData() ServiceDeviceOutputFull {
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ServiceDocsDeviceGetSingle) GetDataOk() (*ServiceDeviceOutputFull, bool) {
+func (o *ServiceDocsDeviceGetSingle) GetDataOk() (*ModelsDeviceOutputFull, bool) {
 	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
@@ -71,8 +71,8 @@ func (o *ServiceDocsDeviceGetSingle) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given ServiceDeviceOutputFull and assigns it to the Data field.
-func (o *ServiceDocsDeviceGetSingle) SetData(v ServiceDeviceOutputFull) {
+// SetData gets a reference to the given ModelsDeviceOutputFull and assigns it to the Data field.
+func (o *ServiceDocsDeviceGetSingle) SetData(v ModelsDeviceOutputFull) {
 	o.Data = &v
 }
 

@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CallRecording** | Pointer to [**ServiceCallRecordingSettings**](ServiceCallRecordingSettings.md) |  | [optional] 
-**DoNotDisturb** | Pointer to [**ServiceVOIPSharedDoNotDisturb**](ServiceVOIPSharedDoNotDisturb.md) |  | [optional] 
+**CallRecording** | Pointer to [**ModelsCallRecordingSettings**](ModelsCallRecordingSettings.md) |  | [optional] 
+**DoNotDisturb** | Pointer to [**ModelsVOIPSharedDoNotDisturb**](ModelsVOIPSharedDoNotDisturb.md) |  | [optional] 
 **Email** | Pointer to **string** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **Features** | Pointer to **[]string** |  | [optional] 
@@ -36,20 +36,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetCallRecording
 
-`func (o *ServiceUserOutputShort) GetCallRecording() ServiceCallRecordingSettings`
+`func (o *ServiceUserOutputShort) GetCallRecording() ModelsCallRecordingSettings`
 
 GetCallRecording returns the CallRecording field if non-nil, zero value otherwise.
 
 ### GetCallRecordingOk
 
-`func (o *ServiceUserOutputShort) GetCallRecordingOk() (*ServiceCallRecordingSettings, bool)`
+`func (o *ServiceUserOutputShort) GetCallRecordingOk() (*ModelsCallRecordingSettings, bool)`
 
 GetCallRecordingOk returns a tuple with the CallRecording field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCallRecording
 
-`func (o *ServiceUserOutputShort) SetCallRecording(v ServiceCallRecordingSettings)`
+`func (o *ServiceUserOutputShort) SetCallRecording(v ModelsCallRecordingSettings)`
 
 SetCallRecording sets CallRecording field to given value.
 
@@ -61,20 +61,20 @@ HasCallRecording returns a boolean if a field has been set.
 
 ### GetDoNotDisturb
 
-`func (o *ServiceUserOutputShort) GetDoNotDisturb() ServiceVOIPSharedDoNotDisturb`
+`func (o *ServiceUserOutputShort) GetDoNotDisturb() ModelsVOIPSharedDoNotDisturb`
 
 GetDoNotDisturb returns the DoNotDisturb field if non-nil, zero value otherwise.
 
 ### GetDoNotDisturbOk
 
-`func (o *ServiceUserOutputShort) GetDoNotDisturbOk() (*ServiceVOIPSharedDoNotDisturb, bool)`
+`func (o *ServiceUserOutputShort) GetDoNotDisturbOk() (*ModelsVOIPSharedDoNotDisturb, bool)`
 
 GetDoNotDisturbOk returns a tuple with the DoNotDisturb field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDoNotDisturb
 
-`func (o *ServiceUserOutputShort) SetDoNotDisturb(v ServiceVOIPSharedDoNotDisturb)`
+`func (o *ServiceUserOutputShort) SetDoNotDisturb(v ModelsVOIPSharedDoNotDisturb)`
 
 SetDoNotDisturb sets DoNotDisturb field to given value.
 

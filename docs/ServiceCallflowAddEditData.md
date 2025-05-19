@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Featurecode** | Pointer to [**ServiceFeatureCode**](ServiceFeatureCode.md) |  | [optional] 
-**Flow** | Pointer to [**ServiceCallflowAddEditFlowData**](ServiceCallflowAddEditFlowData.md) |  | [optional] 
+**Flow** | [**ServiceCallflowAddEditFlowData**](ServiceCallflowAddEditFlowData.md) |  | 
 **Name** | Pointer to **string** |  | [optional] 
 **Numbers** | **[]string** |  | 
 **Patterns** | **[]string** |  | 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewServiceCallflowAddEditData
 
-`func NewServiceCallflowAddEditData(numbers []string, patterns []string, ) *ServiceCallflowAddEditData`
+`func NewServiceCallflowAddEditData(flow ServiceCallflowAddEditFlowData, numbers []string, patterns []string, ) *ServiceCallflowAddEditData`
 
 NewServiceCallflowAddEditData instantiates a new ServiceCallflowAddEditData object
 This constructor will assign default values to properties that have it defined,
@@ -73,11 +73,6 @@ and a boolean to check if the value has been set.
 
 SetFlow sets Flow field to given value.
 
-### HasFlow
-
-`func (o *ServiceCallflowAddEditData) HasFlow() bool`
-
-HasFlow returns a boolean if a field has been set.
 
 ### GetName
 

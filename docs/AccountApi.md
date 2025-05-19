@@ -13,6 +13,8 @@ Method | HTTP request | Description
 [**V1AccountAccountidLimitGet**](AccountAPI.md#V1AccountAccountidLimitGet) | **Get** /v1/account/{accountid}/limit | Get Account Limits
 [**V1AccountAccountidLimitPut**](AccountAPI.md#V1AccountAccountidLimitPut) | **Put** /v1/account/{accountid}/limit | Set Account Limits
 [**V1AccountAccountidPost**](AccountAPI.md#V1AccountAccountidPost) | **Post** /v1/account/{accountid} | Create Sub Account
+[**V1AccountAccountidProvisioningdetailsGet**](AccountAPI.md#V1AccountAccountidProvisioningdetailsGet) | **Get** /v1/account/{accountid}/provisioningdetails | Get Account Provisioning Details
+[**V1AccountAccountidProvisioningdetailsResetpwPut**](AccountAPI.md#V1AccountAccountidProvisioningdetailsResetpwPut) | **Put** /v1/account/{accountid}/provisioningdetails/resetpw | Reset the provisioning details password.
 [**V1AccountAccountidPut**](AccountAPI.md#V1AccountAccountidPut) | **Put** /v1/account/{accountid} | Update Account
 [**V1AccountApikeyGet**](AccountAPI.md#V1AccountApikeyGet) | **Get** /v1/account/apikey | 
 [**V1AccountGet**](AccountAPI.md#V1AccountGet) | **Get** /v1/account | Get Account List
@@ -653,6 +655,146 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## V1AccountAccountidProvisioningdetailsGet
+
+> ServiceDocsAccountProvisioning V1AccountAccountidProvisioningdetailsGet(ctx, accountid).Execute()
+
+Get Account Provisioning Details
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	accountid := "accountid_example" // string | Account ID, 32 alpha numeric
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.V1AccountAccountidProvisioningdetailsGet(context.Background(), accountid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.V1AccountAccountidProvisioningdetailsGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountAccountidProvisioningdetailsGet`: ServiceDocsAccountProvisioning
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.V1AccountAccountidProvisioningdetailsGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountid** | **string** | Account ID, 32 alpha numeric | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountAccountidProvisioningdetailsGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**ServiceDocsAccountProvisioning**](ServiceDocsAccountProvisioning.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## V1AccountAccountidProvisioningdetailsResetpwPut
+
+> ServiceDocsAccountProvisioning V1AccountAccountidProvisioningdetailsResetpwPut(ctx, accountid).Execute()
+
+Reset the provisioning details password.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	accountid := "accountid_example" // string | Account ID, 32 alpha numeric
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountAPI.V1AccountAccountidProvisioningdetailsResetpwPut(context.Background(), accountid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountAPI.V1AccountAccountidProvisioningdetailsResetpwPut``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountAccountidProvisioningdetailsResetpwPut`: ServiceDocsAccountProvisioning
+	fmt.Fprintf(os.Stdout, "Response from `AccountAPI.V1AccountAccountidProvisioningdetailsResetpwPut`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountid** | **string** | Account ID, 32 alpha numeric | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountAccountidProvisioningdetailsResetpwPutRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**ServiceDocsAccountProvisioning**](ServiceDocsAccountProvisioning.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

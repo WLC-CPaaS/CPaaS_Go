@@ -22,10 +22,9 @@ var _ MappedNullable = &ServiceVOIPAccountAddData{}
 
 // ServiceVOIPAccountAddData struct for ServiceVOIPAccountAddData
 type ServiceVOIPAccountAddData struct {
-	CallRecording *ServiceVOIPAccountCallRecording `json:"call_recording,omitempty"`
-	CallerId *ServiceVOIPAccountOutputFullCallerid `json:"caller_id,omitempty"`
-	DoNotDisturb *ServiceVOIPSharedDoNotDisturb `json:"do_not_disturb,omitempty"`
-	MusicOnHold *ServiceVOIPAccountMusicOnHold `json:"music_on_hold,omitempty"`
+	CallerId *ModelsVOIPAccountOutputFullCallerid `json:"caller_id,omitempty"`
+	DoNotDisturb *ModelsVOIPSharedDoNotDisturb `json:"do_not_disturb,omitempty"`
+	MusicOnHold *ModelsVOIPAccountMusicOnHold `json:"music_on_hold,omitempty"`
 	Name string `json:"name"`
 	Realm *string `json:"realm,omitempty"`
 	Timezone string `json:"timezone"`
@@ -52,42 +51,10 @@ func NewServiceVOIPAccountAddDataWithDefaults() *ServiceVOIPAccountAddData {
 	return &this
 }
 
-// GetCallRecording returns the CallRecording field value if set, zero value otherwise.
-func (o *ServiceVOIPAccountAddData) GetCallRecording() ServiceVOIPAccountCallRecording {
-	if o == nil || IsNil(o.CallRecording) {
-		var ret ServiceVOIPAccountCallRecording
-		return ret
-	}
-	return *o.CallRecording
-}
-
-// GetCallRecordingOk returns a tuple with the CallRecording field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ServiceVOIPAccountAddData) GetCallRecordingOk() (*ServiceVOIPAccountCallRecording, bool) {
-	if o == nil || IsNil(o.CallRecording) {
-		return nil, false
-	}
-	return o.CallRecording, true
-}
-
-// HasCallRecording returns a boolean if a field has been set.
-func (o *ServiceVOIPAccountAddData) HasCallRecording() bool {
-	if o != nil && !IsNil(o.CallRecording) {
-		return true
-	}
-
-	return false
-}
-
-// SetCallRecording gets a reference to the given ServiceVOIPAccountCallRecording and assigns it to the CallRecording field.
-func (o *ServiceVOIPAccountAddData) SetCallRecording(v ServiceVOIPAccountCallRecording) {
-	o.CallRecording = &v
-}
-
 // GetCallerId returns the CallerId field value if set, zero value otherwise.
-func (o *ServiceVOIPAccountAddData) GetCallerId() ServiceVOIPAccountOutputFullCallerid {
+func (o *ServiceVOIPAccountAddData) GetCallerId() ModelsVOIPAccountOutputFullCallerid {
 	if o == nil || IsNil(o.CallerId) {
-		var ret ServiceVOIPAccountOutputFullCallerid
+		var ret ModelsVOIPAccountOutputFullCallerid
 		return ret
 	}
 	return *o.CallerId
@@ -95,7 +62,7 @@ func (o *ServiceVOIPAccountAddData) GetCallerId() ServiceVOIPAccountOutputFullCa
 
 // GetCallerIdOk returns a tuple with the CallerId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ServiceVOIPAccountAddData) GetCallerIdOk() (*ServiceVOIPAccountOutputFullCallerid, bool) {
+func (o *ServiceVOIPAccountAddData) GetCallerIdOk() (*ModelsVOIPAccountOutputFullCallerid, bool) {
 	if o == nil || IsNil(o.CallerId) {
 		return nil, false
 	}
@@ -111,15 +78,15 @@ func (o *ServiceVOIPAccountAddData) HasCallerId() bool {
 	return false
 }
 
-// SetCallerId gets a reference to the given ServiceVOIPAccountOutputFullCallerid and assigns it to the CallerId field.
-func (o *ServiceVOIPAccountAddData) SetCallerId(v ServiceVOIPAccountOutputFullCallerid) {
+// SetCallerId gets a reference to the given ModelsVOIPAccountOutputFullCallerid and assigns it to the CallerId field.
+func (o *ServiceVOIPAccountAddData) SetCallerId(v ModelsVOIPAccountOutputFullCallerid) {
 	o.CallerId = &v
 }
 
 // GetDoNotDisturb returns the DoNotDisturb field value if set, zero value otherwise.
-func (o *ServiceVOIPAccountAddData) GetDoNotDisturb() ServiceVOIPSharedDoNotDisturb {
+func (o *ServiceVOIPAccountAddData) GetDoNotDisturb() ModelsVOIPSharedDoNotDisturb {
 	if o == nil || IsNil(o.DoNotDisturb) {
-		var ret ServiceVOIPSharedDoNotDisturb
+		var ret ModelsVOIPSharedDoNotDisturb
 		return ret
 	}
 	return *o.DoNotDisturb
@@ -127,7 +94,7 @@ func (o *ServiceVOIPAccountAddData) GetDoNotDisturb() ServiceVOIPSharedDoNotDist
 
 // GetDoNotDisturbOk returns a tuple with the DoNotDisturb field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ServiceVOIPAccountAddData) GetDoNotDisturbOk() (*ServiceVOIPSharedDoNotDisturb, bool) {
+func (o *ServiceVOIPAccountAddData) GetDoNotDisturbOk() (*ModelsVOIPSharedDoNotDisturb, bool) {
 	if o == nil || IsNil(o.DoNotDisturb) {
 		return nil, false
 	}
@@ -143,15 +110,15 @@ func (o *ServiceVOIPAccountAddData) HasDoNotDisturb() bool {
 	return false
 }
 
-// SetDoNotDisturb gets a reference to the given ServiceVOIPSharedDoNotDisturb and assigns it to the DoNotDisturb field.
-func (o *ServiceVOIPAccountAddData) SetDoNotDisturb(v ServiceVOIPSharedDoNotDisturb) {
+// SetDoNotDisturb gets a reference to the given ModelsVOIPSharedDoNotDisturb and assigns it to the DoNotDisturb field.
+func (o *ServiceVOIPAccountAddData) SetDoNotDisturb(v ModelsVOIPSharedDoNotDisturb) {
 	o.DoNotDisturb = &v
 }
 
 // GetMusicOnHold returns the MusicOnHold field value if set, zero value otherwise.
-func (o *ServiceVOIPAccountAddData) GetMusicOnHold() ServiceVOIPAccountMusicOnHold {
+func (o *ServiceVOIPAccountAddData) GetMusicOnHold() ModelsVOIPAccountMusicOnHold {
 	if o == nil || IsNil(o.MusicOnHold) {
-		var ret ServiceVOIPAccountMusicOnHold
+		var ret ModelsVOIPAccountMusicOnHold
 		return ret
 	}
 	return *o.MusicOnHold
@@ -159,7 +126,7 @@ func (o *ServiceVOIPAccountAddData) GetMusicOnHold() ServiceVOIPAccountMusicOnHo
 
 // GetMusicOnHoldOk returns a tuple with the MusicOnHold field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ServiceVOIPAccountAddData) GetMusicOnHoldOk() (*ServiceVOIPAccountMusicOnHold, bool) {
+func (o *ServiceVOIPAccountAddData) GetMusicOnHoldOk() (*ModelsVOIPAccountMusicOnHold, bool) {
 	if o == nil || IsNil(o.MusicOnHold) {
 		return nil, false
 	}
@@ -175,8 +142,8 @@ func (o *ServiceVOIPAccountAddData) HasMusicOnHold() bool {
 	return false
 }
 
-// SetMusicOnHold gets a reference to the given ServiceVOIPAccountMusicOnHold and assigns it to the MusicOnHold field.
-func (o *ServiceVOIPAccountAddData) SetMusicOnHold(v ServiceVOIPAccountMusicOnHold) {
+// SetMusicOnHold gets a reference to the given ModelsVOIPAccountMusicOnHold and assigns it to the MusicOnHold field.
+func (o *ServiceVOIPAccountAddData) SetMusicOnHold(v ModelsVOIPAccountMusicOnHold) {
 	o.MusicOnHold = &v
 }
 
@@ -270,9 +237,6 @@ func (o ServiceVOIPAccountAddData) MarshalJSON() ([]byte, error) {
 
 func (o ServiceVOIPAccountAddData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.CallRecording) {
-		toSerialize["call_recording"] = o.CallRecording
-	}
 	if !IsNil(o.CallerId) {
 		toSerialize["caller_id"] = o.CallerId
 	}

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**ServiceUserOutputFull**](ServiceUserOutputFull.md) |  | [optional] 
+**Data** | Pointer to [**ModelsUserOutputFull**](ModelsUserOutputFull.md) |  | [optional] 
 **RequestId** | Pointer to **string** | Unique id for each request | [optional] 
 **StatusCode** | Pointer to **int32** | HTTP response status code | [optional] 
 
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *ServiceDocsUserGetSingle) GetData() ServiceUserOutputFull`
+`func (o *ServiceDocsUserGetSingle) GetData() ModelsUserOutputFull`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *ServiceDocsUserGetSingle) GetDataOk() (*ServiceUserOutputFull, bool)`
+`func (o *ServiceDocsUserGetSingle) GetDataOk() (*ModelsUserOutputFull, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *ServiceDocsUserGetSingle) SetData(v ServiceUserOutputFull)`
+`func (o *ServiceDocsUserGetSingle) SetData(v ModelsUserOutputFull)`
 
 SetData sets Data field to given value.
 

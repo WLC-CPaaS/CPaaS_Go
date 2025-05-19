@@ -22,15 +22,15 @@ var _ MappedNullable = &ServiceVOIPUserAdd2{}
 
 // ServiceVOIPUserAdd2 struct for ServiceVOIPUserAdd2
 type ServiceVOIPUserAdd2 struct {
-	CallForward *ServiceCallForward `json:"call_forward,omitempty"`
-	CallRecording *ServiceCallRecordingSettings `json:"call_recording,omitempty"`
-	CallerId *ServiceUserOutputFullCallerid `json:"caller_id,omitempty"`
-	DoNotDisturb *ServiceVOIPSharedDoNotDisturb `json:"do_not_disturb,omitempty"`
+	CallForward *ModelsCallForward `json:"call_forward,omitempty"`
+	CallRecording *ModelsCallRecordingSettings `json:"call_recording,omitempty"`
+	CallerId *ModelsUserOutputFullCallerid `json:"caller_id,omitempty"`
+	DoNotDisturb *ModelsVOIPSharedDoNotDisturb `json:"do_not_disturb,omitempty"`
 	Email string `json:"email"`
 	Enabled *bool `json:"enabled,omitempty"`
 	FirstName string `json:"first_name"`
 	LastName string `json:"last_name"`
-	MusicOnHold *ServiceMusicOnHold `json:"music_on_hold,omitempty"`
+	MusicOnHold *ModelsMusicOnHold `json:"music_on_hold,omitempty"`
 	PresenceId *string `json:"presence_id,omitempty"`
 	Timezone *string `json:"timezone,omitempty"`
 	Verified *bool `json:"verified,omitempty"`
@@ -59,9 +59,9 @@ func NewServiceVOIPUserAdd2WithDefaults() *ServiceVOIPUserAdd2 {
 }
 
 // GetCallForward returns the CallForward field value if set, zero value otherwise.
-func (o *ServiceVOIPUserAdd2) GetCallForward() ServiceCallForward {
+func (o *ServiceVOIPUserAdd2) GetCallForward() ModelsCallForward {
 	if o == nil || IsNil(o.CallForward) {
-		var ret ServiceCallForward
+		var ret ModelsCallForward
 		return ret
 	}
 	return *o.CallForward
@@ -69,7 +69,7 @@ func (o *ServiceVOIPUserAdd2) GetCallForward() ServiceCallForward {
 
 // GetCallForwardOk returns a tuple with the CallForward field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ServiceVOIPUserAdd2) GetCallForwardOk() (*ServiceCallForward, bool) {
+func (o *ServiceVOIPUserAdd2) GetCallForwardOk() (*ModelsCallForward, bool) {
 	if o == nil || IsNil(o.CallForward) {
 		return nil, false
 	}
@@ -85,15 +85,15 @@ func (o *ServiceVOIPUserAdd2) HasCallForward() bool {
 	return false
 }
 
-// SetCallForward gets a reference to the given ServiceCallForward and assigns it to the CallForward field.
-func (o *ServiceVOIPUserAdd2) SetCallForward(v ServiceCallForward) {
+// SetCallForward gets a reference to the given ModelsCallForward and assigns it to the CallForward field.
+func (o *ServiceVOIPUserAdd2) SetCallForward(v ModelsCallForward) {
 	o.CallForward = &v
 }
 
 // GetCallRecording returns the CallRecording field value if set, zero value otherwise.
-func (o *ServiceVOIPUserAdd2) GetCallRecording() ServiceCallRecordingSettings {
+func (o *ServiceVOIPUserAdd2) GetCallRecording() ModelsCallRecordingSettings {
 	if o == nil || IsNil(o.CallRecording) {
-		var ret ServiceCallRecordingSettings
+		var ret ModelsCallRecordingSettings
 		return ret
 	}
 	return *o.CallRecording
@@ -101,7 +101,7 @@ func (o *ServiceVOIPUserAdd2) GetCallRecording() ServiceCallRecordingSettings {
 
 // GetCallRecordingOk returns a tuple with the CallRecording field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ServiceVOIPUserAdd2) GetCallRecordingOk() (*ServiceCallRecordingSettings, bool) {
+func (o *ServiceVOIPUserAdd2) GetCallRecordingOk() (*ModelsCallRecordingSettings, bool) {
 	if o == nil || IsNil(o.CallRecording) {
 		return nil, false
 	}
@@ -117,15 +117,15 @@ func (o *ServiceVOIPUserAdd2) HasCallRecording() bool {
 	return false
 }
 
-// SetCallRecording gets a reference to the given ServiceCallRecordingSettings and assigns it to the CallRecording field.
-func (o *ServiceVOIPUserAdd2) SetCallRecording(v ServiceCallRecordingSettings) {
+// SetCallRecording gets a reference to the given ModelsCallRecordingSettings and assigns it to the CallRecording field.
+func (o *ServiceVOIPUserAdd2) SetCallRecording(v ModelsCallRecordingSettings) {
 	o.CallRecording = &v
 }
 
 // GetCallerId returns the CallerId field value if set, zero value otherwise.
-func (o *ServiceVOIPUserAdd2) GetCallerId() ServiceUserOutputFullCallerid {
+func (o *ServiceVOIPUserAdd2) GetCallerId() ModelsUserOutputFullCallerid {
 	if o == nil || IsNil(o.CallerId) {
-		var ret ServiceUserOutputFullCallerid
+		var ret ModelsUserOutputFullCallerid
 		return ret
 	}
 	return *o.CallerId
@@ -133,7 +133,7 @@ func (o *ServiceVOIPUserAdd2) GetCallerId() ServiceUserOutputFullCallerid {
 
 // GetCallerIdOk returns a tuple with the CallerId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ServiceVOIPUserAdd2) GetCallerIdOk() (*ServiceUserOutputFullCallerid, bool) {
+func (o *ServiceVOIPUserAdd2) GetCallerIdOk() (*ModelsUserOutputFullCallerid, bool) {
 	if o == nil || IsNil(o.CallerId) {
 		return nil, false
 	}
@@ -149,15 +149,15 @@ func (o *ServiceVOIPUserAdd2) HasCallerId() bool {
 	return false
 }
 
-// SetCallerId gets a reference to the given ServiceUserOutputFullCallerid and assigns it to the CallerId field.
-func (o *ServiceVOIPUserAdd2) SetCallerId(v ServiceUserOutputFullCallerid) {
+// SetCallerId gets a reference to the given ModelsUserOutputFullCallerid and assigns it to the CallerId field.
+func (o *ServiceVOIPUserAdd2) SetCallerId(v ModelsUserOutputFullCallerid) {
 	o.CallerId = &v
 }
 
 // GetDoNotDisturb returns the DoNotDisturb field value if set, zero value otherwise.
-func (o *ServiceVOIPUserAdd2) GetDoNotDisturb() ServiceVOIPSharedDoNotDisturb {
+func (o *ServiceVOIPUserAdd2) GetDoNotDisturb() ModelsVOIPSharedDoNotDisturb {
 	if o == nil || IsNil(o.DoNotDisturb) {
-		var ret ServiceVOIPSharedDoNotDisturb
+		var ret ModelsVOIPSharedDoNotDisturb
 		return ret
 	}
 	return *o.DoNotDisturb
@@ -165,7 +165,7 @@ func (o *ServiceVOIPUserAdd2) GetDoNotDisturb() ServiceVOIPSharedDoNotDisturb {
 
 // GetDoNotDisturbOk returns a tuple with the DoNotDisturb field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ServiceVOIPUserAdd2) GetDoNotDisturbOk() (*ServiceVOIPSharedDoNotDisturb, bool) {
+func (o *ServiceVOIPUserAdd2) GetDoNotDisturbOk() (*ModelsVOIPSharedDoNotDisturb, bool) {
 	if o == nil || IsNil(o.DoNotDisturb) {
 		return nil, false
 	}
@@ -181,8 +181,8 @@ func (o *ServiceVOIPUserAdd2) HasDoNotDisturb() bool {
 	return false
 }
 
-// SetDoNotDisturb gets a reference to the given ServiceVOIPSharedDoNotDisturb and assigns it to the DoNotDisturb field.
-func (o *ServiceVOIPUserAdd2) SetDoNotDisturb(v ServiceVOIPSharedDoNotDisturb) {
+// SetDoNotDisturb gets a reference to the given ModelsVOIPSharedDoNotDisturb and assigns it to the DoNotDisturb field.
+func (o *ServiceVOIPUserAdd2) SetDoNotDisturb(v ModelsVOIPSharedDoNotDisturb) {
 	o.DoNotDisturb = &v
 }
 
@@ -291,9 +291,9 @@ func (o *ServiceVOIPUserAdd2) SetLastName(v string) {
 }
 
 // GetMusicOnHold returns the MusicOnHold field value if set, zero value otherwise.
-func (o *ServiceVOIPUserAdd2) GetMusicOnHold() ServiceMusicOnHold {
+func (o *ServiceVOIPUserAdd2) GetMusicOnHold() ModelsMusicOnHold {
 	if o == nil || IsNil(o.MusicOnHold) {
-		var ret ServiceMusicOnHold
+		var ret ModelsMusicOnHold
 		return ret
 	}
 	return *o.MusicOnHold
@@ -301,7 +301,7 @@ func (o *ServiceVOIPUserAdd2) GetMusicOnHold() ServiceMusicOnHold {
 
 // GetMusicOnHoldOk returns a tuple with the MusicOnHold field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ServiceVOIPUserAdd2) GetMusicOnHoldOk() (*ServiceMusicOnHold, bool) {
+func (o *ServiceVOIPUserAdd2) GetMusicOnHoldOk() (*ModelsMusicOnHold, bool) {
 	if o == nil || IsNil(o.MusicOnHold) {
 		return nil, false
 	}
@@ -317,8 +317,8 @@ func (o *ServiceVOIPUserAdd2) HasMusicOnHold() bool {
 	return false
 }
 
-// SetMusicOnHold gets a reference to the given ServiceMusicOnHold and assigns it to the MusicOnHold field.
-func (o *ServiceVOIPUserAdd2) SetMusicOnHold(v ServiceMusicOnHold) {
+// SetMusicOnHold gets a reference to the given ModelsMusicOnHold and assigns it to the MusicOnHold field.
+func (o *ServiceVOIPUserAdd2) SetMusicOnHold(v ModelsMusicOnHold) {
 	o.MusicOnHold = &v
 }
 

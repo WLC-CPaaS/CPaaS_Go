@@ -20,9 +20,15 @@ var _ MappedNullable = &ServiceDocGroupGetAll{}
 
 // ServiceDocGroupGetAll struct for ServiceDocGroupGetAll
 type ServiceDocGroupGetAll struct {
-	Data *ServiceGroupOutputShort `json:"data,omitempty"`
+	Data []ServiceGroupOutputShort `json:"data,omitempty"`
+	// List Pagination: Used to get the next page of results. Will not exist if this is the last page.
+	NextStartKey *string `json:"next_start_key,omitempty"`
+	// List Pagination: The number of results returned in this page
+	PageSize *int32 `json:"page_size,omitempty"`
 	// Unique id for each request
 	RequestId *string `json:"request_id,omitempty"`
+	// List Pagination: Code for paged results
+	StartKey *string `json:"start_key,omitempty"`
 	// HTTP response status code
 	StatusCode *int32 `json:"status_code,omitempty"`
 }
@@ -45,17 +51,17 @@ func NewServiceDocGroupGetAllWithDefaults() *ServiceDocGroupGetAll {
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *ServiceDocGroupGetAll) GetData() ServiceGroupOutputShort {
+func (o *ServiceDocGroupGetAll) GetData() []ServiceGroupOutputShort {
 	if o == nil || IsNil(o.Data) {
-		var ret ServiceGroupOutputShort
+		var ret []ServiceGroupOutputShort
 		return ret
 	}
-	return *o.Data
+	return o.Data
 }
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ServiceDocGroupGetAll) GetDataOk() (*ServiceGroupOutputShort, bool) {
+func (o *ServiceDocGroupGetAll) GetDataOk() ([]ServiceGroupOutputShort, bool) {
 	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
@@ -71,9 +77,73 @@ func (o *ServiceDocGroupGetAll) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given ServiceGroupOutputShort and assigns it to the Data field.
-func (o *ServiceDocGroupGetAll) SetData(v ServiceGroupOutputShort) {
-	o.Data = &v
+// SetData gets a reference to the given []ServiceGroupOutputShort and assigns it to the Data field.
+func (o *ServiceDocGroupGetAll) SetData(v []ServiceGroupOutputShort) {
+	o.Data = v
+}
+
+// GetNextStartKey returns the NextStartKey field value if set, zero value otherwise.
+func (o *ServiceDocGroupGetAll) GetNextStartKey() string {
+	if o == nil || IsNil(o.NextStartKey) {
+		var ret string
+		return ret
+	}
+	return *o.NextStartKey
+}
+
+// GetNextStartKeyOk returns a tuple with the NextStartKey field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ServiceDocGroupGetAll) GetNextStartKeyOk() (*string, bool) {
+	if o == nil || IsNil(o.NextStartKey) {
+		return nil, false
+	}
+	return o.NextStartKey, true
+}
+
+// HasNextStartKey returns a boolean if a field has been set.
+func (o *ServiceDocGroupGetAll) HasNextStartKey() bool {
+	if o != nil && !IsNil(o.NextStartKey) {
+		return true
+	}
+
+	return false
+}
+
+// SetNextStartKey gets a reference to the given string and assigns it to the NextStartKey field.
+func (o *ServiceDocGroupGetAll) SetNextStartKey(v string) {
+	o.NextStartKey = &v
+}
+
+// GetPageSize returns the PageSize field value if set, zero value otherwise.
+func (o *ServiceDocGroupGetAll) GetPageSize() int32 {
+	if o == nil || IsNil(o.PageSize) {
+		var ret int32
+		return ret
+	}
+	return *o.PageSize
+}
+
+// GetPageSizeOk returns a tuple with the PageSize field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ServiceDocGroupGetAll) GetPageSizeOk() (*int32, bool) {
+	if o == nil || IsNil(o.PageSize) {
+		return nil, false
+	}
+	return o.PageSize, true
+}
+
+// HasPageSize returns a boolean if a field has been set.
+func (o *ServiceDocGroupGetAll) HasPageSize() bool {
+	if o != nil && !IsNil(o.PageSize) {
+		return true
+	}
+
+	return false
+}
+
+// SetPageSize gets a reference to the given int32 and assigns it to the PageSize field.
+func (o *ServiceDocGroupGetAll) SetPageSize(v int32) {
+	o.PageSize = &v
 }
 
 // GetRequestId returns the RequestId field value if set, zero value otherwise.
@@ -106,6 +176,38 @@ func (o *ServiceDocGroupGetAll) HasRequestId() bool {
 // SetRequestId gets a reference to the given string and assigns it to the RequestId field.
 func (o *ServiceDocGroupGetAll) SetRequestId(v string) {
 	o.RequestId = &v
+}
+
+// GetStartKey returns the StartKey field value if set, zero value otherwise.
+func (o *ServiceDocGroupGetAll) GetStartKey() string {
+	if o == nil || IsNil(o.StartKey) {
+		var ret string
+		return ret
+	}
+	return *o.StartKey
+}
+
+// GetStartKeyOk returns a tuple with the StartKey field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ServiceDocGroupGetAll) GetStartKeyOk() (*string, bool) {
+	if o == nil || IsNil(o.StartKey) {
+		return nil, false
+	}
+	return o.StartKey, true
+}
+
+// HasStartKey returns a boolean if a field has been set.
+func (o *ServiceDocGroupGetAll) HasStartKey() bool {
+	if o != nil && !IsNil(o.StartKey) {
+		return true
+	}
+
+	return false
+}
+
+// SetStartKey gets a reference to the given string and assigns it to the StartKey field.
+func (o *ServiceDocGroupGetAll) SetStartKey(v string) {
+	o.StartKey = &v
 }
 
 // GetStatusCode returns the StatusCode field value if set, zero value otherwise.
@@ -153,8 +255,17 @@ func (o ServiceDocGroupGetAll) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Data) {
 		toSerialize["data"] = o.Data
 	}
+	if !IsNil(o.NextStartKey) {
+		toSerialize["next_start_key"] = o.NextStartKey
+	}
+	if !IsNil(o.PageSize) {
+		toSerialize["page_size"] = o.PageSize
+	}
 	if !IsNil(o.RequestId) {
 		toSerialize["request_id"] = o.RequestId
+	}
+	if !IsNil(o.StartKey) {
+		toSerialize["start_key"] = o.StartKey
 	}
 	if !IsNil(o.StatusCode) {
 		toSerialize["status_code"] = o.StatusCode

@@ -109,7 +109,7 @@ import (
 func main() {
 	accountID := "accountID_example" // string | Account ID, 32 alpha numeric
 	channelID := "channelID_example" // string | Channel ID
-	reqBody := *openapiclient.NewServiceChannelRunActionData("Action_example") // ServiceChannelRunActionData | payload fields
+	reqBody := *openapiclient.NewServiceVOIPChannelRunActionData("Action_example") // ServiceVOIPChannelRunActionData | payload fields
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **reqBody** | [**ServiceChannelRunActionData**](ServiceChannelRunActionData.md) | payload fields | 
+ **reqBody** | [**ServiceVOIPChannelRunActionData**](ServiceVOIPChannelRunActionData.md) | payload fields | 
 
 ### Return type
 
@@ -184,7 +184,7 @@ import (
 func main() {
 	accountID := "accountID_example" // string | Account ID, 32 alpha numeric
 	channelID := "channelID_example" // string | Channel ID
-	reqBody := *openapiclient.NewServiceChannelRunMetaflowData("Module_example") // ServiceChannelRunMetaflowData | payload fields
+	reqBody := *openapiclient.NewServiceVOIPChannelRunMetaflowData("Module_example") // ServiceVOIPChannelRunMetaflowData | payload fields
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -216,7 +216,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **reqBody** | [**ServiceChannelRunMetaflowData**](ServiceChannelRunMetaflowData.md) | payload fields | 
+ **reqBody** | [**ServiceVOIPChannelRunMetaflowData**](ServiceVOIPChannelRunMetaflowData.md) | payload fields | 
 
 ### Return type
 
@@ -238,7 +238,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDChannelGet
 
-> ServiceDocsChannelGet V1AccountAccountIDChannelGet(ctx, accountID).Execute()
+> ServiceDocsChannelGetAll V1AccountAccountIDChannelGet(ctx, accountID).Execute()
 
 Get Account Channel List
 
@@ -266,7 +266,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ChannelAPI.V1AccountAccountIDChannelGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1AccountAccountIDChannelGet`: ServiceDocsChannelGet
+	// response from `V1AccountAccountIDChannelGet`: ServiceDocsChannelGetAll
 	fmt.Fprintf(os.Stdout, "Response from `ChannelAPI.V1AccountAccountIDChannelGet`: %v\n", resp)
 }
 ```
@@ -290,7 +290,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServiceDocsChannelGet**](ServiceDocsChannelGet.md)
+[**ServiceDocsChannelGetAll**](ServiceDocsChannelGetAll.md)
 
 ### Authorization
 
@@ -308,7 +308,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDDeviceDeviceIDChannelGet
 
-> ServiceDocsChannelGet V1AccountAccountIDDeviceDeviceIDChannelGet(ctx, accountID, deviceID).Execute()
+> ServiceDocsChannelGetAll V1AccountAccountIDDeviceDeviceIDChannelGet(ctx, accountID, deviceID).Execute()
 
 Get Device Channel List
 
@@ -337,7 +337,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ChannelAPI.V1AccountAccountIDDeviceDeviceIDChannelGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1AccountAccountIDDeviceDeviceIDChannelGet`: ServiceDocsChannelGet
+	// response from `V1AccountAccountIDDeviceDeviceIDChannelGet`: ServiceDocsChannelGetAll
 	fmt.Fprintf(os.Stdout, "Response from `ChannelAPI.V1AccountAccountIDDeviceDeviceIDChannelGet`: %v\n", resp)
 }
 ```
@@ -363,7 +363,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServiceDocsChannelGet**](ServiceDocsChannelGet.md)
+[**ServiceDocsChannelGetAll**](ServiceDocsChannelGetAll.md)
 
 ### Authorization
 
@@ -381,7 +381,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDUserUserIDChannelGet
 
-> ServiceDocsChannelGet V1AccountAccountIDUserUserIDChannelGet(ctx, accountID, userID).Execute()
+> ServiceDocsChannelGetAll V1AccountAccountIDUserUserIDChannelGet(ctx, accountID, userID).Execute()
 
 Get User Channel List
 
@@ -410,7 +410,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ChannelAPI.V1AccountAccountIDUserUserIDChannelGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1AccountAccountIDUserUserIDChannelGet`: ServiceDocsChannelGet
+	// response from `V1AccountAccountIDUserUserIDChannelGet`: ServiceDocsChannelGetAll
 	fmt.Fprintf(os.Stdout, "Response from `ChannelAPI.V1AccountAccountIDUserUserIDChannelGet`: %v\n", resp)
 }
 ```
@@ -436,7 +436,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServiceDocsChannelGet**](ServiceDocsChannelGet.md)
+[**ServiceDocsChannelGetAll**](ServiceDocsChannelGetAll.md)
 
 ### Authorization
 

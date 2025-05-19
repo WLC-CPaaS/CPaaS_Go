@@ -20,8 +20,8 @@ var _ MappedNullable = &ServiceUserOutputShort{}
 
 // ServiceUserOutputShort struct for ServiceUserOutputShort
 type ServiceUserOutputShort struct {
-	CallRecording *ServiceCallRecordingSettings `json:"call_recording,omitempty"`
-	DoNotDisturb *ServiceVOIPSharedDoNotDisturb `json:"do_not_disturb,omitempty"`
+	CallRecording *ModelsCallRecordingSettings `json:"call_recording,omitempty"`
+	DoNotDisturb *ModelsVOIPSharedDoNotDisturb `json:"do_not_disturb,omitempty"`
 	Email *string `json:"email,omitempty"`
 	Enabled *bool `json:"enabled,omitempty"`
 	Features []string `json:"features,omitempty"`
@@ -50,9 +50,9 @@ func NewServiceUserOutputShortWithDefaults() *ServiceUserOutputShort {
 }
 
 // GetCallRecording returns the CallRecording field value if set, zero value otherwise.
-func (o *ServiceUserOutputShort) GetCallRecording() ServiceCallRecordingSettings {
+func (o *ServiceUserOutputShort) GetCallRecording() ModelsCallRecordingSettings {
 	if o == nil || IsNil(o.CallRecording) {
-		var ret ServiceCallRecordingSettings
+		var ret ModelsCallRecordingSettings
 		return ret
 	}
 	return *o.CallRecording
@@ -60,7 +60,7 @@ func (o *ServiceUserOutputShort) GetCallRecording() ServiceCallRecordingSettings
 
 // GetCallRecordingOk returns a tuple with the CallRecording field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ServiceUserOutputShort) GetCallRecordingOk() (*ServiceCallRecordingSettings, bool) {
+func (o *ServiceUserOutputShort) GetCallRecordingOk() (*ModelsCallRecordingSettings, bool) {
 	if o == nil || IsNil(o.CallRecording) {
 		return nil, false
 	}
@@ -76,15 +76,15 @@ func (o *ServiceUserOutputShort) HasCallRecording() bool {
 	return false
 }
 
-// SetCallRecording gets a reference to the given ServiceCallRecordingSettings and assigns it to the CallRecording field.
-func (o *ServiceUserOutputShort) SetCallRecording(v ServiceCallRecordingSettings) {
+// SetCallRecording gets a reference to the given ModelsCallRecordingSettings and assigns it to the CallRecording field.
+func (o *ServiceUserOutputShort) SetCallRecording(v ModelsCallRecordingSettings) {
 	o.CallRecording = &v
 }
 
 // GetDoNotDisturb returns the DoNotDisturb field value if set, zero value otherwise.
-func (o *ServiceUserOutputShort) GetDoNotDisturb() ServiceVOIPSharedDoNotDisturb {
+func (o *ServiceUserOutputShort) GetDoNotDisturb() ModelsVOIPSharedDoNotDisturb {
 	if o == nil || IsNil(o.DoNotDisturb) {
-		var ret ServiceVOIPSharedDoNotDisturb
+		var ret ModelsVOIPSharedDoNotDisturb
 		return ret
 	}
 	return *o.DoNotDisturb
@@ -92,7 +92,7 @@ func (o *ServiceUserOutputShort) GetDoNotDisturb() ServiceVOIPSharedDoNotDisturb
 
 // GetDoNotDisturbOk returns a tuple with the DoNotDisturb field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ServiceUserOutputShort) GetDoNotDisturbOk() (*ServiceVOIPSharedDoNotDisturb, bool) {
+func (o *ServiceUserOutputShort) GetDoNotDisturbOk() (*ModelsVOIPSharedDoNotDisturb, bool) {
 	if o == nil || IsNil(o.DoNotDisturb) {
 		return nil, false
 	}
@@ -108,8 +108,8 @@ func (o *ServiceUserOutputShort) HasDoNotDisturb() bool {
 	return false
 }
 
-// SetDoNotDisturb gets a reference to the given ServiceVOIPSharedDoNotDisturb and assigns it to the DoNotDisturb field.
-func (o *ServiceUserOutputShort) SetDoNotDisturb(v ServiceVOIPSharedDoNotDisturb) {
+// SetDoNotDisturb gets a reference to the given ModelsVOIPSharedDoNotDisturb and assigns it to the DoNotDisturb field.
+func (o *ServiceUserOutputShort) SetDoNotDisturb(v ModelsVOIPSharedDoNotDisturb) {
 	o.DoNotDisturb = &v
 }
 

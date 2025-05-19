@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CallerIdName** | Pointer to **string** |  | [optional] 
 **CallerIdNumber** | Pointer to **string** |  | [optional] 
-**Folder** | Pointer to **string** |  | [optional] 
+**Folder** | **string** |  | 
 **From** | Pointer to **string** |  | [optional] 
 **To** | Pointer to **string** |  | [optional] 
 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewServiceVOIPVoicemailMessageAddData
 
-`func NewServiceVOIPVoicemailMessageAddData() *ServiceVOIPVoicemailMessageAddData`
+`func NewServiceVOIPVoicemailMessageAddData(folder string, ) *ServiceVOIPVoicemailMessageAddData`
 
 NewServiceVOIPVoicemailMessageAddData instantiates a new ServiceVOIPVoicemailMessageAddData object
 This constructor will assign default values to properties that have it defined,
@@ -98,11 +98,6 @@ and a boolean to check if the value has been set.
 
 SetFolder sets Folder field to given value.
 
-### HasFolder
-
-`func (o *ServiceVOIPVoicemailMessageAddData) HasFolder() bool`
-
-HasFolder returns a boolean if a field has been set.
 
 ### GetFrom
 

@@ -22,20 +22,20 @@ var _ MappedNullable = &ServiceVOIPDeviceAddEdit2{}
 
 // ServiceVOIPDeviceAddEdit2 struct for ServiceVOIPDeviceAddEdit2
 type ServiceVOIPDeviceAddEdit2 struct {
-	CallForward *ServiceCallForward `json:"call_forward,omitempty"`
-	CallRecording *ServiceCallRecordingSettings `json:"call_recording,omitempty"`
+	CallForward *ModelsCallForward `json:"call_forward,omitempty"`
 	CallerId *ServiceVOIPDeviceAddEdit3c `json:"caller_id,omitempty"`
 	DeviceType *string `json:"device_type,omitempty"`
-	DoNotDisturb *ServiceVOIPSharedDoNotDisturb `json:"do_not_disturb,omitempty"`
+	DoNotDisturb *ModelsVOIPSharedDoNotDisturb `json:"do_not_disturb,omitempty"`
 	// cannot use required, else it has to be true and false is not allowed
 	Enabled *bool `json:"enabled,omitempty"`
 	// dont use mac, it enforces :, which voip does not like
 	MacAddress *string `json:"mac_address,omitempty"`
 	Media *ServiceVOIPDeviceAddEdit3d `json:"media,omitempty"`
-	MusicOnHold *ServiceMusicOnHold `json:"music_on_hold,omitempty"`
+	MusicOnHold *ModelsMusicOnHold `json:"music_on_hold,omitempty"`
 	Name string `json:"name"`
 	// json omitempty is needed else voip fails on \"\" for owner_id
 	OwnerId *string `json:"owner_id,omitempty"`
+	Provision *ServiceVOIPDeviceAddEditProvision `json:"provision,omitempty"`
 	Sip ServiceVOIPDeviceAddEdit3a `json:"sip"`
 }
 
@@ -61,9 +61,9 @@ func NewServiceVOIPDeviceAddEdit2WithDefaults() *ServiceVOIPDeviceAddEdit2 {
 }
 
 // GetCallForward returns the CallForward field value if set, zero value otherwise.
-func (o *ServiceVOIPDeviceAddEdit2) GetCallForward() ServiceCallForward {
+func (o *ServiceVOIPDeviceAddEdit2) GetCallForward() ModelsCallForward {
 	if o == nil || IsNil(o.CallForward) {
-		var ret ServiceCallForward
+		var ret ModelsCallForward
 		return ret
 	}
 	return *o.CallForward
@@ -71,7 +71,7 @@ func (o *ServiceVOIPDeviceAddEdit2) GetCallForward() ServiceCallForward {
 
 // GetCallForwardOk returns a tuple with the CallForward field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ServiceVOIPDeviceAddEdit2) GetCallForwardOk() (*ServiceCallForward, bool) {
+func (o *ServiceVOIPDeviceAddEdit2) GetCallForwardOk() (*ModelsCallForward, bool) {
 	if o == nil || IsNil(o.CallForward) {
 		return nil, false
 	}
@@ -87,41 +87,9 @@ func (o *ServiceVOIPDeviceAddEdit2) HasCallForward() bool {
 	return false
 }
 
-// SetCallForward gets a reference to the given ServiceCallForward and assigns it to the CallForward field.
-func (o *ServiceVOIPDeviceAddEdit2) SetCallForward(v ServiceCallForward) {
+// SetCallForward gets a reference to the given ModelsCallForward and assigns it to the CallForward field.
+func (o *ServiceVOIPDeviceAddEdit2) SetCallForward(v ModelsCallForward) {
 	o.CallForward = &v
-}
-
-// GetCallRecording returns the CallRecording field value if set, zero value otherwise.
-func (o *ServiceVOIPDeviceAddEdit2) GetCallRecording() ServiceCallRecordingSettings {
-	if o == nil || IsNil(o.CallRecording) {
-		var ret ServiceCallRecordingSettings
-		return ret
-	}
-	return *o.CallRecording
-}
-
-// GetCallRecordingOk returns a tuple with the CallRecording field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ServiceVOIPDeviceAddEdit2) GetCallRecordingOk() (*ServiceCallRecordingSettings, bool) {
-	if o == nil || IsNil(o.CallRecording) {
-		return nil, false
-	}
-	return o.CallRecording, true
-}
-
-// HasCallRecording returns a boolean if a field has been set.
-func (o *ServiceVOIPDeviceAddEdit2) HasCallRecording() bool {
-	if o != nil && !IsNil(o.CallRecording) {
-		return true
-	}
-
-	return false
-}
-
-// SetCallRecording gets a reference to the given ServiceCallRecordingSettings and assigns it to the CallRecording field.
-func (o *ServiceVOIPDeviceAddEdit2) SetCallRecording(v ServiceCallRecordingSettings) {
-	o.CallRecording = &v
 }
 
 // GetCallerId returns the CallerId field value if set, zero value otherwise.
@@ -189,9 +157,9 @@ func (o *ServiceVOIPDeviceAddEdit2) SetDeviceType(v string) {
 }
 
 // GetDoNotDisturb returns the DoNotDisturb field value if set, zero value otherwise.
-func (o *ServiceVOIPDeviceAddEdit2) GetDoNotDisturb() ServiceVOIPSharedDoNotDisturb {
+func (o *ServiceVOIPDeviceAddEdit2) GetDoNotDisturb() ModelsVOIPSharedDoNotDisturb {
 	if o == nil || IsNil(o.DoNotDisturb) {
-		var ret ServiceVOIPSharedDoNotDisturb
+		var ret ModelsVOIPSharedDoNotDisturb
 		return ret
 	}
 	return *o.DoNotDisturb
@@ -199,7 +167,7 @@ func (o *ServiceVOIPDeviceAddEdit2) GetDoNotDisturb() ServiceVOIPSharedDoNotDist
 
 // GetDoNotDisturbOk returns a tuple with the DoNotDisturb field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ServiceVOIPDeviceAddEdit2) GetDoNotDisturbOk() (*ServiceVOIPSharedDoNotDisturb, bool) {
+func (o *ServiceVOIPDeviceAddEdit2) GetDoNotDisturbOk() (*ModelsVOIPSharedDoNotDisturb, bool) {
 	if o == nil || IsNil(o.DoNotDisturb) {
 		return nil, false
 	}
@@ -215,8 +183,8 @@ func (o *ServiceVOIPDeviceAddEdit2) HasDoNotDisturb() bool {
 	return false
 }
 
-// SetDoNotDisturb gets a reference to the given ServiceVOIPSharedDoNotDisturb and assigns it to the DoNotDisturb field.
-func (o *ServiceVOIPDeviceAddEdit2) SetDoNotDisturb(v ServiceVOIPSharedDoNotDisturb) {
+// SetDoNotDisturb gets a reference to the given ModelsVOIPSharedDoNotDisturb and assigns it to the DoNotDisturb field.
+func (o *ServiceVOIPDeviceAddEdit2) SetDoNotDisturb(v ModelsVOIPSharedDoNotDisturb) {
 	o.DoNotDisturb = &v
 }
 
@@ -317,9 +285,9 @@ func (o *ServiceVOIPDeviceAddEdit2) SetMedia(v ServiceVOIPDeviceAddEdit3d) {
 }
 
 // GetMusicOnHold returns the MusicOnHold field value if set, zero value otherwise.
-func (o *ServiceVOIPDeviceAddEdit2) GetMusicOnHold() ServiceMusicOnHold {
+func (o *ServiceVOIPDeviceAddEdit2) GetMusicOnHold() ModelsMusicOnHold {
 	if o == nil || IsNil(o.MusicOnHold) {
-		var ret ServiceMusicOnHold
+		var ret ModelsMusicOnHold
 		return ret
 	}
 	return *o.MusicOnHold
@@ -327,7 +295,7 @@ func (o *ServiceVOIPDeviceAddEdit2) GetMusicOnHold() ServiceMusicOnHold {
 
 // GetMusicOnHoldOk returns a tuple with the MusicOnHold field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ServiceVOIPDeviceAddEdit2) GetMusicOnHoldOk() (*ServiceMusicOnHold, bool) {
+func (o *ServiceVOIPDeviceAddEdit2) GetMusicOnHoldOk() (*ModelsMusicOnHold, bool) {
 	if o == nil || IsNil(o.MusicOnHold) {
 		return nil, false
 	}
@@ -343,8 +311,8 @@ func (o *ServiceVOIPDeviceAddEdit2) HasMusicOnHold() bool {
 	return false
 }
 
-// SetMusicOnHold gets a reference to the given ServiceMusicOnHold and assigns it to the MusicOnHold field.
-func (o *ServiceVOIPDeviceAddEdit2) SetMusicOnHold(v ServiceMusicOnHold) {
+// SetMusicOnHold gets a reference to the given ModelsMusicOnHold and assigns it to the MusicOnHold field.
+func (o *ServiceVOIPDeviceAddEdit2) SetMusicOnHold(v ModelsMusicOnHold) {
 	o.MusicOnHold = &v
 }
 
@@ -404,6 +372,38 @@ func (o *ServiceVOIPDeviceAddEdit2) SetOwnerId(v string) {
 	o.OwnerId = &v
 }
 
+// GetProvision returns the Provision field value if set, zero value otherwise.
+func (o *ServiceVOIPDeviceAddEdit2) GetProvision() ServiceVOIPDeviceAddEditProvision {
+	if o == nil || IsNil(o.Provision) {
+		var ret ServiceVOIPDeviceAddEditProvision
+		return ret
+	}
+	return *o.Provision
+}
+
+// GetProvisionOk returns a tuple with the Provision field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ServiceVOIPDeviceAddEdit2) GetProvisionOk() (*ServiceVOIPDeviceAddEditProvision, bool) {
+	if o == nil || IsNil(o.Provision) {
+		return nil, false
+	}
+	return o.Provision, true
+}
+
+// HasProvision returns a boolean if a field has been set.
+func (o *ServiceVOIPDeviceAddEdit2) HasProvision() bool {
+	if o != nil && !IsNil(o.Provision) {
+		return true
+	}
+
+	return false
+}
+
+// SetProvision gets a reference to the given ServiceVOIPDeviceAddEditProvision and assigns it to the Provision field.
+func (o *ServiceVOIPDeviceAddEdit2) SetProvision(v ServiceVOIPDeviceAddEditProvision) {
+	o.Provision = &v
+}
+
 // GetSip returns the Sip field value
 func (o *ServiceVOIPDeviceAddEdit2) GetSip() ServiceVOIPDeviceAddEdit3a {
 	if o == nil {
@@ -441,9 +441,6 @@ func (o ServiceVOIPDeviceAddEdit2) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CallForward) {
 		toSerialize["call_forward"] = o.CallForward
 	}
-	if !IsNil(o.CallRecording) {
-		toSerialize["call_recording"] = o.CallRecording
-	}
 	if !IsNil(o.CallerId) {
 		toSerialize["caller_id"] = o.CallerId
 	}
@@ -468,6 +465,9 @@ func (o ServiceVOIPDeviceAddEdit2) ToMap() (map[string]interface{}, error) {
 	toSerialize["name"] = o.Name
 	if !IsNil(o.OwnerId) {
 		toSerialize["owner_id"] = o.OwnerId
+	}
+	if !IsNil(o.Provision) {
+		toSerialize["provision"] = o.Provision
 	}
 	toSerialize["sip"] = o.Sip
 	return toSerialize, nil

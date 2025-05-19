@@ -4,17 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CallForward** | Pointer to [**ServiceCallForward**](ServiceCallForward.md) |  | [optional] 
-**CallRecording** | Pointer to [**ServiceCallRecordingSettings**](ServiceCallRecordingSettings.md) |  | [optional] 
+**CallForward** | Pointer to [**ModelsCallForward**](ModelsCallForward.md) |  | [optional] 
 **CallerId** | Pointer to [**ServiceVOIPDeviceAddEdit3c**](ServiceVOIPDeviceAddEdit3c.md) |  | [optional] 
 **DeviceType** | Pointer to **string** |  | [optional] 
-**DoNotDisturb** | Pointer to [**ServiceVOIPSharedDoNotDisturb**](ServiceVOIPSharedDoNotDisturb.md) |  | [optional] 
+**DoNotDisturb** | Pointer to [**ModelsVOIPSharedDoNotDisturb**](ModelsVOIPSharedDoNotDisturb.md) |  | [optional] 
 **Enabled** | Pointer to **bool** | cannot use required, else it has to be true and false is not allowed | [optional] 
 **MacAddress** | Pointer to **string** | dont use mac, it enforces :, which voip does not like | [optional] 
 **Media** | Pointer to [**ServiceVOIPDeviceAddEdit3d**](ServiceVOIPDeviceAddEdit3d.md) |  | [optional] 
-**MusicOnHold** | Pointer to [**ServiceMusicOnHold**](ServiceMusicOnHold.md) |  | [optional] 
+**MusicOnHold** | Pointer to [**ModelsMusicOnHold**](ModelsMusicOnHold.md) |  | [optional] 
 **Name** | **string** |  | 
 **OwnerId** | Pointer to **string** | json omitempty is needed else voip fails on \&quot;\&quot; for owner_id | [optional] 
+**Provision** | Pointer to [**ServiceVOIPDeviceAddEditProvision**](ServiceVOIPDeviceAddEditProvision.md) |  | [optional] 
 **Sip** | [**ServiceVOIPDeviceAddEdit3a**](ServiceVOIPDeviceAddEdit3a.md) |  | 
 
 ## Methods
@@ -38,20 +38,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetCallForward
 
-`func (o *ServiceVOIPDeviceAddEdit2) GetCallForward() ServiceCallForward`
+`func (o *ServiceVOIPDeviceAddEdit2) GetCallForward() ModelsCallForward`
 
 GetCallForward returns the CallForward field if non-nil, zero value otherwise.
 
 ### GetCallForwardOk
 
-`func (o *ServiceVOIPDeviceAddEdit2) GetCallForwardOk() (*ServiceCallForward, bool)`
+`func (o *ServiceVOIPDeviceAddEdit2) GetCallForwardOk() (*ModelsCallForward, bool)`
 
 GetCallForwardOk returns a tuple with the CallForward field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCallForward
 
-`func (o *ServiceVOIPDeviceAddEdit2) SetCallForward(v ServiceCallForward)`
+`func (o *ServiceVOIPDeviceAddEdit2) SetCallForward(v ModelsCallForward)`
 
 SetCallForward sets CallForward field to given value.
 
@@ -60,31 +60,6 @@ SetCallForward sets CallForward field to given value.
 `func (o *ServiceVOIPDeviceAddEdit2) HasCallForward() bool`
 
 HasCallForward returns a boolean if a field has been set.
-
-### GetCallRecording
-
-`func (o *ServiceVOIPDeviceAddEdit2) GetCallRecording() ServiceCallRecordingSettings`
-
-GetCallRecording returns the CallRecording field if non-nil, zero value otherwise.
-
-### GetCallRecordingOk
-
-`func (o *ServiceVOIPDeviceAddEdit2) GetCallRecordingOk() (*ServiceCallRecordingSettings, bool)`
-
-GetCallRecordingOk returns a tuple with the CallRecording field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCallRecording
-
-`func (o *ServiceVOIPDeviceAddEdit2) SetCallRecording(v ServiceCallRecordingSettings)`
-
-SetCallRecording sets CallRecording field to given value.
-
-### HasCallRecording
-
-`func (o *ServiceVOIPDeviceAddEdit2) HasCallRecording() bool`
-
-HasCallRecording returns a boolean if a field has been set.
 
 ### GetCallerId
 
@@ -138,20 +113,20 @@ HasDeviceType returns a boolean if a field has been set.
 
 ### GetDoNotDisturb
 
-`func (o *ServiceVOIPDeviceAddEdit2) GetDoNotDisturb() ServiceVOIPSharedDoNotDisturb`
+`func (o *ServiceVOIPDeviceAddEdit2) GetDoNotDisturb() ModelsVOIPSharedDoNotDisturb`
 
 GetDoNotDisturb returns the DoNotDisturb field if non-nil, zero value otherwise.
 
 ### GetDoNotDisturbOk
 
-`func (o *ServiceVOIPDeviceAddEdit2) GetDoNotDisturbOk() (*ServiceVOIPSharedDoNotDisturb, bool)`
+`func (o *ServiceVOIPDeviceAddEdit2) GetDoNotDisturbOk() (*ModelsVOIPSharedDoNotDisturb, bool)`
 
 GetDoNotDisturbOk returns a tuple with the DoNotDisturb field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDoNotDisturb
 
-`func (o *ServiceVOIPDeviceAddEdit2) SetDoNotDisturb(v ServiceVOIPSharedDoNotDisturb)`
+`func (o *ServiceVOIPDeviceAddEdit2) SetDoNotDisturb(v ModelsVOIPSharedDoNotDisturb)`
 
 SetDoNotDisturb sets DoNotDisturb field to given value.
 
@@ -238,20 +213,20 @@ HasMedia returns a boolean if a field has been set.
 
 ### GetMusicOnHold
 
-`func (o *ServiceVOIPDeviceAddEdit2) GetMusicOnHold() ServiceMusicOnHold`
+`func (o *ServiceVOIPDeviceAddEdit2) GetMusicOnHold() ModelsMusicOnHold`
 
 GetMusicOnHold returns the MusicOnHold field if non-nil, zero value otherwise.
 
 ### GetMusicOnHoldOk
 
-`func (o *ServiceVOIPDeviceAddEdit2) GetMusicOnHoldOk() (*ServiceMusicOnHold, bool)`
+`func (o *ServiceVOIPDeviceAddEdit2) GetMusicOnHoldOk() (*ModelsMusicOnHold, bool)`
 
 GetMusicOnHoldOk returns a tuple with the MusicOnHold field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMusicOnHold
 
-`func (o *ServiceVOIPDeviceAddEdit2) SetMusicOnHold(v ServiceMusicOnHold)`
+`func (o *ServiceVOIPDeviceAddEdit2) SetMusicOnHold(v ModelsMusicOnHold)`
 
 SetMusicOnHold sets MusicOnHold field to given value.
 
@@ -305,6 +280,31 @@ SetOwnerId sets OwnerId field to given value.
 `func (o *ServiceVOIPDeviceAddEdit2) HasOwnerId() bool`
 
 HasOwnerId returns a boolean if a field has been set.
+
+### GetProvision
+
+`func (o *ServiceVOIPDeviceAddEdit2) GetProvision() ServiceVOIPDeviceAddEditProvision`
+
+GetProvision returns the Provision field if non-nil, zero value otherwise.
+
+### GetProvisionOk
+
+`func (o *ServiceVOIPDeviceAddEdit2) GetProvisionOk() (*ServiceVOIPDeviceAddEditProvision, bool)`
+
+GetProvisionOk returns a tuple with the Provision field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProvision
+
+`func (o *ServiceVOIPDeviceAddEdit2) SetProvision(v ServiceVOIPDeviceAddEditProvision)`
+
+SetProvision sets Provision field to given value.
+
+### HasProvision
+
+`func (o *ServiceVOIPDeviceAddEdit2) HasProvision() bool`
+
+HasProvision returns a boolean if a field has been set.
 
 ### GetSip
 

@@ -20,7 +20,7 @@ var _ MappedNullable = &ServiceDocsVoicemailGetSingle{}
 
 // ServiceDocsVoicemailGetSingle struct for ServiceDocsVoicemailGetSingle
 type ServiceDocsVoicemailGetSingle struct {
-	Data *ServiceVoicemailOutput `json:"data,omitempty"`
+	Data *ServiceVoicemailOutputFull `json:"data,omitempty"`
 	// Unique id for each request
 	RequestId *string `json:"request_id,omitempty"`
 	// HTTP response status code
@@ -45,9 +45,9 @@ func NewServiceDocsVoicemailGetSingleWithDefaults() *ServiceDocsVoicemailGetSing
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *ServiceDocsVoicemailGetSingle) GetData() ServiceVoicemailOutput {
+func (o *ServiceDocsVoicemailGetSingle) GetData() ServiceVoicemailOutputFull {
 	if o == nil || IsNil(o.Data) {
-		var ret ServiceVoicemailOutput
+		var ret ServiceVoicemailOutputFull
 		return ret
 	}
 	return *o.Data
@@ -55,7 +55,7 @@ func (o *ServiceDocsVoicemailGetSingle) GetData() ServiceVoicemailOutput {
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ServiceDocsVoicemailGetSingle) GetDataOk() (*ServiceVoicemailOutput, bool) {
+func (o *ServiceDocsVoicemailGetSingle) GetDataOk() (*ServiceVoicemailOutputFull, bool) {
 	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
@@ -71,8 +71,8 @@ func (o *ServiceDocsVoicemailGetSingle) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given ServiceVoicemailOutput and assigns it to the Data field.
-func (o *ServiceDocsVoicemailGetSingle) SetData(v ServiceVoicemailOutput) {
+// SetData gets a reference to the given ServiceVoicemailOutputFull and assigns it to the Data field.
+func (o *ServiceDocsVoicemailGetSingle) SetData(v ServiceVoicemailOutputFull) {
 	o.Data = &v
 }
 

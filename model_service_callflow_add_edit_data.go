@@ -23,7 +23,7 @@ var _ MappedNullable = &ServiceCallflowAddEditData{}
 // ServiceCallflowAddEditData struct for ServiceCallflowAddEditData
 type ServiceCallflowAddEditData struct {
 	Featurecode *ServiceFeatureCode `json:"featurecode,omitempty"`
-	Flow *ServiceCallflowAddEditFlowData `json:"flow,omitempty"`
+	Flow ServiceCallflowAddEditFlowData `json:"flow"`
 	Name *string `json:"name,omitempty"`
 	Numbers []string `json:"numbers"`
 	Patterns []string `json:"patterns"`
@@ -35,8 +35,9 @@ type _ServiceCallflowAddEditData ServiceCallflowAddEditData
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewServiceCallflowAddEditData(numbers []string, patterns []string) *ServiceCallflowAddEditData {
+func NewServiceCallflowAddEditData(flow ServiceCallflowAddEditFlowData, numbers []string, patterns []string) *ServiceCallflowAddEditData {
 	this := ServiceCallflowAddEditData{}
+	this.Flow = flow
 	this.Numbers = numbers
 	this.Patterns = patterns
 	return &this
@@ -82,36 +83,28 @@ func (o *ServiceCallflowAddEditData) SetFeaturecode(v ServiceFeatureCode) {
 	o.Featurecode = &v
 }
 
-// GetFlow returns the Flow field value if set, zero value otherwise.
+// GetFlow returns the Flow field value
 func (o *ServiceCallflowAddEditData) GetFlow() ServiceCallflowAddEditFlowData {
-	if o == nil || IsNil(o.Flow) {
+	if o == nil {
 		var ret ServiceCallflowAddEditFlowData
 		return ret
 	}
-	return *o.Flow
+
+	return o.Flow
 }
 
-// GetFlowOk returns a tuple with the Flow field value if set, nil otherwise
+// GetFlowOk returns a tuple with the Flow field value
 // and a boolean to check if the value has been set.
 func (o *ServiceCallflowAddEditData) GetFlowOk() (*ServiceCallflowAddEditFlowData, bool) {
-	if o == nil || IsNil(o.Flow) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Flow, true
+	return &o.Flow, true
 }
 
-// HasFlow returns a boolean if a field has been set.
-func (o *ServiceCallflowAddEditData) HasFlow() bool {
-	if o != nil && !IsNil(o.Flow) {
-		return true
-	}
-
-	return false
-}
-
-// SetFlow gets a reference to the given ServiceCallflowAddEditFlowData and assigns it to the Flow field.
+// SetFlow sets field value
 func (o *ServiceCallflowAddEditData) SetFlow(v ServiceCallflowAddEditFlowData) {
-	o.Flow = &v
+	o.Flow = v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -207,9 +200,7 @@ func (o ServiceCallflowAddEditData) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Featurecode) {
 		toSerialize["featurecode"] = o.Featurecode
 	}
-	if !IsNil(o.Flow) {
-		toSerialize["flow"] = o.Flow
-	}
+	toSerialize["flow"] = o.Flow
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
@@ -223,6 +214,7 @@ func (o *ServiceCallflowAddEditData) UnmarshalJSON(data []byte) (err error) {
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
+		"flow",
 		"numbers",
 		"patterns",
 	}

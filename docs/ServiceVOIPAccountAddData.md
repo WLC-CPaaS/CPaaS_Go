@@ -4,10 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CallRecording** | Pointer to [**ServiceVOIPAccountCallRecording**](ServiceVOIPAccountCallRecording.md) |  | [optional] 
-**CallerId** | Pointer to [**ServiceVOIPAccountOutputFullCallerid**](ServiceVOIPAccountOutputFullCallerid.md) |  | [optional] 
-**DoNotDisturb** | Pointer to [**ServiceVOIPSharedDoNotDisturb**](ServiceVOIPSharedDoNotDisturb.md) |  | [optional] 
-**MusicOnHold** | Pointer to [**ServiceVOIPAccountMusicOnHold**](ServiceVOIPAccountMusicOnHold.md) |  | [optional] 
+**CallerId** | Pointer to [**ModelsVOIPAccountOutputFullCallerid**](ModelsVOIPAccountOutputFullCallerid.md) |  | [optional] 
+**DoNotDisturb** | Pointer to [**ModelsVOIPSharedDoNotDisturb**](ModelsVOIPSharedDoNotDisturb.md) |  | [optional] 
+**MusicOnHold** | Pointer to [**ModelsVOIPAccountMusicOnHold**](ModelsVOIPAccountMusicOnHold.md) |  | [optional] 
 **Name** | **string** |  | 
 **Realm** | Pointer to **string** |  | [optional] 
 **Timezone** | **string** |  | 
@@ -31,47 +30,22 @@ NewServiceVOIPAccountAddDataWithDefaults instantiates a new ServiceVOIPAccountAd
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetCallRecording
-
-`func (o *ServiceVOIPAccountAddData) GetCallRecording() ServiceVOIPAccountCallRecording`
-
-GetCallRecording returns the CallRecording field if non-nil, zero value otherwise.
-
-### GetCallRecordingOk
-
-`func (o *ServiceVOIPAccountAddData) GetCallRecordingOk() (*ServiceVOIPAccountCallRecording, bool)`
-
-GetCallRecordingOk returns a tuple with the CallRecording field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCallRecording
-
-`func (o *ServiceVOIPAccountAddData) SetCallRecording(v ServiceVOIPAccountCallRecording)`
-
-SetCallRecording sets CallRecording field to given value.
-
-### HasCallRecording
-
-`func (o *ServiceVOIPAccountAddData) HasCallRecording() bool`
-
-HasCallRecording returns a boolean if a field has been set.
-
 ### GetCallerId
 
-`func (o *ServiceVOIPAccountAddData) GetCallerId() ServiceVOIPAccountOutputFullCallerid`
+`func (o *ServiceVOIPAccountAddData) GetCallerId() ModelsVOIPAccountOutputFullCallerid`
 
 GetCallerId returns the CallerId field if non-nil, zero value otherwise.
 
 ### GetCallerIdOk
 
-`func (o *ServiceVOIPAccountAddData) GetCallerIdOk() (*ServiceVOIPAccountOutputFullCallerid, bool)`
+`func (o *ServiceVOIPAccountAddData) GetCallerIdOk() (*ModelsVOIPAccountOutputFullCallerid, bool)`
 
 GetCallerIdOk returns a tuple with the CallerId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCallerId
 
-`func (o *ServiceVOIPAccountAddData) SetCallerId(v ServiceVOIPAccountOutputFullCallerid)`
+`func (o *ServiceVOIPAccountAddData) SetCallerId(v ModelsVOIPAccountOutputFullCallerid)`
 
 SetCallerId sets CallerId field to given value.
 
@@ -83,20 +57,20 @@ HasCallerId returns a boolean if a field has been set.
 
 ### GetDoNotDisturb
 
-`func (o *ServiceVOIPAccountAddData) GetDoNotDisturb() ServiceVOIPSharedDoNotDisturb`
+`func (o *ServiceVOIPAccountAddData) GetDoNotDisturb() ModelsVOIPSharedDoNotDisturb`
 
 GetDoNotDisturb returns the DoNotDisturb field if non-nil, zero value otherwise.
 
 ### GetDoNotDisturbOk
 
-`func (o *ServiceVOIPAccountAddData) GetDoNotDisturbOk() (*ServiceVOIPSharedDoNotDisturb, bool)`
+`func (o *ServiceVOIPAccountAddData) GetDoNotDisturbOk() (*ModelsVOIPSharedDoNotDisturb, bool)`
 
 GetDoNotDisturbOk returns a tuple with the DoNotDisturb field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDoNotDisturb
 
-`func (o *ServiceVOIPAccountAddData) SetDoNotDisturb(v ServiceVOIPSharedDoNotDisturb)`
+`func (o *ServiceVOIPAccountAddData) SetDoNotDisturb(v ModelsVOIPSharedDoNotDisturb)`
 
 SetDoNotDisturb sets DoNotDisturb field to given value.
 
@@ -108,20 +82,20 @@ HasDoNotDisturb returns a boolean if a field has been set.
 
 ### GetMusicOnHold
 
-`func (o *ServiceVOIPAccountAddData) GetMusicOnHold() ServiceVOIPAccountMusicOnHold`
+`func (o *ServiceVOIPAccountAddData) GetMusicOnHold() ModelsVOIPAccountMusicOnHold`
 
 GetMusicOnHold returns the MusicOnHold field if non-nil, zero value otherwise.
 
 ### GetMusicOnHoldOk
 
-`func (o *ServiceVOIPAccountAddData) GetMusicOnHoldOk() (*ServiceVOIPAccountMusicOnHold, bool)`
+`func (o *ServiceVOIPAccountAddData) GetMusicOnHoldOk() (*ModelsVOIPAccountMusicOnHold, bool)`
 
 GetMusicOnHoldOk returns a tuple with the MusicOnHold field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMusicOnHold
 
-`func (o *ServiceVOIPAccountAddData) SetMusicOnHold(v ServiceVOIPAccountMusicOnHold)`
+`func (o *ServiceVOIPAccountAddData) SetMusicOnHold(v ModelsVOIPAccountMusicOnHold)`
 
 SetMusicOnHold sets MusicOnHold field to given value.
 

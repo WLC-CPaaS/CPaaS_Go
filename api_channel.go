@@ -160,11 +160,11 @@ type ApiV1AccountAccountIDChannelChannelIDPostRequest struct {
 	ApiService *ChannelAPIService
 	accountID string
 	channelID string
-	reqBody *ServiceChannelRunActionData
+	reqBody *ServiceVOIPChannelRunActionData
 }
 
 // payload fields
-func (r ApiV1AccountAccountIDChannelChannelIDPostRequest) ReqBody(reqBody ServiceChannelRunActionData) ApiV1AccountAccountIDChannelChannelIDPostRequest {
+func (r ApiV1AccountAccountIDChannelChannelIDPostRequest) ReqBody(reqBody ServiceVOIPChannelRunActionData) ApiV1AccountAccountIDChannelChannelIDPostRequest {
 	r.reqBody = &reqBody
 	return r
 }
@@ -303,11 +303,11 @@ type ApiV1AccountAccountIDChannelChannelIDPutRequest struct {
 	ApiService *ChannelAPIService
 	accountID string
 	channelID string
-	reqBody *ServiceChannelRunMetaflowData
+	reqBody *ServiceVOIPChannelRunMetaflowData
 }
 
 // payload fields
-func (r ApiV1AccountAccountIDChannelChannelIDPutRequest) ReqBody(reqBody ServiceChannelRunMetaflowData) ApiV1AccountAccountIDChannelChannelIDPutRequest {
+func (r ApiV1AccountAccountIDChannelChannelIDPutRequest) ReqBody(reqBody ServiceVOIPChannelRunMetaflowData) ApiV1AccountAccountIDChannelChannelIDPutRequest {
 	r.reqBody = &reqBody
 	return r
 }
@@ -447,7 +447,7 @@ type ApiV1AccountAccountIDChannelGetRequest struct {
 	accountID string
 }
 
-func (r ApiV1AccountAccountIDChannelGetRequest) Execute() (*ServiceDocsChannelGet, *http.Response, error) {
+func (r ApiV1AccountAccountIDChannelGetRequest) Execute() (*ServiceDocsChannelGetAll, *http.Response, error) {
 	return r.ApiService.V1AccountAccountIDChannelGetExecute(r)
 }
 
@@ -469,13 +469,13 @@ func (a *ChannelAPIService) V1AccountAccountIDChannelGet(ctx context.Context, ac
 }
 
 // Execute executes the request
-//  @return ServiceDocsChannelGet
-func (a *ChannelAPIService) V1AccountAccountIDChannelGetExecute(r ApiV1AccountAccountIDChannelGetRequest) (*ServiceDocsChannelGet, *http.Response, error) {
+//  @return ServiceDocsChannelGetAll
+func (a *ChannelAPIService) V1AccountAccountIDChannelGetExecute(r ApiV1AccountAccountIDChannelGetRequest) (*ServiceDocsChannelGetAll, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ServiceDocsChannelGet
+		localVarReturnValue  *ServiceDocsChannelGetAll
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChannelAPIService.V1AccountAccountIDChannelGet")
@@ -575,7 +575,7 @@ type ApiV1AccountAccountIDDeviceDeviceIDChannelGetRequest struct {
 	deviceID string
 }
 
-func (r ApiV1AccountAccountIDDeviceDeviceIDChannelGetRequest) Execute() (*ServiceDocsChannelGet, *http.Response, error) {
+func (r ApiV1AccountAccountIDDeviceDeviceIDChannelGetRequest) Execute() (*ServiceDocsChannelGetAll, *http.Response, error) {
 	return r.ApiService.V1AccountAccountIDDeviceDeviceIDChannelGetExecute(r)
 }
 
@@ -599,13 +599,13 @@ func (a *ChannelAPIService) V1AccountAccountIDDeviceDeviceIDChannelGet(ctx conte
 }
 
 // Execute executes the request
-//  @return ServiceDocsChannelGet
-func (a *ChannelAPIService) V1AccountAccountIDDeviceDeviceIDChannelGetExecute(r ApiV1AccountAccountIDDeviceDeviceIDChannelGetRequest) (*ServiceDocsChannelGet, *http.Response, error) {
+//  @return ServiceDocsChannelGetAll
+func (a *ChannelAPIService) V1AccountAccountIDDeviceDeviceIDChannelGetExecute(r ApiV1AccountAccountIDDeviceDeviceIDChannelGetRequest) (*ServiceDocsChannelGetAll, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ServiceDocsChannelGet
+		localVarReturnValue  *ServiceDocsChannelGetAll
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChannelAPIService.V1AccountAccountIDDeviceDeviceIDChannelGet")
@@ -706,7 +706,7 @@ type ApiV1AccountAccountIDUserUserIDChannelGetRequest struct {
 	userID string
 }
 
-func (r ApiV1AccountAccountIDUserUserIDChannelGetRequest) Execute() (*ServiceDocsChannelGet, *http.Response, error) {
+func (r ApiV1AccountAccountIDUserUserIDChannelGetRequest) Execute() (*ServiceDocsChannelGetAll, *http.Response, error) {
 	return r.ApiService.V1AccountAccountIDUserUserIDChannelGetExecute(r)
 }
 
@@ -730,13 +730,13 @@ func (a *ChannelAPIService) V1AccountAccountIDUserUserIDChannelGet(ctx context.C
 }
 
 // Execute executes the request
-//  @return ServiceDocsChannelGet
-func (a *ChannelAPIService) V1AccountAccountIDUserUserIDChannelGetExecute(r ApiV1AccountAccountIDUserUserIDChannelGetRequest) (*ServiceDocsChannelGet, *http.Response, error) {
+//  @return ServiceDocsChannelGetAll
+func (a *ChannelAPIService) V1AccountAccountIDUserUserIDChannelGetExecute(r ApiV1AccountAccountIDUserUserIDChannelGetRequest) (*ServiceDocsChannelGetAll, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ServiceDocsChannelGet
+		localVarReturnValue  *ServiceDocsChannelGetAll
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChannelAPIService.V1AccountAccountIDUserUserIDChannelGet")

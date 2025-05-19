@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CallForward** | Pointer to [**ServiceCallForward**](ServiceCallForward.md) |  | [optional] 
-**CallRecording** | Pointer to [**ServiceCallRecordingSettings**](ServiceCallRecordingSettings.md) |  | [optional] 
-**CallerId** | Pointer to [**ServiceUserOutputFullCallerid**](ServiceUserOutputFullCallerid.md) |  | [optional] 
-**DoNotDisturb** | Pointer to [**ServiceVOIPSharedDoNotDisturb**](ServiceVOIPSharedDoNotDisturb.md) |  | [optional] 
+**CallForward** | Pointer to [**ModelsCallForward**](ModelsCallForward.md) |  | [optional] 
+**CallRecording** | Pointer to [**ModelsCallRecordingSettings**](ModelsCallRecordingSettings.md) |  | [optional] 
+**CallerId** | Pointer to [**ModelsUserOutputFullCallerid**](ModelsUserOutputFullCallerid.md) |  | [optional] 
+**DoNotDisturb** | Pointer to [**ModelsVOIPSharedDoNotDisturb**](ModelsVOIPSharedDoNotDisturb.md) |  | [optional] 
 **Email** | **string** |  | 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **FirstName** | **string** |  | 
 **LastName** | **string** |  | 
-**MusicOnHold** | Pointer to [**ServiceMusicOnHold**](ServiceMusicOnHold.md) |  | [optional] 
+**MusicOnHold** | Pointer to [**ModelsMusicOnHold**](ModelsMusicOnHold.md) |  | [optional] 
 **PresenceId** | Pointer to **string** |  | [optional] 
 **Timezone** | Pointer to **string** |  | [optional] 
 **Verified** | Pointer to **bool** |  | [optional] 
@@ -38,20 +38,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetCallForward
 
-`func (o *ServiceVOIPUserAdd2) GetCallForward() ServiceCallForward`
+`func (o *ServiceVOIPUserAdd2) GetCallForward() ModelsCallForward`
 
 GetCallForward returns the CallForward field if non-nil, zero value otherwise.
 
 ### GetCallForwardOk
 
-`func (o *ServiceVOIPUserAdd2) GetCallForwardOk() (*ServiceCallForward, bool)`
+`func (o *ServiceVOIPUserAdd2) GetCallForwardOk() (*ModelsCallForward, bool)`
 
 GetCallForwardOk returns a tuple with the CallForward field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCallForward
 
-`func (o *ServiceVOIPUserAdd2) SetCallForward(v ServiceCallForward)`
+`func (o *ServiceVOIPUserAdd2) SetCallForward(v ModelsCallForward)`
 
 SetCallForward sets CallForward field to given value.
 
@@ -63,20 +63,20 @@ HasCallForward returns a boolean if a field has been set.
 
 ### GetCallRecording
 
-`func (o *ServiceVOIPUserAdd2) GetCallRecording() ServiceCallRecordingSettings`
+`func (o *ServiceVOIPUserAdd2) GetCallRecording() ModelsCallRecordingSettings`
 
 GetCallRecording returns the CallRecording field if non-nil, zero value otherwise.
 
 ### GetCallRecordingOk
 
-`func (o *ServiceVOIPUserAdd2) GetCallRecordingOk() (*ServiceCallRecordingSettings, bool)`
+`func (o *ServiceVOIPUserAdd2) GetCallRecordingOk() (*ModelsCallRecordingSettings, bool)`
 
 GetCallRecordingOk returns a tuple with the CallRecording field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCallRecording
 
-`func (o *ServiceVOIPUserAdd2) SetCallRecording(v ServiceCallRecordingSettings)`
+`func (o *ServiceVOIPUserAdd2) SetCallRecording(v ModelsCallRecordingSettings)`
 
 SetCallRecording sets CallRecording field to given value.
 
@@ -88,20 +88,20 @@ HasCallRecording returns a boolean if a field has been set.
 
 ### GetCallerId
 
-`func (o *ServiceVOIPUserAdd2) GetCallerId() ServiceUserOutputFullCallerid`
+`func (o *ServiceVOIPUserAdd2) GetCallerId() ModelsUserOutputFullCallerid`
 
 GetCallerId returns the CallerId field if non-nil, zero value otherwise.
 
 ### GetCallerIdOk
 
-`func (o *ServiceVOIPUserAdd2) GetCallerIdOk() (*ServiceUserOutputFullCallerid, bool)`
+`func (o *ServiceVOIPUserAdd2) GetCallerIdOk() (*ModelsUserOutputFullCallerid, bool)`
 
 GetCallerIdOk returns a tuple with the CallerId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCallerId
 
-`func (o *ServiceVOIPUserAdd2) SetCallerId(v ServiceUserOutputFullCallerid)`
+`func (o *ServiceVOIPUserAdd2) SetCallerId(v ModelsUserOutputFullCallerid)`
 
 SetCallerId sets CallerId field to given value.
 
@@ -113,20 +113,20 @@ HasCallerId returns a boolean if a field has been set.
 
 ### GetDoNotDisturb
 
-`func (o *ServiceVOIPUserAdd2) GetDoNotDisturb() ServiceVOIPSharedDoNotDisturb`
+`func (o *ServiceVOIPUserAdd2) GetDoNotDisturb() ModelsVOIPSharedDoNotDisturb`
 
 GetDoNotDisturb returns the DoNotDisturb field if non-nil, zero value otherwise.
 
 ### GetDoNotDisturbOk
 
-`func (o *ServiceVOIPUserAdd2) GetDoNotDisturbOk() (*ServiceVOIPSharedDoNotDisturb, bool)`
+`func (o *ServiceVOIPUserAdd2) GetDoNotDisturbOk() (*ModelsVOIPSharedDoNotDisturb, bool)`
 
 GetDoNotDisturbOk returns a tuple with the DoNotDisturb field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDoNotDisturb
 
-`func (o *ServiceVOIPUserAdd2) SetDoNotDisturb(v ServiceVOIPSharedDoNotDisturb)`
+`func (o *ServiceVOIPUserAdd2) SetDoNotDisturb(v ModelsVOIPSharedDoNotDisturb)`
 
 SetDoNotDisturb sets DoNotDisturb field to given value.
 
@@ -223,20 +223,20 @@ SetLastName sets LastName field to given value.
 
 ### GetMusicOnHold
 
-`func (o *ServiceVOIPUserAdd2) GetMusicOnHold() ServiceMusicOnHold`
+`func (o *ServiceVOIPUserAdd2) GetMusicOnHold() ModelsMusicOnHold`
 
 GetMusicOnHold returns the MusicOnHold field if non-nil, zero value otherwise.
 
 ### GetMusicOnHoldOk
 
-`func (o *ServiceVOIPUserAdd2) GetMusicOnHoldOk() (*ServiceMusicOnHold, bool)`
+`func (o *ServiceVOIPUserAdd2) GetMusicOnHoldOk() (*ModelsMusicOnHold, bool)`
 
 GetMusicOnHoldOk returns a tuple with the MusicOnHold field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMusicOnHold
 
-`func (o *ServiceVOIPUserAdd2) SetMusicOnHold(v ServiceMusicOnHold)`
+`func (o *ServiceVOIPUserAdd2) SetMusicOnHold(v ModelsMusicOnHold)`
 
 SetMusicOnHold sets MusicOnHold field to given value.
 

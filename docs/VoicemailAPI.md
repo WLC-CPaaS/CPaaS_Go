@@ -795,7 +795,7 @@ import (
 func main() {
 	accountID := "accountID_example" // string | account ID, 32 alphanumeric
 	voicemailID := "voicemailID_example" // string | voicemail ID, 32 alphanumeric
-	message := *openapiclient.NewServiceVOIPVoicemailMessageAddData() // ServiceVOIPVoicemailMessageAddData | voicemail message payload fields
+	message := *openapiclient.NewServiceVOIPVoicemailMessageAddData("Folder_example") // ServiceVOIPVoicemailMessageAddData | voicemail message payload fields
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

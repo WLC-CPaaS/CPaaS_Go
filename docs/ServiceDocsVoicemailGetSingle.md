@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**ServiceVoicemailOutput**](ServiceVoicemailOutput.md) |  | [optional] 
+**Data** | Pointer to [**ServiceVoicemailOutputFull**](ServiceVoicemailOutputFull.md) |  | [optional] 
 **RequestId** | Pointer to **string** | Unique id for each request | [optional] 
 **StatusCode** | Pointer to **int32** | HTTP response status code | [optional] 
 
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *ServiceDocsVoicemailGetSingle) GetData() ServiceVoicemailOutput`
+`func (o *ServiceDocsVoicemailGetSingle) GetData() ServiceVoicemailOutputFull`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *ServiceDocsVoicemailGetSingle) GetDataOk() (*ServiceVoicemailOutput, bool)`
+`func (o *ServiceDocsVoicemailGetSingle) GetDataOk() (*ServiceVoicemailOutputFull, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *ServiceDocsVoicemailGetSingle) SetData(v ServiceVoicemailOutput)`
+`func (o *ServiceDocsVoicemailGetSingle) SetData(v ServiceVoicemailOutputFull)`
 
 SetData sets Data field to given value.
 

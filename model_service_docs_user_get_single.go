@@ -20,7 +20,7 @@ var _ MappedNullable = &ServiceDocsUserGetSingle{}
 
 // ServiceDocsUserGetSingle struct for ServiceDocsUserGetSingle
 type ServiceDocsUserGetSingle struct {
-	Data *ServiceUserOutputFull `json:"data,omitempty"`
+	Data *ModelsUserOutputFull `json:"data,omitempty"`
 	// Unique id for each request
 	RequestId *string `json:"request_id,omitempty"`
 	// HTTP response status code
@@ -45,9 +45,9 @@ func NewServiceDocsUserGetSingleWithDefaults() *ServiceDocsUserGetSingle {
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *ServiceDocsUserGetSingle) GetData() ServiceUserOutputFull {
+func (o *ServiceDocsUserGetSingle) GetData() ModelsUserOutputFull {
 	if o == nil || IsNil(o.Data) {
-		var ret ServiceUserOutputFull
+		var ret ModelsUserOutputFull
 		return ret
 	}
 	return *o.Data
@@ -55,7 +55,7 @@ func (o *ServiceDocsUserGetSingle) GetData() ServiceUserOutputFull {
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ServiceDocsUserGetSingle) GetDataOk() (*ServiceUserOutputFull, bool) {
+func (o *ServiceDocsUserGetSingle) GetDataOk() (*ModelsUserOutputFull, bool) {
 	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
@@ -71,8 +71,8 @@ func (o *ServiceDocsUserGetSingle) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given ServiceUserOutputFull and assigns it to the Data field.
-func (o *ServiceDocsUserGetSingle) SetData(v ServiceUserOutputFull) {
+// SetData gets a reference to the given ModelsUserOutputFull and assigns it to the Data field.
+func (o *ServiceDocsUserGetSingle) SetData(v ModelsUserOutputFull) {
 	o.Data = &v
 }
 

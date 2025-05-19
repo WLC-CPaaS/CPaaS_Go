@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**ServiceVoicemailOutputShort**](ServiceVoicemailOutputShort.md) |  | [optional] 
+**Data** | Pointer to [**[]ServiceVoicemailOutputShort**](ServiceVoicemailOutputShort.md) |  | [optional] 
 **NextStartKey** | Pointer to **string** | List Pagination: Used to get the next page of results. Will not exist if this is the last page. | [optional] 
 **PageSize** | Pointer to **int32** | List Pagination: The number of results returned in this page | [optional] 
 **RequestId** | Pointer to **string** | Unique id for each request | [optional] 
@@ -32,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *ServiceDocsVoicemailGetAll) GetData() ServiceVoicemailOutputShort`
+`func (o *ServiceDocsVoicemailGetAll) GetData() []ServiceVoicemailOutputShort`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *ServiceDocsVoicemailGetAll) GetDataOk() (*ServiceVoicemailOutputShort, bool)`
+`func (o *ServiceDocsVoicemailGetAll) GetDataOk() (*[]ServiceVoicemailOutputShort, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *ServiceDocsVoicemailGetAll) SetData(v ServiceVoicemailOutputShort)`
+`func (o *ServiceDocsVoicemailGetAll) SetData(v []ServiceVoicemailOutputShort)`
 
 SetData sets Data field to given value.
 

@@ -13,6 +13,8 @@ package openapi
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the ServiceVOIPVoicemailMessageAddData type satisfies the MappedNullable interface at compile time
@@ -22,17 +24,20 @@ var _ MappedNullable = &ServiceVOIPVoicemailMessageAddData{}
 type ServiceVOIPVoicemailMessageAddData struct {
 	CallerIdName *string `json:"caller_id_name,omitempty"`
 	CallerIdNumber *string `json:"caller_id_number,omitempty"`
-	Folder *string `json:"folder,omitempty"`
+	Folder string `json:"folder"`
 	From *string `json:"from,omitempty"`
 	To *string `json:"to,omitempty"`
 }
+
+type _ServiceVOIPVoicemailMessageAddData ServiceVOIPVoicemailMessageAddData
 
 // NewServiceVOIPVoicemailMessageAddData instantiates a new ServiceVOIPVoicemailMessageAddData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewServiceVOIPVoicemailMessageAddData() *ServiceVOIPVoicemailMessageAddData {
+func NewServiceVOIPVoicemailMessageAddData(folder string) *ServiceVOIPVoicemailMessageAddData {
 	this := ServiceVOIPVoicemailMessageAddData{}
+	this.Folder = folder
 	return &this
 }
 
@@ -108,36 +113,28 @@ func (o *ServiceVOIPVoicemailMessageAddData) SetCallerIdNumber(v string) {
 	o.CallerIdNumber = &v
 }
 
-// GetFolder returns the Folder field value if set, zero value otherwise.
+// GetFolder returns the Folder field value
 func (o *ServiceVOIPVoicemailMessageAddData) GetFolder() string {
-	if o == nil || IsNil(o.Folder) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Folder
+
+	return o.Folder
 }
 
-// GetFolderOk returns a tuple with the Folder field value if set, nil otherwise
+// GetFolderOk returns a tuple with the Folder field value
 // and a boolean to check if the value has been set.
 func (o *ServiceVOIPVoicemailMessageAddData) GetFolderOk() (*string, bool) {
-	if o == nil || IsNil(o.Folder) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Folder, true
+	return &o.Folder, true
 }
 
-// HasFolder returns a boolean if a field has been set.
-func (o *ServiceVOIPVoicemailMessageAddData) HasFolder() bool {
-	if o != nil && !IsNil(o.Folder) {
-		return true
-	}
-
-	return false
-}
-
-// SetFolder gets a reference to the given string and assigns it to the Folder field.
+// SetFolder sets field value
 func (o *ServiceVOIPVoicemailMessageAddData) SetFolder(v string) {
-	o.Folder = &v
+	o.Folder = v
 }
 
 // GetFrom returns the From field value if set, zero value otherwise.
@@ -220,9 +217,7 @@ func (o ServiceVOIPVoicemailMessageAddData) ToMap() (map[string]interface{}, err
 	if !IsNil(o.CallerIdNumber) {
 		toSerialize["caller_id_number"] = o.CallerIdNumber
 	}
-	if !IsNil(o.Folder) {
-		toSerialize["folder"] = o.Folder
-	}
+	toSerialize["folder"] = o.Folder
 	if !IsNil(o.From) {
 		toSerialize["from"] = o.From
 	}
@@ -230,6 +225,43 @@ func (o ServiceVOIPVoicemailMessageAddData) ToMap() (map[string]interface{}, err
 		toSerialize["to"] = o.To
 	}
 	return toSerialize, nil
+}
+
+func (o *ServiceVOIPVoicemailMessageAddData) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"folder",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varServiceVOIPVoicemailMessageAddData := _ServiceVOIPVoicemailMessageAddData{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varServiceVOIPVoicemailMessageAddData)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ServiceVOIPVoicemailMessageAddData(varServiceVOIPVoicemailMessageAddData)
+
+	return err
 }
 
 type NullableServiceVOIPVoicemailMessageAddData struct {

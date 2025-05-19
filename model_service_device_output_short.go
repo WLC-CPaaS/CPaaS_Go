@@ -20,9 +20,8 @@ var _ MappedNullable = &ServiceDeviceOutputShort{}
 
 // ServiceDeviceOutputShort struct for ServiceDeviceOutputShort
 type ServiceDeviceOutputShort struct {
-	CallRecording *ServiceCallRecordingSettings `json:"call_recording,omitempty"`
 	DeviceType *string `json:"device_type,omitempty"`
-	DoNotDisturb *ServiceVOIPSharedDoNotDisturb `json:"do_not_disturb,omitempty"`
+	DoNotDisturb *ModelsVOIPSharedDoNotDisturb `json:"do_not_disturb,omitempty"`
 	Enabled *bool `json:"enabled,omitempty"`
 	Features []string `json:"features,omitempty"`
 	Flags []string `json:"flags,omitempty"`
@@ -47,38 +46,6 @@ func NewServiceDeviceOutputShort() *ServiceDeviceOutputShort {
 func NewServiceDeviceOutputShortWithDefaults() *ServiceDeviceOutputShort {
 	this := ServiceDeviceOutputShort{}
 	return &this
-}
-
-// GetCallRecording returns the CallRecording field value if set, zero value otherwise.
-func (o *ServiceDeviceOutputShort) GetCallRecording() ServiceCallRecordingSettings {
-	if o == nil || IsNil(o.CallRecording) {
-		var ret ServiceCallRecordingSettings
-		return ret
-	}
-	return *o.CallRecording
-}
-
-// GetCallRecordingOk returns a tuple with the CallRecording field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ServiceDeviceOutputShort) GetCallRecordingOk() (*ServiceCallRecordingSettings, bool) {
-	if o == nil || IsNil(o.CallRecording) {
-		return nil, false
-	}
-	return o.CallRecording, true
-}
-
-// HasCallRecording returns a boolean if a field has been set.
-func (o *ServiceDeviceOutputShort) HasCallRecording() bool {
-	if o != nil && !IsNil(o.CallRecording) {
-		return true
-	}
-
-	return false
-}
-
-// SetCallRecording gets a reference to the given ServiceCallRecordingSettings and assigns it to the CallRecording field.
-func (o *ServiceDeviceOutputShort) SetCallRecording(v ServiceCallRecordingSettings) {
-	o.CallRecording = &v
 }
 
 // GetDeviceType returns the DeviceType field value if set, zero value otherwise.
@@ -114,9 +81,9 @@ func (o *ServiceDeviceOutputShort) SetDeviceType(v string) {
 }
 
 // GetDoNotDisturb returns the DoNotDisturb field value if set, zero value otherwise.
-func (o *ServiceDeviceOutputShort) GetDoNotDisturb() ServiceVOIPSharedDoNotDisturb {
+func (o *ServiceDeviceOutputShort) GetDoNotDisturb() ModelsVOIPSharedDoNotDisturb {
 	if o == nil || IsNil(o.DoNotDisturb) {
-		var ret ServiceVOIPSharedDoNotDisturb
+		var ret ModelsVOIPSharedDoNotDisturb
 		return ret
 	}
 	return *o.DoNotDisturb
@@ -124,7 +91,7 @@ func (o *ServiceDeviceOutputShort) GetDoNotDisturb() ServiceVOIPSharedDoNotDistu
 
 // GetDoNotDisturbOk returns a tuple with the DoNotDisturb field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ServiceDeviceOutputShort) GetDoNotDisturbOk() (*ServiceVOIPSharedDoNotDisturb, bool) {
+func (o *ServiceDeviceOutputShort) GetDoNotDisturbOk() (*ModelsVOIPSharedDoNotDisturb, bool) {
 	if o == nil || IsNil(o.DoNotDisturb) {
 		return nil, false
 	}
@@ -140,8 +107,8 @@ func (o *ServiceDeviceOutputShort) HasDoNotDisturb() bool {
 	return false
 }
 
-// SetDoNotDisturb gets a reference to the given ServiceVOIPSharedDoNotDisturb and assigns it to the DoNotDisturb field.
-func (o *ServiceDeviceOutputShort) SetDoNotDisturb(v ServiceVOIPSharedDoNotDisturb) {
+// SetDoNotDisturb gets a reference to the given ModelsVOIPSharedDoNotDisturb and assigns it to the DoNotDisturb field.
+func (o *ServiceDeviceOutputShort) SetDoNotDisturb(v ModelsVOIPSharedDoNotDisturb) {
 	o.DoNotDisturb = &v
 }
 
@@ -379,9 +346,6 @@ func (o ServiceDeviceOutputShort) MarshalJSON() ([]byte, error) {
 
 func (o ServiceDeviceOutputShort) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.CallRecording) {
-		toSerialize["call_recording"] = o.CallRecording
-	}
 	if !IsNil(o.DeviceType) {
 		toSerialize["device_type"] = o.DeviceType
 	}

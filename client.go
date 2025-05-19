@@ -66,6 +66,8 @@ type APIClient struct {
 
 	CallflowAPI *CallflowAPIService
 
+	CdrAPI *CdrAPIService
+
 	ChannelAPI *ChannelAPIService
 
 	DataAPI *DataAPIService
@@ -127,6 +129,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.CallQueueRecipientAPI = (*CallQueueRecipientAPIService)(&c.common)
 	c.CallRecordingAPI = (*CallRecordingAPIService)(&c.common)
 	c.CallflowAPI = (*CallflowAPIService)(&c.common)
+	c.CdrAPI = (*CdrAPIService)(&c.common)
 	c.ChannelAPI = (*ChannelAPIService)(&c.common)
 	c.DataAPI = (*DataAPIService)(&c.common)
 	c.DeviceAPI = (*DeviceAPIService)(&c.common)
@@ -203,6 +206,10 @@ func typeCheckParameter(obj interface{}, expected string, name string) error {
 
 func parameterValueToString( obj interface{}, key string ) string {
 	if reflect.TypeOf(obj).Kind() != reflect.Ptr {
+		if actualObj, ok := obj.(interface{ GetActualInstanceValue() interface{} }); ok {
+			return fmt.Sprintf("%v", actualObj.GetActualInstanceValue())
+		}
+
 		return fmt.Sprintf("%v", obj)
 	}
 	var param,ok = obj.(MappedNullable)
