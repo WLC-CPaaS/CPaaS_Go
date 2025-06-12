@@ -31,7 +31,7 @@ type ApiV1AccountAccountIDDeviceDeviceIDMetaflowDeleteRequest struct {
 	deviceID string
 }
 
-func (r ApiV1AccountAccountIDDeviceDeviceIDMetaflowDeleteRequest) Execute() (*ServiceDocMetaflowGet, *http.Response, error) {
+func (r ApiV1AccountAccountIDDeviceDeviceIDMetaflowDeleteRequest) Execute() (*ServiceDocsMetaflowGet, *http.Response, error) {
 	return r.ApiService.V1AccountAccountIDDeviceDeviceIDMetaflowDeleteExecute(r)
 }
 
@@ -55,13 +55,13 @@ func (a *MetaflowAPIService) V1AccountAccountIDDeviceDeviceIDMetaflowDelete(ctx 
 }
 
 // Execute executes the request
-//  @return ServiceDocMetaflowGet
-func (a *MetaflowAPIService) V1AccountAccountIDDeviceDeviceIDMetaflowDeleteExecute(r ApiV1AccountAccountIDDeviceDeviceIDMetaflowDeleteRequest) (*ServiceDocMetaflowGet, *http.Response, error) {
+//  @return ServiceDocsMetaflowGet
+func (a *MetaflowAPIService) V1AccountAccountIDDeviceDeviceIDMetaflowDeleteExecute(r ApiV1AccountAccountIDDeviceDeviceIDMetaflowDeleteRequest) (*ServiceDocsMetaflowGet, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ServiceDocMetaflowGet
+		localVarReturnValue  *ServiceDocsMetaflowGet
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetaflowAPIService.V1AccountAccountIDDeviceDeviceIDMetaflowDelete")
@@ -162,7 +162,7 @@ type ApiV1AccountAccountIDDeviceDeviceIDMetaflowGetRequest struct {
 	deviceID string
 }
 
-func (r ApiV1AccountAccountIDDeviceDeviceIDMetaflowGetRequest) Execute() (*ServiceDocMetaflowGet, *http.Response, error) {
+func (r ApiV1AccountAccountIDDeviceDeviceIDMetaflowGetRequest) Execute() (*ServiceDocsMetaflowGet, *http.Response, error) {
 	return r.ApiService.V1AccountAccountIDDeviceDeviceIDMetaflowGetExecute(r)
 }
 
@@ -186,13 +186,13 @@ func (a *MetaflowAPIService) V1AccountAccountIDDeviceDeviceIDMetaflowGet(ctx con
 }
 
 // Execute executes the request
-//  @return ServiceDocMetaflowGet
-func (a *MetaflowAPIService) V1AccountAccountIDDeviceDeviceIDMetaflowGetExecute(r ApiV1AccountAccountIDDeviceDeviceIDMetaflowGetRequest) (*ServiceDocMetaflowGet, *http.Response, error) {
+//  @return ServiceDocsMetaflowGet
+func (a *MetaflowAPIService) V1AccountAccountIDDeviceDeviceIDMetaflowGetExecute(r ApiV1AccountAccountIDDeviceDeviceIDMetaflowGetRequest) (*ServiceDocsMetaflowGet, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ServiceDocMetaflowGet
+		localVarReturnValue  *ServiceDocsMetaflowGet
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetaflowAPIService.V1AccountAccountIDDeviceDeviceIDMetaflowGet")
@@ -300,7 +300,7 @@ func (r ApiV1AccountAccountIDDeviceDeviceIDMetaflowPostRequest) ReqBody(reqBody 
 	return r
 }
 
-func (r ApiV1AccountAccountIDDeviceDeviceIDMetaflowPostRequest) Execute() (*ServiceDocMetaflowGet, *http.Response, error) {
+func (r ApiV1AccountAccountIDDeviceDeviceIDMetaflowPostRequest) Execute() (*ServiceDocsMetaflowGet, *http.Response, error) {
 	return r.ApiService.V1AccountAccountIDDeviceDeviceIDMetaflowPostExecute(r)
 }
 
@@ -324,13 +324,13 @@ func (a *MetaflowAPIService) V1AccountAccountIDDeviceDeviceIDMetaflowPost(ctx co
 }
 
 // Execute executes the request
-//  @return ServiceDocMetaflowGet
-func (a *MetaflowAPIService) V1AccountAccountIDDeviceDeviceIDMetaflowPostExecute(r ApiV1AccountAccountIDDeviceDeviceIDMetaflowPostRequest) (*ServiceDocMetaflowGet, *http.Response, error) {
+//  @return ServiceDocsMetaflowGet
+func (a *MetaflowAPIService) V1AccountAccountIDDeviceDeviceIDMetaflowPostExecute(r ApiV1AccountAccountIDDeviceDeviceIDMetaflowPostRequest) (*ServiceDocsMetaflowGet, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ServiceDocMetaflowGet
+		localVarReturnValue  *ServiceDocsMetaflowGet
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetaflowAPIService.V1AccountAccountIDDeviceDeviceIDMetaflowPost")
@@ -435,7 +435,7 @@ type ApiV1AccountAccountIDMetaflowDeleteRequest struct {
 	accountID string
 }
 
-func (r ApiV1AccountAccountIDMetaflowDeleteRequest) Execute() (*ServiceDocMetaflowGet, *http.Response, error) {
+func (r ApiV1AccountAccountIDMetaflowDeleteRequest) Execute() (*ServiceDocsMetaflowGet, *http.Response, error) {
 	return r.ApiService.V1AccountAccountIDMetaflowDeleteExecute(r)
 }
 
@@ -457,13 +457,13 @@ func (a *MetaflowAPIService) V1AccountAccountIDMetaflowDelete(ctx context.Contex
 }
 
 // Execute executes the request
-//  @return ServiceDocMetaflowGet
-func (a *MetaflowAPIService) V1AccountAccountIDMetaflowDeleteExecute(r ApiV1AccountAccountIDMetaflowDeleteRequest) (*ServiceDocMetaflowGet, *http.Response, error) {
+//  @return ServiceDocsMetaflowGet
+func (a *MetaflowAPIService) V1AccountAccountIDMetaflowDeleteExecute(r ApiV1AccountAccountIDMetaflowDeleteRequest) (*ServiceDocsMetaflowGet, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ServiceDocMetaflowGet
+		localVarReturnValue  *ServiceDocsMetaflowGet
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetaflowAPIService.V1AccountAccountIDMetaflowDelete")
@@ -562,7 +562,7 @@ type ApiV1AccountAccountIDMetaflowGetRequest struct {
 	accountID string
 }
 
-func (r ApiV1AccountAccountIDMetaflowGetRequest) Execute() (*ServiceDocMetaflowGet, *http.Response, error) {
+func (r ApiV1AccountAccountIDMetaflowGetRequest) Execute() (*ServiceDocsMetaflowGet, *http.Response, error) {
 	return r.ApiService.V1AccountAccountIDMetaflowGetExecute(r)
 }
 
@@ -584,13 +584,13 @@ func (a *MetaflowAPIService) V1AccountAccountIDMetaflowGet(ctx context.Context, 
 }
 
 // Execute executes the request
-//  @return ServiceDocMetaflowGet
-func (a *MetaflowAPIService) V1AccountAccountIDMetaflowGetExecute(r ApiV1AccountAccountIDMetaflowGetRequest) (*ServiceDocMetaflowGet, *http.Response, error) {
+//  @return ServiceDocsMetaflowGet
+func (a *MetaflowAPIService) V1AccountAccountIDMetaflowGetExecute(r ApiV1AccountAccountIDMetaflowGetRequest) (*ServiceDocsMetaflowGet, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ServiceDocMetaflowGet
+		localVarReturnValue  *ServiceDocsMetaflowGet
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetaflowAPIService.V1AccountAccountIDMetaflowGet")
@@ -696,7 +696,7 @@ func (r ApiV1AccountAccountIDMetaflowPostRequest) Metaflow(metaflow ServiceVOIPM
 	return r
 }
 
-func (r ApiV1AccountAccountIDMetaflowPostRequest) Execute() (*ServiceDocMetaflowGet, *http.Response, error) {
+func (r ApiV1AccountAccountIDMetaflowPostRequest) Execute() (*ServiceDocsMetaflowGet, *http.Response, error) {
 	return r.ApiService.V1AccountAccountIDMetaflowPostExecute(r)
 }
 
@@ -718,13 +718,13 @@ func (a *MetaflowAPIService) V1AccountAccountIDMetaflowPost(ctx context.Context,
 }
 
 // Execute executes the request
-//  @return ServiceDocMetaflowGet
-func (a *MetaflowAPIService) V1AccountAccountIDMetaflowPostExecute(r ApiV1AccountAccountIDMetaflowPostRequest) (*ServiceDocMetaflowGet, *http.Response, error) {
+//  @return ServiceDocsMetaflowGet
+func (a *MetaflowAPIService) V1AccountAccountIDMetaflowPostExecute(r ApiV1AccountAccountIDMetaflowPostRequest) (*ServiceDocsMetaflowGet, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ServiceDocMetaflowGet
+		localVarReturnValue  *ServiceDocsMetaflowGet
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetaflowAPIService.V1AccountAccountIDMetaflowPost")
@@ -829,7 +829,7 @@ type ApiV1AccountAccountIDUserUserIDMetaflowDeleteRequest struct {
 	userID string
 }
 
-func (r ApiV1AccountAccountIDUserUserIDMetaflowDeleteRequest) Execute() (*ServiceDocMetaflowGet, *http.Response, error) {
+func (r ApiV1AccountAccountIDUserUserIDMetaflowDeleteRequest) Execute() (*ServiceDocsMetaflowGet, *http.Response, error) {
 	return r.ApiService.V1AccountAccountIDUserUserIDMetaflowDeleteExecute(r)
 }
 
@@ -853,13 +853,13 @@ func (a *MetaflowAPIService) V1AccountAccountIDUserUserIDMetaflowDelete(ctx cont
 }
 
 // Execute executes the request
-//  @return ServiceDocMetaflowGet
-func (a *MetaflowAPIService) V1AccountAccountIDUserUserIDMetaflowDeleteExecute(r ApiV1AccountAccountIDUserUserIDMetaflowDeleteRequest) (*ServiceDocMetaflowGet, *http.Response, error) {
+//  @return ServiceDocsMetaflowGet
+func (a *MetaflowAPIService) V1AccountAccountIDUserUserIDMetaflowDeleteExecute(r ApiV1AccountAccountIDUserUserIDMetaflowDeleteRequest) (*ServiceDocsMetaflowGet, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ServiceDocMetaflowGet
+		localVarReturnValue  *ServiceDocsMetaflowGet
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetaflowAPIService.V1AccountAccountIDUserUserIDMetaflowDelete")
@@ -960,7 +960,7 @@ type ApiV1AccountAccountIDUserUserIDMetaflowGetRequest struct {
 	userID string
 }
 
-func (r ApiV1AccountAccountIDUserUserIDMetaflowGetRequest) Execute() (*ServiceDocMetaflowGet, *http.Response, error) {
+func (r ApiV1AccountAccountIDUserUserIDMetaflowGetRequest) Execute() (*ServiceDocsMetaflowGet, *http.Response, error) {
 	return r.ApiService.V1AccountAccountIDUserUserIDMetaflowGetExecute(r)
 }
 
@@ -984,13 +984,13 @@ func (a *MetaflowAPIService) V1AccountAccountIDUserUserIDMetaflowGet(ctx context
 }
 
 // Execute executes the request
-//  @return ServiceDocMetaflowGet
-func (a *MetaflowAPIService) V1AccountAccountIDUserUserIDMetaflowGetExecute(r ApiV1AccountAccountIDUserUserIDMetaflowGetRequest) (*ServiceDocMetaflowGet, *http.Response, error) {
+//  @return ServiceDocsMetaflowGet
+func (a *MetaflowAPIService) V1AccountAccountIDUserUserIDMetaflowGetExecute(r ApiV1AccountAccountIDUserUserIDMetaflowGetRequest) (*ServiceDocsMetaflowGet, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ServiceDocMetaflowGet
+		localVarReturnValue  *ServiceDocsMetaflowGet
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetaflowAPIService.V1AccountAccountIDUserUserIDMetaflowGet")
@@ -1098,7 +1098,7 @@ func (r ApiV1AccountAccountIDUserUserIDMetaflowPostRequest) ReqBody(reqBody Serv
 	return r
 }
 
-func (r ApiV1AccountAccountIDUserUserIDMetaflowPostRequest) Execute() (*ServiceDocMetaflowGet, *http.Response, error) {
+func (r ApiV1AccountAccountIDUserUserIDMetaflowPostRequest) Execute() (*ServiceDocsMetaflowGet, *http.Response, error) {
 	return r.ApiService.V1AccountAccountIDUserUserIDMetaflowPostExecute(r)
 }
 
@@ -1122,13 +1122,13 @@ func (a *MetaflowAPIService) V1AccountAccountIDUserUserIDMetaflowPost(ctx contex
 }
 
 // Execute executes the request
-//  @return ServiceDocMetaflowGet
-func (a *MetaflowAPIService) V1AccountAccountIDUserUserIDMetaflowPostExecute(r ApiV1AccountAccountIDUserUserIDMetaflowPostRequest) (*ServiceDocMetaflowGet, *http.Response, error) {
+//  @return ServiceDocsMetaflowGet
+func (a *MetaflowAPIService) V1AccountAccountIDUserUserIDMetaflowPostExecute(r ApiV1AccountAccountIDUserUserIDMetaflowPostRequest) (*ServiceDocsMetaflowGet, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ServiceDocMetaflowGet
+		localVarReturnValue  *ServiceDocsMetaflowGet
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetaflowAPIService.V1AccountAccountIDUserUserIDMetaflowPost")

@@ -8,7 +8,7 @@ info:
   title: White Label Communications CPaas API Documentation
   version: "1.1"
 servers:
-- url: //api.cpaaslabs.net/
+- url: //API_HOSTNAME/
 paths:
   /v1/account:
     get:
@@ -648,13 +648,11 @@ paths:
       - description: Page size (Maximum number of results to display per page)
         in: query
         name: page_size
-        required: true
         schema:
           type: string
       - description: Start key (Starting offset for displaying results)
         in: query
         name: start_key
-        required: true
         schema:
           type: string
       - description: "For displaying records which are created on or after this timestamp\
@@ -662,7 +660,6 @@ paths:
           \ or microseconds or nanoseconds)"
         in: query
         name: created_from
-        required: true
         schema:
           type: string
       - description: "For displaying records which are created on or before this timestamp\
@@ -670,7 +667,6 @@ paths:
           \ or microseconds or nanoseconds)"
         in: query
         name: created_to
-        required: true
         schema:
           type: string
       responses:
@@ -688,8 +684,9 @@ paths:
           description: Bad Request
       security:
       - BearerAuth: []
+      summary: Get CDR List
       tags:
-      - cdr
+      - Data
   /v1/account/{accountID}/cdr/{cdrID}:
     get:
       description: Retrieve the details of a single CDR record from an account.
@@ -721,8 +718,9 @@ paths:
           description: Bad Request
       security:
       - BearerAuth: []
+      summary: Get CDR Details
       tags:
-      - cdr
+      - Data
   /v1/account/{accountID}/channel:
     get:
       description: Get a list of active channels for an account.
@@ -922,7 +920,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/service.DocMetaflowGet'
+                $ref: '#/components/schemas/service.DocsMetaflowGet'
           description: OK
         "400":
           content:
@@ -955,7 +953,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/service.DocMetaflowGet'
+                $ref: '#/components/schemas/service.DocsMetaflowGet'
           description: OK
         "400":
           content:
@@ -995,7 +993,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/service.DocMetaflowGet'
+                $ref: '#/components/schemas/service.DocsMetaflowGet'
           description: OK
         "400":
           content:
@@ -1593,7 +1591,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/service.DocMetaflowGet'
+                $ref: '#/components/schemas/service.DocsMetaflowGet'
           description: OK
         "400":
           content:
@@ -1620,7 +1618,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/service.DocMetaflowGet'
+                $ref: '#/components/schemas/service.DocsMetaflowGet'
           description: OK
         "400":
           content:
@@ -1654,7 +1652,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/service.DocMetaflowGet'
+                $ref: '#/components/schemas/service.DocsMetaflowGet'
           description: OK
         "400":
           content:
@@ -1766,6 +1764,41 @@ paths:
       tags:
       - Presence
       x-codegen-request-body-name: reqBody
+  /v1/account/{accountID}/provision/{filename}:
+    get:
+      description: "Retrieve the configuration details (e.g., settings and parameters)\
+        \ for a device."
+      parameters:
+      - description: "Account ID, 32 alpha numeric"
+        in: path
+        name: accountID
+        required: true
+        schema:
+          type: string
+      - description: Name of config file
+        in: path
+        name: filename
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                format: binary
+                type: string
+          description: OK
+        "400":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/CPAASError'
+          description: Bad Request
+      security:
+      - BasicAuth: []
+      tags:
+      - provision
   /v1/account/{accountID}/queuemembership:
     post:
       description: Allow users to create queue memberships for recipients.
@@ -2691,7 +2724,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/service.DocMetaflowGet'
+                $ref: '#/components/schemas/service.DocsMetaflowGet'
           description: OK
         "400":
           content:
@@ -2724,7 +2757,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/service.DocMetaflowGet'
+                $ref: '#/components/schemas/service.DocsMetaflowGet'
           description: OK
         "400":
           content:
@@ -2764,7 +2797,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/service.DocMetaflowGet'
+                $ref: '#/components/schemas/service.DocsMetaflowGet'
           description: OK
         "400":
           content:
@@ -3584,6 +3617,35 @@ paths:
       tags:
       - Device
       x-codegen-request-body-name: device
+  /v1/account/{accountid}/device/status:
+    get:
+      description: "Retrieve a device’s status (e.g., registered or not registered)\
+        \ in an account."
+      parameters:
+      - description: "Account ID, 32 alpha numeric"
+        in: path
+        name: accountid
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/service.DocsDeviceStatus'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CPAASError'
+          description: Bad Request
+      security:
+      - BearerAuth: []
+      summary: Get Device Status
+      tags:
+      - Device
   /v1/account/{accountid}/device/{deviceid}:
     delete:
       description: Remove one device from a CPaaS account.
@@ -3695,7 +3757,8 @@ paths:
       x-codegen-request-body-name: device
   /v1/account/{accountid}/device/{deviceid}/reboot:
     post:
-      description: Reboot one device from a CPaaS account.
+      description: Reboot a device in an account to mitigate malware and improve device
+        performance.
       parameters:
       - description: "Account ID, 32 alpha numeric"
         in: path
@@ -4304,6 +4367,516 @@ paths:
       tags:
       - VoIP User
       x-codegen-request-body-name: user
+  /v1/account/{accountid}/user/{userid}/userauth:
+    post:
+      description: Impersonate as another user if you have access to admin.
+      parameters:
+      - description: "Account ID, 32 alpha numeric"
+        in: path
+        name: accountid
+        required: true
+        schema:
+          type: string
+      - description: "User ID, 32 alpha numeric"
+        in: path
+        name: userid
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/service.VOIPImpersonateUser'
+        description: Payload for impersonate a user
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/service.DocsImpersonateUserGetSingle'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CPAASError'
+          description: Bad Request
+      security:
+      - BearerAuth: []
+      summary: Impersonate a User
+      tags:
+      - VoIP User
+      x-codegen-request-body-name: user
+  /v1/ap/brand:
+    get:
+      description: "Retrieve a list of all brands (e.g., Yealink and Polycom) by client."
+      parameters:
+      - in: query
+        name: brand_name
+        schema:
+          type: string
+      - in: query
+        name: page_size
+        schema:
+          type: integer
+      - in: query
+        name: start_key
+        schema:
+          type: string
+      - in: query
+        name: status
+        schema:
+          enum:
+          - active
+          - inactive
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/provisioning_docs.DocsBrandsOutput'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/response.ProvisionError'
+          description: Bad Request
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/response.ProvisionError'
+          description: Internal Server Error
+      security:
+      - BearerAuth: []
+      summary: Get Brand
+      tags:
+      - Provisioning
+  /v1/ap/brand/{brand}:
+    get:
+      description: Retrieve a brand's details by the randomly generated ID.
+      parameters:
+      - description: brand id to retrieve a brand
+        in: path
+        name: brand
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/provisioning_docs.DocsBrandOutputSingle'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/response.ProvisionError'
+          description: Bad Request
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/response.ProvisionError'
+          description: Internal Server Error
+      security:
+      - BearerAuth: []
+      summary: Get Brand
+      tags:
+      - Provisioning
+  /v1/ap/brand/{brand}/family:
+    get:
+      description: "Retrieve a list of all families for a brand (e.g., Yealink and\
+        \ Polycom)."
+      parameters:
+      - description: brand
+        in: path
+        name: brand
+        required: true
+        schema:
+          type: string
+      - in: query
+        name: family_name
+        schema:
+          type: string
+      - in: query
+        name: page_size
+        schema:
+          type: integer
+      - in: query
+        name: start_key
+        schema:
+          type: string
+      - in: query
+        name: status
+        schema:
+          enum:
+          - active
+          - inactive
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/provisioning_docs.DocsFamilyOutput'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/response.ProvisionError'
+          description: Bad Request
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/response.ProvisionError'
+          description: Internal Server Error
+      security:
+      - BearerAuth: []
+      summary: Get Family List
+      tags:
+      - Provisioning
+  /v1/ap/brand/{brand}/family/{family}:
+    get:
+      description: Retrieve a family's details by the randomly generated ID.
+      parameters:
+      - description: brand
+        in: path
+        name: brand
+        required: true
+        schema:
+          type: string
+      - description: family
+        in: path
+        name: family
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/provisioning_docs.DocsFamilyOutputSingle'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/response.ProvisionError'
+          description: Bad Request
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/response.ProvisionError'
+          description: Internal Server Error
+      security:
+      - BearerAuth: []
+      summary: Get Family
+      tags:
+      - Provisioning
+  /v1/ap/brand/{brand}/family/{family}/model:
+    get:
+      description: "Retrieve a list of all models within a family for a brand (e.g.,\
+        \ Yealink and Polycom)."
+      parameters:
+      - description: brand
+        in: path
+        name: brand
+        required: true
+        schema:
+          type: string
+      - description: family
+        in: path
+        name: family
+        required: true
+        schema:
+          type: string
+      - in: query
+        name: model_name
+        schema:
+          type: string
+      - in: query
+        name: page_size
+        schema:
+          type: integer
+      - in: query
+        name: start_key
+        schema:
+          type: string
+      - in: query
+        name: status
+        schema:
+          enum:
+          - active
+          - inactive
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/provisioning_docs.DocsModelOutput'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/response.ProvisionError'
+          description: Bad Request
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/response.ProvisionError'
+          description: Internal Server Error
+      security:
+      - BearerAuth: []
+      summary: Get Model List
+      tags:
+      - Provisioning
+  /v1/ap/brand/{brand}/family/{family}/model/{model}:
+    get:
+      description: Retrieve a model's details by the randomly generated ID.
+      parameters:
+      - description: brand
+        in: path
+        name: brand
+        required: true
+        schema:
+          type: string
+      - description: family
+        in: path
+        name: family
+        required: true
+        schema:
+          type: string
+      - description: model
+        in: path
+        name: model
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/provisioning_docs.DocsModelOutputSingle'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/response.ProvisionError'
+          description: Bad Request
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/response.ProvisionError'
+          description: Internal Server Error
+      security:
+      - BearerAuth: []
+      summary: Get Model
+      tags:
+      - Provisioning
+  /v1/ap/brand/{brand}/family/{family}/model/{model}/template:
+    get:
+      description: "Retrieve a list of all templates for a model within a brand (e.g.,\
+        \ Yealink and Polycom)."
+      parameters:
+      - description: brand
+        in: path
+        name: brand
+        required: true
+        schema:
+          type: string
+      - description: family
+        in: path
+        name: family
+        required: true
+        schema:
+          type: string
+      - description: model
+        in: path
+        name: model
+        required: true
+        schema:
+          type: string
+      - in: query
+        name: firmware
+        schema:
+          type: string
+      - in: query
+        name: page_size
+        schema:
+          type: integer
+      - in: query
+        name: start_key
+        schema:
+          type: string
+      - in: query
+        name: status
+        schema:
+          enum:
+          - active
+          - inactive
+          type: string
+      - in: query
+        name: template_name
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/provisioning_docs.DocsTemplatesOutput'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/response.ProvisionError'
+          description: Bad Request
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/response.ProvisionError'
+          description: Internal Server Error
+      security:
+      - BearerAuth: []
+      summary: Get Template List
+      tags:
+      - Provisioning
+  /v1/ap/brand/{brand}/family/{family}/model/{model}/template/{template}:
+    get:
+      description: Retrieve details about a template for a model by the randomly generated
+        ID.
+      parameters:
+      - description: brand
+        in: path
+        name: brand
+        required: true
+        schema:
+          type: string
+      - description: family
+        in: path
+        name: family
+        required: true
+        schema:
+          type: string
+      - description: model
+        in: path
+        name: model
+        required: true
+        schema:
+          type: string
+      - description: template
+        in: path
+        name: template
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/provisioning_docs.DocsTemplateOutputSingle'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/response.ProvisionError'
+          description: Bad Request
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/response.ProvisionError'
+          description: Internal Server Error
+      security:
+      - BearerAuth: []
+      summary: Get Template
+      tags:
+      - Provisioning
+  /v1/ap/configfile/generate:
+    post:
+      description: "Generate a configuration file that includes a list of parameters\
+        \ passed to the specified template_id in the request payload, with populated\
+        \ values returned in the response."
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/models.GenerateConfigFileRequest'
+        description: body params to generate config file
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/provisioning_docs.DocsConfigFileOutput'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/response.ProvisionError'
+          description: Bad Request
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/response.ProvisionError'
+          description: Internal Server Error
+      security:
+      - BearerAuth: []
+      summary: Generate config file
+      tags:
+      - Provisioning
+      x-codegen-request-body-name: params
+  /v1/ap/ping:
+    get:
+      description: Ping the provisioning service.
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/provisioning_docs.DocsPingOutput'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/response.ProvisionError'
+          description: Bad Request
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/response.ProvisionError'
+          description: Internal Server Error
+      security:
+      - BearerAuth: []
+      summary: Provisioning Ping
+      tags:
+      - System Status
   /v1/data/call_daily_summary:
     get:
       description: "Retrieve a daily summary of calls, including the account ID that\
@@ -6385,6 +6958,25 @@ components:
         number:
           type: string
       type: object
+    models.Brand:
+      example:
+        is_active: true
+        updated_at: updated_at
+        created_at: created_at
+        brand_name: brand_name
+        id: id
+      properties:
+        brand_name:
+          type: string
+        created_at:
+          type: string
+        id:
+          type: string
+        is_active:
+          type: boolean
+        updated_at:
+          type: string
+      type: object
     models.CallForward:
       example:
         number: number
@@ -6559,6 +7151,29 @@ components:
           $ref: '#/components/schemas/models.CallRecordingParameters'
         onnet:
           $ref: '#/components/schemas/models.CallRecordingParameters'
+      type: object
+    models.ConfigFileParameter:
+      properties:
+        extension:
+          type: string
+        https_host:
+          type: string
+        https_password:
+          type: string
+        https_username:
+          type: string
+        mac_address:
+          type: string
+        realm:
+          type: string
+        sip_password:
+          type: string
+        sip_username:
+          type: string
+        timezone:
+          type: string
+        voicemail_box_number:
+          type: string
       type: object
     models.DeviceOutputFull:
       example:
@@ -6798,12 +7413,109 @@ components:
         username:
           type: string
       type: object
+    models.Family:
+      example:
+        timezone_format_id: 0
+        is_active: true
+        updated_at: updated_at
+        created_at: created_at
+        brand_name: brand_name
+        id: id
+        family_name: family_name
+      properties:
+        brand_name:
+          type: string
+        created_at:
+          type: string
+        family_name:
+          type: string
+        id:
+          type: string
+        is_active:
+          type: boolean
+        timezone_format_id:
+          type: integer
+        updated_at:
+          type: string
+      type: object
+    models.GenerateConfigFileRequest:
+      properties:
+        parameters:
+          $ref: '#/components/schemas/models.ConfigFileParameter'
+        template_file_id:
+          type: string
+        template_id:
+          type: string
+      required:
+      - parameters
+      - template_file_id
+      - template_id
+      type: object
+    models.Model:
+      example:
+        is_active: true
+        model_name: model_name
+        updated_at: updated_at
+        created_at: created_at
+        brand_name: brand_name
+        id: id
+        family_name: family_name
+      properties:
+        brand_name:
+          type: string
+        created_at:
+          type: string
+        family_name:
+          type: string
+        id:
+          type: string
+        is_active:
+          type: boolean
+        model_name:
+          type: string
+        updated_at:
+          type: string
+      type: object
     models.MusicOnHold:
       example:
         media_id: media_id
       properties:
         media_id:
           maxLength: 128
+          type: string
+      type: object
+    models.Template:
+      example:
+        template_name: template_name
+        is_active: true
+        model_name: model_name
+        updated_at: updated_at
+        firmware_id: firmware_id
+        created_at: created_at
+        brand_name: brand_name
+        firmware_version: firmware_version
+        id: id
+        family_name: family_name
+      properties:
+        brand_name:
+          type: string
+        created_at:
+          type: string
+        family_name:
+          type: string
+        firmware_id:
+          type: string
+        firmware_version:
+          type: string
+        id:
+          type: string
+        is_active:
+          type: boolean
+        model_name:
+          type: string
+        template_name:
+          type: string
+        updated_at:
           type: string
       type: object
     models.UserOutputFull:
@@ -7010,6 +7722,317 @@ components:
         enabled:
           type: boolean
       type: object
+    provisioning_docs.DocsBrandOutputSingle:
+      example:
+        status_code: 0
+        data:
+          is_active: true
+          updated_at: updated_at
+          created_at: created_at
+          brand_name: brand_name
+          id: id
+        request_id: request_id
+      properties:
+        data:
+          $ref: '#/components/schemas/models.Brand'
+        request_id:
+          description: Unique id for each request
+          type: string
+        status_code:
+          description: HTTP response status code
+          type: integer
+      type: object
+    provisioning_docs.DocsBrandsOutput:
+      example:
+        status_code: 6
+        data:
+        - is_active: true
+          updated_at: updated_at
+          created_at: created_at
+          brand_name: brand_name
+          id: id
+        - is_active: true
+          updated_at: updated_at
+          created_at: created_at
+          brand_name: brand_name
+          id: id
+        next_start_key: next_start_key
+        start_key: start_key
+        request_id: request_id
+        page_size: 0
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/models.Brand'
+          type: array
+        next_start_key:
+          description: "List Pagination: Used to get the next page of results. Will\
+            \ not exist if this is the last page."
+          type: string
+        page_size:
+          description: "List Pagination: The number of results returned in this page"
+          type: integer
+        request_id:
+          description: Unique id for each request
+          type: string
+        start_key:
+          description: "List Pagination: Code for paged results"
+          type: string
+        status_code:
+          description: HTTP response status code
+          type: integer
+      type: object
+    provisioning_docs.DocsConfigFileOutput:
+      example:
+        status_code: 6
+        data: data
+        next_start_key: next_start_key
+        start_key: start_key
+        request_id: request_id
+        page_size: 0
+      properties:
+        data:
+          type: string
+        next_start_key:
+          description: "List Pagination: Used to get the next page of results. Will\
+            \ not exist if this is the last page."
+          type: string
+        page_size:
+          description: "List Pagination: The number of results returned in this page"
+          type: integer
+        request_id:
+          description: Unique id for each request
+          type: string
+        start_key:
+          description: "List Pagination: Code for paged results"
+          type: string
+        status_code:
+          description: HTTP response status code
+          type: integer
+      type: object
+    provisioning_docs.DocsFamilyOutput:
+      example:
+        status_code: 1
+        data:
+        - timezone_format_id: 0
+          is_active: true
+          updated_at: updated_at
+          created_at: created_at
+          brand_name: brand_name
+          id: id
+          family_name: family_name
+        - timezone_format_id: 0
+          is_active: true
+          updated_at: updated_at
+          created_at: created_at
+          brand_name: brand_name
+          id: id
+          family_name: family_name
+        next_start_key: next_start_key
+        start_key: start_key
+        request_id: request_id
+        page_size: 6
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/models.Family'
+          type: array
+        next_start_key:
+          description: "List Pagination: Used to get the next page of results. Will\
+            \ not exist if this is the last page."
+          type: string
+        page_size:
+          description: "List Pagination: The number of results returned in this page"
+          type: integer
+        request_id:
+          description: Unique id for each request
+          type: string
+        start_key:
+          description: "List Pagination: Code for paged results"
+          type: string
+        status_code:
+          description: HTTP response status code
+          type: integer
+      type: object
+    provisioning_docs.DocsFamilyOutputSingle:
+      example:
+        status_code: 0
+        data:
+          timezone_format_id: 0
+          is_active: true
+          updated_at: updated_at
+          created_at: created_at
+          brand_name: brand_name
+          id: id
+          family_name: family_name
+        request_id: request_id
+      properties:
+        data:
+          $ref: '#/components/schemas/models.Family'
+        request_id:
+          description: Unique id for each request
+          type: string
+        status_code:
+          description: HTTP response status code
+          type: integer
+      type: object
+    provisioning_docs.DocsModelOutput:
+      example:
+        status_code: 6
+        data:
+        - is_active: true
+          model_name: model_name
+          updated_at: updated_at
+          created_at: created_at
+          brand_name: brand_name
+          id: id
+          family_name: family_name
+        - is_active: true
+          model_name: model_name
+          updated_at: updated_at
+          created_at: created_at
+          brand_name: brand_name
+          id: id
+          family_name: family_name
+        next_start_key: next_start_key
+        start_key: start_key
+        request_id: request_id
+        page_size: 0
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/models.Model'
+          type: array
+        next_start_key:
+          description: "List Pagination: Used to get the next page of results. Will\
+            \ not exist if this is the last page."
+          type: string
+        page_size:
+          description: "List Pagination: The number of results returned in this page"
+          type: integer
+        request_id:
+          description: Unique id for each request
+          type: string
+        start_key:
+          description: "List Pagination: Code for paged results"
+          type: string
+        status_code:
+          description: HTTP response status code
+          type: integer
+      type: object
+    provisioning_docs.DocsModelOutputSingle:
+      example:
+        status_code: 0
+        data:
+          is_active: true
+          model_name: model_name
+          updated_at: updated_at
+          created_at: created_at
+          brand_name: brand_name
+          id: id
+          family_name: family_name
+        request_id: request_id
+      properties:
+        data:
+          $ref: '#/components/schemas/models.Model'
+        request_id:
+          description: Unique id for each request
+          type: string
+        status_code:
+          description: HTTP response status code
+          type: integer
+      type: object
+    provisioning_docs.DocsPingOutput:
+      example:
+        status_code: 0
+        data:
+          message: message
+        request_id: request_id
+      properties:
+        data:
+          $ref: '#/components/schemas/provisioning_docs_DocsPingOutput_data'
+        request_id:
+          description: Unique id for each request
+          type: string
+        status_code:
+          description: HTTP response status code
+          type: integer
+      type: object
+    provisioning_docs.DocsTemplateOutputSingle:
+      example:
+        status_code: 0
+        data:
+          template_name: template_name
+          is_active: true
+          model_name: model_name
+          updated_at: updated_at
+          firmware_id: firmware_id
+          created_at: created_at
+          brand_name: brand_name
+          firmware_version: firmware_version
+          id: id
+          family_name: family_name
+        request_id: request_id
+      properties:
+        data:
+          $ref: '#/components/schemas/models.Template'
+        request_id:
+          description: Unique id for each request
+          type: string
+        status_code:
+          description: HTTP response status code
+          type: integer
+      type: object
+    provisioning_docs.DocsTemplatesOutput:
+      example:
+        status_code: 6
+        data:
+        - template_name: template_name
+          is_active: true
+          model_name: model_name
+          updated_at: updated_at
+          firmware_id: firmware_id
+          created_at: created_at
+          brand_name: brand_name
+          firmware_version: firmware_version
+          id: id
+          family_name: family_name
+        - template_name: template_name
+          is_active: true
+          model_name: model_name
+          updated_at: updated_at
+          firmware_id: firmware_id
+          created_at: created_at
+          brand_name: brand_name
+          firmware_version: firmware_version
+          id: id
+          family_name: family_name
+        next_start_key: next_start_key
+        start_key: start_key
+        request_id: request_id
+        page_size: 0
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/models.Template'
+          type: array
+        next_start_key:
+          description: "List Pagination: Used to get the next page of results. Will\
+            \ not exist if this is the last page."
+          type: string
+        page_size:
+          description: "List Pagination: The number of results returned in this page"
+          type: integer
+        request_id:
+          description: Unique id for each request
+          type: string
+        start_key:
+          description: "List Pagination: Code for paged results"
+          type: string
+        status_code:
+          description: HTTP response status code
+          type: integer
+      type: object
     repository.LocationsResponse:
       example:
         phone_number: phone_number
@@ -7019,6 +8042,34 @@ components:
           type: string
         phone_number:
           type: string
+      type: object
+    response.ProvisionError:
+      example:
+        status_code: 5
+        error_code: 1
+        message: message
+        request_id: request_id
+        errors:
+        - "{}"
+        - "{}"
+      properties:
+        error_code:
+          description: Error Code
+          type: integer
+        errors:
+          description: Error details
+          items:
+            type: object
+          type: array
+        message:
+          description: Error Message
+          type: string
+        request_id:
+          description: Request ID
+          type: string
+        status_code:
+          description: HTTP response status code
+          type: integer
       type: object
     service.APIKey:
       example:
@@ -7763,6 +8814,19 @@ components:
         username:
           type: string
       type: object
+    service.DeviceStatusOutput:
+      example:
+        device_id: device_id
+        registered: true
+        registrable: true
+      properties:
+        device_id:
+          type: string
+        registered:
+          type: boolean
+        registrable:
+          type: boolean
+      type: object
     service.DocE911ActiveLocationOutput:
       example:
         status_code: 0
@@ -8084,36 +9148,6 @@ components:
       properties:
         data:
           $ref: '#/components/schemas/service.GroupOutputFull'
-        request_id:
-          description: Unique id for each request
-          type: string
-        status_code:
-          description: HTTP response status code
-          type: integer
-      type: object
-    service.DocMetaflowGet:
-      example:
-        status_code: 0
-        data:
-          patterns:
-            key:
-              data:
-                key: ""
-              children:
-                key: null
-              module: transfer
-          numbers:
-            key:
-              data:
-                key: ""
-              children:
-                key: null
-              module: transfer
-          binding_digit: binding_digit
-        request_id: request_id
-      properties:
-        data:
-          $ref: '#/components/schemas/service.MetaflowOutput'
         request_id:
           description: Unique id for each request
           type: string
@@ -9355,6 +10389,42 @@ components:
           description: HTTP response status code
           type: integer
       type: object
+    service.DocsDeviceStatus:
+      example:
+        status_code: 6
+        data:
+        - device_id: device_id
+          registered: true
+          registrable: true
+        - device_id: device_id
+          registered: true
+          registrable: true
+        next_start_key: next_start_key
+        start_key: start_key
+        request_id: request_id
+        page_size: 0
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/service.DeviceStatusOutput'
+          type: array
+        next_start_key:
+          description: "List Pagination: Used to get the next page of results. Will\
+            \ not exist if this is the last page."
+          type: string
+        page_size:
+          description: "List Pagination: The number of results returned in this page"
+          type: integer
+        request_id:
+          description: Unique id for each request
+          type: string
+        start_key:
+          description: "List Pagination: Code for paged results"
+          type: string
+        status_code:
+          description: HTTP response status code
+          type: integer
+      type: object
     service.DocsEndpointList:
       example:
         status_code: 1
@@ -9640,6 +10710,36 @@ components:
           description: HTTP response status code
           type: integer
       type: object
+    service.DocsImpersonateUserGetSingle:
+      example:
+        status_code: 0
+        data:
+          cluster_id: cluster_id
+          account_id: account_id
+          user_info:
+            full_name: full_name
+            has_avatar: true
+            priv_level: priv_level
+            last_name: last_name
+            first_name: first_name
+            email: email
+          owner_id: owner_id
+          account_name: account_name
+          auth_token: auth_token
+          is_master_account: true
+          is_reseller: true
+          reseller_id: reseller_id
+        request_id: request_id
+      properties:
+        data:
+          $ref: '#/components/schemas/service.ImpersonateUserOutputFull'
+        request_id:
+          description: Unique id for each request
+          type: string
+        status_code:
+          description: HTTP response status code
+          type: integer
+      type: object
     service.DocsMediaGetAll:
       example:
         status_code: 6
@@ -9699,6 +10799,36 @@ components:
       properties:
         data:
           $ref: '#/components/schemas/service.MediaOutputFull'
+        request_id:
+          description: Unique id for each request
+          type: string
+        status_code:
+          description: HTTP response status code
+          type: integer
+      type: object
+    service.DocsMetaflowGet:
+      example:
+        status_code: 0
+        data:
+          patterns:
+            key:
+              data:
+                key: ""
+              children:
+                key: null
+              module: transfer
+          numbers:
+            key:
+              data:
+                key: ""
+              children:
+                key: null
+              module: transfer
+          binding_digit: binding_digit
+        request_id: request_id
+      properties:
+        data:
+          $ref: '#/components/schemas/service.MetaflowOutput'
         request_id:
           description: Unique id for each request
           type: string
@@ -11182,6 +12312,65 @@ components:
         id:
           type: string
         name:
+          type: string
+      type: object
+    service.ImpersonateUserOutputFull:
+      example:
+        cluster_id: cluster_id
+        account_id: account_id
+        user_info:
+          full_name: full_name
+          has_avatar: true
+          priv_level: priv_level
+          last_name: last_name
+          first_name: first_name
+          email: email
+        owner_id: owner_id
+        account_name: account_name
+        auth_token: auth_token
+        is_master_account: true
+        is_reseller: true
+        reseller_id: reseller_id
+      properties:
+        account_id:
+          type: string
+        account_name:
+          type: string
+        auth_token:
+          type: string
+        cluster_id:
+          type: string
+        is_master_account:
+          type: boolean
+        is_reseller:
+          type: boolean
+        owner_id:
+          type: string
+        reseller_id:
+          type: string
+        user_info:
+          $ref: '#/components/schemas/service.ImpersonatedUserInfo'
+      type: object
+    service.ImpersonatedUserInfo:
+      example:
+        full_name: full_name
+        has_avatar: true
+        priv_level: priv_level
+        last_name: last_name
+        first_name: first_name
+        email: email
+      properties:
+        email:
+          type: string
+        first_name:
+          type: string
+        full_name:
+          type: string
+        has_avatar:
+          type: boolean
+        last_name:
+          type: string
+        priv_level:
           type: string
       type: object
     service.MediaOutputFull:
@@ -12716,6 +13905,17 @@ components:
       - endpoints
       - name
       type: object
+    service.VOIPImpersonateUser:
+      properties:
+        action:
+          enum:
+          - impersonate_user
+          type: string
+        data:
+          type: object
+      required:
+      - action
+      type: object
     service.VOIPMediaAddEditData:
       properties:
         description:
@@ -13152,6 +14352,13 @@ components:
           type: string
       required:
       - file
+      type: object
+    provisioning_docs_DocsPingOutput_data:
+      example:
+        message: message
+      properties:
+        message:
+          type: string
       type: object
     service_CampaignImportOutput_mno_status_list_inner:
       example:

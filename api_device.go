@@ -443,7 +443,7 @@ func (r ApiV1AccountAccountidDeviceDeviceidRebootPostRequest) Execute() (*Servic
 /*
 V1AccountAccountidDeviceDeviceidRebootPost Reboot Device
 
-Reboot one device from a CPaaS account.
+Reboot a device in an account to mitigate malware and improve device performance.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param accountid Account ID, 32 alpha numeric
@@ -785,6 +785,133 @@ func (a *DeviceAPIService) V1AccountAccountidDevicePostExecute(r ApiV1AccountAcc
 	}
 	// body params
 	localVarPostBody = r.device
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["BearerAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v CPAASError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiV1AccountAccountidDeviceStatusGetRequest struct {
+	ctx context.Context
+	ApiService *DeviceAPIService
+	accountid string
+}
+
+func (r ApiV1AccountAccountidDeviceStatusGetRequest) Execute() (*ServiceDocsDeviceStatus, *http.Response, error) {
+	return r.ApiService.V1AccountAccountidDeviceStatusGetExecute(r)
+}
+
+/*
+V1AccountAccountidDeviceStatusGet Get Device Status
+
+Retrieve a device’s status (e.g., registered or not registered) in an account.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param accountid Account ID, 32 alpha numeric
+ @return ApiV1AccountAccountidDeviceStatusGetRequest
+*/
+func (a *DeviceAPIService) V1AccountAccountidDeviceStatusGet(ctx context.Context, accountid string) ApiV1AccountAccountidDeviceStatusGetRequest {
+	return ApiV1AccountAccountidDeviceStatusGetRequest{
+		ApiService: a,
+		ctx: ctx,
+		accountid: accountid,
+	}
+}
+
+// Execute executes the request
+//  @return ServiceDocsDeviceStatus
+func (a *DeviceAPIService) V1AccountAccountidDeviceStatusGetExecute(r ApiV1AccountAccountidDeviceStatusGetRequest) (*ServiceDocsDeviceStatus, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *ServiceDocsDeviceStatus
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceAPIService.V1AccountAccountidDeviceStatusGet")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/v1/account/{accountid}/device/status"
+	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

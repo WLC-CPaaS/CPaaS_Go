@@ -1,6 +1,6 @@
 # \
 
-All URIs are relative to *http://api.cpaaslabs.net*
+All URIs are relative to *http://API_HOSTNAME*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 ## V1AccountAccountIDDeviceDeviceIDMetaflowDelete
 
-> ServiceDocMetaflowGet V1AccountAccountIDDeviceDeviceIDMetaflowDelete(ctx, accountID, deviceID).Execute()
+> ServiceDocsMetaflowGet V1AccountAccountIDDeviceDeviceIDMetaflowDelete(ctx, accountID, deviceID).Execute()
 
 Delete Device Metaflow
 
@@ -47,7 +47,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `MetaflowAPI.V1AccountAccountIDDeviceDeviceIDMetaflowDelete``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1AccountAccountIDDeviceDeviceIDMetaflowDelete`: ServiceDocMetaflowGet
+	// response from `V1AccountAccountIDDeviceDeviceIDMetaflowDelete`: ServiceDocsMetaflowGet
 	fmt.Fprintf(os.Stdout, "Response from `MetaflowAPI.V1AccountAccountIDDeviceDeviceIDMetaflowDelete`: %v\n", resp)
 }
 ```
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServiceDocMetaflowGet**](ServiceDocMetaflowGet.md)
+[**ServiceDocsMetaflowGet**](ServiceDocsMetaflowGet.md)
 
 ### Authorization
 
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDDeviceDeviceIDMetaflowGet
 
-> ServiceDocMetaflowGet V1AccountAccountIDDeviceDeviceIDMetaflowGet(ctx, accountID, deviceID).Execute()
+> ServiceDocsMetaflowGet V1AccountAccountIDDeviceDeviceIDMetaflowGet(ctx, accountID, deviceID).Execute()
 
 Get Device Metaflow List
 
@@ -120,7 +120,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `MetaflowAPI.V1AccountAccountIDDeviceDeviceIDMetaflowGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1AccountAccountIDDeviceDeviceIDMetaflowGet`: ServiceDocMetaflowGet
+	// response from `V1AccountAccountIDDeviceDeviceIDMetaflowGet`: ServiceDocsMetaflowGet
 	fmt.Fprintf(os.Stdout, "Response from `MetaflowAPI.V1AccountAccountIDDeviceDeviceIDMetaflowGet`: %v\n", resp)
 }
 ```
@@ -146,7 +146,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServiceDocMetaflowGet**](ServiceDocMetaflowGet.md)
+[**ServiceDocsMetaflowGet**](ServiceDocsMetaflowGet.md)
 
 ### Authorization
 
@@ -164,7 +164,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDDeviceDeviceIDMetaflowPost
 
-> ServiceDocMetaflowGet V1AccountAccountIDDeviceDeviceIDMetaflowPost(ctx, accountID, deviceID).ReqBody(reqBody).Execute()
+> ServiceDocsMetaflowGet V1AccountAccountIDDeviceDeviceIDMetaflowPost(ctx, accountID, deviceID).ReqBody(reqBody).Execute()
 
 Create Device Metaflow
 
@@ -194,7 +194,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `MetaflowAPI.V1AccountAccountIDDeviceDeviceIDMetaflowPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1AccountAccountIDDeviceDeviceIDMetaflowPost`: ServiceDocMetaflowGet
+	// response from `V1AccountAccountIDDeviceDeviceIDMetaflowPost`: ServiceDocsMetaflowGet
 	fmt.Fprintf(os.Stdout, "Response from `MetaflowAPI.V1AccountAccountIDDeviceDeviceIDMetaflowPost`: %v\n", resp)
 }
 ```
@@ -221,7 +221,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServiceDocMetaflowGet**](ServiceDocMetaflowGet.md)
+[**ServiceDocsMetaflowGet**](ServiceDocsMetaflowGet.md)
 
 ### Authorization
 
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDMetaflowDelete
 
-> ServiceDocMetaflowGet V1AccountAccountIDMetaflowDelete(ctx, accountID).Execute()
+> ServiceDocsMetaflowGet V1AccountAccountIDMetaflowDelete(ctx, accountID).Execute()
 
 Delete Account Metaflow
 
@@ -267,7 +267,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `MetaflowAPI.V1AccountAccountIDMetaflowDelete``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1AccountAccountIDMetaflowDelete`: ServiceDocMetaflowGet
+	// response from `V1AccountAccountIDMetaflowDelete`: ServiceDocsMetaflowGet
 	fmt.Fprintf(os.Stdout, "Response from `MetaflowAPI.V1AccountAccountIDMetaflowDelete`: %v\n", resp)
 }
 ```
@@ -291,7 +291,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServiceDocMetaflowGet**](ServiceDocMetaflowGet.md)
+[**ServiceDocsMetaflowGet**](ServiceDocsMetaflowGet.md)
 
 ### Authorization
 
@@ -309,7 +309,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDMetaflowGet
 
-> ServiceDocMetaflowGet V1AccountAccountIDMetaflowGet(ctx, accountID).Execute()
+> ServiceDocsMetaflowGet V1AccountAccountIDMetaflowGet(ctx, accountID).Execute()
 
 Get Account Metaflow List
 
@@ -337,7 +337,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `MetaflowAPI.V1AccountAccountIDMetaflowGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1AccountAccountIDMetaflowGet`: ServiceDocMetaflowGet
+	// response from `V1AccountAccountIDMetaflowGet`: ServiceDocsMetaflowGet
 	fmt.Fprintf(os.Stdout, "Response from `MetaflowAPI.V1AccountAccountIDMetaflowGet`: %v\n", resp)
 }
 ```
@@ -361,7 +361,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServiceDocMetaflowGet**](ServiceDocMetaflowGet.md)
+[**ServiceDocsMetaflowGet**](ServiceDocsMetaflowGet.md)
 
 ### Authorization
 
@@ -379,7 +379,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDMetaflowPost
 
-> ServiceDocMetaflowGet V1AccountAccountIDMetaflowPost(ctx, accountID).Metaflow(metaflow).Execute()
+> ServiceDocsMetaflowGet V1AccountAccountIDMetaflowPost(ctx, accountID).Metaflow(metaflow).Execute()
 
 Create Account Metaflow
 
@@ -408,7 +408,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `MetaflowAPI.V1AccountAccountIDMetaflowPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1AccountAccountIDMetaflowPost`: ServiceDocMetaflowGet
+	// response from `V1AccountAccountIDMetaflowPost`: ServiceDocsMetaflowGet
 	fmt.Fprintf(os.Stdout, "Response from `MetaflowAPI.V1AccountAccountIDMetaflowPost`: %v\n", resp)
 }
 ```
@@ -433,7 +433,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServiceDocMetaflowGet**](ServiceDocMetaflowGet.md)
+[**ServiceDocsMetaflowGet**](ServiceDocsMetaflowGet.md)
 
 ### Authorization
 
@@ -451,7 +451,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDUserUserIDMetaflowDelete
 
-> ServiceDocMetaflowGet V1AccountAccountIDUserUserIDMetaflowDelete(ctx, accountID, userID).Execute()
+> ServiceDocsMetaflowGet V1AccountAccountIDUserUserIDMetaflowDelete(ctx, accountID, userID).Execute()
 
 Delete User Metaflow
 
@@ -480,7 +480,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `MetaflowAPI.V1AccountAccountIDUserUserIDMetaflowDelete``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1AccountAccountIDUserUserIDMetaflowDelete`: ServiceDocMetaflowGet
+	// response from `V1AccountAccountIDUserUserIDMetaflowDelete`: ServiceDocsMetaflowGet
 	fmt.Fprintf(os.Stdout, "Response from `MetaflowAPI.V1AccountAccountIDUserUserIDMetaflowDelete`: %v\n", resp)
 }
 ```
@@ -506,7 +506,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServiceDocMetaflowGet**](ServiceDocMetaflowGet.md)
+[**ServiceDocsMetaflowGet**](ServiceDocsMetaflowGet.md)
 
 ### Authorization
 
@@ -524,7 +524,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDUserUserIDMetaflowGet
 
-> ServiceDocMetaflowGet V1AccountAccountIDUserUserIDMetaflowGet(ctx, accountID, userID).Execute()
+> ServiceDocsMetaflowGet V1AccountAccountIDUserUserIDMetaflowGet(ctx, accountID, userID).Execute()
 
 Get User Metaflow List
 
@@ -553,7 +553,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `MetaflowAPI.V1AccountAccountIDUserUserIDMetaflowGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1AccountAccountIDUserUserIDMetaflowGet`: ServiceDocMetaflowGet
+	// response from `V1AccountAccountIDUserUserIDMetaflowGet`: ServiceDocsMetaflowGet
 	fmt.Fprintf(os.Stdout, "Response from `MetaflowAPI.V1AccountAccountIDUserUserIDMetaflowGet`: %v\n", resp)
 }
 ```
@@ -579,7 +579,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServiceDocMetaflowGet**](ServiceDocMetaflowGet.md)
+[**ServiceDocsMetaflowGet**](ServiceDocsMetaflowGet.md)
 
 ### Authorization
 
@@ -597,7 +597,7 @@ Name | Type | Description  | Notes
 
 ## V1AccountAccountIDUserUserIDMetaflowPost
 
-> ServiceDocMetaflowGet V1AccountAccountIDUserUserIDMetaflowPost(ctx, accountID, userID).ReqBody(reqBody).Execute()
+> ServiceDocsMetaflowGet V1AccountAccountIDUserUserIDMetaflowPost(ctx, accountID, userID).ReqBody(reqBody).Execute()
 
 Create User Metaflow
 
@@ -627,7 +627,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `MetaflowAPI.V1AccountAccountIDUserUserIDMetaflowPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1AccountAccountIDUserUserIDMetaflowPost`: ServiceDocMetaflowGet
+	// response from `V1AccountAccountIDUserUserIDMetaflowPost`: ServiceDocsMetaflowGet
 	fmt.Fprintf(os.Stdout, "Response from `MetaflowAPI.V1AccountAccountIDUserUserIDMetaflowPost`: %v\n", resp)
 }
 ```
@@ -654,7 +654,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServiceDocMetaflowGet**](ServiceDocMetaflowGet.md)
+[**ServiceDocsMetaflowGet**](ServiceDocsMetaflowGet.md)
 
 ### Authorization
 

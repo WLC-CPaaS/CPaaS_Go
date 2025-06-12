@@ -10,7 +10,6 @@ api_call_queue_membership.go
 api_call_queue_recipient.go
 api_call_recording.go
 api_callflow.go
-api_cdr.go
 api_channel.go
 api_data.go
 api_device.go
@@ -21,6 +20,8 @@ api_menu.go
 api_metaflow.go
 api_phone_number.go
 api_presence.go
+api_provision.go
+api_provisioning.go
 api_sms.go
 api_storage.go
 api_system_status.go
@@ -40,7 +41,6 @@ docs/CallQueueMembershipAPI.md
 docs/CallQueueRecipientAPI.md
 docs/CallRecordingAPI.md
 docs/CallflowAPI.md
-docs/CdrAPI.md
 docs/ChannelAPI.md
 docs/DataAPI.md
 docs/DeviceAPI.md
@@ -70,10 +70,12 @@ docs/ModelsAccountOutputFull.md
 docs/ModelsAccountOutputFullCalleridEmergency.md
 docs/ModelsAccountOutputFullCalleridExternal.md
 docs/ModelsAccountOutputFullCalleridInternal.md
+docs/ModelsBrand.md
 docs/ModelsCallForward.md
 docs/ModelsCallRecordingParameters.md
 docs/ModelsCallRecordingSettings.md
 docs/ModelsCallRecordingSource.md
+docs/ModelsConfigFileParameter.md
 docs/ModelsDeviceOutputFull.md
 docs/ModelsDeviceOutputFullCallerid.md
 docs/ModelsDeviceOutputFullCalleridEmergency.md
@@ -83,7 +85,11 @@ docs/ModelsDeviceOutputFullMedia.md
 docs/ModelsDeviceOutputFullMediaAudio.md
 docs/ModelsDeviceOutputFullProvision.md
 docs/ModelsDeviceOutputFullSIP.md
+docs/ModelsFamily.md
+docs/ModelsGenerateConfigFileRequest.md
+docs/ModelsModel.md
 docs/ModelsMusicOnHold.md
+docs/ModelsTemplate.md
 docs/ModelsUserOutputFull.md
 docs/ModelsUserOutputFullCallerid.md
 docs/ModelsUserOutputFullCalleridEmergency.md
@@ -94,7 +100,21 @@ docs/ModelsVOIPAccountOutputFullCallerid.md
 docs/ModelsVOIPSharedDoNotDisturb.md
 docs/PhoneNumberAPI.md
 docs/PresenceAPI.md
+docs/ProvisionAPI.md
+docs/ProvisioningAPI.md
+docs/ProvisioningDocsDocsBrandOutputSingle.md
+docs/ProvisioningDocsDocsBrandsOutput.md
+docs/ProvisioningDocsDocsConfigFileOutput.md
+docs/ProvisioningDocsDocsFamilyOutput.md
+docs/ProvisioningDocsDocsFamilyOutputSingle.md
+docs/ProvisioningDocsDocsModelOutput.md
+docs/ProvisioningDocsDocsModelOutputSingle.md
+docs/ProvisioningDocsDocsPingOutput.md
+docs/ProvisioningDocsDocsPingOutputData.md
+docs/ProvisioningDocsDocsTemplateOutputSingle.md
+docs/ProvisioningDocsDocsTemplatesOutput.md
 docs/RepositoryLocationsResponse.md
+docs/ResponseProvisionError.md
 docs/SMSAPI.md
 docs/ServiceAPIKey.md
 docs/ServiceAPIResponse.md
@@ -123,6 +143,7 @@ docs/ServiceCampaignTagDetagPhonenumbersOutput.md
 docs/ServiceCdrOutputShort.md
 docs/ServiceChannelOutput.md
 docs/ServiceDeviceOutputShort.md
+docs/ServiceDeviceStatusOutput.md
 docs/ServiceDocE911ActiveLocationOutput.md
 docs/ServiceDocE911ActiveLocationURIApiOutput.md
 docs/ServiceDocE911AddLocationOutput.md
@@ -133,7 +154,6 @@ docs/ServiceDocE911URIsApiOutput.md
 docs/ServiceDocE911ValidateLocationOutput.md
 docs/ServiceDocGroupGetAll.md
 docs/ServiceDocGroupGetSingle.md
-docs/ServiceDocMetaflowGet.md
 docs/ServiceDocsAccountAPIKey.md
 docs/ServiceDocsAccountGetAll.md
 docs/ServiceDocsAccountGetSingle.md
@@ -167,6 +187,7 @@ docs/ServiceDocsChannelGetSingle.md
 docs/ServiceDocsDeviceGetAll.md
 docs/ServiceDocsDeviceGetSingle.md
 docs/ServiceDocsDeviceReboot.md
+docs/ServiceDocsDeviceStatus.md
 docs/ServiceDocsEndpointList.md
 docs/ServiceDocsEventDailySummary.md
 docs/ServiceDocsEventDetail.md
@@ -174,8 +195,10 @@ docs/ServiceDocsEventMonthlySummary.md
 docs/ServiceDocsFeatureDailySummary.md
 docs/ServiceDocsFeatureMonthlySummary.md
 docs/ServiceDocsGetQueueRecipients.md
+docs/ServiceDocsImpersonateUserGetSingle.md
 docs/ServiceDocsMediaGetAll.md
 docs/ServiceDocsMediaGetSingle.md
+docs/ServiceDocsMetaflowGet.md
 docs/ServiceDocsOrderPhonenumber.md
 docs/ServiceDocsParkedcallGet.md
 docs/ServiceDocsPhonenumberAssignPayload.md
@@ -218,6 +241,8 @@ docs/ServiceEndpoint.md
 docs/ServiceFeatureCode.md
 docs/ServiceGroupOutputFull.md
 docs/ServiceGroupOutputShort.md
+docs/ServiceImpersonateUserOutputFull.md
+docs/ServiceImpersonatedUserInfo.md
 docs/ServiceMediaOutputFull.md
 docs/ServiceMediaOutputShort.md
 docs/ServiceMetaflowOutput.md
@@ -268,6 +293,7 @@ docs/ServiceVOIPDeviceAddEdit4.md
 docs/ServiceVOIPDeviceAddEdit5.md
 docs/ServiceVOIPDeviceAddEditProvision.md
 docs/ServiceVOIPGroupAddEdit2.md
+docs/ServiceVOIPImpersonateUser.md
 docs/ServiceVOIPMediaAddEditData.md
 docs/ServiceVOIPMetaflowAddData.md
 docs/ServiceVOIPPresenceSetResetEditData.md
@@ -318,10 +344,12 @@ model_models_account_output_full.go
 model_models_account_output_full_callerid_emergency.go
 model_models_account_output_full_callerid_external.go
 model_models_account_output_full_callerid_internal.go
+model_models_brand.go
 model_models_call_forward.go
 model_models_call_recording_parameters.go
 model_models_call_recording_settings.go
 model_models_call_recording_source.go
+model_models_config_file_parameter.go
 model_models_device_output_full.go
 model_models_device_output_full_callerid.go
 model_models_device_output_full_callerid_emergency.go
@@ -331,7 +359,11 @@ model_models_device_output_full_media.go
 model_models_device_output_full_media_audio.go
 model_models_device_output_full_provision.go
 model_models_device_output_full_sip.go
+model_models_family.go
+model_models_generate_config_file_request.go
+model_models_model.go
 model_models_music_on_hold.go
+model_models_template.go
 model_models_user_output_full.go
 model_models_user_output_full_callerid.go
 model_models_user_output_full_callerid_emergency.go
@@ -340,7 +372,19 @@ model_models_user_output_full_callerid_internal.go
 model_models_voip_account_music_on_hold.go
 model_models_voip_account_output_full_callerid.go
 model_models_voip_shared_do_not_disturb.go
+model_provisioning_docs_docs_brand_output_single.go
+model_provisioning_docs_docs_brands_output.go
+model_provisioning_docs_docs_config_file_output.go
+model_provisioning_docs_docs_family_output.go
+model_provisioning_docs_docs_family_output_single.go
+model_provisioning_docs_docs_model_output.go
+model_provisioning_docs_docs_model_output_single.go
+model_provisioning_docs_docs_ping_output.go
+model_provisioning_docs_docs_ping_output_data.go
+model_provisioning_docs_docs_template_output_single.go
+model_provisioning_docs_docs_templates_output.go
 model_repository_locations_response.go
+model_response_provision_error.go
 model_service_account_limit_output.go
 model_service_account_output_short.go
 model_service_admin_user_add_data.go
@@ -368,6 +412,7 @@ model_service_campaign_tag_detag_phonenumbers_output.go
 model_service_cdr_output_short.go
 model_service_channel_output.go
 model_service_device_output_short.go
+model_service_device_status_output.go
 model_service_doc_e911_active_location_output.go
 model_service_doc_e911_active_location_uri_api_output.go
 model_service_doc_e911_add_location_output.go
@@ -378,7 +423,6 @@ model_service_doc_e911_uris_api_output.go
 model_service_doc_e911_validate_location_output.go
 model_service_doc_group_get_all.go
 model_service_doc_group_get_single.go
-model_service_doc_metaflow_get.go
 model_service_docs_account_api_key.go
 model_service_docs_account_get_all.go
 model_service_docs_account_get_single.go
@@ -412,6 +456,7 @@ model_service_docs_channel_get_single.go
 model_service_docs_device_get_all.go
 model_service_docs_device_get_single.go
 model_service_docs_device_reboot.go
+model_service_docs_device_status.go
 model_service_docs_endpoint_list.go
 model_service_docs_event_daily_summary.go
 model_service_docs_event_detail.go
@@ -419,8 +464,10 @@ model_service_docs_event_monthly_summary.go
 model_service_docs_feature_daily_summary.go
 model_service_docs_feature_monthly_summary.go
 model_service_docs_get_queue_recipients.go
+model_service_docs_impersonate_user_get_single.go
 model_service_docs_media_get_all.go
 model_service_docs_media_get_single.go
+model_service_docs_metaflow_get.go
 model_service_docs_order_phonenumber.go
 model_service_docs_parkedcall_get.go
 model_service_docs_phonenumber_assign_payload.go
@@ -463,6 +510,8 @@ model_service_endpoint.go
 model_service_feature_code.go
 model_service_group_output_full.go
 model_service_group_output_short.go
+model_service_impersonate_user_output_full.go
+model_service_impersonated_user_info.go
 model_service_media_output_full.go
 model_service_media_output_short.go
 model_service_metaflow_output.go
@@ -517,6 +566,7 @@ model_service_voip_device_add_edit4.go
 model_service_voip_device_add_edit5.go
 model_service_voip_device_add_edit_provision.go
 model_service_voip_group_add_edit2.go
+model_service_voip_impersonate_user.go
 model_service_voip_media_add_edit_data.go
 model_service_voip_metaflow_add_data.go
 model_service_voip_presence_set_reset_edit_data.go
@@ -532,4 +582,6 @@ model_service_webhook_add.go
 model_service_webhook_delete_output.go
 model_service_webhook_edit.go
 response.go
+test/api_provision_test.go
+test/api_provisioning_test.go
 utils.go

@@ -1,6 +1,6 @@
 # \
 
-All URIs are relative to *http://api.cpaaslabs.net*
+All URIs are relative to *http://API_HOSTNAME*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**V1AccountAccountidUserUseridDelete**](VoIPUserAPI.md#V1AccountAccountidUserUseridDelete) | **Delete** /v1/account/{accountid}/user/{userid} | Delete User
 [**V1AccountAccountidUserUseridGet**](VoIPUserAPI.md#V1AccountAccountidUserUseridGet) | **Get** /v1/account/{accountid}/user/{userid} | Get User Details
 [**V1AccountAccountidUserUseridPut**](VoIPUserAPI.md#V1AccountAccountidUserUseridPut) | **Put** /v1/account/{accountid}/user/{userid} | Update User
+[**V1AccountAccountidUserUseridUserauthPost**](VoIPUserAPI.md#V1AccountAccountidUserUseridUserauthPost) | **Post** /v1/account/{accountid}/user/{userid}/userauth | Impersonate a User
 
 
 
@@ -364,6 +365,81 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ServiceDocsUserGetSingle**](ServiceDocsUserGetSingle.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## V1AccountAccountidUserUseridUserauthPost
+
+> ServiceDocsImpersonateUserGetSingle V1AccountAccountidUserUseridUserauthPost(ctx, accountid, userid).User(user).Execute()
+
+Impersonate a User
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	accountid := "accountid_example" // string | Account ID, 32 alpha numeric
+	userid := "userid_example" // string | User ID, 32 alpha numeric
+	user := *openapiclient.NewServiceVOIPImpersonateUser("Action_example") // ServiceVOIPImpersonateUser | Payload for impersonate a user
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VoIPUserAPI.V1AccountAccountidUserUseridUserauthPost(context.Background(), accountid, userid).User(user).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VoIPUserAPI.V1AccountAccountidUserUseridUserauthPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountAccountidUserUseridUserauthPost`: ServiceDocsImpersonateUserGetSingle
+	fmt.Fprintf(os.Stdout, "Response from `VoIPUserAPI.V1AccountAccountidUserUseridUserauthPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountid** | **string** | Account ID, 32 alpha numeric | 
+**userid** | **string** | User ID, 32 alpha numeric | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountAccountidUserUseridUserauthPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **user** | [**ServiceVOIPImpersonateUser**](ServiceVOIPImpersonateUser.md) | Payload for impersonate a user | 
+
+### Return type
+
+[**ServiceDocsImpersonateUserGetSingle**](ServiceDocsImpersonateUserGetSingle.md)
 
 ### Authorization
 

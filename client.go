@@ -66,8 +66,6 @@ type APIClient struct {
 
 	CallflowAPI *CallflowAPIService
 
-	CdrAPI *CdrAPIService
-
 	ChannelAPI *ChannelAPIService
 
 	DataAPI *DataAPIService
@@ -87,6 +85,10 @@ type APIClient struct {
 	PhoneNumberAPI *PhoneNumberAPIService
 
 	PresenceAPI *PresenceAPIService
+
+	ProvisionAPI *ProvisionAPIService
+
+	ProvisioningAPI *ProvisioningAPIService
 
 	SMSAPI *SMSAPIService
 
@@ -129,7 +131,6 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.CallQueueRecipientAPI = (*CallQueueRecipientAPIService)(&c.common)
 	c.CallRecordingAPI = (*CallRecordingAPIService)(&c.common)
 	c.CallflowAPI = (*CallflowAPIService)(&c.common)
-	c.CdrAPI = (*CdrAPIService)(&c.common)
 	c.ChannelAPI = (*ChannelAPIService)(&c.common)
 	c.DataAPI = (*DataAPIService)(&c.common)
 	c.DeviceAPI = (*DeviceAPIService)(&c.common)
@@ -140,6 +141,8 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.MetaflowAPI = (*MetaflowAPIService)(&c.common)
 	c.PhoneNumberAPI = (*PhoneNumberAPIService)(&c.common)
 	c.PresenceAPI = (*PresenceAPIService)(&c.common)
+	c.ProvisionAPI = (*ProvisionAPIService)(&c.common)
+	c.ProvisioningAPI = (*ProvisioningAPIService)(&c.common)
 	c.SMSAPI = (*SMSAPIService)(&c.common)
 	c.StorageAPI = (*StorageAPIService)(&c.common)
 	c.SystemStatusAPI = (*SystemStatusAPIService)(&c.common)

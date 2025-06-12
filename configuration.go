@@ -94,7 +94,7 @@ func NewConfiguration() *Configuration {
 		Debug:            false,
 		Servers:          ServerConfigurations{
 			{
-				URL: "//api.cpaaslabs.net",
+				URL: "//API_HOSTNAME",
 				Description: "No description provided",
 			},
 		},

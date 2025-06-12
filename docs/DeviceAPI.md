@@ -1,6 +1,6 @@
 # \
 
-All URIs are relative to *http://api.cpaaslabs.net*
+All URIs are relative to *http://API_HOSTNAME*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**V1AccountAccountidDeviceDeviceidRebootPost**](DeviceAPI.md#V1AccountAccountidDeviceDeviceidRebootPost) | **Post** /v1/account/{accountid}/device/{deviceid}/reboot | Reboot Device
 [**V1AccountAccountidDeviceGet**](DeviceAPI.md#V1AccountAccountidDeviceGet) | **Get** /v1/account/{accountid}/device | Get Device List
 [**V1AccountAccountidDevicePost**](DeviceAPI.md#V1AccountAccountidDevicePost) | **Post** /v1/account/{accountid}/device | Create Device
+[**V1AccountAccountidDeviceStatusGet**](DeviceAPI.md#V1AccountAccountidDeviceStatusGet) | **Get** /v1/account/{accountid}/device/status | Get Device Status
 
 
 
@@ -446,6 +447,76 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## V1AccountAccountidDeviceStatusGet
+
+> ServiceDocsDeviceStatus V1AccountAccountidDeviceStatusGet(ctx, accountid).Execute()
+
+Get Device Status
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	accountid := "accountid_example" // string | Account ID, 32 alpha numeric
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DeviceAPI.V1AccountAccountidDeviceStatusGet(context.Background(), accountid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DeviceAPI.V1AccountAccountidDeviceStatusGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountAccountidDeviceStatusGet`: ServiceDocsDeviceStatus
+	fmt.Fprintf(os.Stdout, "Response from `DeviceAPI.V1AccountAccountidDeviceStatusGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountid** | **string** | Account ID, 32 alpha numeric | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountAccountidDeviceStatusGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**ServiceDocsDeviceStatus**](ServiceDocsDeviceStatus.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
