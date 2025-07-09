@@ -29,7 +29,7 @@ type ApiV1E911GetRequest struct {
 	ApiService *E911APIService
 }
 
-func (r ApiV1E911GetRequest) Execute() (*ServiceDocE911URIsApiOutput, *http.Response, error) {
+func (r ApiV1E911GetRequest) Execute() (*ServiceDocsE911URIsApiOutput, *http.Response, error) {
 	return r.ApiService.V1E911GetExecute(r)
 }
 
@@ -49,13 +49,13 @@ func (a *E911APIService) V1E911Get(ctx context.Context) ApiV1E911GetRequest {
 }
 
 // Execute executes the request
-//  @return ServiceDocE911URIsApiOutput
-func (a *E911APIService) V1E911GetExecute(r ApiV1E911GetRequest) (*ServiceDocE911URIsApiOutput, *http.Response, error) {
+//  @return ServiceDocsE911URIsApiOutput
+func (a *E911APIService) V1E911GetExecute(r ApiV1E911GetRequest) (*ServiceDocsE911URIsApiOutput, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ServiceDocE911URIsApiOutput
+		localVarReturnValue  *ServiceDocsE911URIsApiOutput
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "E911APIService.V1E911Get")
@@ -150,7 +150,7 @@ type ApiV1E911LocationLocationIDActivatePutRequest struct {
 	locationID string
 }
 
-func (r ApiV1E911LocationLocationIDActivatePutRequest) Execute() (*ServiceDocE911ActiveLocationOutput, *http.Response, error) {
+func (r ApiV1E911LocationLocationIDActivatePutRequest) Execute() (*ServiceDocsE911ActiveLocationOutput, *http.Response, error) {
 	return r.ApiService.V1E911LocationLocationIDActivatePutExecute(r)
 }
 
@@ -172,13 +172,13 @@ func (a *E911APIService) V1E911LocationLocationIDActivatePut(ctx context.Context
 }
 
 // Execute executes the request
-//  @return ServiceDocE911ActiveLocationOutput
-func (a *E911APIService) V1E911LocationLocationIDActivatePutExecute(r ApiV1E911LocationLocationIDActivatePutRequest) (*ServiceDocE911ActiveLocationOutput, *http.Response, error) {
+//  @return ServiceDocsE911ActiveLocationOutput
+func (a *E911APIService) V1E911LocationLocationIDActivatePutExecute(r ApiV1E911LocationLocationIDActivatePutRequest) (*ServiceDocsE911ActiveLocationOutput, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ServiceDocE911ActiveLocationOutput
+		localVarReturnValue  *ServiceDocsE911ActiveLocationOutput
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "E911APIService.V1E911LocationLocationIDActivatePut")
@@ -274,7 +274,7 @@ type ApiV1E911LocationLocationIDDeleteRequest struct {
 	locationID string
 }
 
-func (r ApiV1E911LocationLocationIDDeleteRequest) Execute() (*ServiceDocE911RemoveLocationOutput, *http.Response, error) {
+func (r ApiV1E911LocationLocationIDDeleteRequest) Execute() (*ServiceDocsE911RemoveLocationOutput, *http.Response, error) {
 	return r.ApiService.V1E911LocationLocationIDDeleteExecute(r)
 }
 
@@ -296,13 +296,13 @@ func (a *E911APIService) V1E911LocationLocationIDDelete(ctx context.Context, loc
 }
 
 // Execute executes the request
-//  @return ServiceDocE911RemoveLocationOutput
-func (a *E911APIService) V1E911LocationLocationIDDeleteExecute(r ApiV1E911LocationLocationIDDeleteRequest) (*ServiceDocE911RemoveLocationOutput, *http.Response, error) {
+//  @return ServiceDocsE911RemoveLocationOutput
+func (a *E911APIService) V1E911LocationLocationIDDeleteExecute(r ApiV1E911LocationLocationIDDeleteRequest) (*ServiceDocsE911RemoveLocationOutput, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ServiceDocE911RemoveLocationOutput
+		localVarReturnValue  *ServiceDocsE911RemoveLocationOutput
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "E911APIService.V1E911LocationLocationIDDelete")
@@ -404,7 +404,7 @@ func (r ApiV1E911LocationValidatePutRequest) ReqBody(reqBody ServiceE911Validate
 	return r
 }
 
-func (r ApiV1E911LocationValidatePutRequest) Execute() (*ServiceDocE911ValidateLocationOutput, *http.Response, error) {
+func (r ApiV1E911LocationValidatePutRequest) Execute() (*ServiceDocsE911ValidateLocationOutput, *http.Response, error) {
 	return r.ApiService.V1E911LocationValidatePutExecute(r)
 }
 
@@ -424,13 +424,13 @@ func (a *E911APIService) V1E911LocationValidatePut(ctx context.Context) ApiV1E91
 }
 
 // Execute executes the request
-//  @return ServiceDocE911ValidateLocationOutput
-func (a *E911APIService) V1E911LocationValidatePutExecute(r ApiV1E911LocationValidatePutRequest) (*ServiceDocE911ValidateLocationOutput, *http.Response, error) {
+//  @return ServiceDocsE911ValidateLocationOutput
+func (a *E911APIService) V1E911LocationValidatePutExecute(r ApiV1E911LocationValidatePutRequest) (*ServiceDocsE911ValidateLocationOutput, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ServiceDocE911ValidateLocationOutput
+		localVarReturnValue  *ServiceDocsE911ValidateLocationOutput
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "E911APIService.V1E911LocationValidatePut")
@@ -530,7 +530,7 @@ type ApiV1E911PhoneNumberDeleteRequest struct {
 	phoneNumber string
 }
 
-func (r ApiV1E911PhoneNumberDeleteRequest) Execute() (*ServiceDocE911RemoveURIApiOutput, *http.Response, error) {
+func (r ApiV1E911PhoneNumberDeleteRequest) Execute() (*ServiceDocsE911RemoveURIApiOutput, *http.Response, error) {
 	return r.ApiService.V1E911PhoneNumberDeleteExecute(r)
 }
 
@@ -552,13 +552,13 @@ func (a *E911APIService) V1E911PhoneNumberDelete(ctx context.Context, phoneNumbe
 }
 
 // Execute executes the request
-//  @return ServiceDocE911RemoveURIApiOutput
-func (a *E911APIService) V1E911PhoneNumberDeleteExecute(r ApiV1E911PhoneNumberDeleteRequest) (*ServiceDocE911RemoveURIApiOutput, *http.Response, error) {
+//  @return ServiceDocsE911RemoveURIApiOutput
+func (a *E911APIService) V1E911PhoneNumberDeleteExecute(r ApiV1E911PhoneNumberDeleteRequest) (*ServiceDocsE911RemoveURIApiOutput, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ServiceDocE911RemoveURIApiOutput
+		localVarReturnValue  *ServiceDocsE911RemoveURIApiOutput
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "E911APIService.V1E911PhoneNumberDelete")
@@ -654,7 +654,7 @@ type ApiV1E911PhoneNumberLocationActiveGetRequest struct {
 	phoneNumber string
 }
 
-func (r ApiV1E911PhoneNumberLocationActiveGetRequest) Execute() (*ServiceDocE911ActiveLocationURIApiOutput, *http.Response, error) {
+func (r ApiV1E911PhoneNumberLocationActiveGetRequest) Execute() (*ServiceDocsE911ActiveLocationURIApiOutput, *http.Response, error) {
 	return r.ApiService.V1E911PhoneNumberLocationActiveGetExecute(r)
 }
 
@@ -676,13 +676,13 @@ func (a *E911APIService) V1E911PhoneNumberLocationActiveGet(ctx context.Context,
 }
 
 // Execute executes the request
-//  @return ServiceDocE911ActiveLocationURIApiOutput
-func (a *E911APIService) V1E911PhoneNumberLocationActiveGetExecute(r ApiV1E911PhoneNumberLocationActiveGetRequest) (*ServiceDocE911ActiveLocationURIApiOutput, *http.Response, error) {
+//  @return ServiceDocsE911ActiveLocationURIApiOutput
+func (a *E911APIService) V1E911PhoneNumberLocationActiveGetExecute(r ApiV1E911PhoneNumberLocationActiveGetRequest) (*ServiceDocsE911ActiveLocationURIApiOutput, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ServiceDocE911ActiveLocationURIApiOutput
+		localVarReturnValue  *ServiceDocsE911ActiveLocationURIApiOutput
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "E911APIService.V1E911PhoneNumberLocationActiveGet")
@@ -778,7 +778,7 @@ type ApiV1E911PhoneNumberLocationGetRequest struct {
 	phoneNumber string
 }
 
-func (r ApiV1E911PhoneNumberLocationGetRequest) Execute() (*ServiceDocE911LocationsURIApiOutput, *http.Response, error) {
+func (r ApiV1E911PhoneNumberLocationGetRequest) Execute() (*ServiceDocsE911LocationsURIApiOutput, *http.Response, error) {
 	return r.ApiService.V1E911PhoneNumberLocationGetExecute(r)
 }
 
@@ -800,13 +800,13 @@ func (a *E911APIService) V1E911PhoneNumberLocationGet(ctx context.Context, phone
 }
 
 // Execute executes the request
-//  @return ServiceDocE911LocationsURIApiOutput
-func (a *E911APIService) V1E911PhoneNumberLocationGetExecute(r ApiV1E911PhoneNumberLocationGetRequest) (*ServiceDocE911LocationsURIApiOutput, *http.Response, error) {
+//  @return ServiceDocsE911LocationsURIApiOutput
+func (a *E911APIService) V1E911PhoneNumberLocationGetExecute(r ApiV1E911PhoneNumberLocationGetRequest) (*ServiceDocsE911LocationsURIApiOutput, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ServiceDocE911LocationsURIApiOutput
+		localVarReturnValue  *ServiceDocsE911LocationsURIApiOutput
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "E911APIService.V1E911PhoneNumberLocationGet")
@@ -908,7 +908,7 @@ func (r ApiV1E911PostRequest) ReqBody(reqBody ServiceE911AddLocationInput) ApiV1
 	return r
 }
 
-func (r ApiV1E911PostRequest) Execute() (*ServiceDocE911AddLocationOutput, *http.Response, error) {
+func (r ApiV1E911PostRequest) Execute() (*ServiceDocsE911AddLocationOutput, *http.Response, error) {
 	return r.ApiService.V1E911PostExecute(r)
 }
 
@@ -928,13 +928,13 @@ func (a *E911APIService) V1E911Post(ctx context.Context) ApiV1E911PostRequest {
 }
 
 // Execute executes the request
-//  @return ServiceDocE911AddLocationOutput
-func (a *E911APIService) V1E911PostExecute(r ApiV1E911PostRequest) (*ServiceDocE911AddLocationOutput, *http.Response, error) {
+//  @return ServiceDocsE911AddLocationOutput
+func (a *E911APIService) V1E911PostExecute(r ApiV1E911PostRequest) (*ServiceDocsE911AddLocationOutput, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ServiceDocE911AddLocationOutput
+		localVarReturnValue  *ServiceDocsE911AddLocationOutput
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "E911APIService.V1E911Post")

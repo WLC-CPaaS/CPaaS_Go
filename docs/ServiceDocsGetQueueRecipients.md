@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**ServiceQueueRecipientOutputFull**](ServiceQueueRecipientOutputFull.md) |  | [optional] 
+**Data** | Pointer to [**ServiceQueueRecipientOutput**](ServiceQueueRecipientOutput.md) |  | [optional] 
 **NextStartKey** | Pointer to **string** | List Pagination: Used to get the next page of results. Will not exist if this is the last page. | [optional] 
 **PageSize** | Pointer to **int32** | List Pagination: The number of results returned in this page | [optional] 
 **RequestId** | Pointer to **string** | Unique id for each request | [optional] 
@@ -32,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *ServiceDocsGetQueueRecipients) GetData() ServiceQueueRecipientOutputFull`
+`func (o *ServiceDocsGetQueueRecipients) GetData() ServiceQueueRecipientOutput`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *ServiceDocsGetQueueRecipients) GetDataOk() (*ServiceQueueRecipientOutputFull, bool)`
+`func (o *ServiceDocsGetQueueRecipients) GetDataOk() (*ServiceQueueRecipientOutput, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *ServiceDocsGetQueueRecipients) SetData(v ServiceQueueRecipientOutputFull)`
+`func (o *ServiceDocsGetQueueRecipients) SetData(v ServiceQueueRecipientOutput)`
 
 SetData sets Data field to given value.
 

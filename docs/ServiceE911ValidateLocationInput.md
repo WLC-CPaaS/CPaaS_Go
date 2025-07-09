@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Location** | [**ServiceE911LocationInput**](ServiceE911LocationInput.md) |  | 
+**Location** | Pointer to [**ServiceE911LocationInput**](ServiceE911LocationInput.md) |  | [optional] 
 
 ## Methods
 
 ### NewServiceE911ValidateLocationInput
 
-`func NewServiceE911ValidateLocationInput(location ServiceE911LocationInput, ) *ServiceE911ValidateLocationInput`
+`func NewServiceE911ValidateLocationInput() *ServiceE911ValidateLocationInput`
 
 NewServiceE911ValidateLocationInput instantiates a new ServiceE911ValidateLocationInput object
 This constructor will assign default values to properties that have it defined,
@@ -44,6 +44,11 @@ and a boolean to check if the value has been set.
 
 SetLocation sets Location field to given value.
 
+### HasLocation
+
+`func (o *ServiceE911ValidateLocationInput) HasLocation() bool`
+
+HasLocation returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

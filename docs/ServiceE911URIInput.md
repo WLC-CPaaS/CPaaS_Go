@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CallerName** | **string** |  | 
+**CallerName** | Pointer to **string** |  | [optional] 
 **Uri** | **string** |  | 
 
 ## Methods
 
 ### NewServiceE911URIInput
 
-`func NewServiceE911URIInput(callerName string, uri string, ) *ServiceE911URIInput`
+`func NewServiceE911URIInput(uri string, ) *ServiceE911URIInput`
 
 NewServiceE911URIInput instantiates a new ServiceE911URIInput object
 This constructor will assign default values to properties that have it defined,
@@ -45,6 +45,11 @@ and a boolean to check if the value has been set.
 
 SetCallerName sets CallerName field to given value.
 
+### HasCallerName
+
+`func (o *ServiceE911URIInput) HasCallerName() bool`
+
+HasCallerName returns a boolean if a field has been set.
 
 ### GetUri
 

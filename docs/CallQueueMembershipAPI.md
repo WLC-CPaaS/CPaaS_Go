@@ -1,6 +1,6 @@
 # \
 
-All URIs are relative to *http://API_HOSTNAME*
+All URIs are relative to *http://api.beta.cpaaslabs.net*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## V1AccountAccountIDQueuemembershipPost
 
-> ServiceDocsCallQueueMemberGetSingle V1AccountAccountIDQueuemembershipPost(ctx, accountID).ReqBody(reqBody).Execute()
+> ServiceDocsQueueMembershipOutput V1AccountAccountIDQueuemembershipPost(ctx, accountID).ReqBody(reqBody).Execute()
 
 Grant Queue Membership to User
 
@@ -41,7 +41,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `CallQueueMembershipAPI.V1AccountAccountIDQueuemembershipPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1AccountAccountIDQueuemembershipPost`: ServiceDocsCallQueueMemberGetSingle
+	// response from `V1AccountAccountIDQueuemembershipPost`: ServiceDocsQueueMembershipOutput
 	fmt.Fprintf(os.Stdout, "Response from `CallQueueMembershipAPI.V1AccountAccountIDQueuemembershipPost`: %v\n", resp)
 }
 ```
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServiceDocsCallQueueMemberGetSingle**](ServiceDocsCallQueueMemberGetSingle.md)
+[**ServiceDocsQueueMembershipOutput**](ServiceDocsQueueMembershipOutput.md)
 
 ### Authorization
 

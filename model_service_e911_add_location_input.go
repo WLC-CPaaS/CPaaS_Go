@@ -13,8 +13,6 @@ package openapi
 
 import (
 	"encoding/json"
-	"bytes"
-	"fmt"
 )
 
 // checks if the ServiceE911AddLocationInput type satisfies the MappedNullable interface at compile time
@@ -22,20 +20,16 @@ var _ MappedNullable = &ServiceE911AddLocationInput{}
 
 // ServiceE911AddLocationInput struct for ServiceE911AddLocationInput
 type ServiceE911AddLocationInput struct {
-	Location ServiceE911LocationInput `json:"location"`
-	Uri ServiceE911URIInput `json:"uri"`
+	Location *ServiceE911LocationInput `json:"location,omitempty"`
+	Uri *ServiceE911URIInput `json:"uri,omitempty"`
 }
-
-type _ServiceE911AddLocationInput ServiceE911AddLocationInput
 
 // NewServiceE911AddLocationInput instantiates a new ServiceE911AddLocationInput object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewServiceE911AddLocationInput(location ServiceE911LocationInput, uri ServiceE911URIInput) *ServiceE911AddLocationInput {
+func NewServiceE911AddLocationInput() *ServiceE911AddLocationInput {
 	this := ServiceE911AddLocationInput{}
-	this.Location = location
-	this.Uri = uri
 	return &this
 }
 
@@ -47,52 +41,68 @@ func NewServiceE911AddLocationInputWithDefaults() *ServiceE911AddLocationInput {
 	return &this
 }
 
-// GetLocation returns the Location field value
+// GetLocation returns the Location field value if set, zero value otherwise.
 func (o *ServiceE911AddLocationInput) GetLocation() ServiceE911LocationInput {
-	if o == nil {
+	if o == nil || IsNil(o.Location) {
 		var ret ServiceE911LocationInput
 		return ret
 	}
-
-	return o.Location
+	return *o.Location
 }
 
-// GetLocationOk returns a tuple with the Location field value
+// GetLocationOk returns a tuple with the Location field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceE911AddLocationInput) GetLocationOk() (*ServiceE911LocationInput, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Location) {
 		return nil, false
 	}
-	return &o.Location, true
+	return o.Location, true
 }
 
-// SetLocation sets field value
+// HasLocation returns a boolean if a field has been set.
+func (o *ServiceE911AddLocationInput) HasLocation() bool {
+	if o != nil && !IsNil(o.Location) {
+		return true
+	}
+
+	return false
+}
+
+// SetLocation gets a reference to the given ServiceE911LocationInput and assigns it to the Location field.
 func (o *ServiceE911AddLocationInput) SetLocation(v ServiceE911LocationInput) {
-	o.Location = v
+	o.Location = &v
 }
 
-// GetUri returns the Uri field value
+// GetUri returns the Uri field value if set, zero value otherwise.
 func (o *ServiceE911AddLocationInput) GetUri() ServiceE911URIInput {
-	if o == nil {
+	if o == nil || IsNil(o.Uri) {
 		var ret ServiceE911URIInput
 		return ret
 	}
-
-	return o.Uri
+	return *o.Uri
 }
 
-// GetUriOk returns a tuple with the Uri field value
+// GetUriOk returns a tuple with the Uri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceE911AddLocationInput) GetUriOk() (*ServiceE911URIInput, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Uri) {
 		return nil, false
 	}
-	return &o.Uri, true
+	return o.Uri, true
 }
 
-// SetUri sets field value
+// HasUri returns a boolean if a field has been set.
+func (o *ServiceE911AddLocationInput) HasUri() bool {
+	if o != nil && !IsNil(o.Uri) {
+		return true
+	}
+
+	return false
+}
+
+// SetUri gets a reference to the given ServiceE911URIInput and assigns it to the Uri field.
 func (o *ServiceE911AddLocationInput) SetUri(v ServiceE911URIInput) {
-	o.Uri = v
+	o.Uri = &v
 }
 
 func (o ServiceE911AddLocationInput) MarshalJSON() ([]byte, error) {
@@ -105,47 +115,13 @@ func (o ServiceE911AddLocationInput) MarshalJSON() ([]byte, error) {
 
 func (o ServiceE911AddLocationInput) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["location"] = o.Location
-	toSerialize["uri"] = o.Uri
+	if !IsNil(o.Location) {
+		toSerialize["location"] = o.Location
+	}
+	if !IsNil(o.Uri) {
+		toSerialize["uri"] = o.Uri
+	}
 	return toSerialize, nil
-}
-
-func (o *ServiceE911AddLocationInput) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"location",
-		"uri",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varServiceE911AddLocationInput := _ServiceE911AddLocationInput{}
-
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varServiceE911AddLocationInput)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ServiceE911AddLocationInput(varServiceE911AddLocationInput)
-
-	return err
 }
 
 type NullableServiceE911AddLocationInput struct {

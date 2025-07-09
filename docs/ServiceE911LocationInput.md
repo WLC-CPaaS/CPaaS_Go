@@ -4,19 +4,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Address1** | **string** |  | 
+**Address1** | Pointer to **string** |  | [optional] 
 **Address2** | Pointer to **string** |  | [optional] 
-**Community** | **string** |  | 
+**Community** | Pointer to **string** |  | [optional] 
 **PlusFour** | Pointer to **string** |  | [optional] 
-**PostalCode** | **string** |  | 
-**State** | **string** |  | 
-**Type** | Pointer to **string** |  | [optional] 
+**PostalCode** | Pointer to **string** |  | [optional] 
+**State** | Pointer to **string** |  | [optional] 
+**Type** | **string** |  | 
 
 ## Methods
 
 ### NewServiceE911LocationInput
 
-`func NewServiceE911LocationInput(address1 string, community string, postalCode string, state string, ) *ServiceE911LocationInput`
+`func NewServiceE911LocationInput(type_ string, ) *ServiceE911LocationInput`
 
 NewServiceE911LocationInput instantiates a new ServiceE911LocationInput object
 This constructor will assign default values to properties that have it defined,
@@ -50,6 +50,11 @@ and a boolean to check if the value has been set.
 
 SetAddress1 sets Address1 field to given value.
 
+### HasAddress1
+
+`func (o *ServiceE911LocationInput) HasAddress1() bool`
+
+HasAddress1 returns a boolean if a field has been set.
 
 ### GetAddress2
 
@@ -95,6 +100,11 @@ and a boolean to check if the value has been set.
 
 SetCommunity sets Community field to given value.
 
+### HasCommunity
+
+`func (o *ServiceE911LocationInput) HasCommunity() bool`
+
+HasCommunity returns a boolean if a field has been set.
 
 ### GetPlusFour
 
@@ -140,6 +150,11 @@ and a boolean to check if the value has been set.
 
 SetPostalCode sets PostalCode field to given value.
 
+### HasPostalCode
+
+`func (o *ServiceE911LocationInput) HasPostalCode() bool`
+
+HasPostalCode returns a boolean if a field has been set.
 
 ### GetState
 
@@ -160,6 +175,11 @@ and a boolean to check if the value has been set.
 
 SetState sets State field to given value.
 
+### HasState
+
+`func (o *ServiceE911LocationInput) HasState() bool`
+
+HasState returns a boolean if a field has been set.
 
 ### GetType
 
@@ -180,11 +200,6 @@ and a boolean to check if the value has been set.
 
 SetType sets Type field to given value.
 
-### HasType
-
-`func (o *ServiceE911LocationInput) HasType() bool`
-
-HasType returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

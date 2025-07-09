@@ -30,7 +30,7 @@ type ApiV1AccountAccountIDParkedcallGetRequest struct {
 	accountID string
 }
 
-func (r ApiV1AccountAccountIDParkedcallGetRequest) Execute() (*ServiceDocsParkedcallGet, *http.Response, error) {
+func (r ApiV1AccountAccountIDParkedcallGetRequest) Execute() (*ServiceDocsCallparkGet, *http.Response, error) {
 	return r.ApiService.V1AccountAccountIDParkedcallGetExecute(r)
 }
 
@@ -52,13 +52,13 @@ func (a *CallParkAPIService) V1AccountAccountIDParkedcallGet(ctx context.Context
 }
 
 // Execute executes the request
-//  @return ServiceDocsParkedcallGet
-func (a *CallParkAPIService) V1AccountAccountIDParkedcallGetExecute(r ApiV1AccountAccountIDParkedcallGetRequest) (*ServiceDocsParkedcallGet, *http.Response, error) {
+//  @return ServiceDocsCallparkGet
+func (a *CallParkAPIService) V1AccountAccountIDParkedcallGetExecute(r ApiV1AccountAccountIDParkedcallGetRequest) (*ServiceDocsCallparkGet, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ServiceDocsParkedcallGet
+		localVarReturnValue  *ServiceDocsCallparkGet
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CallParkAPIService.V1AccountAccountIDParkedcallGet")

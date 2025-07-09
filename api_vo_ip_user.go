@@ -736,7 +736,7 @@ func (r ApiV1AccountAccountidUserUseridUserauthPostRequest) Execute() (*ServiceD
 /*
 V1AccountAccountidUserUseridUserauthPost Impersonate a User
 
-Impersonate as another user if you have access to admin.
+Retrieve a token for making presence calls.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param accountid Account ID, 32 alpha numeric

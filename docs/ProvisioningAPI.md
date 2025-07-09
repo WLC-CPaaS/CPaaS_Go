@@ -1,26 +1,100 @@
 # \
 
-All URIs are relative to *http://API_HOSTNAME*
+All URIs are relative to *http://api.beta.cpaaslabs.net*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**V1ApBrandBrandFamilyFamilyGet**](ProvisioningAPI.md#V1ApBrandBrandFamilyFamilyGet) | **Get** /v1/ap/brand/{brand}/family/{family} | Get Family
+[**V1AccountAccountIDProvisionFilenameGet**](ProvisioningAPI.md#V1AccountAccountIDProvisionFilenameGet) | **Get** /v1/account/{accountID}/provision/{filename} | Get Config File Details
+[**V1ApBrandBrandFamilyFamilyGet**](ProvisioningAPI.md#V1ApBrandBrandFamilyFamilyGet) | **Get** /v1/ap/brand/{brand}/family/{family} | Get Family Details
 [**V1ApBrandBrandFamilyFamilyModelGet**](ProvisioningAPI.md#V1ApBrandBrandFamilyFamilyModelGet) | **Get** /v1/ap/brand/{brand}/family/{family}/model | Get Model List
-[**V1ApBrandBrandFamilyFamilyModelModelGet**](ProvisioningAPI.md#V1ApBrandBrandFamilyFamilyModelModelGet) | **Get** /v1/ap/brand/{brand}/family/{family}/model/{model} | Get Model
+[**V1ApBrandBrandFamilyFamilyModelModelGet**](ProvisioningAPI.md#V1ApBrandBrandFamilyFamilyModelModelGet) | **Get** /v1/ap/brand/{brand}/family/{family}/model/{model} | Get Model Details
 [**V1ApBrandBrandFamilyFamilyModelModelTemplateGet**](ProvisioningAPI.md#V1ApBrandBrandFamilyFamilyModelModelTemplateGet) | **Get** /v1/ap/brand/{brand}/family/{family}/model/{model}/template | Get Template List
-[**V1ApBrandBrandFamilyFamilyModelModelTemplateTemplateGet**](ProvisioningAPI.md#V1ApBrandBrandFamilyFamilyModelModelTemplateTemplateGet) | **Get** /v1/ap/brand/{brand}/family/{family}/model/{model}/template/{template} | Get Template
+[**V1ApBrandBrandFamilyFamilyModelModelTemplateTemplateGet**](ProvisioningAPI.md#V1ApBrandBrandFamilyFamilyModelModelTemplateTemplateGet) | **Get** /v1/ap/brand/{brand}/family/{family}/model/{model}/template/{template} | Get Template Details
 [**V1ApBrandBrandFamilyGet**](ProvisioningAPI.md#V1ApBrandBrandFamilyGet) | **Get** /v1/ap/brand/{brand}/family | Get Family List
-[**V1ApBrandBrandGet**](ProvisioningAPI.md#V1ApBrandBrandGet) | **Get** /v1/ap/brand/{brand} | Get Brand
-[**V1ApBrandGet**](ProvisioningAPI.md#V1ApBrandGet) | **Get** /v1/ap/brand | Get Brand
-[**V1ApConfigfileGeneratePost**](ProvisioningAPI.md#V1ApConfigfileGeneratePost) | **Post** /v1/ap/configfile/generate | Generate config file
+[**V1ApBrandBrandGet**](ProvisioningAPI.md#V1ApBrandBrandGet) | **Get** /v1/ap/brand/{brand} | Get Brand Details
+[**V1ApBrandGet**](ProvisioningAPI.md#V1ApBrandGet) | **Get** /v1/ap/brand | Get Brand List
+[**V1ApConfigfileGeneratePost**](ProvisioningAPI.md#V1ApConfigfileGeneratePost) | **Post** /v1/ap/configfile/generate | Generate Config File
 
+
+
+## V1AccountAccountIDProvisionFilenameGet
+
+> *os.File V1AccountAccountIDProvisionFilenameGet(ctx, accountID, filename).Execute()
+
+Get Config File Details
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	accountID := "accountID_example" // string | Account ID, 32 alpha numeric
+	filename := "filename_example" // string | Name of config file
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ProvisioningAPI.V1AccountAccountIDProvisionFilenameGet(context.Background(), accountID, filename).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ProvisioningAPI.V1AccountAccountIDProvisionFilenameGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1AccountAccountIDProvisionFilenameGet`: *os.File
+	fmt.Fprintf(os.Stdout, "Response from `ProvisioningAPI.V1AccountAccountIDProvisionFilenameGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**accountID** | **string** | Account ID, 32 alpha numeric | 
+**filename** | **string** | Name of config file | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1AccountAccountIDProvisionFilenameGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[***os.File**](*os.File.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## V1ApBrandBrandFamilyFamilyGet
 
 > ProvisioningDocsDocsFamilyOutputSingle V1ApBrandBrandFamilyFamilyGet(ctx, brand, family).Execute()
 
-Get Family
+Get Family Details
 
 
 
@@ -174,7 +248,7 @@ Name | Type | Description  | Notes
 
 > ProvisioningDocsDocsModelOutputSingle V1ApBrandBrandFamilyFamilyModelModelGet(ctx, brand, family, model).Execute()
 
-Get Model
+Get Model Details
 
 
 
@@ -336,7 +410,7 @@ Name | Type | Description  | Notes
 
 > ProvisioningDocsDocsTemplateOutputSingle V1ApBrandBrandFamilyFamilyModelModelTemplateTemplateGet(ctx, brand, family, model, template).Execute()
 
-Get Template
+Get Template Details
 
 
 
@@ -493,7 +567,7 @@ Name | Type | Description  | Notes
 
 > ProvisioningDocsDocsBrandOutputSingle V1ApBrandBrandGet(ctx, brand).Execute()
 
-Get Brand
+Get Brand Details
 
 
 
@@ -563,7 +637,7 @@ Name | Type | Description  | Notes
 
 > ProvisioningDocsDocsBrandsOutput V1ApBrandGet(ctx).BrandName(brandName).PageSize(pageSize).StartKey(startKey).Status(status).Execute()
 
-Get Brand
+Get Brand List
 
 
 
@@ -635,7 +709,7 @@ Name | Type | Description  | Notes
 
 > ProvisioningDocsDocsConfigFileOutput V1ApConfigfileGeneratePost(ctx).Params(params).Execute()
 
-Generate config file
+Generate Config File
 
 
 

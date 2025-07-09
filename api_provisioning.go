@@ -18,11 +18,129 @@ import (
 	"net/http"
 	"net/url"
 	"strings"
+	"os"
 )
 
 
 // ProvisioningAPIService ProvisioningAPI service
 type ProvisioningAPIService service
+
+type ApiV1AccountAccountIDProvisionFilenameGetRequest struct {
+	ctx context.Context
+	ApiService *ProvisioningAPIService
+	accountID string
+	filename string
+}
+
+func (r ApiV1AccountAccountIDProvisionFilenameGetRequest) Execute() (*os.File, *http.Response, error) {
+	return r.ApiService.V1AccountAccountIDProvisionFilenameGetExecute(r)
+}
+
+/*
+V1AccountAccountIDProvisionFilenameGet Get Config File Details
+
+Retrieve the configuration details (e.g., settings and parameters) for a device.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param accountID Account ID, 32 alpha numeric
+ @param filename Name of config file
+ @return ApiV1AccountAccountIDProvisionFilenameGetRequest
+*/
+func (a *ProvisioningAPIService) V1AccountAccountIDProvisionFilenameGet(ctx context.Context, accountID string, filename string) ApiV1AccountAccountIDProvisionFilenameGetRequest {
+	return ApiV1AccountAccountIDProvisionFilenameGetRequest{
+		ApiService: a,
+		ctx: ctx,
+		accountID: accountID,
+		filename: filename,
+	}
+}
+
+// Execute executes the request
+//  @return *os.File
+func (a *ProvisioningAPIService) V1AccountAccountIDProvisionFilenameGetExecute(r ApiV1AccountAccountIDProvisionFilenameGetRequest) (*os.File, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *os.File
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProvisioningAPIService.V1AccountAccountIDProvisionFilenameGet")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/v1/account/{accountID}/provision/{filename}"
+	localVarPath = strings.Replace(localVarPath, "{"+"accountID"+"}", url.PathEscape(parameterValueToString(r.accountID, "accountID")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"filename"+"}", url.PathEscape(parameterValueToString(r.filename, "filename")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v CPAASError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
 
 type ApiV1ApBrandBrandFamilyFamilyGetRequest struct {
 	ctx context.Context
@@ -36,7 +154,7 @@ func (r ApiV1ApBrandBrandFamilyFamilyGetRequest) Execute() (*ProvisioningDocsDoc
 }
 
 /*
-V1ApBrandBrandFamilyFamilyGet Get Family
+V1ApBrandBrandFamilyFamilyGet Get Family Details
 
 Retrieve a family's details by the randomly generated ID.
 
@@ -357,7 +475,7 @@ func (r ApiV1ApBrandBrandFamilyFamilyModelModelGetRequest) Execute() (*Provision
 }
 
 /*
-V1ApBrandBrandFamilyFamilyModelModelGet Get Model
+V1ApBrandBrandFamilyFamilyModelModelGet Get Model Details
 
 Retrieve a model's details by the randomly generated ID.
 
@@ -695,7 +813,7 @@ func (r ApiV1ApBrandBrandFamilyFamilyModelModelTemplateTemplateGetRequest) Execu
 }
 
 /*
-V1ApBrandBrandFamilyFamilyModelModelTemplateTemplateGet Get Template
+V1ApBrandBrandFamilyFamilyModelModelTemplateTemplateGet Get Template Details
 
 Retrieve details about a template for a model by the randomly generated ID.
 
@@ -1016,7 +1134,7 @@ func (r ApiV1ApBrandBrandGetRequest) Execute() (*ProvisioningDocsDocsBrandOutput
 }
 
 /*
-V1ApBrandBrandGet Get Brand
+V1ApBrandBrandGet Get Brand Details
 
 Retrieve a brand's details by the randomly generated ID.
 
@@ -1177,7 +1295,7 @@ func (r ApiV1ApBrandGetRequest) Execute() (*ProvisioningDocsDocsBrandsOutput, *h
 }
 
 /*
-V1ApBrandGet Get Brand
+V1ApBrandGet Get Brand List
 
 Retrieve a list of all brands (e.g., Yealink and Polycom) by client.
 
@@ -1330,7 +1448,7 @@ func (r ApiV1ApConfigfileGeneratePostRequest) Execute() (*ProvisioningDocsDocsCo
 }
 
 /*
-V1ApConfigfileGeneratePost Generate config file
+V1ApConfigfileGeneratePost Generate Config File
 
 Generate a configuration file that includes a list of parameters passed to the specified template_id in the request payload, with populated values returned in the response.
 

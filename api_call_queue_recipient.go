@@ -38,7 +38,7 @@ func (r ApiV1AccountAccountIDLoginrecipientRecipientIDPostRequest) ReqBody(reqBo
 	return r
 }
 
-func (r ApiV1AccountAccountIDLoginrecipientRecipientIDPostRequest) Execute() (*ServiceDocsCallQueueResponseShort, *http.Response, error) {
+func (r ApiV1AccountAccountIDLoginrecipientRecipientIDPostRequest) Execute() (*ServiceDocsCallQueueRecipientLoginLogoutOutput, *http.Response, error) {
 	return r.ApiService.V1AccountAccountIDLoginrecipientRecipientIDPostExecute(r)
 }
 
@@ -62,13 +62,13 @@ func (a *CallQueueRecipientAPIService) V1AccountAccountIDLoginrecipientRecipient
 }
 
 // Execute executes the request
-//  @return ServiceDocsCallQueueResponseShort
-func (a *CallQueueRecipientAPIService) V1AccountAccountIDLoginrecipientRecipientIDPostExecute(r ApiV1AccountAccountIDLoginrecipientRecipientIDPostRequest) (*ServiceDocsCallQueueResponseShort, *http.Response, error) {
+//  @return ServiceDocsCallQueueRecipientLoginLogoutOutput
+func (a *CallQueueRecipientAPIService) V1AccountAccountIDLoginrecipientRecipientIDPostExecute(r ApiV1AccountAccountIDLoginrecipientRecipientIDPostRequest) (*ServiceDocsCallQueueRecipientLoginLogoutOutput, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ServiceDocsCallQueueResponseShort
+		localVarReturnValue  *ServiceDocsCallQueueRecipientLoginLogoutOutput
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CallQueueRecipientAPIService.V1AccountAccountIDLoginrecipientRecipientIDPost")

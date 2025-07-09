@@ -24,6 +24,7 @@ type ServiceVOIPDeviceAddEditProvision struct {
 	EndpointFamily *string `json:"endpoint_family,omitempty"`
 	EndpointModel *string `json:"endpoint_model,omitempty"`
 	Id *string `json:"id,omitempty"`
+	LineKeys []ServiceVOIPDeviceAddEditLineKey `json:"line_keys,omitempty"`
 }
 
 // NewServiceVOIPDeviceAddEditProvision instantiates a new ServiceVOIPDeviceAddEditProvision object
@@ -171,6 +172,38 @@ func (o *ServiceVOIPDeviceAddEditProvision) SetId(v string) {
 	o.Id = &v
 }
 
+// GetLineKeys returns the LineKeys field value if set, zero value otherwise.
+func (o *ServiceVOIPDeviceAddEditProvision) GetLineKeys() []ServiceVOIPDeviceAddEditLineKey {
+	if o == nil || IsNil(o.LineKeys) {
+		var ret []ServiceVOIPDeviceAddEditLineKey
+		return ret
+	}
+	return o.LineKeys
+}
+
+// GetLineKeysOk returns a tuple with the LineKeys field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ServiceVOIPDeviceAddEditProvision) GetLineKeysOk() ([]ServiceVOIPDeviceAddEditLineKey, bool) {
+	if o == nil || IsNil(o.LineKeys) {
+		return nil, false
+	}
+	return o.LineKeys, true
+}
+
+// HasLineKeys returns a boolean if a field has been set.
+func (o *ServiceVOIPDeviceAddEditProvision) HasLineKeys() bool {
+	if o != nil && !IsNil(o.LineKeys) {
+		return true
+	}
+
+	return false
+}
+
+// SetLineKeys gets a reference to the given []ServiceVOIPDeviceAddEditLineKey and assigns it to the LineKeys field.
+func (o *ServiceVOIPDeviceAddEditProvision) SetLineKeys(v []ServiceVOIPDeviceAddEditLineKey) {
+	o.LineKeys = v
+}
+
 func (o ServiceVOIPDeviceAddEditProvision) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -192,6 +225,9 @@ func (o ServiceVOIPDeviceAddEditProvision) ToMap() (map[string]interface{}, erro
 	}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
+	}
+	if !IsNil(o.LineKeys) {
+		toSerialize["line_keys"] = o.LineKeys
 	}
 	return toSerialize, nil
 }

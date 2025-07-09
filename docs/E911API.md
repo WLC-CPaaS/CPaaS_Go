@@ -1,6 +1,6 @@
 # \
 
-All URIs are relative to *http://API_HOSTNAME*
+All URIs are relative to *http://api.beta.cpaaslabs.net*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 ## V1E911Get
 
-> ServiceDocE911URIsApiOutput V1E911Get(ctx).Execute()
+> ServiceDocsE911URIsApiOutput V1E911Get(ctx).Execute()
 
 Get E911 List
 
@@ -44,7 +44,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `E911API.V1E911Get``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1E911Get`: ServiceDocE911URIsApiOutput
+	// response from `V1E911Get`: ServiceDocsE911URIsApiOutput
 	fmt.Fprintf(os.Stdout, "Response from `E911API.V1E911Get`: %v\n", resp)
 }
 ```
@@ -60,7 +60,7 @@ Other parameters are passed through a pointer to a apiV1E911GetRequest struct vi
 
 ### Return type
 
-[**ServiceDocE911URIsApiOutput**](ServiceDocE911URIsApiOutput.md)
+[**ServiceDocsE911URIsApiOutput**](ServiceDocsE911URIsApiOutput.md)
 
 ### Authorization
 
@@ -78,7 +78,7 @@ No authorization required
 
 ## V1E911LocationLocationIDActivatePut
 
-> ServiceDocE911ActiveLocationOutput V1E911LocationLocationIDActivatePut(ctx, locationID).Execute()
+> ServiceDocsE911ActiveLocationOutput V1E911LocationLocationIDActivatePut(ctx, locationID).Execute()
 
 Activate E911 Location
 
@@ -106,7 +106,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `E911API.V1E911LocationLocationIDActivatePut``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1E911LocationLocationIDActivatePut`: ServiceDocE911ActiveLocationOutput
+	// response from `V1E911LocationLocationIDActivatePut`: ServiceDocsE911ActiveLocationOutput
 	fmt.Fprintf(os.Stdout, "Response from `E911API.V1E911LocationLocationIDActivatePut`: %v\n", resp)
 }
 ```
@@ -130,7 +130,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServiceDocE911ActiveLocationOutput**](ServiceDocE911ActiveLocationOutput.md)
+[**ServiceDocsE911ActiveLocationOutput**](ServiceDocsE911ActiveLocationOutput.md)
 
 ### Authorization
 
@@ -148,7 +148,7 @@ No authorization required
 
 ## V1E911LocationLocationIDDelete
 
-> ServiceDocE911RemoveLocationOutput V1E911LocationLocationIDDelete(ctx, locationID).Execute()
+> ServiceDocsE911RemoveLocationOutput V1E911LocationLocationIDDelete(ctx, locationID).Execute()
 
 Delete E911 Location
 
@@ -176,7 +176,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `E911API.V1E911LocationLocationIDDelete``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1E911LocationLocationIDDelete`: ServiceDocE911RemoveLocationOutput
+	// response from `V1E911LocationLocationIDDelete`: ServiceDocsE911RemoveLocationOutput
 	fmt.Fprintf(os.Stdout, "Response from `E911API.V1E911LocationLocationIDDelete`: %v\n", resp)
 }
 ```
@@ -200,7 +200,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServiceDocE911RemoveLocationOutput**](ServiceDocE911RemoveLocationOutput.md)
+[**ServiceDocsE911RemoveLocationOutput**](ServiceDocsE911RemoveLocationOutput.md)
 
 ### Authorization
 
@@ -218,7 +218,7 @@ No authorization required
 
 ## V1E911LocationValidatePut
 
-> ServiceDocE911ValidateLocationOutput V1E911LocationValidatePut(ctx).ReqBody(reqBody).Execute()
+> ServiceDocsE911ValidateLocationOutput V1E911LocationValidatePut(ctx).ReqBody(reqBody).Execute()
 
 Validate a Location
 
@@ -237,7 +237,7 @@ import (
 )
 
 func main() {
-	reqBody := *openapiclient.NewServiceE911ValidateLocationInput(*openapiclient.NewServiceE911LocationInput("Address1_example", "Community_example", "PostalCode_example", "State_example")) // ServiceE911ValidateLocationInput | location details
+	reqBody := *openapiclient.NewServiceE911ValidateLocationInput() // ServiceE911ValidateLocationInput | location details
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -246,7 +246,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `E911API.V1E911LocationValidatePut``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1E911LocationValidatePut`: ServiceDocE911ValidateLocationOutput
+	// response from `V1E911LocationValidatePut`: ServiceDocsE911ValidateLocationOutput
 	fmt.Fprintf(os.Stdout, "Response from `E911API.V1E911LocationValidatePut`: %v\n", resp)
 }
 ```
@@ -266,7 +266,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServiceDocE911ValidateLocationOutput**](ServiceDocE911ValidateLocationOutput.md)
+[**ServiceDocsE911ValidateLocationOutput**](ServiceDocsE911ValidateLocationOutput.md)
 
 ### Authorization
 
@@ -284,7 +284,7 @@ No authorization required
 
 ## V1E911PhoneNumberDelete
 
-> ServiceDocE911RemoveURIApiOutput V1E911PhoneNumberDelete(ctx, phoneNumber).Execute()
+> ServiceDocsE911RemoveURIApiOutput V1E911PhoneNumberDelete(ctx, phoneNumber).Execute()
 
 Delete E911 Phone Number
 
@@ -312,7 +312,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `E911API.V1E911PhoneNumberDelete``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1E911PhoneNumberDelete`: ServiceDocE911RemoveURIApiOutput
+	// response from `V1E911PhoneNumberDelete`: ServiceDocsE911RemoveURIApiOutput
 	fmt.Fprintf(os.Stdout, "Response from `E911API.V1E911PhoneNumberDelete`: %v\n", resp)
 }
 ```
@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServiceDocE911RemoveURIApiOutput**](ServiceDocE911RemoveURIApiOutput.md)
+[**ServiceDocsE911RemoveURIApiOutput**](ServiceDocsE911RemoveURIApiOutput.md)
 
 ### Authorization
 
@@ -354,7 +354,7 @@ No authorization required
 
 ## V1E911PhoneNumberLocationActiveGet
 
-> ServiceDocE911ActiveLocationURIApiOutput V1E911PhoneNumberLocationActiveGet(ctx, phoneNumber).Execute()
+> ServiceDocsE911ActiveLocationURIApiOutput V1E911PhoneNumberLocationActiveGet(ctx, phoneNumber).Execute()
 
 Get Actvie Location for a Phone Number
 
@@ -382,7 +382,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `E911API.V1E911PhoneNumberLocationActiveGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1E911PhoneNumberLocationActiveGet`: ServiceDocE911ActiveLocationURIApiOutput
+	// response from `V1E911PhoneNumberLocationActiveGet`: ServiceDocsE911ActiveLocationURIApiOutput
 	fmt.Fprintf(os.Stdout, "Response from `E911API.V1E911PhoneNumberLocationActiveGet`: %v\n", resp)
 }
 ```
@@ -406,7 +406,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServiceDocE911ActiveLocationURIApiOutput**](ServiceDocE911ActiveLocationURIApiOutput.md)
+[**ServiceDocsE911ActiveLocationURIApiOutput**](ServiceDocsE911ActiveLocationURIApiOutput.md)
 
 ### Authorization
 
@@ -424,7 +424,7 @@ No authorization required
 
 ## V1E911PhoneNumberLocationGet
 
-> ServiceDocE911LocationsURIApiOutput V1E911PhoneNumberLocationGet(ctx, phoneNumber).Execute()
+> ServiceDocsE911LocationsURIApiOutput V1E911PhoneNumberLocationGet(ctx, phoneNumber).Execute()
 
 Get Location List for Phone Number
 
@@ -452,7 +452,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `E911API.V1E911PhoneNumberLocationGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1E911PhoneNumberLocationGet`: ServiceDocE911LocationsURIApiOutput
+	// response from `V1E911PhoneNumberLocationGet`: ServiceDocsE911LocationsURIApiOutput
 	fmt.Fprintf(os.Stdout, "Response from `E911API.V1E911PhoneNumberLocationGet`: %v\n", resp)
 }
 ```
@@ -476,7 +476,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServiceDocE911LocationsURIApiOutput**](ServiceDocE911LocationsURIApiOutput.md)
+[**ServiceDocsE911LocationsURIApiOutput**](ServiceDocsE911LocationsURIApiOutput.md)
 
 ### Authorization
 
@@ -494,7 +494,7 @@ No authorization required
 
 ## V1E911Post
 
-> ServiceDocE911AddLocationOutput V1E911Post(ctx).ReqBody(reqBody).Execute()
+> ServiceDocsE911AddLocationOutput V1E911Post(ctx).ReqBody(reqBody).Execute()
 
 Create an E911 Location
 
@@ -513,7 +513,7 @@ import (
 )
 
 func main() {
-	reqBody := *openapiclient.NewServiceE911AddLocationInput(*openapiclient.NewServiceE911LocationInput("Address1_example", "Community_example", "PostalCode_example", "State_example"), *openapiclient.NewServiceE911URIInput("CallerName_example", "Uri_example")) // ServiceE911AddLocationInput | location details
+	reqBody := *openapiclient.NewServiceE911AddLocationInput() // ServiceE911AddLocationInput | location details
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -522,7 +522,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `E911API.V1E911Post``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1E911Post`: ServiceDocE911AddLocationOutput
+	// response from `V1E911Post`: ServiceDocsE911AddLocationOutput
 	fmt.Fprintf(os.Stdout, "Response from `E911API.V1E911Post`: %v\n", resp)
 }
 ```
@@ -542,7 +542,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServiceDocE911AddLocationOutput**](ServiceDocE911AddLocationOutput.md)
+[**ServiceDocsE911AddLocationOutput**](ServiceDocsE911AddLocationOutput.md)
 
 ### Authorization
 

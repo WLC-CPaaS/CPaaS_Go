@@ -13,8 +13,6 @@ package openapi
 
 import (
 	"encoding/json"
-	"bytes"
-	"fmt"
 )
 
 // checks if the ServiceE911ValidateLocationInput type satisfies the MappedNullable interface at compile time
@@ -22,18 +20,15 @@ var _ MappedNullable = &ServiceE911ValidateLocationInput{}
 
 // ServiceE911ValidateLocationInput struct for ServiceE911ValidateLocationInput
 type ServiceE911ValidateLocationInput struct {
-	Location ServiceE911LocationInput `json:"location"`
+	Location *ServiceE911LocationInput `json:"location,omitempty"`
 }
-
-type _ServiceE911ValidateLocationInput ServiceE911ValidateLocationInput
 
 // NewServiceE911ValidateLocationInput instantiates a new ServiceE911ValidateLocationInput object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewServiceE911ValidateLocationInput(location ServiceE911LocationInput) *ServiceE911ValidateLocationInput {
+func NewServiceE911ValidateLocationInput() *ServiceE911ValidateLocationInput {
 	this := ServiceE911ValidateLocationInput{}
-	this.Location = location
 	return &this
 }
 
@@ -45,28 +40,36 @@ func NewServiceE911ValidateLocationInputWithDefaults() *ServiceE911ValidateLocat
 	return &this
 }
 
-// GetLocation returns the Location field value
+// GetLocation returns the Location field value if set, zero value otherwise.
 func (o *ServiceE911ValidateLocationInput) GetLocation() ServiceE911LocationInput {
-	if o == nil {
+	if o == nil || IsNil(o.Location) {
 		var ret ServiceE911LocationInput
 		return ret
 	}
-
-	return o.Location
+	return *o.Location
 }
 
-// GetLocationOk returns a tuple with the Location field value
+// GetLocationOk returns a tuple with the Location field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceE911ValidateLocationInput) GetLocationOk() (*ServiceE911LocationInput, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Location) {
 		return nil, false
 	}
-	return &o.Location, true
+	return o.Location, true
 }
 
-// SetLocation sets field value
+// HasLocation returns a boolean if a field has been set.
+func (o *ServiceE911ValidateLocationInput) HasLocation() bool {
+	if o != nil && !IsNil(o.Location) {
+		return true
+	}
+
+	return false
+}
+
+// SetLocation gets a reference to the given ServiceE911LocationInput and assigns it to the Location field.
 func (o *ServiceE911ValidateLocationInput) SetLocation(v ServiceE911LocationInput) {
-	o.Location = v
+	o.Location = &v
 }
 
 func (o ServiceE911ValidateLocationInput) MarshalJSON() ([]byte, error) {
@@ -79,45 +82,10 @@ func (o ServiceE911ValidateLocationInput) MarshalJSON() ([]byte, error) {
 
 func (o ServiceE911ValidateLocationInput) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["location"] = o.Location
+	if !IsNil(o.Location) {
+		toSerialize["location"] = o.Location
+	}
 	return toSerialize, nil
-}
-
-func (o *ServiceE911ValidateLocationInput) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"location",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err;
-	}
-
-	for _, requiredProperty := range(requiredProperties) {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varServiceE911ValidateLocationInput := _ServiceE911ValidateLocationInput{}
-
-	decoder := json.NewDecoder(bytes.NewReader(data))
-	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varServiceE911ValidateLocationInput)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ServiceE911ValidateLocationInput(varServiceE911ValidateLocationInput)
-
-	return err
 }
 
 type NullableServiceE911ValidateLocationInput struct {

@@ -1,6 +1,6 @@
 # \
 
-All URIs are relative to *http://API_HOSTNAME*
+All URIs are relative to *http://api.beta.cpaaslabs.net*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## V1AccountAccountIDParkedcallGet
 
-> ServiceDocsParkedcallGet V1AccountAccountIDParkedcallGet(ctx, accountID).Execute()
+> ServiceDocsCallparkGet V1AccountAccountIDParkedcallGet(ctx, accountID).Execute()
 
 Get Call Park List
 
@@ -38,7 +38,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `CallParkAPI.V1AccountAccountIDParkedcallGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1AccountAccountIDParkedcallGet`: ServiceDocsParkedcallGet
+	// response from `V1AccountAccountIDParkedcallGet`: ServiceDocsCallparkGet
 	fmt.Fprintf(os.Stdout, "Response from `CallParkAPI.V1AccountAccountIDParkedcallGet`: %v\n", resp)
 }
 ```
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServiceDocsParkedcallGet**](ServiceDocsParkedcallGet.md)
+[**ServiceDocsCallparkGet**](ServiceDocsCallparkGet.md)
 
 ### Authorization
 

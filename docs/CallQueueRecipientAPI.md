@@ -1,6 +1,6 @@
 # \
 
-All URIs are relative to *http://API_HOSTNAME*
+All URIs are relative to *http://api.beta.cpaaslabs.net*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## V1AccountAccountIDLoginrecipientRecipientIDPost
 
-> ServiceDocsCallQueueResponseShort V1AccountAccountIDLoginrecipientRecipientIDPost(ctx, accountID, recipientID).ReqBody(reqBody).Execute()
+> ServiceDocsCallQueueRecipientLoginLogoutOutput V1AccountAccountIDLoginrecipientRecipientIDPost(ctx, accountID, recipientID).ReqBody(reqBody).Execute()
 
 Login as Recipient
 
@@ -42,7 +42,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `CallQueueRecipientAPI.V1AccountAccountIDLoginrecipientRecipientIDPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1AccountAccountIDLoginrecipientRecipientIDPost`: ServiceDocsCallQueueResponseShort
+	// response from `V1AccountAccountIDLoginrecipientRecipientIDPost`: ServiceDocsCallQueueRecipientLoginLogoutOutput
 	fmt.Fprintf(os.Stdout, "Response from `CallQueueRecipientAPI.V1AccountAccountIDLoginrecipientRecipientIDPost`: %v\n", resp)
 }
 ```
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServiceDocsCallQueueResponseShort**](ServiceDocsCallQueueResponseShort.md)
+[**ServiceDocsCallQueueRecipientLoginLogoutOutput**](ServiceDocsCallQueueRecipientLoginLogoutOutput.md)
 
 ### Authorization
 

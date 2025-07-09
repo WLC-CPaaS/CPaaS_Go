@@ -37,7 +37,7 @@ func (r ApiV1AccountAccountIDQueuemembershipPostRequest) ReqBody(reqBody Service
 	return r
 }
 
-func (r ApiV1AccountAccountIDQueuemembershipPostRequest) Execute() (*ServiceDocsCallQueueMemberGetSingle, *http.Response, error) {
+func (r ApiV1AccountAccountIDQueuemembershipPostRequest) Execute() (*ServiceDocsQueueMembershipOutput, *http.Response, error) {
 	return r.ApiService.V1AccountAccountIDQueuemembershipPostExecute(r)
 }
 
@@ -59,13 +59,13 @@ func (a *CallQueueMembershipAPIService) V1AccountAccountIDQueuemembershipPost(ct
 }
 
 // Execute executes the request
-//  @return ServiceDocsCallQueueMemberGetSingle
-func (a *CallQueueMembershipAPIService) V1AccountAccountIDQueuemembershipPostExecute(r ApiV1AccountAccountIDQueuemembershipPostRequest) (*ServiceDocsCallQueueMemberGetSingle, *http.Response, error) {
+//  @return ServiceDocsQueueMembershipOutput
+func (a *CallQueueMembershipAPIService) V1AccountAccountIDQueuemembershipPostExecute(r ApiV1AccountAccountIDQueuemembershipPostRequest) (*ServiceDocsQueueMembershipOutput, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ServiceDocsCallQueueMemberGetSingle
+		localVarReturnValue  *ServiceDocsQueueMembershipOutput
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CallQueueMembershipAPIService.V1AccountAccountIDQueuemembershipPost")

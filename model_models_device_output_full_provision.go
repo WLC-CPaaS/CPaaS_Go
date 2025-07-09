@@ -24,6 +24,7 @@ type ModelsDeviceOutputFullProvision struct {
 	EndpointFamily *string `json:"endpoint_family,omitempty"`
 	EndpointModel *string `json:"endpoint_model,omitempty"`
 	Id *string `json:"id,omitempty"`
+	LineKeys []ModelsVOIPDeviceOutputLineKey `json:"line_keys,omitempty"`
 }
 
 // NewModelsDeviceOutputFullProvision instantiates a new ModelsDeviceOutputFullProvision object
@@ -171,6 +172,38 @@ func (o *ModelsDeviceOutputFullProvision) SetId(v string) {
 	o.Id = &v
 }
 
+// GetLineKeys returns the LineKeys field value if set, zero value otherwise.
+func (o *ModelsDeviceOutputFullProvision) GetLineKeys() []ModelsVOIPDeviceOutputLineKey {
+	if o == nil || IsNil(o.LineKeys) {
+		var ret []ModelsVOIPDeviceOutputLineKey
+		return ret
+	}
+	return o.LineKeys
+}
+
+// GetLineKeysOk returns a tuple with the LineKeys field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsDeviceOutputFullProvision) GetLineKeysOk() ([]ModelsVOIPDeviceOutputLineKey, bool) {
+	if o == nil || IsNil(o.LineKeys) {
+		return nil, false
+	}
+	return o.LineKeys, true
+}
+
+// HasLineKeys returns a boolean if a field has been set.
+func (o *ModelsDeviceOutputFullProvision) HasLineKeys() bool {
+	if o != nil && !IsNil(o.LineKeys) {
+		return true
+	}
+
+	return false
+}
+
+// SetLineKeys gets a reference to the given []ModelsVOIPDeviceOutputLineKey and assigns it to the LineKeys field.
+func (o *ModelsDeviceOutputFullProvision) SetLineKeys(v []ModelsVOIPDeviceOutputLineKey) {
+	o.LineKeys = v
+}
+
 func (o ModelsDeviceOutputFullProvision) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -192,6 +225,9 @@ func (o ModelsDeviceOutputFullProvision) ToMap() (map[string]interface{}, error)
 	}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
+	}
+	if !IsNil(o.LineKeys) {
+		toSerialize["line_keys"] = o.LineKeys
 	}
 	return toSerialize, nil
 }

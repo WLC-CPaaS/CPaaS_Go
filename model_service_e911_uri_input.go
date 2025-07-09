@@ -22,7 +22,7 @@ var _ MappedNullable = &ServiceE911URIInput{}
 
 // ServiceE911URIInput struct for ServiceE911URIInput
 type ServiceE911URIInput struct {
-	CallerName string `json:"callerName"`
+	CallerName *string `json:"callerName,omitempty"`
 	Uri string `json:"uri"`
 }
 
@@ -32,9 +32,8 @@ type _ServiceE911URIInput ServiceE911URIInput
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewServiceE911URIInput(callerName string, uri string) *ServiceE911URIInput {
+func NewServiceE911URIInput(uri string) *ServiceE911URIInput {
 	this := ServiceE911URIInput{}
-	this.CallerName = callerName
 	this.Uri = uri
 	return &this
 }
@@ -47,28 +46,36 @@ func NewServiceE911URIInputWithDefaults() *ServiceE911URIInput {
 	return &this
 }
 
-// GetCallerName returns the CallerName field value
+// GetCallerName returns the CallerName field value if set, zero value otherwise.
 func (o *ServiceE911URIInput) GetCallerName() string {
-	if o == nil {
+	if o == nil || IsNil(o.CallerName) {
 		var ret string
 		return ret
 	}
-
-	return o.CallerName
+	return *o.CallerName
 }
 
-// GetCallerNameOk returns a tuple with the CallerName field value
+// GetCallerNameOk returns a tuple with the CallerName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceE911URIInput) GetCallerNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.CallerName) {
 		return nil, false
 	}
-	return &o.CallerName, true
+	return o.CallerName, true
 }
 
-// SetCallerName sets field value
+// HasCallerName returns a boolean if a field has been set.
+func (o *ServiceE911URIInput) HasCallerName() bool {
+	if o != nil && !IsNil(o.CallerName) {
+		return true
+	}
+
+	return false
+}
+
+// SetCallerName gets a reference to the given string and assigns it to the CallerName field.
 func (o *ServiceE911URIInput) SetCallerName(v string) {
-	o.CallerName = v
+	o.CallerName = &v
 }
 
 // GetUri returns the Uri field value
@@ -105,7 +112,9 @@ func (o ServiceE911URIInput) MarshalJSON() ([]byte, error) {
 
 func (o ServiceE911URIInput) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["callerName"] = o.CallerName
+	if !IsNil(o.CallerName) {
+		toSerialize["callerName"] = o.CallerName
+	}
 	toSerialize["uri"] = o.Uri
 	return toSerialize, nil
 }
@@ -115,7 +124,6 @@ func (o *ServiceE911URIInput) UnmarshalJSON(data []byte) (err error) {
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
-		"callerName",
 		"uri",
 	}
 

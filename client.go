@@ -86,8 +86,6 @@ type APIClient struct {
 
 	PresenceAPI *PresenceAPIService
 
-	ProvisionAPI *ProvisionAPIService
-
 	ProvisioningAPI *ProvisioningAPIService
 
 	SMSAPI *SMSAPIService
@@ -141,7 +139,6 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.MetaflowAPI = (*MetaflowAPIService)(&c.common)
 	c.PhoneNumberAPI = (*PhoneNumberAPIService)(&c.common)
 	c.PresenceAPI = (*PresenceAPIService)(&c.common)
-	c.ProvisionAPI = (*ProvisionAPIService)(&c.common)
 	c.ProvisioningAPI = (*ProvisioningAPIService)(&c.common)
 	c.SMSAPI = (*SMSAPIService)(&c.common)
 	c.StorageAPI = (*StorageAPIService)(&c.common)
