@@ -24,6 +24,7 @@ type ModelsConfigFileParameter struct {
 	HttpsHost *string `json:"https_host,omitempty"`
 	HttpsPassword *string `json:"https_password,omitempty"`
 	HttpsUsername *string `json:"https_username,omitempty"`
+	LineKeys []ModelsLineKeyProcessedTempData `json:"line_keys,omitempty"`
 	MacAddress *string `json:"mac_address,omitempty"`
 	Realm *string `json:"realm,omitempty"`
 	SipPassword *string `json:"sip_password,omitempty"`
@@ -175,6 +176,38 @@ func (o *ModelsConfigFileParameter) HasHttpsUsername() bool {
 // SetHttpsUsername gets a reference to the given string and assigns it to the HttpsUsername field.
 func (o *ModelsConfigFileParameter) SetHttpsUsername(v string) {
 	o.HttpsUsername = &v
+}
+
+// GetLineKeys returns the LineKeys field value if set, zero value otherwise.
+func (o *ModelsConfigFileParameter) GetLineKeys() []ModelsLineKeyProcessedTempData {
+	if o == nil || IsNil(o.LineKeys) {
+		var ret []ModelsLineKeyProcessedTempData
+		return ret
+	}
+	return o.LineKeys
+}
+
+// GetLineKeysOk returns a tuple with the LineKeys field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ModelsConfigFileParameter) GetLineKeysOk() ([]ModelsLineKeyProcessedTempData, bool) {
+	if o == nil || IsNil(o.LineKeys) {
+		return nil, false
+	}
+	return o.LineKeys, true
+}
+
+// HasLineKeys returns a boolean if a field has been set.
+func (o *ModelsConfigFileParameter) HasLineKeys() bool {
+	if o != nil && !IsNil(o.LineKeys) {
+		return true
+	}
+
+	return false
+}
+
+// SetLineKeys gets a reference to the given []ModelsLineKeyProcessedTempData and assigns it to the LineKeys field.
+func (o *ModelsConfigFileParameter) SetLineKeys(v []ModelsLineKeyProcessedTempData) {
+	o.LineKeys = v
 }
 
 // GetMacAddress returns the MacAddress field value if set, zero value otherwise.
@@ -390,6 +423,9 @@ func (o ModelsConfigFileParameter) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.HttpsUsername) {
 		toSerialize["https_username"] = o.HttpsUsername
+	}
+	if !IsNil(o.LineKeys) {
+		toSerialize["line_keys"] = o.LineKeys
 	}
 	if !IsNil(o.MacAddress) {
 		toSerialize["mac_address"] = o.MacAddress

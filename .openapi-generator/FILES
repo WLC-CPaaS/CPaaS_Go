@@ -86,6 +86,7 @@ docs/ModelsDeviceOutputFullProvision.md
 docs/ModelsDeviceOutputFullSIP.md
 docs/ModelsFamily.md
 docs/ModelsGenerateConfigFileRequest.md
+docs/ModelsLineKeyProcessedTempData.md
 docs/ModelsModel.md
 docs/ModelsMusicOnHold.md
 docs/ModelsTemplate.md
@@ -361,6 +362,7 @@ model_models_device_output_full_provision.go
 model_models_device_output_full_sip.go
 model_models_family.go
 model_models_generate_config_file_request.go
+model_models_line_key_processed_temp_data.go
 model_models_model.go
 model_models_music_on_hold.go
 model_models_template.go

@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **HttpsHost** | Pointer to **string** |  | [optional] 
 **HttpsPassword** | Pointer to **string** |  | [optional] 
 **HttpsUsername** | Pointer to **string** |  | [optional] 
+**LineKeys** | Pointer to [**[]ModelsLineKeyProcessedTempData**](ModelsLineKeyProcessedTempData.md) |  | [optional] 
 **MacAddress** | Pointer to **string** |  | [optional] 
 **Realm** | Pointer to **string** |  | [optional] 
 **SipPassword** | Pointer to **string** |  | [optional] 
@@ -133,6 +134,31 @@ SetHttpsUsername sets HttpsUsername field to given value.
 `func (o *ModelsConfigFileParameter) HasHttpsUsername() bool`
 
 HasHttpsUsername returns a boolean if a field has been set.
+
+### GetLineKeys
+
+`func (o *ModelsConfigFileParameter) GetLineKeys() []ModelsLineKeyProcessedTempData`
+
+GetLineKeys returns the LineKeys field if non-nil, zero value otherwise.
+
+### GetLineKeysOk
+
+`func (o *ModelsConfigFileParameter) GetLineKeysOk() (*[]ModelsLineKeyProcessedTempData, bool)`
+
+GetLineKeysOk returns a tuple with the LineKeys field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLineKeys
+
+`func (o *ModelsConfigFileParameter) SetLineKeys(v []ModelsLineKeyProcessedTempData)`
+
+SetLineKeys sets LineKeys field to given value.
+
+### HasLineKeys
+
+`func (o *ModelsConfigFileParameter) HasLineKeys() bool`
+
+HasLineKeys returns a boolean if a field has been set.
 
 ### GetMacAddress
 
