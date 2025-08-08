@@ -5,7 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Label** | Pointer to **string** |  | [optional] 
-**Line** | Pointer to **int32** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **Value** | Pointer to **string** |  | [optional] 
 
@@ -52,31 +51,6 @@ SetLabel sets Label field to given value.
 `func (o *ModelsLineKeyProcessedTempData) HasLabel() bool`
 
 HasLabel returns a boolean if a field has been set.
-
-### GetLine
-
-`func (o *ModelsLineKeyProcessedTempData) GetLine() int32`
-
-GetLine returns the Line field if non-nil, zero value otherwise.
-
-### GetLineOk
-
-`func (o *ModelsLineKeyProcessedTempData) GetLineOk() (*int32, bool)`
-
-GetLineOk returns a tuple with the Line field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLine
-
-`func (o *ModelsLineKeyProcessedTempData) SetLine(v int32)`
-
-SetLine sets Line field to given value.
-
-### HasLine
-
-`func (o *ModelsLineKeyProcessedTempData) HasLine() bool`
-
-HasLine returns a boolean if a field has been set.
 
 ### GetType
 

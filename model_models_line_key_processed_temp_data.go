@@ -21,7 +21,6 @@ var _ MappedNullable = &ModelsLineKeyProcessedTempData{}
 // ModelsLineKeyProcessedTempData struct for ModelsLineKeyProcessedTempData
 type ModelsLineKeyProcessedTempData struct {
 	Label *string `json:"label,omitempty"`
-	Line *int32 `json:"line,omitempty"`
 	Type *string `json:"type,omitempty"`
 	Value *string `json:"value,omitempty"`
 }
@@ -73,38 +72,6 @@ func (o *ModelsLineKeyProcessedTempData) HasLabel() bool {
 // SetLabel gets a reference to the given string and assigns it to the Label field.
 func (o *ModelsLineKeyProcessedTempData) SetLabel(v string) {
 	o.Label = &v
-}
-
-// GetLine returns the Line field value if set, zero value otherwise.
-func (o *ModelsLineKeyProcessedTempData) GetLine() int32 {
-	if o == nil || IsNil(o.Line) {
-		var ret int32
-		return ret
-	}
-	return *o.Line
-}
-
-// GetLineOk returns a tuple with the Line field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ModelsLineKeyProcessedTempData) GetLineOk() (*int32, bool) {
-	if o == nil || IsNil(o.Line) {
-		return nil, false
-	}
-	return o.Line, true
-}
-
-// HasLine returns a boolean if a field has been set.
-func (o *ModelsLineKeyProcessedTempData) HasLine() bool {
-	if o != nil && !IsNil(o.Line) {
-		return true
-	}
-
-	return false
-}
-
-// SetLine gets a reference to the given int32 and assigns it to the Line field.
-func (o *ModelsLineKeyProcessedTempData) SetLine(v int32) {
-	o.Line = &v
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
@@ -183,9 +150,6 @@ func (o ModelsLineKeyProcessedTempData) ToMap() (map[string]interface{}, error) 
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label
-	}
-	if !IsNil(o.Line) {
-		toSerialize["line"] = o.Line
 	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type

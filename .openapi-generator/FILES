@@ -242,7 +242,6 @@ docs/ServiceFeatureCode.md
 docs/ServiceGroupOutputFull.md
 docs/ServiceGroupOutputShort.md
 docs/ServiceImpersonateUserOutputFull.md
-docs/ServiceImpersonatedUserInfo.md
 docs/ServiceMediaOutputFull.md
 docs/ServiceMediaOutputShort.md
 docs/ServiceMetaflowOutput.md
@@ -267,7 +266,6 @@ docs/ServiceSystemStatusCPAASService.md
 docs/ServiceSystemStatusMessagingService.md
 docs/ServiceSystemStatusOutput.md
 docs/ServiceSystemStatusSupportService.md
-docs/ServiceSystemStatusVOIPService.md
 docs/ServiceTTS.md
 docs/ServiceTemporalRuleOutputFull.md
 docs/ServiceTemporalRuleOutputShort.md
@@ -514,7 +512,6 @@ model_service_feature_code.go
 model_service_group_output_full.go
 model_service_group_output_short.go
 model_service_impersonate_user_output_full.go
-model_service_impersonated_user_info.go
 model_service_media_output_full.go
 model_service_media_output_short.go
 model_service_metaflow_output.go
@@ -539,7 +536,6 @@ model_service_system_status_cpaas_service.go
 model_service_system_status_messaging_service.go
 model_service_system_status_output.go
 model_service_system_status_support_service.go
-model_service_system_status_voip_service.go
 model_service_temporal_rule_output_full.go
 model_service_temporal_rule_output_short.go
 model_service_temporal_rule_set_output_full.go

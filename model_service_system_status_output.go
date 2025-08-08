@@ -23,7 +23,6 @@ type ServiceSystemStatusOutput struct {
 	CpaasServices *ServiceSystemStatusCPAASService `json:"cpaas_services,omitempty"`
 	MessagingServices *ServiceSystemStatusMessagingService `json:"messaging_services,omitempty"`
 	SupportServices *ServiceSystemStatusSupportService `json:"support_services,omitempty"`
-	VoipServices *ServiceSystemStatusVOIPService `json:"voip_services,omitempty"`
 }
 
 // NewServiceSystemStatusOutput instantiates a new ServiceSystemStatusOutput object
@@ -139,38 +138,6 @@ func (o *ServiceSystemStatusOutput) SetSupportServices(v ServiceSystemStatusSupp
 	o.SupportServices = &v
 }
 
-// GetVoipServices returns the VoipServices field value if set, zero value otherwise.
-func (o *ServiceSystemStatusOutput) GetVoipServices() ServiceSystemStatusVOIPService {
-	if o == nil || IsNil(o.VoipServices) {
-		var ret ServiceSystemStatusVOIPService
-		return ret
-	}
-	return *o.VoipServices
-}
-
-// GetVoipServicesOk returns a tuple with the VoipServices field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ServiceSystemStatusOutput) GetVoipServicesOk() (*ServiceSystemStatusVOIPService, bool) {
-	if o == nil || IsNil(o.VoipServices) {
-		return nil, false
-	}
-	return o.VoipServices, true
-}
-
-// HasVoipServices returns a boolean if a field has been set.
-func (o *ServiceSystemStatusOutput) HasVoipServices() bool {
-	if o != nil && !IsNil(o.VoipServices) {
-		return true
-	}
-
-	return false
-}
-
-// SetVoipServices gets a reference to the given ServiceSystemStatusVOIPService and assigns it to the VoipServices field.
-func (o *ServiceSystemStatusOutput) SetVoipServices(v ServiceSystemStatusVOIPService) {
-	o.VoipServices = &v
-}
-
 func (o ServiceSystemStatusOutput) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -189,9 +156,6 @@ func (o ServiceSystemStatusOutput) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.SupportServices) {
 		toSerialize["support_services"] = o.SupportServices
-	}
-	if !IsNil(o.VoipServices) {
-		toSerialize["voip_services"] = o.VoipServices
 	}
 	return toSerialize, nil
 }
